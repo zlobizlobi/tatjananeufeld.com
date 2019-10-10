@@ -7,6 +7,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -16,6 +17,13 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `tatjananeufeld`,
+        accessToken: `MC5YWi1mTGhFQUFDUUFBaTdS.77-9d--_ve-_vUbvv70K77-977-977-977-9YUx5BGLvv70iB--_ve-_ve-_vVjvv73vv70oCe-_vVkHRe-_vQ`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
