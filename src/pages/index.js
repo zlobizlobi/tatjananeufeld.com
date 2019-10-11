@@ -1,8 +1,6 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { useStaticQuery, graphql } from "gatsby"
-
+import { Layout } from "../components"
+import { ConcertSlice } from '../components/concertSlice'
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -17,20 +15,10 @@ import { useStaticQuery, graphql } from "gatsby"
 
 
 const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+
   return (
     <Layout>
-      <SEO title="Home" />
+      <ConcertSlice />
     </Layout>
   )
 }

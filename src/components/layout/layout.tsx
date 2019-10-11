@@ -13,7 +13,8 @@ interface IProps {
   children: React.ReactNode
 }
 
-const Layout: React.FC<IProps> = ({ children }) => {
+export const Layout: React.FC<IProps> = ({ children }) => {
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,7 +25,6 @@ const Layout: React.FC<IProps> = ({ children }) => {
     }
   `)
 
-  console.log(data)
 
   return (
     <>
@@ -40,4 +40,3 @@ const Layout: React.FC<IProps> = ({ children }) => {
 }
 
 
-export default Layout
