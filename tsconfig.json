@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es2017",
+        "lib": [
+            "dom",
+            "es2015",
+            "es2017"
+        ],
+        "jsx": "react",
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "baseUrl": ".",
+        "declaration": true,
+        "incremental": true,
+        "emitDeclarationOnly": true,
+        "paths": {
+            "*": [
+                "node_modules/*",
+                "src/types/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
