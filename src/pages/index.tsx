@@ -1,6 +1,5 @@
 import React from "react"
 import { Layout } from "../components"
-import { ConcertSlice } from '../components/concertSlice'
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -18,7 +17,6 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <ConcertSlice />
     </Layout>
   )
 }
