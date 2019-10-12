@@ -7,11 +7,18 @@
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-
+import styled from 'styled-components'
+import { GlobalStyle } from "../../styles"
 
 interface IProps {
   children: React.ReactNode
 }
+
+
+
+const Nav = styled.nav`
+
+`
 
 export const Layout: React.FC<IProps> = ({ children }) => {
 
@@ -27,7 +34,8 @@ export const Layout: React.FC<IProps> = ({ children }) => {
 
 
   return (
-    <>
+    <React.Fragment>
+      <GlobalStyle />
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div>
         <nav></nav>
@@ -35,7 +43,7 @@ export const Layout: React.FC<IProps> = ({ children }) => {
         <footer>
         </footer>
       </div>
-    </>
+    </React.Fragment>
   )
 }
 
