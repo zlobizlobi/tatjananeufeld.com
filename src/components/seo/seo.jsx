@@ -1,14 +1,7 @@
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-interface IProps {
-  description: string;
-  lang: string;
-  meta: string;
-  title: string;
-}
-
-export function SEO({ description, lang, meta, title }: IProps = { description: '', lang: '', meta: '', title: '' }): null {
+export function SEO({ description, lang, meta, title } = { description: '', lang: '', meta: '', title: '' }) {
   const { site } = useStaticQuery(
     graphql`
       query {

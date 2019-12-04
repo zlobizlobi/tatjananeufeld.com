@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import * as Scroll from 'react-scroll'
 
-export const Link = styled.a`
+export const LinkComponent = styled(Scroll.Link)`
     color: white;
     font-size: 16px;
     text-decoration: none;

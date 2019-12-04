@@ -13,8 +13,8 @@ import { Layout } from "../components"
 
 
 
-const IndexPage = () => {
 
+const IndexPage = () => {
   return (
     <Layout>
     </Layout>

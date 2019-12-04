@@ -8,4 +8,3 @@ export const Nav = styled.nav`
     background-color: black;
     border-bottom: 1px solid rgba(255,255,255,0.3);
 `
-

@@ -59,10 +59,6 @@ export const HamburgerInput = styled.input.attrs({ type: 'checkbox' })`
     }
 `
 
-interface IProps {
-    isOpen: boolean;
-}
-
 export const SlideMenu = styled.ul`
         display: flex;
         flex-direction: column;
@@ -76,7 +72,7 @@ export const SlideMenu = styled.ul`
         padding: 100px 0;
         background: black;
         list-style-type: none;
-        opacity: ${({ isOpen }: IProps) => isOpen ? '1' : '0'};
+        opacity: ${({ isOpen }) => isOpen ? '1' : '0'};
         font-smoothing: antialiased;
         transform-origin: 0% 0%;
         transition: opacity 0.4s;
