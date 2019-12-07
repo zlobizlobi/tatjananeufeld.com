@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     body, html {
         font-family: 'Raleway';
         background-color: black;
-        height: 100vh;
+        height: 100%;
+        max-height: 100%;
     }
 `

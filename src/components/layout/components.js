@@ -5,6 +5,7 @@ export const Nav = styled.nav`
     align-items: center;
     height: 60px;
     width: 100vw;
+    position: absolute;
     background-color: black;
     border-bottom: 1px solid rgba(255,255,255,0.3);
 `

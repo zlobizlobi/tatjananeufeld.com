@@ -8,7 +8,6 @@ export const breakpoints = {
 };
 
 export const media = Object.entries(breakpoints).reduce(
-
     (acc, [label, size]) => {
 
         return {

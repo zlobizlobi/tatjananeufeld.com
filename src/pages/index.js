@@ -1,5 +1,6 @@
 import React from "react"
-import { Layout } from "../components"
+import { Layout } from "components"
+import { LandingSection } from 'sections'
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -17,6 +18,7 @@ import { Layout } from "../components"
 const IndexPage = () => {
   return (
     <Layout>
+      <LandingSection />
     </Layout>
   )
 }

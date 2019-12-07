@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `Tatjana Neufeld`,
@@ -49,5 +51,12 @@ module.exports = {
         redirect: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        components: path.join(__dirname, './src/components'),
+        sections: path.join(__dirname, './src/sections')
+      }
+    }
   ],
 }
