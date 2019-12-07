@@ -4,14 +4,16 @@ import { media } from '../../../styles'
 
 export const Nav = styled.nav`
     display: none;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     top: 40%;
     left: 50px;
     
-    ${media.sm`
+    ${media.md`
         display: flex;
         flex-direction: column;
+        padding: 30px;
+        background-color: rgba(255,255,255,0.1);
     `}
 `
 
@@ -31,16 +33,28 @@ export const NavLink = styled(NavLinkComponent)`
     color: rgba(255,255,255,0.8);
 
     ${({ isActive }) => isActive && css`
-        left: 5px;
+        left: 10px;
         color: rgba(255,255,255,1);
     `}
 
     :hover {
-        left: 5px;
+        left: 10px;
         color: rgba(255, 255, 255, 1);
     }
 
     &:last-child {
         margin: 0;
     }
+
+    &:last-child > a {
+        margin: 0;
+        padding-bottom: 5px;
+    }
+`
+
+export const Divider = styled.span`
+    width: 100px;
+    height: 0.5px;
+    border-top: 1px solid white;
+    margin: 10px 0;
 `

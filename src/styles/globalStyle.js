@@ -35,4 +35,8 @@ export const GlobalStyle = createGlobalStyle`
         height: 100%;
         max-height: 100%;
     }
+
+    button {
+        font-family: 'inherit';
+    }
 `

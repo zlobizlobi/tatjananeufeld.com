@@ -1,9 +1,11 @@
 import React from 'react'
-import { Nav, NavList, NavLink } from './styles'
-import { FormattedMessage } from 'react-intl'
+import { Nav, NavList, NavLink, Divider } from './styles'
+import { FormattedMessage } from 'gatsby-plugin-intl'
+import { LanguageSwitch } from '../../languageSwitch'
 
 export const DesktopMenu = () => {
-    const [isActive, setIsActive] = React.useState([])
+    const [isActive, setIsActive] = React.useState(['home'])
+
     const navLinks = ['home', 'concerts', 'biography', 'gallery', 'repertoir', 'partners', 'teacher', 'contact'];
 
     const handleOnClick = (navLink) => {
@@ -13,20 +15,19 @@ export const DesktopMenu = () => {
     return (
         <Nav>
             <NavList>
-                {navLinks.map(navLink => {
-                    return (
-                        <NavLink onClick={() => handleOnClick(navLink)}
-                            key={navLink}
-                            name={navLink}
-                            isActive={isActive.includes(navLink)}
-                        >
-                            <FormattedMessage
-                                id={navLink}
-                            />
-                        </NavLink>
-                    )
-                })}
+                {navLinks.map(navLink =>
+                    <NavLink
+                        onClick={() => handleOnClick(navLink)}
+                        key={navLink}
+                        name={navLink}
+                        isActive={isActive.includes(navLink)}
+                    >
+                        <FormattedMessage id={navLink} />
+                    </NavLink>
+                )}
             </NavList>
+            <Divider />
+            <LanguageSwitch />
         </Nav>
     )
 }
