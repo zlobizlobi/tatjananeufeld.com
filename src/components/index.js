@@ -1,4 +1,5 @@
 export { ConcertSlice } from './concertSlice'
 export { Layout } from './layout'
 export { SEO } from './seo'
-export { HamburgerMenu } from './hamburgerMenu'
+export { MobileMenu } from './mobileMenu'
+export { DesktopMenu } from './desktopMenu'

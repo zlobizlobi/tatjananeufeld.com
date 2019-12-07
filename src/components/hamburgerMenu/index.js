@@ -1,2 +1,0 @@
-export { HamburgerMenu } from './hamburgerMenu'
-

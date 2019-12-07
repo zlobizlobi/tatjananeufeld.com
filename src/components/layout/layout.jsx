@@ -1,8 +1,7 @@
 import React, { Suspense } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GlobalStyle } from "../../styles"
-import { HamburgerMenu } from "../hamburgerMenu"
-import { Nav } from "./components"
+import { MobileMenu, DesktopMenu } from "./menu"
 
 export const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -15,14 +14,12 @@ export const Layout = ({ children }) => {
     }
   `)
 
-
   return (
     <React.Fragment>
       <GlobalStyle />
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      <Nav>
-        <HamburgerMenu />
-      </Nav>
+      <MobileMenu />
+      <DesktopMenu />
       <main>{children}</main>
     </React.Fragment>
   )
