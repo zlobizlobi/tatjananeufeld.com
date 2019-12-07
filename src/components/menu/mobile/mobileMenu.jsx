@@ -14,10 +14,14 @@ export const MobileMenu = () => {
                 <Bars />
                 <Bars />
                 <SlideMenu isOpen={isOpen}>
+                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="home" /></NavLink>
+                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="concerts" /></NavLink>
+                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="biography" /></NavLink>
+                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="gallery" /></NavLink>
+                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="repertoir" /></NavLink>
+                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="partners" /></NavLink>
+                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="teacher" /></NavLink>
                     <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="contact" /></NavLink>
-                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="home" /></NavLink>
-                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="home" /></NavLink>
-                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="home" /></NavLink>
                     <button onClick={() => changeLocale('de')} style={{ color: 'white' }}>de</button>
                     <button onClick={() => changeLocale('nl')} style={{ color: 'white' }}>nl</button>
                 </SlideMenu >
