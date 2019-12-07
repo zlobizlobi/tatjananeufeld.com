@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Img } from 'gatsby-image'
-import { Image, ImageContainer } from './styles'
+import { Image, ImageContainer, Name, SubHeading, NameContainer } from './styles'
 
 export const LandingSection = () => {
 
@@ -38,6 +37,10 @@ export const LandingSection = () => {
   return (
     <ImageContainer>
       <Image fluid={fluid} />
-    </ImageContainer>
+      <NameContainer>
+        <Name>Tatjana Neufeld</Name>
+        <SubHeading>Piano Stories of A Russian Maestro</SubHeading>
+      </NameContainer>
+    </ImageContainer >
   )
 }

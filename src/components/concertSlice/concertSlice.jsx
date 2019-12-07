@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -31,5 +31,5 @@ export const ConcertSlice = () => {
 
   console.log(prismicData)
 
-  return null
+  return <div></div>
 }

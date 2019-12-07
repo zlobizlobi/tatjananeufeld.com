@@ -16,7 +16,7 @@ export function SEO({ description, lang, meta, title } = { description: '', lang
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  // const metaDescription = description || site.siteMetadata.description
 
   return (
     // <Helmet

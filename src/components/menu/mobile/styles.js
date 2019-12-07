@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { media } from '../../styles/media'
+import { media } from '../../../styles'
 
 export const Hamburger = styled.button`
     display: flex;
@@ -78,6 +78,17 @@ export const SlideMenu = styled.ul`
         transition: opacity 0.4s;
 `
 
+export const Nav = styled.nav`
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 100vw;
+    position: absolute;
+    background-color: black;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
 
-
+    ${media.md(`
+        display: none;
+    `)}
+`
 

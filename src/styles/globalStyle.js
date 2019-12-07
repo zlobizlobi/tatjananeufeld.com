@@ -1,19 +1,26 @@
 import { createGlobalStyle } from 'styled-components'
-import Raleway from '../fonts/Raleway-Regular.ttf'
-import Playfair from '../fonts/PlayfairDisplay-Regular.ttf'
+import Montserrat from '../fonts/Montserrat-Regular.ttf'
+import Baskervville from '../fonts/Baskervville-Regular.ttf'
+import Cormorant from '../fonts/CormorantGaramond-Light.ttf'
 
 export const GlobalStyle = createGlobalStyle`
 
     @font-face {
-        font-family: 'Raleway';
+        font-family: 'Montserrat';
         font-weight: normal;
-        src: url(${Raleway});
+        src: url(${Montserrat});
     }
 
     @font-face {
-        font-family: 'Playfair';
+        font-family: 'Baskervville';
         font-weight: normal;
-        src: url(${Playfair});
+        src: url(${Baskervville});
+    }
+
+    @font-face {
+        font-family: 'Cormorant Garamond';
+        font-weight: normal;
+        src: url(${Cormorant});
     }
 
     * {
@@ -23,9 +30,13 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body, html {
-        font-family: 'Raleway';
+        font-family: 'Baskervville', serif;
         background-color: black;
         height: 100%;
         max-height: 100%;
+    }
+
+    button {
+        font-family: 'inherit';
     }
 `
