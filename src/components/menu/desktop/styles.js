@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { NavLink as NavLinkComponent } from '../../navLink'
 import { media } from '../../../styles'
 
@@ -8,6 +8,7 @@ export const Nav = styled.nav`
     z-index: 1;
     top: 40%;
     left: 50px;
+    
     ${media.sm`
         display: flex;
         flex-direction: column;
@@ -26,10 +27,17 @@ export const NavLink = styled(NavLinkComponent)`
     font-family: 'Cormorant Garamond';
     position: relative;
     left: 0;
-    transition: left 0.2s ease-in-out;
+    transition: left 0.3s ease-in-out;
+    color: rgba(255,255,255,0.8);
+
+    ${({ isActive }) => isActive && css`
+        left: 5px;
+        color: rgba(255,255,255,1);
+    `}
 
     :hover {
         left: 5px;
+        color: rgba(255, 255, 255, 1);
     }
 
     &:last-child {
