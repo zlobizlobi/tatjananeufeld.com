@@ -23,5 +23,6 @@ export const Button = styled.button`
     `}
 `
 export const Container = styled.div`
-display: flex;
+    display: flex;
+    z-index: 1;
 `

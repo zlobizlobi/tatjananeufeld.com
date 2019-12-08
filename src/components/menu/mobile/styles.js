@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { NavLink as NavLinkComponent } from '../../navLink'
 import { media } from '../../../styles'
+import { LanguageSwitch as LanguageSwitchComponent } from '../../languageSwitch'
 
 export const Hamburger = styled.button`
     display: flex;
@@ -17,7 +18,7 @@ export const Hamburger = styled.button`
 export const Bars = styled.span`
     width: 30px;
     height: 2px;
-    border-top: 2px solid rgba(255,255,255,0.8);
+    border-top: 2px solid rgba(255,255,255,1);
     margin: 4px 0;
     transform-origin: 4px 0px;
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1), opacity 0.2s ease;
@@ -86,6 +87,7 @@ export const SlideMenu = styled.ul`
 export const Nav = styled.nav`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 60px;
     width: 100vw;
     position: absolute;
@@ -98,5 +100,18 @@ export const Nav = styled.nav`
 `
 
 export const NavLink = styled(NavLinkComponent)`
-    color: white;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Cormorant Garamond';
+
+    ${({ isActive }) => isActive && css`
+        color: white;
+    `}
+
+    :hover {
+        color: white;
+    }
+`
+
+export const LanguageSwitch = styled(LanguageSwitchComponent)`
+    margin: 0 25px 0 0 !important;
 `

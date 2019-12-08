@@ -1,9 +1,17 @@
 import React, { useState } from 'react'
-import { Hamburger, HamburgerInput, Bars, SlideMenu, Nav, NavLink } from './styles'
-import { FormattedMessage, changeLocale } from 'gatsby-plugin-intl'
+import { Hamburger, HamburgerInput, Bars, SlideMenu, Nav, NavLink, LanguageSwitch } from './styles'
+import { FormattedMessage } from 'gatsby-plugin-intl'
 
 export const MobileMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const [isActive, setIsActive] = useState(['home'])
+
+    const navLinks = ['home', 'concerts', 'biography', 'gallery', 'repertoir', 'partners', 'teacher', 'contact'];
+
+    const handleOnClick = (navLink) => {
+        setIsActive([navLink])
+    }
 
     return (
         <Nav>
@@ -13,16 +21,19 @@ export const MobileMenu = () => {
                 <Bars />
                 <Bars />
                 <SlideMenu isOpen={isOpen}>
-                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="home" /></NavLink>
-                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="concerts" /></NavLink>
-                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="biography" /></NavLink>
-                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="gallery" /></NavLink>
-                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="repertoir" /></NavLink>
-                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="partners" /></NavLink>
-                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="teacher" /></NavLink>
-                    <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="contact" /></NavLink>
+                    {navLinks.map(navLink =>
+                        <NavLink
+                            onClick={() => handleOnClick(navLink), () => setIsOpen(false)}
+                            key={navLink}
+                            name={navLink}
+                            isActive={isActive.includes(navLink)}
+                        >
+                            <FormattedMessage id={navLink} />
+                        </NavLink>
+                    )}
                 </SlideMenu >
             </Hamburger>
+            <LanguageSwitch />
         </Nav>
     )
 }

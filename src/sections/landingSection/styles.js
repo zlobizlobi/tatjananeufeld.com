@@ -69,6 +69,12 @@ export const Button = styled.button`
     font-size: 13px;
     
 
+    & > span {
+        position: relative;
+        left: 0;
+        transition: all 0.2s ease;
+    }
+
     & > svg {
         position: relative;
         left: 0;
@@ -77,25 +83,18 @@ export const Button = styled.button`
         transition: all 0.2s ease;
     }
 
-    & > span {
-        position: relative;
-        left: 0;
-        transition: all 0.2s ease;
-    }
-
     :hover {
         background-color: white;
         color: black;
     
-    & > span {
-        left: -5px;
-    }
+        & > span {
+            left: -5px;
+        }
 
-    & > svg {
-        left: 5px;
-        opacity: 1;
-        display: inline;
-    }
-
+        & > svg {
+            left: 5px;
+            opacity: 1;
+            display: inline;
+        }
     }
 `

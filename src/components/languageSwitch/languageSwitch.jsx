@@ -2,14 +2,14 @@ import React from 'react'
 import { Button, Container } from './styles'
 import { changeLocale, useIntl } from 'gatsby-plugin-intl'
 
-export const LanguageSwitch = () => {
+export const LanguageSwitch = ({ className }) => {
 
     const intl = useIntl();
 
     const languages = ['nl', 'de', 'ru'];
 
     return (
-        <Container>
+        <Container className={className}>
             {languages.map(language =>
                 <Button
                     isActive={intl.locale === language}
