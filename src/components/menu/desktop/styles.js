@@ -12,7 +12,7 @@ export const Nav = styled.nav`
     ${media.md`
         display: flex;
         flex-direction: column;
-        padding: 30px;
+        padding: 40px 30px;
         background-color: rgba(255,255,255,0.1);
     `}
 `
@@ -30,7 +30,7 @@ export const NavLink = styled(NavLinkComponent)`
     position: relative;
     left: 0;
     transition: left 0.3s ease-in-out;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.6);
 
     ${({ isActive }) => isActive && css`
         left: 10px;

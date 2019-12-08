@@ -31,6 +31,7 @@ export const NameContainer = styled.div`
     justify-content: flex-start;
     position: absolute;
     z-index: 1;
+    padding: 0 30px;
     
     ${media.sm(`
         justify-content: flex-end;
@@ -42,7 +43,7 @@ export const Name = styled.h1`
     text-transform: uppercase;
     letter-spacing: 2.5px;
     font-family: 'Cormorant Garamond';
-    margin-bottom: 5px;
+    margin: 0;
 `
 
 export const SubHeading = styled.h6`
@@ -50,4 +51,51 @@ export const SubHeading = styled.h6`
     letter-spacing: 5px;
     color: white;
     line-height: 20px;
+    margin: 10px 0;
+`
+
+export const Button = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    width: 150px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    
+
+    & > svg {
+        position: relative;
+        left: 0;
+        opacity: 0;
+        display: none;
+        transition: all 0.2s ease;
+    }
+
+    & > span {
+        position: relative;
+        left: 0;
+        transition: all 0.2s ease;
+    }
+
+    :hover {
+        background-color: white;
+        color: black;
+    
+    & > span {
+        left: -5px;
+    }
+
+    & > svg {
+        left: 5px;
+        opacity: 1;
+        display: inline;
+    }
+
+    }
 `

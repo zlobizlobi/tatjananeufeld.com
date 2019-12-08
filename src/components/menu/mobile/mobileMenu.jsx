@@ -1,10 +1,9 @@
-import React from 'react'
-import { Hamburger, HamburgerInput, Bars, SlideMenu, Nav } from './styles'
-import { NavLink } from '../../navLink';
+import React, { useState } from 'react'
+import { Hamburger, HamburgerInput, Bars, SlideMenu, Nav, NavLink } from './styles'
 import { FormattedMessage, changeLocale } from 'gatsby-plugin-intl'
 
 export const MobileMenu = () => {
-    const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <Nav>
@@ -22,8 +21,6 @@ export const MobileMenu = () => {
                     <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="partners" /></NavLink>
                     <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="teacher" /></NavLink>
                     <NavLink onClick={() => setIsOpen(false)}><FormattedMessage id="contact" /></NavLink>
-                    <button onClick={() => changeLocale('de')} style={{ color: 'white' }}>de</button>
-                    <button onClick={() => changeLocale('nl')} style={{ color: 'white' }}>nl</button>
                 </SlideMenu >
             </Hamburger>
         </Nav>

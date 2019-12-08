@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { NavLink as NavLinkComponent } from '../../navLink'
 import { media } from '../../../styles'
 
 export const Hamburger = styled.button`
@@ -38,7 +38,11 @@ export const HamburgerInput = styled.input.attrs({ type: 'checkbox' })`
       width: 28px;
       height: 28px;
       position: absolute;
-      z-index: 4;
+      z-index: 5;
+       
+      :focus {
+        outline: none;
+      }
 
       &:checked ~ span {
         opacity: 1;
@@ -60,22 +64,23 @@ export const HamburgerInput = styled.input.attrs({ type: 'checkbox' })`
 `
 
 export const SlideMenu = styled.ul`
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        position: absolute;
-        left: 0;
-        top: 0px;
-        width: 100vw;
-        height: 100vh;
-        padding: 100px 0;
-        background: black;
-        list-style-type: none;
-        opacity: ${({ isOpen }) => isOpen ? '1' : '0'};
-        font-smoothing: antialiased;
-        transform-origin: 0% 0%;
-        transition: opacity 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    padding: 100px 0;
+    background: black;
+    list-style-type: none;
+    opacity: ${({ isOpen }) => isOpen ? '0.85' : '0'};
+    font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transition: opacity 0.4s;   
+    z-index: 3;
 `
 
 export const Nav = styled.nav`
@@ -87,8 +92,11 @@ export const Nav = styled.nav`
     background-color: black;
     border-bottom: 1px solid rgba(255,255,255,0.3);
 
-    ${media.md(`
+    ${media.sm(`
         display: none;
     `)}
 `
 
+export const NavLink = styled(NavLinkComponent)`
+    color: white;
+`
