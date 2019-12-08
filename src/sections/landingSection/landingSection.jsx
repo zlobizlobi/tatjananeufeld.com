@@ -53,7 +53,7 @@ export const LandingSection = () => {
           <FormattedMessage id="landing_section_subheading" />
         </SubHeading>
         <Scroll.Link to='contact-section' smooth duration={1100}>
-          <Button aria-label="Go to the concert dates"><span>See dates</span><FiArrowRight /></Button>
+          <Button aria-label="Go to the concert dates"><span><FormattedMessage id="landing_section_button">See dates</FormattedMessage></span><FiArrowRight /></Button>
         </Scroll.Link>
       </NameContainer>
     </ImageContainer >

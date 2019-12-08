@@ -59,7 +59,7 @@ export const Button = styled.button`
     align-items: center;
     justify-content: center;
     padding: 10px 15px;
-    width: 150px;
+    width: 170px;
     background-color: transparent;
     border: 1px solid white;
     color: white;
