@@ -23,7 +23,10 @@ export const MobileMenu = () => {
                 <SlideMenu isOpen={isOpen}>
                     {navLinks.map(navLink =>
                         <NavLink
-                            onClick={() => handleOnClick(navLink), () => setIsOpen(false)}
+                            onClick={() => {
+                                handleOnClick(navLink);
+                                setIsOpen(false);
+                            }}
                             key={navLink}
                             name={navLink}
                             isActive={isActive.includes(navLink)}
@@ -34,7 +37,7 @@ export const MobileMenu = () => {
                 </SlideMenu >
             </Hamburger>
             <LanguageSwitch />
-        </Nav>
+        </Nav >
     )
 }
 

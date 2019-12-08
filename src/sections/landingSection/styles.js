@@ -30,7 +30,7 @@ export const NameContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     padding: 0 30px;
     
     ${media.sm(`

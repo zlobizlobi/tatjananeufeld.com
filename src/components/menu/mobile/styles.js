@@ -9,7 +9,7 @@ export const Hamburger = styled.button`
     border: none;
     margin-left: 25px;
     background-color: transparent;
-
+    
     ${media.md(`
         display: none;
     `)}
@@ -23,7 +23,7 @@ export const Bars = styled.span`
     transform-origin: 4px 0px;
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1), opacity 0.2s ease;
     position: relative;
-    z-index: 4;
+    z-index: 6;
 
     &:first-child {
         transform-origin: 0% 0%;
@@ -40,7 +40,8 @@ export const HamburgerInput = styled.input.attrs({ type: 'checkbox' })`
       height: 28px;
       position: absolute;
       z-index: 5;
-       
+      cursor pointer;
+
       :focus {
         outline: none;
       }
@@ -61,15 +62,16 @@ export const HamburgerInput = styled.input.attrs({ type: 'checkbox' })`
 
     &:checked ~ ul {
         transform: none;
+        display: flex;
     }
 `
 
 export const SlideMenu = styled.ul`
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: absolute;
+    display: none;
     left: 0;
     top: 0px;
     width: 100vw;
@@ -80,8 +82,8 @@ export const SlideMenu = styled.ul`
     opacity: ${({ isOpen }) => isOpen ? '0.85' : '0'};
     font-smoothing: antialiased;
     transform-origin: 0% 0%;
-    transition: opacity 0.4s;   
-    z-index: 3;
+    transition: all 0.3s ease;   
+    z-index: 4;
 `
 
 export const Nav = styled.nav`
@@ -94,7 +96,7 @@ export const Nav = styled.nav`
     background-color: black;
     border-bottom: 1px solid rgba(255,255,255,0.3);
 
-    ${media.sm(`
+    ${media.md(`
         display: none;
     `)}
 `

@@ -8,23 +8,26 @@ import { FiArrowRight } from 'react-icons/fi'
 export const LandingSection = () => {
 
   const landingPageImageSource = useStaticQuery(graphql`
-    query landinPageImageQuery {
-      prismicMainPage {
-        data {
-          landing_page_image {
+  query landingPageQuery {
+    prismicMainPage {
+      data {
+        landing_page_image {
             localFile {
-              childImageSharp {
-                fluid(traceSVG: {optCurve: true, blackOnWhite: false, background: "rgba(255,255,255,0.7)", threshold: 80}){
-                  src
-                  srcSet
-                  tracedSVG
+                childImageSharp {
+                  sizes(
+                    traceSVG: { color: "rgba(0,0,0)", threshold: 80 }
+                    quality: 100
+                  ) {
+                    tracedSVG
+                    srcSet
+                  }
                 }
-              }
-            }
-          }
+              }        
         }
       }
     }
+  }
+  
   `)
 
   const { prismicMainPage: {
@@ -32,7 +35,7 @@ export const LandingSection = () => {
       landing_page_image: {
         localFile: {
           childImageSharp: {
-            fluid
+            sizes
           }
         }
       }
@@ -41,12 +44,16 @@ export const LandingSection = () => {
 
   return (
     <ImageContainer>
-      <Image fluid={fluid} />
+      <Image fluid={sizes} />
       <NameContainer>
-        <Name><FormattedMessage id="landing_section_heading" /></Name>
-        <SubHeading>Piano Stories of A Russian Maestro</SubHeading>
+        <Name>
+          <FormattedMessage id="landing_section_heading" />
+        </Name>
+        <SubHeading>
+          <FormattedMessage id="landing_section_subheading" />
+        </SubHeading>
         <Scroll.Link to='contact-section' smooth duration={1100}>
-          <Button aria-label="Go to the concert dates"><span>See dates &nbsp;</span><FiArrowRight /></Button>
+          <Button aria-label="Go to the concert dates"><span>See dates</span><FiArrowRight /></Button>
         </Scroll.Link>
       </NameContainer>
     </ImageContainer >
