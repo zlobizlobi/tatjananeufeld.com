@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Image, ImageContainer, Name, SubHeading, NameContainer, Button } from './styles'
+import { Image, Name, SubHeading, NameContainer, Button, Section } from './styles'
 import { FormattedMessage } from 'gatsby-plugin-intl'
 import Scroll from 'react-scroll'
 import { FiArrowRight } from 'react-icons/fi'
@@ -8,26 +8,25 @@ import { FiArrowRight } from 'react-icons/fi'
 export const LandingSection = () => {
 
   const landingPageImageSource = useStaticQuery(graphql`
-  query landingPageQuery {
-    prismicMainPage {
-      data {
-        landing_page_image {
-            localFile {
-                childImageSharp {
-                  sizes(
-                    traceSVG: { color: "rgba(0,0,0)", threshold: 80 }
-                    quality: 100
-                  ) {
-                    tracedSVG
-                    srcSet
+    query landingPageQuery {
+      prismicMainPage {
+        data {
+          landing_page_image {
+              localFile {
+                  childImageSharp {
+                    sizes(
+                      traceSVG: { color: "rgba(0,0,0)", threshold: 80 }
+                      quality: 100
+                    ) {
+                      tracedSVG
+                      srcSet
+                    }
                   }
-                }
-              }        
+                }        
+          }
         }
       }
     }
-  }
-  
   `)
 
   const { prismicMainPage: {
@@ -43,7 +42,7 @@ export const LandingSection = () => {
   } } = landingPageImageSource
 
   return (
-    <ImageContainer>
+    <Section>
       <Image fluid={sizes} />
       <NameContainer>
         <Name>
@@ -53,9 +52,16 @@ export const LandingSection = () => {
           <FormattedMessage id="landing_section_subheading" />
         </SubHeading>
         <Scroll.Link to='contact-section' smooth duration={1100}>
-          <Button aria-label="Go to the concert dates"><span><FormattedMessage id="landing_section_button">See dates</FormattedMessage></span><FiArrowRight /></Button>
+          <Button aria-label="Go to the concert dates">
+            <span>
+              <FormattedMessage id="landing_section_button">
+                See dates
+              </FormattedMessage>
+            </span>
+            <FiArrowRight />
+          </Button>
         </Scroll.Link>
       </NameContainer>
-    </ImageContainer >
+    </Section >
   )
 }

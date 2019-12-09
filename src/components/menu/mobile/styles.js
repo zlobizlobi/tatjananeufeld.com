@@ -7,7 +7,7 @@ export const Hamburger = styled.button`
     display: flex;
     flex-direction: column;
     border: none;
-    margin-left: 25px;
+    margin-left: 30px;
     background-color: transparent;
     
     ${media.md(`
@@ -90,7 +90,7 @@ export const Nav = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
+    height: 75px;
     width: 100vw;
     position: absolute;
     background-color: black;
@@ -115,5 +115,5 @@ export const NavLink = styled(NavLinkComponent)`
 `
 
 export const LanguageSwitch = styled(LanguageSwitchComponent)`
-    margin: 0 25px 0 0 !important;
+    margin: 0 30px 0 0;
 `

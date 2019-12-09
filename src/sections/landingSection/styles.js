@@ -8,20 +8,25 @@ export const Image = styled(Img)`
     picture > img {
         object-fit: cover !important;
         object-position: 50% 0% !important;
+        height: 100vh !important;
     }
+
+    ${media.md(`
+        picture > img {
+            object-fit: contain !important;
+            object-position: 0% 0%  !important;
+            width: 100vw !important;
+        }
+    `)}
 `
 
-export const ImageContainer = styled.div`
+export const Section = styled.section`
     z-index: 0;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
-${media.sm(`
-        justify-content: flex-end;
-    `)}
 `
 /*  & > img:  Adjust image positioning (if image covers area with defined height) and add font-family for polyfill */
 
@@ -31,12 +36,14 @@ export const NameContainer = styled.div`
     justify-content: flex-start;
     position: absolute;
     z-index: 3;
-    padding: 0 30px;
+    padding:  30px;
+    margin-top: 130px;
+    background-color: rgba(255,255,255,0.2);
     
-    ${media.sm(`
-        justify-content: flex-end;
-        padding-right: 100px;
-    `)}
+    ${media.md(`
+     margin: 0 0 0 120px;
+     align-self: center;
+`)}
 `
 export const Name = styled.h1`
     color: white;
@@ -49,9 +56,9 @@ export const Name = styled.h1`
 export const SubHeading = styled.h6`
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 5px;
-    color: white;
+    color: rgba(255,255,255,0.6);
     line-height: 20px;
-    margin: 10px 0;
+    margin: 0 0 20px 0;
 `
 
 export const Button = styled.button`
@@ -59,7 +66,7 @@ export const Button = styled.button`
     align-items: center;
     justify-content: center;
     padding: 10px 15px;
-    width: 170px;
+    width: 200px;
     background-color: transparent;
     border: 1px solid white;
     color: white;
@@ -67,7 +74,7 @@ export const Button = styled.button`
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 13px;
-    
+    box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.1);
 
     & > span {
         position: relative;

@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 import Montserrat from '../fonts/Montserrat-Regular.ttf'
 import Baskervville from '../fonts/Baskervville-Regular.ttf'
 import Cormorant from '../fonts/CormorantGaramond-Light.ttf'
+import CormorantBold from '../fonts/CormorantGaramond-Bold.ttf'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -21,6 +22,12 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Cormorant Garamond';
         font-weight: normal;
         src: url(${Cormorant});
+    }
+
+    @font-face {
+        font-family: 'Cormorant Garamond';
+        font-weight: bold;
+        src: url(${CormorantBold});
     }
 
     * {

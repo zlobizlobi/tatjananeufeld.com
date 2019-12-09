@@ -6,7 +6,7 @@ export const LanguageSwitch = ({ className }) => {
 
     const intl = useIntl();
 
-    const languages = ['nl', 'de', 'ru'];
+    const languages = ['en', 'de', 'ru'];
 
     return (
         <Container className={className}>

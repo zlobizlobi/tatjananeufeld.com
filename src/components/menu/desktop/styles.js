@@ -6,14 +6,14 @@ export const Nav = styled.nav`
     display: none;
     position: fixed;
     z-index: 1;
-    top: 40%;
-    left: 50px;
+    top: 35%;
+    left: 5%;
     
     ${media.md`
         display: flex;
         flex-direction: column;
         padding: 40px 30px;
-        background-color: rgba(255,255,255,0.1);
+        background-color: rgba(255,255,255,0.2);
     `}
 `
 
@@ -56,5 +56,5 @@ export const Divider = styled.span`
     width: 100px;
     height: 0.5px;
     border-top: 1px solid white;
-    margin: 10px 0;
+    margin: 20px 0;
 `
