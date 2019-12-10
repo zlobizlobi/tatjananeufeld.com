@@ -1,46 +1,57 @@
 import styled from 'styled-components'
 import { media } from '../../styles'
 
-export const TableHeadRow = styled.tr`
-    height: 50px;
-    text-transform: uppercase;
-`
-export const TableHeadRowCell = styled.th`
-    vertical-align: middle;
-    border-bottom: 1px solid white;
-    text-align: center;
-    color: white;
-    padding: 10px;
-    width: 10%;
+export const TableHead = styled.div`
+    display: flex;
+    justify-content: flex-start;
     font-family: 'Cormorant Garamond' , serif;
     font-weight: bold;
+    flex-shrink: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
 `
-
-export const Table = styled.table`
-    text-align: center;
-    margin: 0;
-    border-collapse: collapse;
-    border-spacing: 0;
-    table-layout: fixed;
-    font-size: 13px;
-    width: 75%;
-
-    ${media.md(`
-        font-size: inherit;
-    `)}
-`
-
-export const TableBodyRow = styled.tr`
-`
-
-export const TableBodyRowCell = styled.td`
-    vertical-align: middle;
-    border-bottom: 1px solid rgba(255,255,255,0.5);
-    text-align: center;
+export const TableHeadCell = styled.span`
     color: white;
-    padding: 20px 0;
+    padding: 0 20px;
     font-family: 'Cormorant Garamond' , serif;
-    font-weight: normal;
-    color: rgba(255,255,255,0.7);
+    width: 20%;
+    display: flex;
+    align-items: flex-end;
+    text-transform: uppercase;
+    
+    &:last-child {
+        padding: 0;
+    }
+`
+
+export const TableBodyRow = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 0.5px solid rgba(255,255,255, 0.5);
+
+    &:last-child {
+       margin: 0;
+       border: none;
+    }
+`
+
+export const TableBodyRowCell = styled.span`
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    padding: 0 20px;
+    font-family: 'Montserrat' , serif;
+    font-weight: lighter;
+    color: rgba(255,255, 255,0.7);
     text-transform: none;
+    line-height: 25px;
+    width: 20%;
+    font-size: 0.9em;
+    &:last-child{
+        padding: 0;
+        text-align: left;
+    }
 `

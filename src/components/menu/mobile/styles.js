@@ -9,10 +9,6 @@ export const Hamburger = styled.button`
     border: none;
     margin-left: 30px;
     background-color: transparent;
-    
-    ${media.md(`
-        display: none;
-    `)}
 `
 
 export const Bars = styled.span`
@@ -39,7 +35,7 @@ export const HamburgerInput = styled.input.attrs({ type: 'checkbox' })`
       width: 28px;
       height: 28px;
       position: absolute;
-      z-index: 5;
+      z-index: 7;
       cursor pointer;
 
       :focus {
@@ -94,9 +90,8 @@ export const Nav = styled.nav`
     width: 100vw;
     position: absolute;
     background-color: black;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
 
-    ${media.md(`
+    ${media.lg(`
         display: none;
     `)}
 `

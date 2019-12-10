@@ -1,20 +1,24 @@
 import styled from 'styled-components'
+import { media } from '../../styles'
 
 export const Container = styled.section`
-    min-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: 100px;
+    padding: 50px 150px;
 `
 
 export const Heading = styled.h1`
     color: white;
     padding-bottom: 5px;
-    border-bottom: 1px solid white;
     font-family: 'Cormorant Garamond', serif;
     display: inline-block;
-    margin-bottom: 20px;
-    font-size: 30px;
-    align-self: center;
+    margin-bottom: 40px;
+    font-size: 50px;
+    text-transform: uppercase;
+`
+
+export const TableContainer = styled.div`
+    padding: 50px;
+    border: 1px solid white;
 `

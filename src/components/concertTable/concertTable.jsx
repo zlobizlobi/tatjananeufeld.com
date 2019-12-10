@@ -1,7 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { ConcertTableRow } from './concertTableRow'
-import { TableHeadRow, Table, TableHeadRowCell } from './styles'
+import { TableHead, TableHeadCell } from './styles'
+
 export const ConcertTable = () => {
     const prismicData = useStaticQuery(graphql`
         query MyQuery {
@@ -29,29 +30,15 @@ export const ConcertTable = () => {
     } } = prismicData
 
     return (
-        <Table>
-            <thead>
-                <TableHeadRow>
-                    <TableHeadRowCell>
-                        Date
-                    </TableHeadRowCell>
-                    <TableHeadRowCell>
-                        Concert
-                    </TableHeadRowCell>
-                    <TableHeadRowCell>
-                        Venue
-                    </TableHeadRowCell>
-                    <TableHeadRowCell>
-                        Hall
-                    </TableHeadRowCell>
-                    <TableHeadRowCell>
-                        Program
-                    </TableHeadRowCell>
-                </TableHeadRow>
-            </thead>
-            <tbody>
-                {concertData.map(concert => <ConcertTableRow {...concert.primary} />)}
-            </tbody>
-        </Table>
+        <>
+            <TableHead>
+                <TableHeadCell style={{ fontSize: '30px' }}>Date</TableHeadCell>
+                <TableHeadCell style={{ color: 'rgba(255,255,255,0.7)' }}>Concert</TableHeadCell>
+                <TableHeadCell style={{ fontSize: '30px' }}>Venue</TableHeadCell>
+                <TableHeadCell style={{ color: 'rgba(255,255,255,0.7)' }}>Hall</TableHeadCell>
+                <TableHeadCell style={{ fontSize: '30px' }}>Program</TableHeadCell>
+            </TableHead>
+            {concertData.map(concert => <ConcertTableRow {...concert.primary} />)}
+        </>
     )
 }

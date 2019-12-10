@@ -1,10 +1,12 @@
 import React from 'react'
-import { Container, Heading } from './styles'
+import { Container, Heading, TableContainer } from './styles'
 import { ConcertTable } from '../../components/concertTable'
 
 export const ConcertSection = () => (
     <Container>
-        <Heading>Concert dates</Heading>
-        <ConcertTable />
+        <Heading>Concerts</Heading>
+        <TableContainer>
+            <ConcertTable />
+        </TableContainer>
     </Container>
 )

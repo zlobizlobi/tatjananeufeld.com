@@ -9,12 +9,12 @@ export const Nav = styled.nav`
     top: 35%;
     left: 5%;
     
-    ${media.md`
+    ${media.lg`
         display: flex;
         flex-direction: column;
         padding: 40px 30px;
         background-color: rgba(255,255,255,0.2);
-    `}
+        box-shadow: 10px 10px 5px -8px rgba(255,255,255,0.75);`}
 `
 
 export const NavList = styled.ul`

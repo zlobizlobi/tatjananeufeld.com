@@ -6,11 +6,11 @@ export const ConcertTableRow = ({ name, ticketsurl, date, hall, program, locatio
 
     return (
         <TableBodyRow>
-            <TableBodyRowCell>{FormattedDate(date)}</TableBodyRowCell>
-            <TableBodyRowCell>{location}</TableBodyRowCell>
+            <TableBodyRowCell style={{ color: 'white' }}>{FormattedDate(date)}</TableBodyRowCell>
             <TableBodyRowCell>{name}</TableBodyRowCell>
+            <TableBodyRowCell style={{ color: 'white' }}>{location}</TableBodyRowCell>
             <TableBodyRowCell>{hall}</TableBodyRowCell>
-            <TableBodyRowCell>{program}</TableBodyRowCell>
+            <TableBodyRowCell style={{ color: 'white' }}>{program}</TableBodyRowCell>
         </TableBodyRow>
     )
 }
