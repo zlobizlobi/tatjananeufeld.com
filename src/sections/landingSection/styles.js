@@ -58,7 +58,6 @@ export const NameContainer = styled.div`
     `)}   
     
     ${media.lg(`
-        margin: 0 0 0 120px;
         align-self: center
     `)}
  

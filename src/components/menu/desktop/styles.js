@@ -6,15 +6,26 @@ export const Nav = styled.nav`
     display: none;
     position: fixed;
     z-index: 3;
-    top: 35%;
-    left: 100px;
+    top: 30%;
+    padding: 30px;
+    left: 25px;
     
-    ${media.sm`
+    ${media.md`
         display: flex;
         flex-direction: column;
-        min-width: 300px;
+        min-width: 180px;
         `
     }
+     
+    ${media.lg`
+        left: 100px;
+    `}
+
+    ${media.md`
+        display: flex;
+        flex-direction: column;
+        min-width: 180px;
+    `}
 `
 
 export const NavList = styled.ul`

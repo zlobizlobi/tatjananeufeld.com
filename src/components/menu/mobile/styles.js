@@ -3,6 +3,20 @@ import { NavLink as NavLinkComponent } from '../../navLink'
 import { media } from '../../../styles'
 import { LanguageSwitch as LanguageSwitchComponent } from '../../languageSwitch'
 
+export const Nav = styled.nav`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    width: 100vw;
+    position: absolute;
+    background-color: black;
+
+    ${media.md(`
+        display: none;
+    `)}
+`
+
 export const Hamburger = styled.button`
     display: flex;
     flex-direction: column;
@@ -82,19 +96,6 @@ export const SlideMenu = styled.ul`
     z-index: 4;
 `
 
-export const Nav = styled.nav`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 75px;
-    width: 100vw;
-    position: absolute;
-    background-color: black;
-
-    ${media.sm(`
-        display: none;
-    `)}
-`
 
 export const NavLink = styled(NavLinkComponent)`
     color: rgba(255,255,255,0.6);

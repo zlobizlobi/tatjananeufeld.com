@@ -6,11 +6,14 @@ export const Container = styled.section`
     flex-direction: column;
     align-items: center;
     padding: 0;
-    margin-top: 100px;
+    margin-top: 200px;
 
+    ${media.md(`
+        align-items: flex-end;
+    `)}
 
     ${media.xl(`
-        padding-right: 100px;
+        padding-right: 200px;
         align-items: flex-end;
     `)}
 `
@@ -19,24 +22,30 @@ export const Heading = styled.h1`
     color: white;
     font-family: 'Cormorant Garamond', serif;
     display: inline-block;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
     font-size: 32px;
     text-transform: uppercase;
     padding-bottom: 5px;
     align-self: center;
+    border-bottom: 0.5px solid rgba(255,255,255,0.4);
+
+    ${media.md(`
+        align-self: flex-end;
+        font-size: 55px;
+        margin-right: 100px;
+    `)}
 
     ${media.lg(`
         align-self: flex-end;
         font-size: 55px;
+        margin-right: 70px;
     `)}
 `
 
 export const TableContainer = styled.div`
     margin: 0 25px;
-    
-    ${media.lg(`
-        padding: 30px 50px 50px 50px;
-        border: 1px solid rgba(255,255,255,0.7);
+
+    ${media.md(`
         margin: 0;
     `)}
 `

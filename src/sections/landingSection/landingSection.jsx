@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Image, Name, SubHeading, NameContainer, Button, Section } from './styles'
 import { FormattedMessage } from 'gatsby-plugin-intl'
 import Scroll from 'react-scroll'
-import { FiArrowRight } from 'react-icons/fi'
+import { FiArrowRight, FiCalendar } from 'react-icons/fi'
 
 export const LandingSection = () => {
 
@@ -56,7 +56,7 @@ export const LandingSection = () => {
             <span>
               <FormattedMessage id="landing_section_button" />
             </span>
-            <FiArrowRight />
+            <FiCalendar />
           </Button>
         </Scroll.Link>
       </NameContainer>

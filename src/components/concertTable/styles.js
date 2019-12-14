@@ -15,7 +15,7 @@ export const TableHeadCell = styled.th`
     font-size: 8px;
     font-weight: bold;
 
-    ${media.lg(`
+    ${media.md(`
         padding: 15px;
         font-size: 14px;
     `)}
@@ -36,14 +36,24 @@ export const TableRowCell = styled.td`
     padding: 8px;
     font-family: 'Montserrat' , serif;
     font-weight: lighter;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,1);
     text-transform: none;
     line-height: 17px;
     font-size: 8px;
     letter-spacing: 1px;
     vertical-align: middle;
 
+    ${media.md(`
+        font-size: 13px;
+        padding: 25px 7.5px;
+    `)}
+
     ${media.lg(`
+        font-size: 13px;
+        padding: 25px 40px;
+    `)}
+
+    ${media.xl(`
         font-size: 13px;
         padding: 25px 60px;
     `)}
