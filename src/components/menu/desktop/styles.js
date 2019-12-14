@@ -5,16 +5,16 @@ import { media } from '../../../styles'
 export const Nav = styled.nav`
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     top: 35%;
-    left: 5%;
+    left: 100px;
     
-    ${media.lg`
+    ${media.sm`
         display: flex;
         flex-direction: column;
-        padding: 40px 30px;
-        background-color: rgba(255,255,255,0.2);
-        box-shadow: 10px 10px 5px -8px rgba(255,255,255,0.75);`}
+        min-width: 300px;
+        `
+    }
 `
 
 export const NavList = styled.ul`
@@ -26,7 +26,7 @@ export const NavList = styled.ul`
 
 export const NavLink = styled(NavLinkComponent)`
     margin-bottom: 10px;
-    font-family: 'Cormorant Garamond';
+    font-family: 'Montserrat', serif;
     position: relative;
     left: 0;
     transition: left 0.3s ease-in-out;

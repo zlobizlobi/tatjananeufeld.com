@@ -2,6 +2,8 @@ import React from "react"
 // import { useStaticQuery, graphql } from "gatsby"
 import { GlobalStyle } from "../../styles"
 import { MobileMenu, DesktopMenu } from "../menu"
+import styled from 'styled-components'
+
 
 export const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -15,13 +17,13 @@ export const Layout = ({ children }) => {
   // `)
 
   return (
-    <React.Fragment>
+    <>
       <GlobalStyle />
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <MobileMenu />
       <DesktopMenu />
       <main>{children}</main>
-    </React.Fragment>
+    </>
   )
 }
 

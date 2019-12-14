@@ -91,7 +91,7 @@ export const Nav = styled.nav`
     position: absolute;
     background-color: black;
 
-    ${media.lg(`
+    ${media.sm(`
         display: none;
     `)}
 `

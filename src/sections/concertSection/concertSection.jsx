@@ -8,5 +8,8 @@ export const ConcertSection = () => (
         <TableContainer>
             <ConcertTable />
         </TableContainer>
+        <TableContainer>
+            <ConcertTable />
+        </TableContainer>
     </Container>
 )
