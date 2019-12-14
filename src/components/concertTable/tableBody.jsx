@@ -31,7 +31,7 @@ export const TableBody = () => {
 
     return (
         <>
-            {concertData.map(({ primary: { date, city, concert_location, program } }) =>
+            {concertData.map(({ primary: { date, city, concert_location, program, ticketsUrl } }) =>
                 <TableRow>
                     <TableRowCell>{FormattedDate(date)}</TableRowCell>
                     <TableRowCell>{city}</TableRowCell>

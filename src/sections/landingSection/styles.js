@@ -29,6 +29,10 @@ export const Section = styled.section`
     justify-content: flex-start;
     
     ${media.sm(`
+        justify-content: center;
+    `)}
+
+    ${media.md(`
         justify-content: flex-end;
     `)}
 
@@ -49,15 +53,21 @@ export const NameContainer = styled.div`
     padding: 30px;
     margin-top: 140px;
     box-sizing: border-box;
-    
+
     align-self: center;
 
     ${media.sm(`
         margin: 0;
         align-self: flex-end;
     `)}   
+
+    ${media.md(`
+        margin: 0;
+        align-self: flex-end;
+    `)}   
     
     ${media.lg(`
+        margin-left: 100px;
         align-self: center
     `)}
  
@@ -138,9 +148,5 @@ export const Button = styled.button`
     ${media.lg(`
         font-size: 13px;
         width: 200px;
-
-        & > svg {
-            margin-top: 3px;
-        }
     `)}
 `

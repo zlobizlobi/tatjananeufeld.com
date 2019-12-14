@@ -24,7 +24,22 @@ export const TableHeadCell = styled.th`
 export const TableRow = styled.tr`
     border-bottom: 0.5px solid rgba(255,255,255, 0.1);
     height: 60px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    
+    :hover {
+        background-color: white;
 
+        > td {
+            color: black;
+        }
+
+        &:first-child {
+            background-color: transparent;
+            cursor: default;
+        }
+    }
+    
     &:last-child {
        border: none;
     }

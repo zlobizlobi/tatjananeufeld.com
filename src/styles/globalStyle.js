@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import MontserratRegular from '../fonts/Montserrat-Regular.ttf'
-import MontserratExtraLight from '../fonts/Montserrat-ExtraLight.ttf'
+import MontserratLight from '../fonts/Montserrat-Light.ttf'
 import MontserratBold from '../fonts/Montserrat-Bold.ttf'
 import Baskervville from '../fonts/Baskervville-Regular.ttf'
 import Cormorant from '../fonts/CormorantGaramond-Light.ttf'
@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Montserrat';
         font-weight: lighter;
-        src: url(${MontserratExtraLight});
+        src: url(${MontserratLight});
     }
     @font-face {
         font-family: 'Montserrat';
