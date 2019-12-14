@@ -21,12 +21,14 @@ export const TableHeadCell = styled.th`
     `)}
 `
 
-export const TableRow = styled.tr`
+export const TableRow = styled.a`
+    display: table-row;
     border-bottom: 0.5px solid rgba(255,255,255, 0.1);
     height: 60px;
     transition: background-color 0.2s ease;
     cursor: pointer;
-    
+    text-decoration: none;
+
     :hover {
         background-color: white;
 
@@ -46,12 +48,10 @@ export const TableRow = styled.tr`
 `
 
 export const TableRowCell = styled.td`
-    display: table-cell;
-    color: white;
     padding: 8px;
     font-family: 'Montserrat' , serif;
     font-weight: lighter;
-    color: rgba(255,255,255,1);
+    color: rgba(255,255,255,0.8);
     text-transform: none;
     line-height: 17px;
     font-size: 8px;

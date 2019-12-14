@@ -41,7 +41,7 @@ export const NavLink = styled(NavLinkComponent)`
     position: relative;
     left: 0;
     transition: left 0.3s ease-in-out;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.7);
 
     ${({ isActive }) => isActive && css`
         left: 10px;

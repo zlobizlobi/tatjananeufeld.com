@@ -31,8 +31,8 @@ export const TableBody = () => {
 
     return (
         <>
-            {concertData.map(({ primary: { date, city, concert_location, program, ticketsUrl } }) =>
-                <TableRow>
+            {concertData.map(({ primary: { date, city, concert_location, program, ticketsurl } }) =>
+                <TableRow href={ticketsurl} target="_blank">
                     <TableRowCell>{FormattedDate(date)}</TableRowCell>
                     <TableRowCell>{city}</TableRowCell>
                     <TableRowCell>{concert_location}</TableRowCell>
