@@ -53,22 +53,30 @@ export const TableRowCell = styled.td`
     font-weight: lighter;
     color: rgba(255,255,255,0.8);
     text-transform: none;
-    line-height: 17px;
+    line-height: 20px;
     font-size: 8px;
     letter-spacing: 1px;
     vertical-align: middle;
+    max-width: 100px;
 
+    &:last-child {
+        border: none;
+     }
+    
     ${media.md(`
+        max-width: 250px;
         font-size: 13px;
         padding: 25px 7.5px;
     `)}
 
     ${media.lg(`
+        max-width: 250px;
         font-size: 13px;
         padding: 25px 40px;
     `)}
 
     ${media.xl(`
+        max-width: 250px;
         font-size: 13px;
         padding: 25px 60px;
     `)}
@@ -81,4 +89,27 @@ export const Table = styled.table`
     text-align: center;
     margin: 0;
     table-layout: fixed;
+`
+
+export const ArchiveButton = styled.button`
+    padding: 10px 15px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    transition: all 0.2s ease;
+    
+    :hover {
+        background-color: white;
+        color: black;
+    }
+
+    :focus{
+        outline: none;
+    }
 `

@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 import MontserratRegular from '../fonts/Montserrat-Regular.ttf'
 import MontserratLight from '../fonts/Montserrat-Light.ttf'
 import MontserratBold from '../fonts/Montserrat-Bold.ttf'
-import Baskervville from '../fonts/Baskervville-Regular.ttf'
 import Cormorant from '../fonts/CormorantGaramond-Light.ttf'
 import CormorantBold from '../fonts/CormorantGaramond-Bold.ttf'
 
@@ -26,12 +25,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     @font-face {
-        font-family: 'Baskervville';
-        font-weight: normal;
-        src: url(${Baskervville});
-    }
-
-    @font-face {
         font-family: 'Cormorant Garamond';
         font-weight: normal;
         src: url(${Cormorant});
@@ -50,7 +43,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body, html {
-        font-family: 'Baskervville', serif;
         background-color: black;
         height: 100%;
         max-height: 100%;

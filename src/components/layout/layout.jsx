@@ -3,6 +3,7 @@ import React from "react"
 import { GlobalStyle } from "../../styles"
 import { MobileMenu, DesktopMenu } from "../menu"
 import styled from 'styled-components'
+import { DesktopMenuTwo } from "../desktopMenuTwo/desktopMenuTwo"
 
 
 export const Layout = ({ children }) => {
@@ -21,7 +22,8 @@ export const Layout = ({ children }) => {
       <GlobalStyle />
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <MobileMenu />
-      <DesktopMenu />
+      {/* <DesktopMenu /> */}
+      <DesktopMenuTwo />
       <main>{children}</main>
     </>
   )

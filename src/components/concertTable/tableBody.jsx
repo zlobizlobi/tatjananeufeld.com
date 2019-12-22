@@ -1,37 +1,24 @@
 import React from 'react'
 import { TableRow, TableRowCell } from './styles'
 import { FormattedDate } from 'react-intl'
-import { useStaticQuery, graphql } from 'gatsby'
 
-export const TableBody = () => {
+export const TableBody = ({ isArchiveOpen, concerts }) => {
 
-    const prismicRowData = useStaticQuery(graphql`
-        query RowData {
-            prismicMainPage {
-                data {
-                    body {
-                        primary {
-                            city
-                            concert_location
-                            date
-                            program
-                            ticketsurl
-                        }
-                    }
-                }
-            }
+    const getItems = (concerts) => {
+        if (concerts.length <= 5) {
+            return concerts;
         }
-    `)
 
-    const { prismicMainPage: {
-        data: {
-            body: concertData
+        if (!isArchiveOpen) {
+            return concerts.slice(0, 5);
         }
-    } } = prismicRowData
+
+        return concerts;
+    };
 
     return (
         <>
-            {concertData.map(({ primary: { date, city, concert_location, program, ticketsurl } }) =>
+            {getItems(concerts).map(({ primary: { date, city, concert_location, program, ticketsurl } }) =>
                 <TableRow href={ticketsurl} target="_blank">
                     <TableRowCell>{FormattedDate(date)}</TableRowCell>
                     <TableRowCell>{city}</TableRowCell>

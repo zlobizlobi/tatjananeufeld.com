@@ -10,21 +10,13 @@ export const Nav = styled.nav`
     padding: 30px;
     left: 25px;
     
-    ${media.md`
-        display: flex;
-        flex-direction: column;
-        min-width: 180px;
-        `
-    }
-     
-    ${media.lg`
+    ${media.xl`
         left: 100px;
     `}
 
     ${media.md`
         display: flex;
         flex-direction: column;
-        min-width: 180px;
     `}
 `
 

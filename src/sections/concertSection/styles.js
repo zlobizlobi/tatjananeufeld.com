@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { media } from '../../styles'
 
-export const Container = styled.section`
+export const Section = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,8 +43,9 @@ export const Heading = styled.h1`
 `
 
 export const TableContainer = styled.div`
-    margin: 0 25px;
-
+    margin: 0 15px;
+    text-align: center;
+    
     ${media.md(`
         margin: 0;
     `)}

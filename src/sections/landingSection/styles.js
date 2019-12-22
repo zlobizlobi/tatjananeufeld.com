@@ -41,7 +41,6 @@ export const Section = styled.section`
    `)}
 
 `
-/*  & > img:  Adjust image positioning (if image covers area with defined height) and add font-family for polyfill */
 
 export const NameContainer = styled.div`
     display: inline-flex;
@@ -49,11 +48,10 @@ export const NameContainer = styled.div`
     justify-content: flex-start;
     flex-wrap: wrap;
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     padding: 30px;
     margin-top: 140px;
     box-sizing: border-box;
-
     align-self: center;
 
     ${media.sm(`
@@ -67,7 +65,6 @@ export const NameContainer = styled.div`
     `)}   
     
     ${media.lg(`
-        margin-left: 100px;
         align-self: center
     `)}
  
@@ -76,12 +73,13 @@ export const Name = styled.h1`
     color: white;
     text-transform: uppercase;
     letter-spacing: 2.5px;
-    font-family: 'Cormorant Garamond';
+    font-family: 'Montserrat';
     margin-bottom: 10px;
     font-size: 18px;
     position: relative;
     left: 0;
-
+    font-weight: normal;
+    
     ${media.lg(`
         font-size: 2em;
     `)}
@@ -122,7 +120,6 @@ export const Button = styled.button`
     }
 
     & > svg {
-        margin-top: 3px;
         position: relative;
         left: 0;
         display: none;
