@@ -1,1 +1,1 @@
-export { LanguageSwitch } from './languageSwitch'
+export { LanguageSwitch } from "./languageSwitch"

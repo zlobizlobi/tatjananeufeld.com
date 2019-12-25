@@ -1,52 +1,37 @@
-import styled from 'styled-components'
-import { media } from '../../styles'
+import styled from "styled-components"
+import { media } from "../../styles"
 
 export const Section = styled.section`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin-top: 200px;
-
-    ${media.md(`
-        align-items: flex-end;
-    `)}
-
-    ${media.xl(`
-        padding-right: 200px;
-        align-items: flex-end;
-    `)}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin-top: 200px;
 `
 
 export const Heading = styled.h1`
-    color: white;
-    font-family: 'Cormorant Garamond', serif;
-    display: inline-block;
-    margin-bottom: 100px;
-    font-size: 32px;
-    text-transform: uppercase;
-    padding-bottom: 5px;
-    align-self: center;
-    border-bottom: 0.5px solid rgba(255,255,255,0.4);
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 100px;
+  font-size: 32px;
+  text-transform: uppercase;
+  padding-bottom: 5px;
 
-    ${media.md(`
-        align-self: flex-end;
-        font-size: 55px;
-        margin-right: 100px;
-    `)}
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.4);
 
-    ${media.lg(`
-        align-self: flex-end;
-        font-size: 55px;
-        margin-right: 70px;
+  ${media.md(`
+    font-size: 55px;
+    display: inline-flex;
+        align-self: flex-start;
+        margin-left: 280px;
     `)}
 `
 
 export const TableContainer = styled.div`
-    margin: 0 15px;
-    text-align: center;
-    
-    ${media.md(`
+  margin: 0 15px;
+  text-align: center;
+
+  ${media.md(`
         margin: 0;
     `)}
 `

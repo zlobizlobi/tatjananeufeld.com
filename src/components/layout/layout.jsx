@@ -2,9 +2,8 @@ import React from "react"
 // import { useStaticQuery, graphql } from "gatsby"
 import { GlobalStyle } from "../../styles"
 import { MobileMenu, DesktopMenu } from "../menu"
-import styled from 'styled-components'
+import styled from "styled-components"
 import { DesktopMenuTwo } from "../desktopMenuTwo/desktopMenuTwo"
-
 
 export const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -28,5 +27,3 @@ export const Layout = ({ children }) => {
     </>
   )
 }
-
-

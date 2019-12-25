@@ -1,9 +1,9 @@
-import { createGlobalStyle } from 'styled-components'
-import MontserratRegular from '../fonts/Montserrat-Regular.ttf'
-import MontserratLight from '../fonts/Montserrat-Light.ttf'
-import MontserratBold from '../fonts/Montserrat-Bold.ttf'
-import Cormorant from '../fonts/CormorantGaramond-Light.ttf'
-import CormorantBold from '../fonts/CormorantGaramond-Bold.ttf'
+import { createGlobalStyle } from "styled-components"
+import MontserratRegular from "../fonts/Montserrat-Regular.ttf"
+import MontserratLight from "../fonts/Montserrat-Light.ttf"
+import MontserratBold from "../fonts/Montserrat-Bold.ttf"
+import Cormorant from "../fonts/CormorantGaramond-Light.ttf"
+import CormorantBold from "../fonts/CormorantGaramond-Bold.ttf"
 
 export const GlobalStyle = createGlobalStyle`
 

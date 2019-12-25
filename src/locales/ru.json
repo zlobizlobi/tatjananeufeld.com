@@ -1,13 +1,14 @@
 {
-    "home": "Главная",
-    "concerts": "Концерты",
-    "biography": "Биография",
-    "gallery": "Галерия",
-    "repertoir": "Репертуар",
-    "partners": "Партнёры",
-    "teacher": "Татьяна Подьемова",
-    "contact": "Контакты",
-    "landing_section_heading": "Татьяна Нойфельд",
-    "landing_section_subheading": "Фортепианные рассказы русского маэстро",
-    "landing_section_button": "Посмотреть даты"
+  "home": "Главная",
+  "concerts": "Концерты",
+  "biography": "Биография",
+  "gallery": "Галерия",
+  "repertoir": "Репертуар",
+  "Tatjana Neufeld": "Татьяна Нойфельд",
+  "partners": "Партнёры",
+  "teacher": "Татьяна Подьемова",
+  "contact": "Контакты",
+  "landing_section_heading": "Татьяна Нойфельд",
+  "landing_section_subheading": "Фортепианные рассказы русского маэстро",
+  "landing_section_button": "Посмотреть даты"
 }

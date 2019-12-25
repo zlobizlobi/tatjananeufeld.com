@@ -1,7 +1,14 @@
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-export function SEO({ description, lang, meta, title } = { description: '', lang: '', meta: '', title: '' }) {
+export function SEO(
+  { description, lang, meta, title } = {
+    description: "",
+    lang: "",
+    meta: "",
+    title: "",
+  }
+) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -76,4 +83,3 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }
-
