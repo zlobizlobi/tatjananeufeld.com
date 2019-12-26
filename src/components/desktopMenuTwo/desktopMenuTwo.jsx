@@ -19,7 +19,7 @@ const navbarAnimation = keyframes`
 export const Nav = styled.nav`
   width: 100%;
   background-color: ${({ isScrolled }) =>
-        isScrolled ? "#0d0d0d" : "transparent"};
+    isScrolled ? "#0d0d0d" : "transparent"};
   position: ${({ isScrolled }) => (isScrolled ? "fixed" : "absolute")};
   display: none;
   color: white;
@@ -29,8 +29,8 @@ export const Nav = styled.nav`
   line-height: 25px;
 
   ${({ isScrolled }) =>
-        isScrolled &&
-        css`
+    isScrolled &&
+    css`
       animation: 0.3s ${navbarAnimation} ease;
     `}
 
@@ -61,73 +61,70 @@ export const NavLink = styled(NavLinkComponent)`
   }
 
   ${({ isActive }) =>
-        isActive &&
-        css`
+    isActive &&
+    css`
       color: white;
     `}
-
-  &:last-child > a {
-    margin: 0;
-  }
+    
+    > a {
+      font-size: 12px;
+    }
+ 
 
   &:nth-child(5) > a {
     font-weight: light;
-    padding: 0 15px;
-    font-size: 16px;
+    // padding: 0 15px;
+    // font-size: 16px;
   }
 
-  > a {
-    font-size: 12px;
-  }
 `
 export const DesktopMenuTwo = () => {
-    const [isActive, setIsActive] = React.useState(["Tatjana Neufeld"])
+  const [isActive, setIsActive] = React.useState(["home"])
 
-    const [isScrolled, setIsScrolled] = React.useState(false)
+  const [isScrolled, setIsScrolled] = React.useState(false)
 
-    const navLinks = [
-        "home",
-        "concerts",
-        "biography",
-        "gallery",
-        "Tatjana Neufeld",
-        "repertoir",
-        "partners",
-        "teacher",
-        "contact",
-    ]
+  const navLinks = [
+    "home",
+    "concerts",
+    "biography",
+    "gallery",
+    "repertoir",
+    "partners",
+    "teacher",
+    "contact",
+  ]
 
-    const handleScroll = () => {
-        if (window.pageYOffset > 350) {
-            setIsScrolled(true)
-        } else {
-            setIsScrolled(false)
-        }
+  const handleScroll = () => {
+    if (window.pageYOffset > 350) {
+      setIsScrolled(true)
+    } else {
+      setIsScrolled(false)
     }
+  }
 
-    React.useEffect(() => {
-        window.addEventListener("scroll", handleScroll)
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
 
-        return () => window.removeEventListener("scroll", handleScroll)
-    })
+    return () => window.removeEventListener("scroll", handleScroll)
+  })
 
-    const handleOnClick = navLink => {
-        setIsActive([navLink])
-    }
-    return (
-        <Nav isScrolled={isScrolled}>
-            <NavList>
-                {navLinks.map(navLink => (
-                    <NavLink
-                        onClick={() => handleOnClick(navLink)}
-                        key={navLink}
-                        name={navLink}
-                        isActive={isActive.includes(navLink)}
-                    >
-                        <FormattedMessage id={navLink} />
-                    </NavLink>
-                ))}
-            </NavList>
-        </Nav>
-    )
+  const handleOnClick = navLink => {
+    setIsActive([navLink])
+  }
+  return (
+    <Nav isScrolled={isScrolled}>
+      <NavList>
+        {navLinks.map(navLink => (
+          <NavLink
+            onClick={() => handleOnClick(navLink)}
+            key={navLink}
+            name={navLink}
+            isActive={isActive.includes(navLink)}
+          >
+            <FormattedMessage id={navLink} />
+          </NavLink>
+        ))}
+      </NavList>
+    </Nav>
+  )
 }

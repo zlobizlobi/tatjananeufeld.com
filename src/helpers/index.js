@@ -1,2 +1,2 @@
-export { formatDate } from "./formatDate"
+export { formatToPureDate } from "./formatToPureDate"
 export { jsonParse } from "./jsonParse"

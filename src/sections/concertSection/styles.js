@@ -16,14 +16,11 @@ export const Heading = styled.h1`
   font-size: 32px;
   text-transform: uppercase;
   padding-bottom: 5px;
-
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.4);
 
   ${media.md(`
-    font-size: 55px;
-    display: inline-flex;
-        align-self: flex-start;
-        margin-left: 280px;
+        font-size: 55px;
+        display: inline-flex;
     `)}
 `
 
@@ -32,6 +29,6 @@ export const TableContainer = styled.div`
   text-align: center;
 
   ${media.md(`
-        margin: 0;
-    `)}
+      margin: 0;
+  `)}
 `

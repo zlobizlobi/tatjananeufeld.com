@@ -21,7 +21,7 @@ export const TableBody = ({ isArchiveOpen, concerts }) => {
         ({
           primary: { date, city, concert_location, program, ticketsurl },
         }) => (
-          <TableRow href={ticketsurl} target="_blank">
+          <TableRow key={date} href={ticketsurl} target="_blank">
             <TableRowCell>{FormattedDate(date)}</TableRowCell>
             <TableRowCell>{city}</TableRowCell>
             <TableRowCell>{concert_location}</TableRowCell>

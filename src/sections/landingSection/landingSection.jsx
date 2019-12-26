@@ -10,7 +10,7 @@ import {
 } from "./styles"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import Scroll from "react-scroll"
-import { FiArrowRight, FiCalendar } from "react-icons/fi"
+import { FiCalendar } from "react-icons/fi"
 
 export const LandingSection = () => {
   const landingPageImageSource = useStaticQuery(graphql`
@@ -38,9 +38,7 @@ export const LandingSection = () => {
       data: {
         landing_page_image: {
           localFile: {
-            childImageSharp: {
-               fluid 
-            },
+            childImageSharp: { fluid },
           },
         },
       },

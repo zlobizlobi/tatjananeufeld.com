@@ -15,28 +15,28 @@ export const ConcertTable = () => {
   const [isArchiveOpen, setArchiveOpen] = useState(false)
 
   const prismicRowData = useStaticQuery(graphql`
-      query Concerts {
-          prismicMainPage {
-              data {
-                  body {
-                      primary {
-                          city
-                          name
-                          date
-                          program
-                          vendors
-                      }
-                  }
-              }
+    query Concerts {
+      prismicMainPage {
+        data {
+          body {
+            primary {
+              city
+              name
+              date
+              program
+              vendors
+            }
           }
+        }
       }
+    }
   `)
 
-  const { prismicMainPage: {
-      data: {
-          body: concerts
-      }
-  } } = prismicRowData
+  const {
+    prismicMainPage: {
+      data: { body: concerts },
+    },
+  } = prismicRowData
 
   return (
     <React.Fragment>
@@ -50,12 +50,12 @@ export const ConcertTable = () => {
           </TableRow>
         </TableHead>
         <TableBody isArchiveOpen={isArchiveOpen} concerts={concerts} />
-      </Table >
-            {concerts.length > 5 && (
-                <ArchiveButton onClick={() => setArchiveOpen(!isArchiveOpen)}>
-                    {isArchiveOpen ? 'Close' : 'See archive'}
-                </ArchiveButton>
-            )}
+      </Table>
+      {concerts.length > 5 && (
+        <ArchiveButton onClick={() => setArchiveOpen(!isArchiveOpen)}>
+          {isArchiveOpen ? "Close" : "See archive"}
+        </ArchiveButton>
+      )}
     </React.Fragment>
   )
 }

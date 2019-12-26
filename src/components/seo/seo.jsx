@@ -1,6 +1,4 @@
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
 export function SEO(
   { description, lang, meta, title } = {
     description: "",
@@ -9,19 +7,19 @@ export function SEO(
     title: "",
   }
 ) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+  // const { site } = useStaticQuery(
+  //   graphql`
+  //     query {
+  //       site {
+  //         siteMetadata {
+  //           title
+  //           description
+  //           author
+  //         }
+  //       }
+  //     }
+  //   `
+  // )
 
   // const metaDescription = description || site.siteMetadata.description
 
