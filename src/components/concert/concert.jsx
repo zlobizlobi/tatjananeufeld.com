@@ -14,6 +14,7 @@ import {
   HiddenContainer,
   HiddenHeading,
   VendorContainer,
+  HiddenSubContainer
 } from "./styles"
 import { FormattedDate, FormattedTime } from "react-intl"
 import { jsonParse, formatToPureDate } from "../../helpers"
@@ -56,12 +57,13 @@ export const Concert = ({
   }, [])
 
   return (
+    <div style={{display: 'flex', flexDirection: 'column', padding: '0 15px 30px 15px', margin: '30px 0', borderBottom: '0.5px solid rgba(255,255,255,0.3'}}>
     <Container
       heightsContainers={heightsContainers}
       ref={parentContainerRef}
       isExtended={isExtended}
     >
-      <div style={{display: 'flex'}}>
+      <div style={{display: 'flex', marginBottom: '30px'}}>
       <Poster src={url} alt='Concert poster' />
       <NameDateContainer>
         <Name>{name}</Name>
@@ -91,23 +93,28 @@ export const Concert = ({
         isExtended={isExtended}
         ref={hiddenContainerRef}
       >
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div style={{display: 'flex', flexDirection: 'column', marginBottom: '30px'}}>
           <HiddenHeading>Tickets</HiddenHeading>
+          <HiddenSubContainer>
           {parsedVendors.map(({ vendor, ticketUrl }) => (
             <VendorContainer href={ticketUrl} as='a' key={vendor}>
-              <span style={{fontWeight: 'bold'}}>{vendor}</span>
+              <span>{vendor}</span>
               <GetTicketsButton>Tickets</GetTicketsButton>
             </VendorContainer>
           ))}
+          </HiddenSubContainer>
         </div>
-        <div style={{display: 'flex', flexDirection: 'column', marginTop: '30px'}}>
+        <div style={{display: 'flex', flexDirection: 'column'}}>
           <HiddenHeading>Program</HiddenHeading>
-          <span style={{fontWeight: 'normal', fontFamily: 'Montserrat'}}>{program}</span>
+          <HiddenSubContainer>
+           <span>{program}</span>
+          </HiddenSubContainer>
         </div>
       </HiddenContainer>
-      <Button onClick={() => handleOnClick()}>
-        {isExtended ? "Less" : "More"}
-      </Button>
     </Container>
+    <Button onClick={() => handleOnClick()}>
+      {isExtended ? "Less" : "More"}
+    </Button>
+    </div>
   )
 }

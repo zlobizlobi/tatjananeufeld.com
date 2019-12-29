@@ -1,35 +1,43 @@
 import styled from "styled-components"
+import { media } from '../../styles'
 
 export const Container = styled.div`
-  padding: 25px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   color: white;
-  min-height: 240px;
+  min-height: 200px;
+  min-width: auto;
   position: relative;
-  margin-bottom: 40px;
   overflow-y: ${({ isExtended }) => (isExtended ? "visible" : "hidden")};
-  transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-out;
   height: ${({
     isExtended,
     heightsContainers: { hiddenContainer, parentContainer },
   }) =>
     isExtended
       ? `calc(${hiddenContainer}px + ${parentContainer}px)`
-      : `${parentContainer}px`};
+      : `200px`};
 
   &:last-child {
     margin: 0;
   }
+
+  ${media.md(`
+    min-width: 600px;
+  `)}
 `
 
 export const Name = styled.h2`
   font-family: "Montserrat", sans-serif;
-  margin-bottom: 16px;
   font-weight: bold;
   letter-spacing: 1.5px;
+  font-size: 15px;
+  margin-bottom: 30px;
+
+  ${media.md(`
+    font-size: 22px;
+  `)}
 `
 
 export const DateContainer = styled.div`
@@ -39,8 +47,12 @@ export const DateContainer = styled.div`
   font-weight: lighter;
   align-items: center;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 25px;
+
+  ${media.md(`
+    font-size: 13px;
+  `)}
 `
 
 export const NameDateContainer = styled.div`
@@ -57,17 +69,24 @@ export const Divider = styled.span`
 
 export const VenueContainer = styled.div`
   display: flex;
+  
+
 `
 export const VenueItem = styled.span`
   margin-right: 5px;
   font-weight: lighter;
   font-style: italic;
   font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  opacity: 0.7;
+  font-size: 10px;
+  opacity: 1;
+
   &:last-child {
     margin: 0;
   }
+
+  ${media.md(`
+    font-size: 11px;
+  `)}
 `
 
 export const Poster = styled.img`
@@ -80,10 +99,10 @@ export const Poster = styled.img`
 
 export const Button = styled.button`
   background-color: transparent;
-  height: 30px;
+  height: 25px;
   width: 50px;
   align-self: flex-end;
-  border: 1px solid white;
+  border: 1px solid rgba(255,255,255,0.4);
   color: white;
   font-family: "Montserrat", sans-serif;
   transition: all 0.3s ease;
@@ -92,7 +111,7 @@ export const Button = styled.button`
   font-weight: 900;
   position: relative;
   z-index: 2;
-
+  margin-top: 40px;
   :hover {
     color: black;
     background-color: white;
@@ -117,15 +136,13 @@ export const TimeContainer = styled.div`
 `
 
 export const HiddenContainer = styled.div`
-  position: absolute;
-  top: 180px;
-  opacity: ${({ isExtended }) => (isExtended ? "1" : "0")};
   display: flex;
   flex-direction: column;
   z-index: 0;
   transition: opacity 0.3s ease;
-  align-self: center;
   width: 100%;
+  opacity: ${({ isExtended }) => (isExtended ? "1" : "0")};
+  visibility: ${({ isExtended }) => (isExtended ? "visible" : "hidden")};
 `
 
 export const HiddenHeading = styled.h4`
@@ -136,18 +153,22 @@ export const HiddenHeading = styled.h4`
   border-bottom: 1px solid white;
   padding-bottom: 2px;
   align-self: flex-start;
-
+  font-size: 14px;
+  font-weight: bold;
   &:nth-child(2){
     margin-top: 20px;
   }
+
+
+  ${media.md(`
+    font-size: 16px;
+  `)}
 `
 
 export const VendorContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+  margin-bottom: 15px;
   color: white;
   transition: color 0.3s ease;
   position: relative;
@@ -161,11 +182,22 @@ export const VendorContainer = styled.div`
     }
   }
 
+  > button {
+    font-size: 11px;
+  }
+
   text-decoration: none;
 
   &:last-child{
     margin: 0;
   }
+
+  ${media.md(`
+
+    > button {
+      font-size: 13px;
+    }
+  `)}
 `
 
 export const GetTicketsButton = styled.button`
@@ -177,4 +209,18 @@ export const GetTicketsButton = styled.button`
   color: rgba(255,255,255,1);
   transition: color 0.3s ease;
   background-color: transparent;
+`
+
+export const HiddenSubContainer = styled.div`
+  font-size: 11px;
+  font-family: "Montserrat", sans-serif;
+  
+  &:last-child {
+    max-width: 500px;
+    line-height: 22px;
+  }
+
+  ${media.md(`
+    font-size: 13px;
+  `)}
 `

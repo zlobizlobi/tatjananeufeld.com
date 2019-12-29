@@ -36,9 +36,11 @@ export const ConcertSection = () => {
   return (
     <Section>
       <Heading>Concerts</Heading>
-      {concerts.map(({ primary: props, name }) => (
-        <Concert key={name} {...props} />
-      ))}
+      <div>
+        {concerts.map(({ primary: props, name }) => (
+          <Concert key={name} {...props} />
+        ))}
+      </div>
     </Section>
   )
 }

@@ -7,6 +7,7 @@ export const Section = styled.section`
   align-items: center;
   padding: 0;
   margin-top: 200px;
+  position: relative;
 `
 
 export const Heading = styled.h1`
