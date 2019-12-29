@@ -66,7 +66,7 @@ export const Concert = ({
       <div style={{display: 'flex', marginBottom: '30px'}}>
       <Poster src={url} alt='Concert poster' />
       <NameDateContainer>
-        <Name>{name}</Name>
+        <Name onClick={() => setIsExtended(!isExtended)}>{name}</Name>
         <DateContainer>
           <span style={{ marginRight: "10px" }}>
             <FormattedDate
@@ -107,7 +107,7 @@ export const Concert = ({
         <div style={{display: 'flex', flexDirection: 'column'}}>
           <HiddenHeading>Program</HiddenHeading>
           <HiddenSubContainer>
-           <span>{program}</span>
+           <span style={{whiteSpace: 'pre-wrap'}}>{program}</span>
           </HiddenSubContainer>
         </div>
       </HiddenContainer>

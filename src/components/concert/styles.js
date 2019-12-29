@@ -34,7 +34,8 @@ export const Name = styled.h2`
   letter-spacing: 1.5px;
   font-size: 15px;
   margin-bottom: 30px;
-
+  cursor: pointer;
+  
   ${media.md(`
     font-size: 22px;
   `)}
