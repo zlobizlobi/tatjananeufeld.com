@@ -46,7 +46,7 @@ export const LandingSection = () => {
   } = landingPageImageSource
 
   return (
-    <Section>
+    <Section name="home">
       <Image fluid={fluid} />
       <NameContainer>
         <Name>
@@ -55,7 +55,7 @@ export const LandingSection = () => {
         <SubHeading>
           <FormattedMessage id="landing_section_subheading" />
         </SubHeading>
-        <Scroll.Link to="contact-section" smooth duration={1100}>
+        <Scroll.Link to="concerts" smooth duration={1100}>
           <Button aria-label="Go to the concert dates">
             <span>
               <FormattedMessage id="landing_section_button" />

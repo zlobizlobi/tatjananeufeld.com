@@ -139,7 +139,7 @@ export const HiddenContainer = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   width: 100%;
   opacity: ${({ isExtended }) => (isExtended ? "1" : "0")};
   visibility: ${({ isExtended }) => (isExtended ? "visible" : "hidden")};

@@ -34,7 +34,7 @@ export const ConcertSection = () => {
   } = prismicRowData
 
   return (
-    <Section>
+    <Section name="concerts">
       <Heading>Concerts</Heading>
       <div>
         {concerts.map(({ primary: props, name }) => (

@@ -57,7 +57,7 @@ export const Concert = ({
   }, [])
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', padding: '0 15px 30px 15px', margin: '30px 0', borderBottom: '0.5px solid rgba(255,255,255,0.3'}}>
+    <div style={{display: 'flex', flexDirection: 'column', padding: '0 20px 30px 20px', margin: '30px 0', borderBottom: '0.5px solid rgba(255,255,255,0.3'}}>
     <Container
       heightsContainers={heightsContainers}
       ref={parentContainerRef}
