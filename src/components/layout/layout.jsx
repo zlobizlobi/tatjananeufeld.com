@@ -1,7 +1,6 @@
 import React from "react"
 import { GlobalStyle } from "../../styles"
-import { MobileMenu } from "../menu"
-import { DesktopMenuTwo } from "../desktopMenuTwo/desktopMenuTwo"
+import { MobileMenu, DesktopMenu } from "../menu"
 
 export const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -20,7 +19,7 @@ export const Layout = ({ children }) => {
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <MobileMenu />
       {/* <DesktopMenu /> */}
-      <DesktopMenuTwo />
+      <DesktopMenu />
       <main>{children}</main>
     </>
   )

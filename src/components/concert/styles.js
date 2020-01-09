@@ -12,9 +12,9 @@ export const Container = styled.div`
   overflow-y: ${({ isExtended }) => (isExtended ? "visible" : "hidden")};
   transition: height 0.3s ease-out;
   height: ${({
-    isExtended,
-    heightsContainers: { hiddenContainer, parentContainer },
-  }) =>
+  isExtended,
+  heightsContainers: { hiddenContainer, parentContainer },
+}) =>
     isExtended
       ? `calc(${hiddenContainer}px + ${parentContainer}px)`
       : `200px`};
@@ -100,8 +100,7 @@ export const Poster = styled.img`
 
 export const Button = styled.button`
   background-color: transparent;
-  height: 25px;
-  width: 50px;
+  padding: 5px 7.5px;
   align-self: flex-end;
   border: 1px solid rgba(255,255,255,0.4);
   color: white;

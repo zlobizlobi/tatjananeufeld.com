@@ -10,5 +10,8 @@
   "contact": "Contacts",
   "landing_section_heading": "Tatjana Neufeld",
   "landing_section_subheading": "Piano stories of a Russian maestro",
-  "landing_section_button": "See concert dates"
+  "landing_section_button": "See concert dates",
+  "concert_heading": "Concerts",
+  "concert_button_more": "More",
+  "concert_button_less": "Less"
 }

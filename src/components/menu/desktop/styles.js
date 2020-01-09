@@ -1,65 +1,88 @@
-import styled, { css } from "styled-components"
-import { NavLink as NavLinkComponent } from "../../navLink"
-import { media } from "../../../styles"
+import styled, { keyframes, css } from 'styled-components'
+import { NavLink as NavLinkComponent } from '../../navLink'
+import { LanguageSwitch as LanguageSwitchComponent } from '../../languageSwitch'
+import { media } from '../../../styles'
+
+const navbarAnimation = keyframes`
+  0% {
+      top: -30px;
+  }
+  50% {
+      top: -15px;
+  }
+  100% {
+      top: 0px;
+  }
+`
+
+export const LanguageSwitch = styled(LanguageSwitchComponent)`
+  height: 30px;
+  align-items: center;
+  margin: 15px 0 0 0;
+
+  ${media.lg(`
+    padding-left: 15px;
+    border-left: 1px solid rgba(255, 255, 255, 0.7);
+    margin: 0 0 0 15px;
+  `)}
+`
 
 export const Nav = styled.nav`
+  width: 100%;
+  background-color: ${({ isScrolled }) =>
+    isScrolled ? "#0d0d0d" : "transparent"};
+  position: ${({ isScrolled }) => (isScrolled ? "fixed" : "absolute")};
   display: none;
-  position: fixed;
-  z-index: 3;
-  top: 30%;
-  padding: 30px;
-  left: 25px;
+  color: white;
+  z-index: 2;
+  transition: all 0.3s ease;
+  padding: 15px 10px;
+  line-height: 25px;
+  flex-wrap: wrap;
 
-  ${media.xl`
-        left: 100px;
-    `}
+  ${({ isScrolled }) =>
+    isScrolled &&
+    css`
+    animation: 0.3s ${navbarAnimation} ease;
+  `}
 
-  ${media.md`
-        display: flex;
-        flex-direction: column;
-    `}
+  ${media.md(`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  `)}
 `
 
 export const NavList = styled.ul`
-  list-style-type: none;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: center;
 `
 
 export const NavLink = styled(NavLinkComponent)`
-  margin-bottom: 10px;
   font-family: "Montserrat", serif;
-  position: relative;
-  left: 0;
   transition: left 0.3s ease-in-out;
   color: rgba(255, 255, 255, 0.7);
-
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      left: 10px;
-      color: rgba(255, 255, 255, 1);
-    `}
+  margin-right: 15px;
+  text-transform: uppercase;
 
   :hover {
     left: 10px;
     color: rgba(255, 255, 255, 1);
   }
 
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      color: white;
+  `}
+
+  > a {
+    font-size: 12px;
+  }
+
   &:last-child {
     margin: 0;
   }
-
-  &:last-child > a {
-    margin: 0;
-    padding-bottom: 5px;
-  }
-`
-
-export const Divider = styled.span`
-  width: 100px;
-  height: 0.5px;
-  border-top: 1px solid white;
-  margin: 20px 0;
 `

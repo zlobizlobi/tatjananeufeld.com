@@ -11,7 +11,7 @@ export const Button = styled.button`
   height: 22.5px;
   cursor: pointer;
   transition: color 0.2s ease-in-out, background-color 0.4s ease;
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.7);
 
   &:last-child {
     margin: 0;

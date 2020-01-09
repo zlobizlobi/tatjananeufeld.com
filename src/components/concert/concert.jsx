@@ -16,7 +16,7 @@ import {
   VendorContainer,
   HiddenSubContainer
 } from "./styles"
-import { FormattedDate, FormattedTime } from "react-intl"
+import { FormattedDate, FormattedTime, FormattedMessage } from "react-intl"
 import { jsonParse, formatToPureDate } from "../../helpers"
 import { useEffect } from "react"
 
@@ -57,64 +57,64 @@ export const Concert = ({
   }, [])
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', padding: '0 20px 30px 20px', margin: '30px 0', borderBottom: '0.5px solid rgba(255,255,255,0.3'}}>
-    <Container
-      heightsContainers={heightsContainers}
-      ref={parentContainerRef}
-      isExtended={isExtended}
-    >
-      <div style={{display: 'flex', marginBottom: '30px'}}>
-      <Poster src={url} alt='Concert poster' />
-      <NameDateContainer>
-        <Name onClick={() => setIsExtended(!isExtended)}>{name}</Name>
-        <DateContainer>
-          <span style={{ marginRight: "10px" }}>
-            <FormattedDate
-              value={pureDate}
-              year="numeric"
-              month="long"
-              day="2-digit"
-            />
-          </span>
-          <TimeContainer>
-            <FormattedTime value={date} />
-            <Divider />
-            {city}
-          </TimeContainer>
-        </DateContainer>
-        <VenueContainer>
-          <VenueItem>{venue},</VenueItem>
-          <VenueItem>{hall}</VenueItem>
-        </VenueContainer>
-      </NameDateContainer>
-      </div>
-      <HiddenContainer
-        height={heightsContainers.hiddenContainer}
+    <div style={{ display: 'flex', flexDirection: 'column', padding: '0 20px 30px 20px', margin: '30px 0', borderBottom: '0.5px solid rgba(255,255,255,0.3' }}>
+      <Container
+        heightsContainers={heightsContainers}
+        ref={parentContainerRef}
         isExtended={isExtended}
-        ref={hiddenContainerRef}
       >
-        <div style={{display: 'flex', flexDirection: 'column', marginBottom: '30px'}}>
-          <HiddenHeading>Tickets</HiddenHeading>
-          <HiddenSubContainer>
-          {parsedVendors.map(({ vendor, ticketUrl }) => (
-            <VendorContainer href={ticketUrl} as='a' key={vendor}>
-              <span>{vendor}</span>
-              <GetTicketsButton>Tickets</GetTicketsButton>
-            </VendorContainer>
-          ))}
-          </HiddenSubContainer>
+        <div style={{ display: 'flex', marginBottom: '30px' }}>
+          <Poster src={url} alt='Concert poster' />
+          <NameDateContainer>
+            <Name onClick={() => setIsExtended(!isExtended)}>{name}</Name>
+            <DateContainer>
+              <span style={{ marginRight: "10px" }}>
+                <FormattedDate
+                  value={pureDate}
+                  year="numeric"
+                  month="long"
+                  day="2-digit"
+                />
+              </span>
+              <TimeContainer>
+                <FormattedTime value={date} />
+                <Divider />
+                {city}
+              </TimeContainer>
+            </DateContainer>
+            <VenueContainer>
+              <VenueItem>{venue},</VenueItem>
+              <VenueItem>{hall}</VenueItem>
+            </VenueContainer>
+          </NameDateContainer>
         </div>
-        <div style={{display: 'flex', flexDirection: 'column'}}>
-          <HiddenHeading>Program</HiddenHeading>
-          <HiddenSubContainer>
-           <span style={{whiteSpace: 'pre-wrap'}}>{program}</span>
-          </HiddenSubContainer>
-        </div>
-      </HiddenContainer>
-    </Container>
-    <Button onClick={() => handleOnClick()}>
-      {isExtended ? "Less" : "More"}
-    </Button>
+        <HiddenContainer
+          height={heightsContainers.hiddenContainer}
+          isExtended={isExtended}
+          ref={hiddenContainerRef}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '30px' }}>
+            <HiddenHeading>Tickets</HiddenHeading>
+            <HiddenSubContainer>
+              {parsedVendors.map(({ vendor, ticketUrl }) => (
+                <VendorContainer href={ticketUrl} as='a' key={vendor}>
+                  <span>{vendor}</span>
+                  <GetTicketsButton>Tickets</GetTicketsButton>
+                </VendorContainer>
+              ))}
+            </HiddenSubContainer>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <HiddenHeading>Program</HiddenHeading>
+            <HiddenSubContainer>
+              <span style={{ whiteSpace: 'pre-wrap' }}>{program}</span>
+            </HiddenSubContainer>
+          </div>
+        </HiddenContainer>
+      </Container>
+      <Button onClick={() => handleOnClick()}>
+        <FormattedMessage id={isExtended ? 'concert_button_less' : 'concert_button_more'} />
+      </Button>
     </div>
   )
 }

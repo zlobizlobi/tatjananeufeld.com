@@ -2,6 +2,7 @@ import React from "react"
 import { Section, Heading } from "./styles"
 import { Concert } from "components"
 import { useStaticQuery, graphql } from "gatsby"
+import { FormattedMessage } from 'react-intl'
 
 export const ConcertSection = () => {
   const prismicRowData = useStaticQuery(graphql`
@@ -35,7 +36,9 @@ export const ConcertSection = () => {
 
   return (
     <Section name="concerts">
-      <Heading>Concerts</Heading>
+      <Heading>
+        <FormattedMessage id="concert_heading" />
+      </Heading>
       <div>
         {concerts.map(({ primary: props, name }) => (
           <Concert key={name} {...props} />

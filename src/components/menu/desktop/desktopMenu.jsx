@@ -1,10 +1,11 @@
 import React from "react"
-import { Nav, NavList, NavLink, Divider } from "./styles"
-import { FormattedMessage } from "gatsby-plugin-intl"
-import { LanguageSwitch } from "../../languageSwitch"
+import { FormattedMessage } from "react-intl"
+import { NavLink, LanguageSwitch, Nav, NavList } from './styles'
 
 export const DesktopMenu = () => {
   const [isActive, setIsActive] = React.useState(["home"])
+
+  const [isScrolled, setIsScrolled] = React.useState(false)
 
   const navLinks = [
     "home",
@@ -17,12 +18,25 @@ export const DesktopMenu = () => {
     "contact",
   ]
 
+  const handleScroll = () => {
+    if (window.pageYOffset > 350) {
+      setIsScrolled(true)
+    } else {
+      setIsScrolled(false)
+    }
+  }
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  })
+
   const handleOnClick = navLink => {
     setIsActive([navLink])
   }
-
   return (
-    <Nav>
+    <Nav isScrolled={isScrolled}>
       <NavList>
         {navLinks.map(navLink => (
           <NavLink
@@ -35,7 +49,6 @@ export const DesktopMenu = () => {
           </NavLink>
         ))}
       </NavList>
-      <Divider />
       <LanguageSwitch />
     </Nav>
   )
