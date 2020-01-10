@@ -18,6 +18,9 @@ export const ConcertSection = () => {
               date
               program
               vendors
+              file {
+                url
+              }
               poster {
                 url
               }

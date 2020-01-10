@@ -14,11 +14,13 @@ import {
   HiddenContainer,
   HiddenHeading,
   VendorContainer,
-  HiddenSubContainer
+  HiddenSubContainer,
+  DownloadLink
 } from "./styles"
 import { FormattedDate, FormattedTime, FormattedMessage } from "react-intl"
 import { jsonParse, formatToPureDate } from "../../helpers"
 import { useEffect } from "react"
+import { FiDownload } from 'react-icons/fi'
 
 export const Concert = ({
   name,
@@ -29,6 +31,7 @@ export const Concert = ({
   program,
   vendors,
   poster: { url },
+  file: { url: fileUrl }
 }) => {
   const pureDate = formatToPureDate(date)
 
@@ -56,6 +59,7 @@ export const Concert = ({
     })
   }, [])
 
+  console.log(fileUrl);
   return (
     <div style={{ display: 'flex', flexDirection: 'column', padding: '0 20px 30px 20px', margin: '30px 0', borderBottom: '0.5px solid rgba(255,255,255,0.3' }}>
       <Container
@@ -109,12 +113,13 @@ export const Concert = ({
             <HiddenSubContainer>
               <span style={{ whiteSpace: 'pre-wrap' }}>{program}</span>
             </HiddenSubContainer>
+            <DownloadLink href={fileUrl} target="_blank" download="program.pdf"><FiDownload /> Download full program</DownloadLink>
           </div>
         </HiddenContainer>
       </Container>
       <Button onClick={() => handleOnClick()}>
         <FormattedMessage id={isExtended ? 'concert_button_less' : 'concert_button_more'} />
       </Button>
-    </div>
+    </div >
   )
 }

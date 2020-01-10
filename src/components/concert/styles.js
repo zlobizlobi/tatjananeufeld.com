@@ -112,6 +112,7 @@ export const Button = styled.button`
   position: relative;
   z-index: 2;
   margin-top: 40px;
+
   :hover {
     color: black;
     background-color: white;
@@ -206,7 +207,7 @@ export const GetTicketsButton = styled.button`
   border-left: none;
   border-right: none;
   font-family: "Montserrat", sans-serif;
-  color: rgba(255,255,255,1);
+  color: white;
   transition: color 0.3s ease;
   background-color: transparent;
 `
@@ -220,6 +221,26 @@ export const HiddenSubContainer = styled.div`
     line-height: 22px;
   }
 
+  ${media.md(`
+    font-size: 13px;
+  `)}
+`
+
+export const DownloadLink = styled.a` 
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  align-self: flex-start;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  > svg {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
   ${media.md(`
     font-size: 13px;
   `)}
