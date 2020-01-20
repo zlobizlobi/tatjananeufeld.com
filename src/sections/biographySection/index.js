@@ -1,0 +1,1 @@
+export {BiographySection} from './biographySection'

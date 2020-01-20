@@ -3,15 +3,15 @@
   "concerts": "Konzertagenda",
   "biography": "Biografie",
   "gallery": "Galerie",
-  "repertoir": "Repertoir",
   "Tatjana Neufeld": "Tatjana Neufeld",
-  "partners": "Partner",
-  "teacher": "Tatjana Podyomova",
+  "repertoir-partners": "Repertoir/Partner",
+  "tatyana-podyomova": "Tatjana Podyomova",
   "contact": "Kontakt",
   "landing_section_heading": "Tatjana Neufeld",
   "landing_section_subheading": "Klaviergeschichten eines russischen Maestro",
   "landing_section_button": "Siehe Konzertdaten",
   "concert_heading": "Konzertagenda",
   "concert_button_more": "Mehr",
-  "concert_button_less": "Weniger"
+  "concert_button_less": "Weniger",
+  "biography_heading": "Biografie"
 }

@@ -1,8 +1,8 @@
 import React from "react"
-import { Section, Heading } from "./styles"
-import { Concert } from "components"
+import { Section } from "./styles"
+import { Concert, Heading } from "@components"
 import { useStaticQuery, graphql } from "gatsby"
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage } from "react-intl"
 
 export const ConcertSection = () => {
   const prismicRowData = useStaticQuery(graphql`

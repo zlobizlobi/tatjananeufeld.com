@@ -45,10 +45,11 @@ export const GlobalStyle = createGlobalStyle`
     body, html {
         background-color: black;
         height: 100%;
+        font-family: 'Montserrat';
         max-height: 100%;
     }
 
     button {
-        font-family: 'inherit';
+        font-family: inherit;
     }
 `

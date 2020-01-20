@@ -3,15 +3,15 @@
   "concerts": "Concerts",
   "biography": "Biography",
   "gallery": "Gallery",
-  "repertoir": "Repertoire",
   "Tatjana Neufeld": "Tatjana Neufeld",
-  "partners": "Partners",
-  "teacher": "Tatjana Podyomova",
+  "repertoir-partners": "Repertoire/Partners",
+  "tatyana-podyomova": "Tatjana Podyomova",
   "contact": "Contacts",
   "landing_section_heading": "Tatjana Neufeld",
   "landing_section_subheading": "Piano stories of a Russian maestro",
   "landing_section_button": "See concert dates",
   "concert_heading": "Concerts",
   "concert_button_more": "More",
-  "concert_button_less": "Less"
+  "concert_button_less": "Less",
+  "biography_heading": "Biography"
 }

@@ -19,6 +19,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-source-prismic`,
       options: {
@@ -54,8 +55,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-root-import",
       options: {
-        components: path.join(__dirname, "./src/components"),
-        sections: path.join(__dirname, "./src/sections"),
+        "@components": path.join(__dirname, "./src/components"),
+        "@sections": path.join(__dirname, "./src/sections"),
+        "@styles": path.join(__dirname, "./src/styles"),
       },
     },
   ],

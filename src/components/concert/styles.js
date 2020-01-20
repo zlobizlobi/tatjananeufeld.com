@@ -1,23 +1,12 @@
-import styled from "styled-components"
-import { media } from '../../styles'
+import styled, { css } from "styled-components"
+import { media } from "../../styles"
 
-export const Container = styled.div`
+export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   color: white;
-  min-height: 200px;
-  min-width: auto;
-  position: relative;
   overflow-y: ${({ isExtended }) => (isExtended ? "visible" : "hidden")};
-  transition: height 0.3s ease-out;
-  height: ${({
-  isExtended,
-  heightsContainers: { hiddenContainer, parentContainer },
-}) =>
-    isExtended
-      ? `calc(${hiddenContainer}px + ${parentContainer}px)`
-      : `200px`};
 
   &:last-child {
     margin: 0;
@@ -28,14 +17,22 @@ export const Container = styled.div`
   `)}
 `
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  transition: height 0.3s ease-out;
+  padding: 30px 0;
+`
+
 export const Name = styled.h2`
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: normal;
   letter-spacing: 1.5px;
   font-size: 15px;
   margin-bottom: 30px;
   cursor: pointer;
-  
+
   ${media.md(`
     font-size: 22px;
   `)}
@@ -70,17 +67,13 @@ export const Divider = styled.span`
 
 export const VenueContainer = styled.div`
   display: flex;
-  
-
 `
 export const VenueItem = styled.span`
   margin-right: 5px;
-  font-weight: lighter;
   font-style: italic;
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
-  opacity: 1;
-
+  color: #808080;
   &:last-child {
     margin: 0;
   }
@@ -92,39 +85,32 @@ export const VenueItem = styled.span`
 
 export const Poster = styled.img`
   margin-right: 20px;
-  object-fit: contain;
-  max-width: 150px;
-  height: 120px;
+  object-fit: cover;
+  width: 150px;
+  height: 250px;
+  max-height: 250px;
   align-self: flex-start;
+`
+export const Flex = styled.div`
+  display: flex;
+  ${({ flexDirection }) => css`
+    flex-direction: ${flexDirection};
+  `}
 `
 
 export const Button = styled.button`
   background-color: transparent;
   padding: 5px 7.5px;
   align-self: flex-end;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: white;
-  font-family: "Montserrat", sans-serif;
   transition: all 0.3s ease;
   cursor: pointer;
-  font-size: 10px;
-  font-weight: 900;
   position: relative;
-  z-index: 2;
-  margin-top: 40px;
-
+  z-index: 1;
   :hover {
     color: black;
     background-color: white;
-    border: 0.5px solid white;
-  }
-
-  :focus{
-    outline: none;
-  }
-
-  > svg {
-    margin: 2px 0 0 5px;
   }
 `
 
@@ -137,13 +123,13 @@ export const TimeContainer = styled.div`
 `
 
 export const HiddenContainer = styled.div`
-  display: flex;
   flex-direction: column;
   z-index: 0;
   transition: all 0.3s ease;
   width: 100%;
   opacity: ${({ isExtended }) => (isExtended ? "1" : "0")};
-  visibility: ${({ isExtended }) => (isExtended ? "visible" : "hidden")};
+  display: ${({ isExtended }) => (isExtended ? "flex" : "none")};
+  margin: 30px 0;
 `
 
 export const HiddenHeading = styled.h4`
@@ -156,10 +142,9 @@ export const HiddenHeading = styled.h4`
   align-self: flex-start;
   font-size: 14px;
   font-weight: bold;
-  &:nth-child(2){
+  &:nth-child(2) {
     margin-top: 20px;
   }
-
 
   ${media.md(`
     font-size: 16px;
@@ -172,14 +157,15 @@ export const VendorContainer = styled.div`
   margin-bottom: 15px;
   color: white;
   transition: color 0.3s ease;
-  position: relative;
   z-index: 1;
   cursor: pointer;
+  text-decoration: none;
+
   :hover {
-    color: rgba(255,255,255,0.6);
+    color: rgba(255, 255, 255, 0.6);
 
     > button {
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
     }
   }
 
@@ -187,26 +173,26 @@ export const VendorContainer = styled.div`
     font-size: 11px;
   }
 
-  text-decoration: none;
-
-  &:last-child{
+  &:last-child {
     margin: 0;
   }
 
   ${media.md(`
-
     > button {
-      font-size: 13px;
+      font-size: 13px;  
     }
   `)}
 `
 
+export const Program = styled.span`
+  white-space: pre-wrap;
+`
+
 export const GetTicketsButton = styled.button`
-  border-bottom: 0.5px solid rgba(255,255,255,0.6);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.8);
   border-top: none;
   border-left: none;
   border-right: none;
-  font-family: "Montserrat", sans-serif;
   color: white;
   transition: color 0.3s ease;
   background-color: transparent;
@@ -214,8 +200,8 @@ export const GetTicketsButton = styled.button`
 
 export const HiddenSubContainer = styled.div`
   font-size: 11px;
-  font-family: "Montserrat", sans-serif;
-  
+  margin-bottom: 50px;
+
   &:last-child {
     max-width: 500px;
     line-height: 22px;
@@ -226,21 +212,20 @@ export const HiddenSubContainer = styled.div`
   `)}
 `
 
-export const DownloadLink = styled.a` 
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 11px;
-  align-self: flex-start;
-  margin-top: 60px;
-  display: flex;
+export const DownloadLink = styled.a`
+  display: inline-flex;
   align-items: center;
+  font-size: 11px;
   cursor: pointer;
+  text-decoration: underline;
+  color: white;
+  align-self: flex-start;
 
   > svg {
     margin-right: 10px;
     font-size: 18px;
   }
-  
+
   ${media.md(`
     font-size: 13px;
   `)}

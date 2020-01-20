@@ -76,7 +76,7 @@ export const HamburgerInput = styled.input.attrs({ type: "checkbox" })`
     }
 `
 
-export const SlideMenu = styled.ul`
+export const Navigation = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;

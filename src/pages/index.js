@@ -1,7 +1,6 @@
 import React from "react"
-import { Layout } from "components"
-import { LandingSection } from "sections"
-import { ConcertSection } from "../sections/concertSection/concertSection"
+import { Layout } from "@components"
+import { LandingSection, ConcertSection } from "@sections"
 
 const IndexPage = () => {
   return (

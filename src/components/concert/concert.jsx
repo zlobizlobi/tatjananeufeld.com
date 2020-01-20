@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react"
 import {
+  Program,
   Container,
+  ContentContainer,
   Name,
   NameDateContainer,
   DateContainer,
@@ -15,12 +17,13 @@ import {
   HiddenHeading,
   VendorContainer,
   HiddenSubContainer,
-  DownloadLink
+  DownloadLink,
+  Flex,
 } from "./styles"
 import { FormattedDate, FormattedTime, FormattedMessage } from "react-intl"
 import { jsonParse, formatToPureDate } from "../../helpers"
 import { useEffect } from "react"
-import { FiDownload } from 'react-icons/fi'
+import { FiDownload } from "react-icons/fi"
 
 export const Concert = ({
   name,
@@ -31,7 +34,7 @@ export const Concert = ({
   program,
   vendors,
   poster: { url },
-  file: { url: fileUrl }
+  file: { url: fileUrl },
 }) => {
   const pureDate = formatToPureDate(date)
 
@@ -57,29 +60,30 @@ export const Concert = ({
       hiddenContainer: hiddenContainerRef.current.clientHeight,
       parentContainer: parentContainerRef.current.clientHeight,
     })
-  }, [])
+  }, [hiddenContainerRef, parentContainerRef])
 
-  console.log(fileUrl);
+  console.log(
+    hiddenContainerRef.current && hiddenContainerRef.current.clientHeight
+  )
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', padding: '0 20px 30px 20px', margin: '30px 0', borderBottom: '0.5px solid rgba(255,255,255,0.3' }}>
-      <Container
-        heightsContainers={heightsContainers}
-        ref={parentContainerRef}
-        isExtended={isExtended}
-      >
-        <div style={{ display: 'flex', marginBottom: '30px' }}>
-          <Poster src={url} alt='Concert poster' />
+    <Container
+      heightsContainers={heightsContainers}
+      ref={parentContainerRef}
+      isExtended={isExtended}
+    >
+      <ContentContainer>
+        <Flex>
+          <Poster src={url} alt="Concert poster" />
           <NameDateContainer>
             <Name onClick={() => setIsExtended(!isExtended)}>{name}</Name>
             <DateContainer>
-              <span style={{ marginRight: "10px" }}>
-                <FormattedDate
-                  value={pureDate}
-                  year="numeric"
-                  month="long"
-                  day="2-digit"
-                />
-              </span>
+              <FormattedDate
+                value={pureDate}
+                year="numeric"
+                month="long"
+                day="2-digit"
+              />
               <TimeContainer>
                 <FormattedTime value={date} />
                 <Divider />
@@ -91,35 +95,37 @@ export const Concert = ({
               <VenueItem>{hall}</VenueItem>
             </VenueContainer>
           </NameDateContainer>
-        </div>
+        </Flex>
         <HiddenContainer
           height={heightsContainers.hiddenContainer}
           isExtended={isExtended}
           ref={hiddenContainerRef}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '30px' }}>
-            <HiddenHeading>Tickets</HiddenHeading>
-            <HiddenSubContainer>
-              {parsedVendors.map(({ vendor, ticketUrl }) => (
-                <VendorContainer href={ticketUrl} as='a' key={vendor}>
-                  <span>{vendor}</span>
-                  <GetTicketsButton>Tickets</GetTicketsButton>
-                </VendorContainer>
-              ))}
-            </HiddenSubContainer>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <HiddenHeading>Tickets</HiddenHeading>
+          <HiddenSubContainer>
+            {parsedVendors.map(({ vendor, ticketUrl }) => (
+              <VendorContainer href={ticketUrl} as="a" key={vendor}>
+                <span>{vendor}</span>
+                <GetTicketsButton>Tickets</GetTicketsButton>
+              </VendorContainer>
+            ))}
+          </HiddenSubContainer>
+          <Flex flexDirection="column">
             <HiddenHeading>Program</HiddenHeading>
             <HiddenSubContainer>
-              <span style={{ whiteSpace: 'pre-wrap' }}>{program}</span>
+              <Program>{program}</Program>
             </HiddenSubContainer>
-            <DownloadLink href={fileUrl} target="_blank" download="program.pdf"><FiDownload /> Download full program</DownloadLink>
-          </div>
+            <DownloadLink href={fileUrl} target="_blank" download>
+              <FiDownload /> Download full program
+            </DownloadLink>
+          </Flex>
         </HiddenContainer>
-      </Container>
+      </ContentContainer>
       <Button onClick={() => handleOnClick()}>
-        <FormattedMessage id={isExtended ? 'concert_button_less' : 'concert_button_more'} />
+        <FormattedMessage
+          id={isExtended ? "concert_button_less" : "concert_button_more"}
+        />
       </Button>
-    </div >
+    </Container>
   )
 }

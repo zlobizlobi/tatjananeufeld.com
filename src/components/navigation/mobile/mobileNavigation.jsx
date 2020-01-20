@@ -3,14 +3,14 @@ import {
   Hamburger,
   HamburgerInput,
   Bars,
-  SlideMenu,
+  Navigation,
   Nav,
   NavLink,
   LanguageSwitch,
 } from "./styles"
 import { FormattedMessage } from "gatsby-plugin-intl"
 
-export const MobileMenu = () => {
+export const MobileNavigation = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const [isActive, setIsActive] = useState(["home"])
@@ -20,9 +20,8 @@ export const MobileMenu = () => {
     "concerts",
     "biography",
     "gallery",
-    "repertoir",
-    "partners",
-    "teacher",
+    "repertoir-partners",
+    "tatyana-podyomova",
     "contact",
   ]
 
@@ -37,7 +36,7 @@ export const MobileMenu = () => {
         <Bars />
         <Bars />
         <Bars />
-        <SlideMenu isOpen={isOpen}>
+        <Navigation isOpen={isOpen}>
           {navLinks.map(navLink => (
             <NavLink
               onClick={() => {
@@ -51,7 +50,7 @@ export const MobileMenu = () => {
               <FormattedMessage id={navLink} />
             </NavLink>
           ))}
-        </SlideMenu>
+        </Navigation>
       </Hamburger>
       <LanguageSwitch />
     </Nav>
