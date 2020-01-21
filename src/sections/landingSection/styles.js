@@ -44,15 +44,18 @@ export const NameContainer = styled.div`
   align-self: center;
   margin-top: 140px;
   padding: 20px;
-  background-color: rgba(0,0,0,0.1);
-
+  background-color: rgba(0,0,0,0.2);
+  margin: 140px 20px 0 20px;
+  
   ${media.sm(`
-      left: 50%;
       align-self: center;
     `)}
 
   ${media.lg(`
-        margin-top: 0;  
+      left: 50%;
+      margin-top: 0;  
+      padding: 0px;
+      background-color: transparent;
     `)}
 `
 export const Name = styled.h1`
@@ -79,8 +82,14 @@ export const SubHeading = styled.h6`
   margin: 0 0 20px 0;
   font-size: 11px;
   font-weight: normal;
+  color: rgba(255,255,255,0.8);
+
+  ${media.sm(`
+        font-size: 0.67em;
+    `)}
 
   ${media.lg(`
+        color: #a6a6a6;
         font-size: 0.67em;
     `)}
 `
