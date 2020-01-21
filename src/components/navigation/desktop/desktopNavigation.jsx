@@ -35,23 +35,16 @@ export const DesktopNavigation = props => {
   })
 
   const handleOnClick = async (navLink, location) => {
-    if (navLink === "repertoir-partners") {
+    if (navLink === "repertoir-partners" || navLink === "tatyana-podyomova") {
       navigate(navLink)
-      setIsActive([navLink])
-      return
-    }
-
-    if (navLink === "tatyana-podyomova") {
-      navigate(navLink)
-      setIsActive([navLink])
       return
     }
 
     if (
-      location.pathname === `/${locale}/tatyana-podyomova/` ||
-      location.pathname === `/${locale}/repertoir-partners/`
+      location.pathname  === `/${locale}/tatyana-podyomova` ||
+      location.pathname === `/${locale}/repertoir-partners`
     ) {
-      navigate("/")
+      await navigate("/")
       setIsActive([navLink])
       return
     }

@@ -62,10 +62,6 @@ export const Concert = ({
     })
   }, [hiddenContainerRef, parentContainerRef])
 
-  console.log(
-    hiddenContainerRef.current && hiddenContainerRef.current.clientHeight
-  )
-
   return (
     <Container
       heightsContainers={heightsContainers}
