@@ -23,6 +23,10 @@ export const Container = styled.div`
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
   transition: height 0.3s ease-out;
   padding: 30px;
+
+  &:last-child {
+    border: none;
+  }
 `
 
 export const Name = styled.h2`
@@ -88,10 +92,10 @@ export const Poster = styled.img`
   margin-right: 20px;
   object-fit: cover;
   width: 80px;
-  height: 150px;
+  height: 110px;
   max-height: 250px;
   align-self: flex-start;
-
+  
   ${media.md(`
     width: 150px;
     height: 200px;
@@ -153,6 +157,7 @@ export const HiddenHeading = styled.h4`
   align-self: flex-start;
   font-size: 14px;
   font-weight: bold;
+
   &:nth-child(2) {
     margin-top: 20px;
   }

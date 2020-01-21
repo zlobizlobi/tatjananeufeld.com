@@ -1,35 +1,11 @@
 import styled from "styled-components"
-import { media } from "../../styles"
+import {Section as SectionComponent, Heading as HeadingComponent} from '@components'
 
-export const Section = styled.section`
-  display: flex;
-  flex-direction: column;
+export const Section = styled(SectionComponent)`
   align-items: center;
-  padding: 0;
-  margin-top: 200px;
-  position: relative;
 `
-
-export const Heading = styled.h1`
+export const Heading = styled(HeadingComponent)`
   color: white;
-  font-family: "Cormorant Garamond", serif;
-  margin-bottom: 100px;
-  font-size: 32px;
-  text-transform: uppercase;
-  padding-bottom: 5px;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.4);
-
-  ${media.md(`
-        font-size: 55px;
-        display: inline-flex;
-    `)}
 `
 
-export const TableContainer = styled.div`
-  margin: 0 15px;
-  text-align: center;
 
-  ${media.md(`
-      margin: 0;
-  `)}
-`
