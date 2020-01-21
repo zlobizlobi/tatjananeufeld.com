@@ -22,7 +22,7 @@ export const Container = styled.div`
   flex-direction: column;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
   transition: height 0.3s ease-out;
-  padding: 30px 0;
+  padding: 30px;
 `
 
 export const Name = styled.h2`
@@ -30,11 +30,12 @@ export const Name = styled.h2`
   font-weight: normal;
   letter-spacing: 1.5px;
   font-size: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   cursor: pointer;
 
   ${media.md(`
     font-size: 22px;
+    margin-bottom: 30px;
   `)}
 `
 
@@ -86,10 +87,15 @@ export const VenueItem = styled.span`
 export const Poster = styled.img`
   margin-right: 20px;
   object-fit: cover;
-  width: 150px;
-  height: 250px;
+  width: 80px;
+  height: 150px;
   max-height: 250px;
   align-self: flex-start;
+
+  ${media.md(`
+    width: 150px;
+    height: 200px;
+  `)}
 `
 export const Flex = styled.div`
   display: flex;
@@ -100,7 +106,7 @@ export const Flex = styled.div`
 
 export const Button = styled.button`
   background-color: transparent;
-  padding: 5px 7.5px;
+  padding: 2.5px 5px;
   align-self: flex-end;
   border: 1px solid rgba(255, 255, 255, 0.4);
   color: white;
@@ -108,17 +114,22 @@ export const Button = styled.button`
   cursor: pointer;
   position: relative;
   z-index: 1;
+  font-size: 10px;
+  margin-top: 30px;
+
   :hover {
     color: black;
     background-color: white;
   }
+
+  ${media.md(`
+  font-size: 14px;
+  padding: 5px 7.5px;
+`)}
 `
 
 export const TimeContainer = styled.div`
-  display: inline-flex;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-  align-items: center;
+
   line-height: 25px;
 `
 
