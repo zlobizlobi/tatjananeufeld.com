@@ -40,13 +40,15 @@ export const NameContainer = styled.div`
   flex-wrap: wrap;
   position: absolute;
   z-index: 1;
-  padding: 30px;
   box-sizing: border-box;
   align-self: center;
   margin-top: 140px;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.1);
 
   ${media.sm(`
-        align-self: center;
+      left: 50%;
+      align-self: center;
     `)}
 
   ${media.lg(`
@@ -63,7 +65,7 @@ export const Name = styled.h1`
   position: relative;
   left: 0;
   font-weight: normal;
-
+        
   ${media.lg(`
         font-size: 2em;
     `)}

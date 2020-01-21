@@ -123,7 +123,7 @@ export const Button = styled.button`
   }
 
   ${media.md(`
-  font-size: 14px;
+  font-size: 12px;
   padding: 5px 7.5px;
 `)}
 `
