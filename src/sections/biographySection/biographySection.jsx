@@ -8,7 +8,7 @@ export const BiographySection = () => (
     <Heading>
       <FormattedMessage id="biography_heading" />
     </Heading>
-    <div >
+    <div>
       <FirstImage src={image} />
     <Text>
     <span style={{fontWeight: 900}}>Tatjana Neufeld</span> ist erste Preisträgerin des Internationalen Klavierwettbewerbs 

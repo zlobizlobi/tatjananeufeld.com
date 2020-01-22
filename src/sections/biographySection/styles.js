@@ -24,6 +24,7 @@ export const FirstImage = styled.img`
     height: 239px;
     float: left;
     filter: grayscale(85%);
+    padding: 0 20px 20px 30px;
 
     ${media.sm(`
     padding: 0 20px 20px 30px;

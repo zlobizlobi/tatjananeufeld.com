@@ -41,8 +41,8 @@ export const DesktopNavigation = props => {
     }
 
     if (
-      location.pathname  === `/${locale}/tatyana-podyomova` ||
-      location.pathname === `/${locale}/repertoir-partners`
+      location.pathname  === `/${locale}/tatyana-podyomova/` ||
+      location.pathname === `/${locale}/repertoir-partners/`
     ) {
       await navigate("/")
       setIsActive([navLink])

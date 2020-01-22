@@ -7,6 +7,7 @@ import {
   NameContainer,
   Button,
   Section,
+  Gradient
 } from "./styles"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import Scroll from "react-scroll"
@@ -48,6 +49,7 @@ export const LandingSection = () => {
   return (
     <Section name="home">
       <Image fluid={fluid} />
+      <Gradient />
       <NameContainer>
         <Name>
           <FormattedMessage id="landing_section_heading" />
