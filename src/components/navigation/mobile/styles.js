@@ -98,7 +98,7 @@ export const Navigation = styled.ul`
 
 export const NavLink = styled(NavLinkComponent)`
   color: rgba(255, 255, 255, 0.6);
-  font-family: "Cormorant Garamond";
+  font-family: "Montserrat";
 
   ${({ isActive }) =>
     isActive &&
