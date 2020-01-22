@@ -107,7 +107,9 @@ export const Button = styled.button`
   transition: all 0.3s ease;
   font-size: 10px;
   box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.1);
-
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  
   & > span {
     position: relative;
     left: 0;
@@ -116,9 +118,9 @@ export const Button = styled.button`
 
   & > svg {
     position: relative;
+    margin-left: 10px;
+    font-size: 14px;
     left: 0;
-    display: none;
-    opacity: 0;
     transition: all 0.2s ease;
   }
 
@@ -132,14 +134,11 @@ export const Button = styled.button`
 
     & > svg {
       left: 5px;
-      display: inline;
-      opacity: 1;
     }
   }
 
   ${media.lg(`
-        font-size: 13px;
-        width: 200px;
+        font-size: 12px;
     `)}
 `
 export const Gradient = styled.div`

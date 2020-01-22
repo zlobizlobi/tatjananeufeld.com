@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components"
 import MontserratRegular from "../fonts/Montserrat-Regular.ttf"
 import MontserratLight from "../fonts/Montserrat-Light.ttf"
 import MontserratBold from "../fonts/Montserrat-Bold.ttf"
-import Cormorant from "../fonts/CormorantGaramond-Light.ttf"
-import CormorantBold from "../fonts/CormorantGaramond-Bold.ttf"
+import MontserratSemiBold from "../fonts/Montserrat-SemiBold.ttf"
+
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -18,23 +18,20 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: lighter;
         src: url(${MontserratLight});
     }
+
+    @font-face {
+        font-family: 'Montserrat';
+        font-weight: 600;
+        src: url(${MontserratSemiBold});
+    }
+
     @font-face {
         font-family: 'Montserrat';
         font-weight: bold;
         src: url(${MontserratBold});
     }
 
-    @font-face {
-        font-family: 'Cormorant Garamond';
-        font-weight: normal;
-        src: url(${Cormorant});
-    }
 
-    @font-face {
-        font-family: 'Cormorant Garamond';
-        font-weight: bold;
-        src: url(${CormorantBold});
-    }
 
     * {
         margin: 0;
