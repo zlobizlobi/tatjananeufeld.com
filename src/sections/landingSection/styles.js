@@ -100,7 +100,7 @@ export const Button = styled.button`
   justify-content: center;
   padding: 10px 15px;
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid rgba(255,255,255,0.8);
   color: white;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
