@@ -1,4 +1,5 @@
 import React from "react"
+import { useTrail, animated } from 'react-spring'
 import { useStaticQuery, graphql } from "gatsby"
 import {
   Image,
@@ -21,10 +22,8 @@ export const LandingSection = () => {
           landing_page_image {
             localFile {
               childImageSharp {
-                fluid(traceSVG: { color: "rgba(0,0,0, 0.7)", threshold: 80 }) {
-                  src
-                  srcSet
-                  tracedSVG
+                fluid(quality: 100){
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -33,6 +32,7 @@ export const LandingSection = () => {
       }
     }
   `)
+  
 
   const {
     prismicMainPage: {
@@ -46,25 +46,38 @@ export const LandingSection = () => {
     },
   } = landingPageImageSource
 
+  const items = [
+  <Name>
+    <FormattedMessage id="landing_section_heading" />
+  </Name>,
+  <SubHeading>
+    <FormattedMessage id="landing_section_subheading" />
+  </SubHeading>,
+  <Scroll.Link to="concerts" smooth duration={1100}>
+    <Button aria-label="Go to the concert dates">
+      <span>
+        <FormattedMessage id="landing_section_button" />
+      </span>
+      <FiCalendar />
+    </Button>
+  </Scroll.Link>
+  ]
+
+  const trail = useTrail(items.length, {
+    from: { opacity: 0, transform: 'translate3d(0,90px,0)' },
+    opacity: 1,
+    transform: 'translate3d(0,0px,0)',
+    config: { mass: 1, tension: 200, friction: 30 },
+  })
+
   return (
     <Section name="home">
       <Image fluid={fluid} />
       <Gradient />
       <NameContainer>
-        <Name>
-          <FormattedMessage id="landing_section_heading" />
-        </Name>
-        <SubHeading>
-          <FormattedMessage id="landing_section_subheading" />
-        </SubHeading>
-        <Scroll.Link to="concerts" smooth duration={1100}>
-          <Button aria-label="Go to the concert dates">
-            <span>
-              <FormattedMessage id="landing_section_button" />
-            </span>
-            <FiCalendar />
-          </Button>
-        </Scroll.Link>
+      {trail.map((styles, i) => (
+        <animated.div style={styles}>{items[i]}</animated.div>
+      ))}
       </NameContainer>
     </Section>
   )

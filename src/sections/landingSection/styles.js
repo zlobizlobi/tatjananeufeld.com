@@ -146,7 +146,7 @@ export const Gradient = styled.div`
   left: 0;
   top: 0;
   background: rgb(59, 60, 62);
-  background: linear-gradient(90deg, rgba(59, 60, 62,0.255) 39%, rgba(59, 60, 62,0.85) 52%,rgba(59, 60, 62,1) 455%);
+  background: linear-gradient(90deg, rgba(59, 60, 62,0.450) 39%, rgba(59, 60, 62,1) 50%,rgba(59, 60, 62,1) 455%);
   width: 100vw;
   height: 100vh;
   display: none;
