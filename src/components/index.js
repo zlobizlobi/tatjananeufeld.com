@@ -6,3 +6,5 @@ export { Concert } from "./concert"
 export { Heading } from "./heading"
 export { Section } from "./section"
 export { Caroussel } from './caroussel'
+export { Footer } from './footer'
+export { NavLink } from './navLink'

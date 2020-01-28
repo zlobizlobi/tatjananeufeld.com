@@ -4,10 +4,11 @@ import { NavLink, LanguageSwitch, Nav, NavList } from "./styles"
 import { navigate } from "gatsby"
 import { useIntl } from "react-intl"
 import { Location } from "@reach/router"
+
 export const DesktopNavigation = props => {
   const [isActive, setIsActive] = React.useState(["home"])
+ const { locale } = useIntl()
 
-  const { locale } = useIntl()
   const [isScrolled, setIsScrolled] = React.useState(false)
 
   const navLinks = [

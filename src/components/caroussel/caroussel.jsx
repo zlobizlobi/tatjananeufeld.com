@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { ArrowPrevious, ArrowNext, Image} from './styles'
 
 const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,

@@ -1,6 +1,7 @@
 import React from "react"
 import { GlobalStyle } from "../../styles"
 import { MobileNavigation, DesktopNavigation  } from "../navigation"
+import { Footer } from "../footer"
 
 export const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -21,6 +22,7 @@ export const Layout = ({ children }) => {
       {/* <DesktopMenu /> */}
       <DesktopNavigation />
       <main>{children}</main>
+      <Footer/>
     </>
   )
 }

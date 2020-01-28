@@ -10,5 +10,6 @@ export const Heading = styled.h1`
 
   ${media.md(`
         font-size: 55px;
+        margin-right: 385px;
     `)}
 `

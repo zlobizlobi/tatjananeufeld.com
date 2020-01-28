@@ -65,8 +65,6 @@ export const Name = styled.h1`
   font-family: "Montserrat";
   margin-bottom: 10px;
   font-size: 18px;
-  position: relative;
-  left: 0;
   font-weight: normal;
         
   ${media.lg(`
