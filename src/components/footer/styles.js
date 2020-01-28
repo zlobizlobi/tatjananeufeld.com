@@ -9,12 +9,17 @@ export const FooterComponent = styled.footer`
     align-items: center;
     padding: 50px;
     background-color: rgba(0,0,0,0.5);
-    box-shadow: -2px -7px 22px -13px rgba(255,255,255,0.75);
+    box-shadow: -2px -7px 18px -13px rgba(255,255,255,0.75);
 `
 
 export const IconContainer = styled.div`
   display: flex;
   align-items: center;
+  
+  > a {
+    text-decoration: none;
+    color: white;
+  }
 `
 
 export const Facebook = styled(TiSocialFacebook)`

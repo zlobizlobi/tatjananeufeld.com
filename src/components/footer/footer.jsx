@@ -54,8 +54,8 @@ export const Footer = () => {
               ))}
             </NavList>
             <IconContainer>
-              <Youtube />
-              <Facebook />
+              <a href="https://youtube.com"><Youtube /></a>
+              <a href="https://youtube.com"><Facebook /></a>
             </IconContainer>
             <CopyRighText>
               © Copyright Tatjana Neufeld 2020,
