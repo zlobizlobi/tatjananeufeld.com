@@ -96,18 +96,16 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 15px;
+  padding: 12.5px 20px;
   background-color: transparent;
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.2);
   color: white;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 10px;
-  box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.1);
   letter-spacing: 1px;
   text-transform: uppercase;
-  
   & > span {
     position: relative;
     left: 0;

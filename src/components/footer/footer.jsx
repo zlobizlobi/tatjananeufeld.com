@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FooterComponent, Name, NavList, NavLink, IconContainer, Youtube, Facebook, CopyRighText} from './styles'
+import { FooterComponent, Name, NavList, NavLink, IconContainer, Youtube, Facebook, CopyRighText, Container} from './styles'
 import { navigate } from "gatsby"
 import { Location } from "@reach/router"
 import { useIntl } from "react-intl"
@@ -38,6 +38,7 @@ export const Footer = () => {
       }
     
     return (
+      <Container>
         <Location>
           {({location}) => (
           <FooterComponent>
@@ -61,8 +62,9 @@ export const Footer = () => {
               © Copyright Tatjana Neufeld 2020,
                 Made by zlobizlobi
               </CopyRighText>
-        </FooterComponent>
+          </FooterComponent>
           )}
         </Location>
+        </Container>
     )
 }

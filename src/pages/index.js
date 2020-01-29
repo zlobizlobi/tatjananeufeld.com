@@ -1,6 +1,6 @@
 import React from "react"
 import { Layout } from "@components"
-import { LandingSection, ConcertSection, BiographySection, GallerySection} from "@sections"
+import { LandingSection, ConcertSection, BiographySection, GallerySection, ContactSection} from "@sections"
 
 const IndexPage = () => {
   return (
@@ -8,7 +8,8 @@ const IndexPage = () => {
       <LandingSection />
       <ConcertSection />
       <BiographySection />
-      <GallerySection/>
+      <GallerySection />
+      {/* <ContactSection /> */}
     </Layout>
   )
 }

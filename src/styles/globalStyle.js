@@ -41,7 +41,6 @@ export const GlobalStyle = createGlobalStyle`
         background-color: black;
         height: 100%;
         font-family: 'Montserrat';
-        max-height: 100%;
     }
 
     button {
