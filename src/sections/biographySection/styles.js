@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import {Section as SectionComponent} from '@components'
-import {media} from '../../styles'
+import { Section as SectionComponent } from '@components'
+import { media } from '../../styles'
 import Image from 'gatsby-image'
 
 export const Section = styled(SectionComponent)`
@@ -17,17 +17,17 @@ export const Text = styled.p`
 export const FirstImage = styled(Image)`
     width: 200px;
     height: 200px;
+    margin: 30px 0;
 
-    object-fit: cover;
-    margin: 40px 0;
-    box-sizing: content-box;
+    > picture > img {
+        object-fit: cover !important;
+        object-position: 0% 0% !important;
+    }
 
     ${media.sm(`
         border-radius: 0%;
+        margin: 0 30px;
         box-sizing: border-box;
-        margin: 0 20px 20px 30px;
-        width: 350px;   
-        height: 240px;
         object-fit: cover;
         float: left;
     `)}
@@ -36,7 +36,7 @@ export const FirstImage = styled(Image)`
 export const SecondImage = styled(FirstImage)`
     display: inline;
     margin: 0;
-    
+
     &:last-child {
         margin: 40px 0 0 0;
     }
@@ -45,9 +45,11 @@ export const SecondImage = styled(FirstImage)`
        display: none;
     `)}
 `
+
 export const NameHighlight = styled.span`
     font-weight: bold;
 `
+
 export const ContentContainer = styled.div`
     display: flex;
     flex-direction: column-reverse;
