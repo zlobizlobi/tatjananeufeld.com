@@ -1,5 +1,5 @@
 import React from 'react'
-import { GlobalStyle } from '../../styles'
+import { GlobalStyle } from '@styles'
 import { MobileNavigation, DesktopNavigation } from '../navigation'
 
 export const Layout = ({ children }) => {

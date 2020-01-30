@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Section as SectionComponent } from '@components'
-import { media } from '../../styles'
+import { media } from '@styles'
 import Image from 'gatsby-image'
 
 export const Section = styled(SectionComponent)`

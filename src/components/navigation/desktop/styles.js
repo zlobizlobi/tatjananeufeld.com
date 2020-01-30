@@ -1,7 +1,7 @@
 import styled, { keyframes, css } from 'styled-components'
 import { NavLink as NavLinkComponent } from '../../navLink'
 import { LanguageSwitch as LanguageSwitchComponent } from '../../languageSwitch'
-import { media } from '../../../styles'
+import { media } from '@styles'
 
 const navbarAnimation = keyframes`
   0% {

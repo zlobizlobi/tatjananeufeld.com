@@ -1,50 +1,50 @@
-import styled from "styled-components"
-import { media } from "../../styles"
+import styled from 'styled-components'
+import { media } from '@styles'
 
 export const TableHead = styled.thead`
-  font-family: "Cormorant Garamond", serif;
-  font-weight: bold;
-  padding-bottom: 5px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 `
 
 export const TableHeadCell = styled.th`
-  color: white;
-  padding: 8px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 8px;
-  font-weight: bold;
+    color: white;
+    padding: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    font-weight: bold;
 
-  ${media.md(`
+    ${media.md(`
         padding: 15px;
         font-size: 14px;
     `)}
 `
 
 export const TableRow = styled.a`
-  display: table-row;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
-  height: 60px;
-  transition: background-color 0.2s ease;
-  cursor: pointer;
-  text-decoration: none;
+    display: table-row;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+    height: 60px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
 
-  :hover {
-    background-color: white;
+    :hover {
+        background-color: white;
 
-    > td {
-      color: black;
+        > td {
+            color: black;
+        }
+
+        &:first-child {
+            background-color: transparent;
+            cursor: default;
+        }
     }
 
-    &:first-child {
-      background-color: transparent;
-      cursor: default;
+    &:last-child {
+        border: none;
     }
-  }
-
-  &:last-child {
-    border: none;
-  }
 `
 
 export const TableRowCell = styled.td`
@@ -83,33 +83,33 @@ export const TableRowCell = styled.td`
 `
 
 export const Table = styled.table`
-  border-collapse: collapse;
-  border-spacing: 0;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 0;
-  table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    table-layout: fixed;
 `
 
 export const ArchiveButton = styled.button`
-  padding: 10px 15px;
-  font-family: "Montserrat", sans-serif;
-  margin-top: 40px;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  letter-spacing: 1px;
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  transition: all 0.2s ease;
+    padding: 10px 15px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    transition: all 0.2s ease;
 
-  :hover {
-    background-color: white;
-    color: black;
-  }
+    :hover {
+        background-color: white;
+        color: black;
+    }
 
-  :focus {
-    outline: none;
-  }
+    :focus {
+        outline: none;
+    }
 `

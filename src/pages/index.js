@@ -6,7 +6,7 @@ import {
     BiographySection,
     GallerySection,
     ContactSection,
-} from '@sections'
+} from '../sections'
 
 const IndexPage = () => {
     return (

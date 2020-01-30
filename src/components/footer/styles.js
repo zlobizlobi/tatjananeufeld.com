@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { media } from '../../styles'
+import { media } from '@styles'
 import { NavLink as NavLinkComponent } from '../navLink'
 import { TiSocialFacebook, TiSocialYoutube } from 'react-icons/ti'
 

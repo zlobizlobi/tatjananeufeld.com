@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
-import { media } from '../../styles'
+import { media } from '@styles'
 
 const Image = styled(Img)`
     height: 300px;

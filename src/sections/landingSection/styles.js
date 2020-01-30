@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { media } from '../../styles'
+import { media } from '@styles'
 
 export const Image = styled(Img)`
     width: 100%;
