@@ -8,6 +8,7 @@ import {
     Youtube,
     Facebook,
     CopyRighText,
+    Container,
 } from './styles'
 import { navigate } from 'gatsby'
 import { Location } from '@reach/router'

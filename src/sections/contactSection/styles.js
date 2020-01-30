@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Heading as HeadingComponent } from '@components'
 import { FiPhoneCall } from 'react-icons/fi'
-
+import { media } from '@styles'
 export const Section = styled.section`
     display: inline-flex;
     flex-direction: column;
@@ -45,12 +45,17 @@ export const PhoneIcon = styled(FiPhoneCall)`
 `
 
 export const FormHeading = styled.h3`
-    font-size: 23px;
+    font-size: 12px;
     font-weight: normal;
     margin-top: 60px;
     padding-top: 40px;
     box-shadow: 0px -7px 18px -13px rgba(255, 255, 255, 0.75);
-    width: 350px;
+    width: 40%;
     text-align: center;
     line-height: 32px;
+    margin: 60px 30px 0 30px;
+
+    ${media.md(`
+      font-size: 23px;
+    `)}
 `
