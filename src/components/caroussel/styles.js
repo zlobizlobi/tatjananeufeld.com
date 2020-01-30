@@ -2,19 +2,19 @@ import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import { media } from '../../styles'
-// import Slider  from 'react-slick'
 
-// export const CarousselComponent = styled(Slider)`
-    
-// `
-
-const Image = styled(Img)`   
+const Image = styled(Img)`
     height: 300px;
-    
+
     ${media.sm(`
         height: 800px !important;
-        object-fit: cover !important;
-        object-position: 100% 100% !important;
+    `)}
+
+    ${media.xl(`
+        > picture > img {
+            object-fit: cover !important;
+            height: 1000px !important;
+        }
     `)}
 `
 
