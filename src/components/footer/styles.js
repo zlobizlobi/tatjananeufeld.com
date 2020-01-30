@@ -10,6 +10,7 @@ export const FooterComponent = styled.footer`
     padding: 50px;
     background-color: rgba(0,0,0,0.5);
     box-shadow: -2px -7px 18px -13px rgba(255,255,255,0.75);
+    width: 100%;
 `
 
 export const IconContainer = styled.div`
@@ -23,9 +24,9 @@ export const IconContainer = styled.div`
 `
 
 export const Facebook = styled(TiSocialFacebook)`
-    color: white;
-    font-size: 25px;
-    margin-top: 29px;
+  color: white;
+  font-size: 25px;
+  margin-top: 29px;
 `
 
 export const Youtube = styled(TiSocialYoutube)`
@@ -92,4 +93,8 @@ export const CopyRighText = styled.h6`
     margin-top: 30px;
     line-height: 20px;
     text-align: center;
+`
+
+export const Container = styled.div`
+    position: relative;
 `

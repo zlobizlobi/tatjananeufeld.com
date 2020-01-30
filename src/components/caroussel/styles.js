@@ -35,8 +35,8 @@ const arrowStyles = css`
         ${media.sm(`
             padding: 10px;
             border: 1px solid white;
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
         `)}
     }
 `
