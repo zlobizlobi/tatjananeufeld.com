@@ -8,14 +8,13 @@ import {
   NavLink,
   LanguageSwitch,
 } from "./styles"
-import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
+import { FormattedMessage } from "gatsby-plugin-intl"
 
 export const MobileNavigation = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const [isActive, setIsActive] = useState(["home"])
 
-  const { locale } = useIntl()
   const navLinks = [
     "home",
     "concerts",

@@ -16,11 +16,11 @@ const navbarAnimation = keyframes`
 `
 
 export const LanguageSwitch = styled(LanguageSwitchComponent)`
-  height: 30px;
-  align-items: center;
-  margin: 15px 0 0 0;
+    height: 30px;
+    align-items: center;
+    margin: 15px 0 0 0;
 
-  ${media.lg(`
+    ${media.lg(`
     padding-left: 15px;
     border-left: 1px solid rgba(255, 255, 255, 0.7);
     margin: 0 0 0 15px;
@@ -28,25 +28,26 @@ export const LanguageSwitch = styled(LanguageSwitchComponent)`
 `
 
 export const Nav = styled.nav`
-  width: 100%;
-  background-color: ${({ isScrolled }) =>
-    isScrolled ? "#0d0d0d" : "transparent"};
-  position: ${({ isScrolled }) => (isScrolled ? "fixed" : "absolute")};
-  display: none;
-  color: white;
-  z-index: 2;
-  transition: all 0.3s ease;
-  padding: 15px 10px;
-  line-height: 25px;
-  flex-wrap: wrap;
+    width: 100%;
+    background-color: ${({ isScrolled }) =>
+        isScrolled ? '#0d0d0d' : 'transparent'};
+    position: ${({ isScrolled }) => (isScrolled ? 'fixed' : 'absolute')};
+    display: none;
+    color: white;
+    z-index: 2;
+    transition: all 0.3s ease;
+    padding: 15px 10px;
+    line-height: 25px;
+    flex-wrap: wrap;
 
-  ${({ isScrolled }) =>
-    isScrolled &&
-    css`
-    animation: 0.3s ${navbarAnimation} ease;
-  `}
+    ${({ isScrolled }) =>
+        isScrolled &&
+        css`
+            animation: 0.3s ${navbarAnimation} ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        `}
 
-  ${media.md(`
+    ${media.md(`
       display: flex;
       align-items: center;
       justify-content: center;
@@ -54,35 +55,35 @@ export const Nav = styled.nav`
 `
 
 export const NavList = styled.ul`
-  display: flex;
-  list-style-type: none;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
 `
 
 export const NavLink = styled(NavLinkComponent)`
-  font-family: "Montserrat", serif;
-  transition: left 0.3s ease-in-out;
-  color: rgba(255, 255, 255, 0.7);
-  margin-right: 15px;
-  text-transform: uppercase;
+    font-family: 'Montserrat', serif;
+    transition: left 0.3s ease-in-out;
+    color: rgba(255, 255, 255, 0.7);
+    margin-right: 15px;
+    text-transform: uppercase;
 
-  :hover {
-    left: 10px;
-    color: rgba(255, 255, 255, 1);
-  }
+    :hover {
+        left: 10px;
+        color: rgba(255, 255, 255, 1);
+    }
 
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      color: white;
-  `}
+    ${({ isActive }) =>
+        isActive &&
+        css`
+            color: white;
+        `}
 
-  > a {
-    font-size: 12px;
-  }
+    > a {
+        font-size: 12px;
+    }
 
-  &:last-child {
-    margin: 0;
-  }
+    &:last-child {
+        margin: 0;
+    }
 `
