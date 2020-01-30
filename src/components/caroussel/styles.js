@@ -30,11 +30,11 @@ const arrowStyles = css`
         color: white;
         position: absolute;
         top: 50%;
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 35px;
         z-index: 1;
         cursor: pointer;
-
+        background-color: rgba(255, 255, 255, 0.2);
         :hover {
             color: white;
         }
@@ -51,7 +51,7 @@ const arrowStyles = css`
 const ArrowNext = styled(FiChevronRight)`
     && {
         ${arrowStyles}
-        right: 10px;
+        right: -20px;
 
         ${media.md(`
             right: -60px;
@@ -62,7 +62,7 @@ const ArrowNext = styled(FiChevronRight)`
 const ArrowPrevious = styled(FiChevronLeft)`
     && {
         ${arrowStyles}
-        left: 10px;
+        left: -20px;
 
         ${media.md(`
             left: -60px;
