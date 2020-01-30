@@ -8,9 +8,12 @@ export const Section = styled.section`
     align-items: center;
     padding: 50px 0;
     color: white;
-    min-width: 600px;
     align-self: center;
     margin-bottom: 30px;
+
+    ${media.md(`
+        min-width: 600px;
+    `)}
 `
 
 export const Heading = styled(HeadingComponent)`
@@ -27,9 +30,13 @@ export const SubContainer = styled.div`
 `
 
 export const Number = styled.h2`
-    font-size: 25px;
+    font-size: 16px;
     font-weight: normal;
     margin-bottom: 10px;
+
+    ${media.md(`
+        font-size: 25px;        
+    `)}
 `
 
 export const Email = styled.h6`
@@ -45,15 +52,14 @@ export const PhoneIcon = styled(FiPhoneCall)`
 `
 
 export const FormHeading = styled.h3`
-    font-size: 12px;
     font-weight: normal;
     margin-top: 60px;
     padding-top: 40px;
     box-shadow: 0px -7px 18px -13px rgba(255, 255, 255, 0.75);
-    width: 40%;
     text-align: center;
     line-height: 32px;
     margin: 60px 30px 0 30px;
+    font-size: 16px;
 
     ${media.md(`
       font-size: 23px;

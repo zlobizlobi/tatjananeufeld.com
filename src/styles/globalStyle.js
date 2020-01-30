@@ -1,9 +1,8 @@
-import { createGlobalStyle } from "styled-components"
-import MontserratRegular from "./fonts/Montserrat-Regular.ttf"
-import MontserratLight from "./fonts/Montserrat-Light.ttf"
-import MontserratBold from "./fonts/Montserrat-Bold.ttf"
-import MontserratSemiBold from "./fonts/Montserrat-SemiBold.ttf"
-
+import { createGlobalStyle } from 'styled-components'
+import MontserratRegular from './fonts/Montserrat-Regular.ttf'
+import MontserratLight from './fonts/Montserrat-Light.ttf'
+import MontserratBold from './fonts/Montserrat-Bold.ttf'
+import MontserratSemiBold from './fonts/Montserrat-SemiBold.ttf'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -39,8 +38,8 @@ export const GlobalStyle = createGlobalStyle`
 
     body, html {
         background-color: black;
-        height: 100%;
         font-family: 'Montserrat';
+        width: 100%;
     }
 
     button {
