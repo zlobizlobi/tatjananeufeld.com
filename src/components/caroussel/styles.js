@@ -6,14 +6,21 @@ import { media } from '../../styles'
 const Image = styled(Img)`
     height: 300px;
 
+    > picture > img {
+        object-fit: contain !important;
+    }
+
     ${media.sm(`
         height: 800px !important;
+        > picture > img {
+            object-fit: contain !important;
+        }    
     `)}
 
     ${media.xl(`
         > picture > img {
-            object-fit: cover !important;
-            height: 1000px !important;
+            object-fit: contain !important;
+            height: 1000px;
         }
     `)}
 `

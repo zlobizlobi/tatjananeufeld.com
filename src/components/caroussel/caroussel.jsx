@@ -6,9 +6,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { ArrowPrevious, ArrowNext, Image } from './styles'
 
 const settings = {
-    dots: false,
-    infinite: true,
     speed: 500,
+    infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     prevArrow: <ArrowPrevious />,
@@ -41,6 +40,8 @@ export const Caroussel = () => {
             data: { image_collection },
         },
     } = carousselQuery
+
+    console.log(image_collection)
 
     return (
         <Slider style={{ width: '100%', height: '100%' }} {...settings}>
