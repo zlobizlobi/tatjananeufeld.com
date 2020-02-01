@@ -20,16 +20,15 @@ export const ContentContainer = styled.div`
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
     transition: height 0.3s ease-out;
-    padding: 25px 15px;
+    padding: 30px 15px 0 15px;
 
     &:last-child {
         border: none;
     }
 
     ${media.md(`
-        padding: 30px;
+        padding: 30px 30px 0 30px;
     `)}
 `
 
@@ -109,6 +108,15 @@ export const Flex = styled.div`
     ${({ flexDirection }) => css`
         flex-direction: ${flexDirection};
     `}
+`
+
+export const ContainerDivider = styled.span`
+    display: inline;
+    height: 1px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    align-self: center;
+    margin-top: 30px;
 `
 
 export const Button = styled.button`

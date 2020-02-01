@@ -11,6 +11,7 @@ import {
     VenueItem,
     Poster,
     Button,
+    ContainerDivider,
     GetTicketsButton,
     TimeContainer,
     HiddenContainer,
@@ -164,6 +165,7 @@ export const Concert = ({
                     }
                 />
             </Button>
+            <ContainerDivider />
         </Container>
     )
 }
