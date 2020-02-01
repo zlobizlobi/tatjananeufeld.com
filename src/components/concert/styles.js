@@ -12,7 +12,7 @@ export const ContentContainer = styled.div`
         margin: 0;
     }
 
-    ${media.md(`
+    ${media.md(`    
     min-width: 600px;
   `)}
 `
@@ -22,11 +22,15 @@ export const Container = styled.div`
     flex-direction: column;
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
     transition: height 0.3s ease-out;
-    padding: 30px;
+    padding: 25px 15px;
 
     &:last-child {
         border: none;
     }
+
+    ${media.md(`
+        padding: 30px;
+    `)}
 `
 
 export const Name = styled.h2`
