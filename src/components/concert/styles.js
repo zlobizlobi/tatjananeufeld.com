@@ -171,17 +171,7 @@ export const VendorContainer = styled.div`
     margin-bottom: 15px;
     color: white;
     transition: color 0.3s ease;
-    z-index: 1;
-    cursor: pointer;
     text-decoration: none;
-
-    :hover {
-        color: rgba(255, 255, 255, 0.6);
-
-        > button {
-            color: rgba(255, 255, 255, 0.6);
-        }
-    }
 
     > button {
         font-size: 11px;
@@ -192,9 +182,9 @@ export const VendorContainer = styled.div`
     }
 
     ${media.md(`
-    > button {
-      font-size: 13px;  
-    }
+        > button {
+            font-size: 13px;  
+        }
   `)}
 `
 
@@ -210,6 +200,7 @@ export const GetTicketsButton = styled.button`
     color: white;
     transition: color 0.3s ease;
     background-color: transparent;
+    z-index: -1;
 `
 
 export const HiddenSubContainer = styled.div`

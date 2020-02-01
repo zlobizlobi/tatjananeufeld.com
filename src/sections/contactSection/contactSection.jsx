@@ -8,6 +8,7 @@ import {
     PhoneIcon,
     FormHeading,
 } from './styles'
+import { ContactForm as Form } from '@components'
 
 export const ContactSection = () => {
     return (
@@ -23,6 +24,7 @@ export const ContactSection = () => {
             <FormHeading>
                 Or fill out this form, I'll quickly get back to you
             </FormHeading>
+            {/* <Form /> */}
         </Section>
     )
 }

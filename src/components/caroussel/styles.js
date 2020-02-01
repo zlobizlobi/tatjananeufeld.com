@@ -40,10 +40,9 @@ const arrowStyles = css`
         }
 
         ${media.sm(`
-            padding: 10px;
-            border: 1px solid white;
             width: 40px;
             height: 40px;
+            padding: 5px;
         `)}
     }
 `
@@ -52,10 +51,6 @@ const ArrowNext = styled(FiChevronRight)`
     && {
         ${arrowStyles}
         right: -20px;
-
-        ${media.md(`
-            right: -60px;
-        `)}
     }
 `
 
@@ -63,10 +58,6 @@ const ArrowPrevious = styled(FiChevronLeft)`
     && {
         ${arrowStyles}
         left: -20px;
-
-        ${media.md(`
-            left: -60px;
-        `)}
     }
 `
 

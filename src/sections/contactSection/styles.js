@@ -53,7 +53,6 @@ export const PhoneIcon = styled(FiPhoneCall)`
 
 export const FormHeading = styled.h3`
     font-weight: normal;
-    margin-top: 60px;
     padding-top: 40px;
     box-shadow: 0px -7px 18px -13px rgba(255, 255, 255, 0.75);
     text-align: center;
@@ -63,5 +62,6 @@ export const FormHeading = styled.h3`
 
     ${media.md(`
       font-size: 23px;
+      max-width: 400px;
     `)}
 `
