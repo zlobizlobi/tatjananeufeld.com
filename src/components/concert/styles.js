@@ -35,7 +35,7 @@ export const Container = styled.div`
 export const Name = styled.h2`
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     font-size: 15px;
     cursor: pointer;
 
@@ -121,7 +121,7 @@ export const ContainerDivider = styled.span`
 
 export const Button = styled.button`
     background-color: transparent;
-    padding: 2.5px 5px;
+    padding: 7.5px;
     align-self: flex-end;
     border: 1px solid rgba(255, 255, 255, 0.4);
     color: white;
@@ -131,6 +131,7 @@ export const Button = styled.button`
     z-index: 1;
     font-size: 10px;
     margin-top: 30px;
+    letter-spacing: 1px;
 
     :hover {
         color: black;

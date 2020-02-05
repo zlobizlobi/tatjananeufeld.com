@@ -23,6 +23,10 @@ export const Field = styled(FormFieldComponent)`
     &:last-child {
         margin: 0;
     }
+
+    ::placeholder {
+        letter-spacing: 1px;
+    }
 `
 
 export const Label = styled.label`

@@ -104,7 +104,7 @@ export const Button = styled.button`
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 10px;
-    letter-spacing: 1px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
 
     & > span {
