@@ -11,10 +11,14 @@ export const Form = styled(FormComponent)`
     flex-direction: column;
     margin-top: 60px;
 `
-
 export const Field = styled(FormFieldComponent)`
-    margin: 20px 0;
-    padding: 5px 10px;
+    margin-bottom: 5px;
+    padding: 8.5px 10px;
+    background-color: transparent;
+    border: ${({ error }) =>
+        error ? '0.5px solid #cc0000' : '0.5px solid rgba(255, 255, 255, 1)'};
+    color: white;
+    min-width: 250px;
 
     &:last-child {
         margin: 0;
@@ -23,15 +27,36 @@ export const Field = styled(FormFieldComponent)`
 
 export const Label = styled.label`
     color: white;
-    font-size: 14px;
+    font-size: 12px;
+    margin-bottom: 5px;
 `
 
 export const Button = styled.button.attrs({ type: 'submit' })`
-    padding: 5px 7.5px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 9px;
+    border: 0.5px solid rgba(255, 255, 255, 1);
+    background-color: transparent;
+    color: white;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    :hover {
+        background-color: white;
+        color: black;
+    }
 `
 
-export const ErrorMessageField = styled(ErrorMessage)`
-    font-size: 12px;
-    color: red;
+export const FieldContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin: 0;
+    }
+`
+
+export const ErrorWrapper = styled.span`
+    font-size: 10px;
+    color: #cc0000;
 `

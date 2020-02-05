@@ -59,7 +59,7 @@ export const HamburgerInput = styled.input.attrs({ type: 'checkbox' })`
 
       &:checked ~ span {
         opacity: 1;
-        transform: rotate(45deg) translate(5px, -2px);
+        transform: rotate(45deg) translate(6px, -2px);
       }
 
       &:checked ~ span:nth-last-child(3) {

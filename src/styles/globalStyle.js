@@ -42,7 +42,8 @@ export const GlobalStyle = createGlobalStyle`
         width: 100%;
     }
 
-    button {
+    button, input, textarea{
         font-family: inherit;
+        font-weight: inherit;
     }
 `

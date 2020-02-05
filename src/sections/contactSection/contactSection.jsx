@@ -24,7 +24,7 @@ export const ContactSection = () => {
             <FormHeading>
                 Or fill out this form, I'll quickly get back to you
             </FormHeading>
-            {/* <Form /> */}
+            <Form />
         </Section>
     )
 }
