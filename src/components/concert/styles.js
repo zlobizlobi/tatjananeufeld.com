@@ -13,8 +13,8 @@ export const ContentContainer = styled.div`
     }
 
     ${media.md(`    
-    min-width: 600px;
-  `)}
+        min-width: 600px;
+    `)}
 `
 
 export const Container = styled.div`

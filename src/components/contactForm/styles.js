@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
-import {
-    Form as FormComponent,
-    Field as FormFieldComponent,
-    ErrorMessage,
-} from 'formik'
+import { Form as FormComponent, Field as FormFieldComponent } from 'formik'
 
 export const Form = styled(FormComponent)`
     display: flex;

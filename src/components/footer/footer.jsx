@@ -78,7 +78,15 @@ export const Footer = () => {
                             </a>
                         </IconContainer>
                         <CopyRighText>
-                            © Copyright Tatjana Neufeld 2020, Made by zlobizlobi
+                            © Copyright Tatjana Neufeld 2020, Made by{' '}
+                            <a
+                                href="https://github.com/zlobizlobi"
+                                style={{
+                                    color: 'white',
+                                }}
+                            >
+                                zlobizlobi
+                            </a>
                         </CopyRighText>
                     </FooterComponent>
                 )}
