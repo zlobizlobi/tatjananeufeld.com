@@ -1,14 +1,7 @@
-import React from 'react'
-import { Formik, ErrorMessage } from 'formik'
-import {
-    Form,
-    Field,
-    Button,
-    Label,
-    FieldContainer,
-    ErrorWrapper,
-} from './styles'
-import * as yup from 'yup'
+import React from 'react';
+import { Formik, ErrorMessage } from 'formik';
+import { Form, Field, Button, FieldContainer, ErrorWrapper } from './styles';
+import * as yup from 'yup';
 
 export const validationSchema = yup.object({
     name: yup.string().required("What's your name?"),
@@ -17,7 +10,7 @@ export const validationSchema = yup.object({
         .required('Your e-mail is required')
         .email('Try this:  yourname@example.com'),
     message: yup.string().max(350, "That's a bit too long, max 350 words"),
-})
+});
 
 const handleSubmit = (values, { resetForm }) => {
     return fetch('https://api.formik.com/submit/tatjana-neufeld/contact-form', {
@@ -28,13 +21,13 @@ const handleSubmit = (values, { resetForm }) => {
         body: JSON.stringify(values),
     })
         .then(() => {
-            resetForm({})
+            resetForm({});
         })
         .catch(err => {
-            alert('Error, please try again later')
-            console.log(err)
-        })
-}
+            alert('Error, please try again later');
+            console.log(err);
+        });
+};
 
 export const ContactForm = () => (
     <Formik
@@ -47,7 +40,7 @@ export const ContactForm = () => (
         onSubmit={handleSubmit}
     >
         {({ isSubmitting, errors, touched }) => {
-            console.log(touched)
+            console.log(touched);
             return (
                 <Form>
                     <FieldContainer>
@@ -88,7 +81,7 @@ export const ContactForm = () => (
                         Send
                     </Button>
                 </Form>
-            )
+            );
         }}
     </Formik>
-)
+);
