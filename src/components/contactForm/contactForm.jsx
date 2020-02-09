@@ -39,49 +39,46 @@ export const ContactForm = () => (
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
     >
-        {({ isSubmitting, errors, touched }) => {
-            console.log(touched);
-            return (
-                <Form>
-                    <FieldContainer>
-                        <Field
-                            name="name"
-                            type="text"
-                            error={touched.name && errors.name}
-                            placeholder="Full name"
-                        />
-                        <ErrorWrapper>
-                            <ErrorMessage name="name" />
-                        </ErrorWrapper>
-                    </FieldContainer>
-                    <FieldContainer>
-                        <Field
-                            name="email"
-                            type="email"
-                            error={touched.email && errors.email}
-                            placeholder="Email address"
-                        />
-                        <ErrorWrapper>
-                            <ErrorMessage name="email" />
-                        </ErrorWrapper>
-                    </FieldContainer>
-                    <FieldContainer>
-                        <Field
-                            name="message"
-                            component="textarea"
-                            error={touched.message && errors.message}
-                            placeholder="Write a message here..."
-                            style={{ minHeight: '150px', resize: 'none' }}
-                        />
-                        <ErrorWrapper>
-                            <ErrorMessage name="message" />
-                        </ErrorWrapper>
-                    </FieldContainer>
-                    <Button type="submit" disabled={isSubmitting}>
-                        Send
-                    </Button>
-                </Form>
-            );
-        }}
+        {({ isSubmitting, errors, touched }) => (
+            <Form>
+                <FieldContainer>
+                    <Field
+                        name="name"
+                        type="text"
+                        error={touched.name && errors.name}
+                        placeholder="Full name"
+                    />
+                    <ErrorWrapper>
+                        <ErrorMessage name="name" />
+                    </ErrorWrapper>
+                </FieldContainer>
+                <FieldContainer>
+                    <Field
+                        name="email"
+                        type="email"
+                        error={touched.email && errors.email}
+                        placeholder="Email address"
+                    />
+                    <ErrorWrapper>
+                        <ErrorMessage name="email" />
+                    </ErrorWrapper>
+                </FieldContainer>
+                <FieldContainer>
+                    <Field
+                        name="message"
+                        component="textarea"
+                        error={touched.message && errors.message}
+                        placeholder="Write a message here..."
+                        style={{ minHeight: '150px', resize: 'none' }}
+                    />
+                    <ErrorWrapper>
+                        <ErrorMessage name="message" />
+                    </ErrorWrapper>
+                </FieldContainer>
+                <Button type="submit" disabled={isSubmitting}>
+                    Send
+                </Button>
+            </Form>
+        )}
     </Formik>
 );

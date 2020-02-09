@@ -1,8 +1,16 @@
 import React from 'react';
 import { Layout, Partnership } from '@components';
 import { Heading, Container } from './styles';
+import styled from 'styled-components';
 
 import { useStaticQuery, graphql } from 'gatsby';
+
+const PageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+`;
 
 const RepertoirPartners = () => {
     const partnershipsData = useStaticQuery(graphql`
@@ -50,12 +58,14 @@ const RepertoirPartners = () => {
 
     return (
         <Layout>
-            <Container>
-                <Heading>Partnerships</Heading>
-                {partnerships.map(p => (
-                    <Partnership {...p} />
-                ))}
-            </Container>
+            <PageContainer>
+                <Heading>Repertoir/Partnerships</Heading>
+                <Container>
+                    {partnerships.map(p => (
+                        <Partnership {...p} />
+                    ))}
+                </Container>
+            </PageContainer>
         </Layout>
     );
 };

@@ -6,15 +6,20 @@ import Img from 'gatsby-image';
 export const Section = styled(SectionComponent)`
     background-color: white;
     color: black;
+
+    padding: 150px 30px;
+
+    ${media.md(`
+        padding: 150px 0;
+    `)}
 `;
 
 export const Text = styled.p`
     font-size: 14px;
     line-height: 24.5px;
-    padding: 0 30px;
     max-width: 800px;
 
-    ${media.md(`
+    ${media.sm(`
         padding: 0;
     `)}
 `;
@@ -39,8 +44,7 @@ export const FirstImage = styled(Img)`
 `;
 
 export const SecondImage = styled(FirstImage)`
-    display: inline;
-    margin: 0;
+    margin: 30px 0;
 
     &:last-child {
         margin: 40px 0 0 0;
@@ -62,5 +66,6 @@ export const ContentContainer = styled.div`
 
     ${media.sm(`
         display: inline-block;
+        padding: 0;
     `)}
 `;

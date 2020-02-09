@@ -6,15 +6,18 @@ export const Heading = styled(HeadingComponent)`
     && {
         color: white;
         margin: 0;
-        ${media.md(`
-            margin-right: 250px;
-        `)};
     }
 `;
 
 export const Container = styled.div`
-    margin-top: 150px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding: 0 30px;
+    margin-top: 50px;
+
+    ${media.lg(`
+        flex-direction: row;
+        padding: 0 100px;
+    `)}
 `;

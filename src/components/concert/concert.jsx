@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef } from 'react';
 import {
     Program,
     Container,
@@ -20,12 +20,12 @@ import {
     HiddenSubContainer,
     DownloadLink,
     Flex,
-} from './styles'
-import { FormattedDate, FormattedTime, FormattedMessage } from 'react-intl'
-import { jsonParse, formatToPureDate } from '../../helpers'
-import { useEffect } from 'react'
-import { FiDownload } from 'react-icons/fi'
-import thumbnailImage from '../../images/thumbnail.svg'
+} from './styles';
+import { FormattedDate, FormattedTime, FormattedMessage } from 'react-intl';
+import { jsonParse, formatToPureDate } from '../../helpers';
+import { useEffect } from 'react';
+import { FiDownload } from 'react-icons/fi';
+import thumbnailImage from '../../images/thumbnail.svg';
 export const Concert = ({
     name,
     city,
@@ -37,31 +37,33 @@ export const Concert = ({
     poster: { url },
     file,
 }) => {
-    const pureDate = formatToPureDate(date)
+    const pureDate = formatToPureDate(date);
 
-    const [isExtended, setIsExtended] = useState(false)
+    const [isExtended, setIsExtended] = useState(false);
 
     const [heightsContainers, setHeightsContainer] = useState({
         hiddenContainer: 0,
         parentContainer: 0,
-    })
+    });
 
     const handleOnClick = () => {
-        setIsExtended(!isExtended)
-    }
+        setIsExtended(!isExtended);
+    };
 
-    const parsedVendors = jsonParse(vendors)
+    debugger;
+    console.log(vendors);
+    const parsedVendors = jsonParse(vendors);
 
-    const parentContainerRef = useRef()
+    const parentContainerRef = useRef();
 
-    const hiddenContainerRef = useRef()
+    const hiddenContainerRef = useRef();
 
     useEffect(() => {
         setHeightsContainer({
             hiddenContainer: hiddenContainerRef.current.clientHeight,
             parentContainer: parentContainerRef.current.clientHeight,
-        })
-    }, [hiddenContainerRef, parentContainerRef])
+        });
+    }, [hiddenContainerRef, parentContainerRef]);
 
     return (
         <Container
@@ -167,5 +169,5 @@ export const Concert = ({
             </Button>
             <ContainerDivider />
         </Container>
-    )
-}
+    );
+};

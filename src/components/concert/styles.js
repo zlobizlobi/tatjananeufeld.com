@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components'
-import { media } from '@styles'
+import styled, { css } from 'styled-components';
+import { media } from '@styles';
 
 export const ContentContainer = styled.div`
     display: flex;
@@ -15,7 +15,7 @@ export const ContentContainer = styled.div`
     ${media.md(`    
         min-width: 600px;
     `)}
-`
+`;
 
 export const Container = styled.div`
     display: flex;
@@ -30,7 +30,7 @@ export const Container = styled.div`
     ${media.md(`
         padding: 30px 30px 0 30px;
     `)}
-`
+`;
 
 export const Name = styled.h2`
     font-family: 'Montserrat', sans-serif;
@@ -40,10 +40,10 @@ export const Name = styled.h2`
     cursor: pointer;
 
     ${media.md(`
-    font-size: 22px;
-    margin-bottom: 30px;
+        font-size: 22px;
+        margin-bottom: 30px;
   `)}
-`
+`;
 
 export const DateContainer = styled.div`
     display: flex;
@@ -58,23 +58,23 @@ export const DateContainer = styled.div`
     ${media.md(`
     font-size: 13px;
   `)}
-`
+`;
 
 export const NameDateContainer = styled.div`
     display: flex;
     flex-direction: column;
-`
+`;
 export const Divider = styled.span`
     transform: rotate(90deg);
     height: 1px;
     border-top: 1px solid white;
     width: 15px;
     margin: 0 4px;
-`
+`;
 
 export const VenueContainer = styled.div`
     display: flex;
-`
+`;
 export const VenueItem = styled.span`
     margin-right: 5px;
     font-style: italic;
@@ -88,7 +88,7 @@ export const VenueItem = styled.span`
     ${media.md(`
     font-size: 11px;
   `)}
-`
+`;
 
 export const Poster = styled.img`
     margin-right: 20px;
@@ -102,13 +102,13 @@ export const Poster = styled.img`
     width: 150px;
     height: 200px;
   `)}
-`
+`;
 export const Flex = styled.div`
     display: flex;
     ${({ flexDirection }) => css`
         flex-direction: ${flexDirection};
     `}
-`
+`;
 
 export const ContainerDivider = styled.span`
     display: inline;
@@ -117,7 +117,7 @@ export const ContainerDivider = styled.span`
     width: 100%;
     align-self: center;
     margin-top: 30px;
-`
+`;
 
 export const Button = styled.button`
     background-color: transparent;
@@ -142,11 +142,11 @@ export const Button = styled.button`
   font-size: 12px;
   padding: 5px 7.5px;
 `)}
-`
+`;
 
 export const TimeContainer = styled.div`
     line-height: 25px;
-`
+`;
 
 export const HiddenContainer = styled.div`
     flex-direction: column;
@@ -156,7 +156,7 @@ export const HiddenContainer = styled.div`
     opacity: ${({ isExtended }) => (isExtended ? '1' : '0')};
     display: ${({ isExtended }) => (isExtended ? 'flex' : 'none')};
     margin: 30px 0;
-`
+`;
 
 export const HiddenHeading = styled.h4`
     color: white;
@@ -176,7 +176,7 @@ export const HiddenHeading = styled.h4`
     ${media.md(`
     font-size: 16px;
   `)}
-`
+`;
 
 export const VendorContainer = styled.div`
     display: flex;
@@ -199,11 +199,11 @@ export const VendorContainer = styled.div`
             font-size: 13px;  
         }
   `)}
-`
+`;
 
 export const Program = styled.span`
     white-space: pre-wrap;
-`
+`;
 
 export const GetTicketsButton = styled.button`
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.8);
@@ -214,7 +214,7 @@ export const GetTicketsButton = styled.button`
     transition: color 0.3s ease;
     background-color: transparent;
     z-index: -1;
-`
+`;
 
 export const HiddenSubContainer = styled.div`
     font-size: 11px;
@@ -228,7 +228,7 @@ export const HiddenSubContainer = styled.div`
     ${media.md(`
     font-size: 13px;
   `)}
-`
+`;
 
 export const DownloadLink = styled.a`
     display: inline-flex;
@@ -247,4 +247,4 @@ export const DownloadLink = styled.a`
     ${media.md(`
     font-size: 13px;
   `)}
-`
+`;

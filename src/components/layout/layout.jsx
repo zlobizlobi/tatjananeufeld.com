@@ -24,7 +24,7 @@ export const Layout = ({ children }) => {
             <main style={{ display: 'flex', flexDirection: 'column' }}>
                 {children}
             </main>
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 };
