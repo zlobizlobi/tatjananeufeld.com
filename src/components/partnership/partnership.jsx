@@ -40,7 +40,7 @@ export const Partnership = ({ primary: partnerShip, items: partners }) => {
                     </>
                 ) : (
                         <>
-                            <span style={{ display: 'inline', color: 'white', fontSize: '16px', alignSelf: 'center', marginTop: '50px' }}>See more</span>
+                            <span style={{ display: 'inline', color: 'white', fontSize: '14px', alignSelf: 'center', marginTop: '50px' }}>See more</span>
                             <ArrowDown onClick={() => setIsOpen(!isOpen)} />
                         </>
                     )}

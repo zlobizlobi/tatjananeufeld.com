@@ -22,14 +22,12 @@ export const Layout = ({ children }) => {
     return (
         <AppContainer>
             <GlobalStyle />
-            {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
             <MobileNavigation />
-            {/* <DesktopMenu /> */}
             <DesktopNavigation />
             <Main>
                 {children}
             </Main>
-            {/* <Footer /> */}
+            <Footer />
         </AppContainer>
     );
 };

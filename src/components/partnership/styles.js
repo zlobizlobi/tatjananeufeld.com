@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components';
 import { media } from '@styles';
 import Img from 'gatsby-image';
 import {
-    IoIosArrowDropupCircle,
-    IoIosArrowDropdownCircle,
     IoIosArrowDown,
     IoIosArrowUp,
 } from 'react-icons/io';
@@ -46,7 +44,8 @@ export const Image = styled(Img)`
     }
 
     ${media.lg(`
-        margin-right: 20px;
+        margin-right: 30px;
+        
         > picture > img {
             object-fit: cover !important;
             object-position: center center !important;
@@ -80,10 +79,10 @@ export const PartnershipName = styled.h2`
     margin-bottom: 10px;
     padding-bottom: 5px;
     border-bottom: 1px solid white;
-
+    align-self: flex-start;
     ${media.md(`
         font-size: 22px;
-        margin-bottom: 25px;
+        margin-bottom: 10px;
     `)}
 `;
 
