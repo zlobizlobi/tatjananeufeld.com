@@ -24,7 +24,7 @@ export const Text = styled.p`
     font-size: 14px;
     line-height: 24.5px;
     max-width: 600px;
-    color: white;
+    color: rgba(255,255,255,0.5);
 
     ${media.sm(`
         margin: 0;
@@ -46,7 +46,7 @@ export const Name = styled.h3`
     font-weight: bolder;
     color: white;
     margin-bottom: 20px;
-    
+
     ${media.md(`
         margin: 0;
     `)}

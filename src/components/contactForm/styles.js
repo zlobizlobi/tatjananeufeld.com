@@ -12,7 +12,7 @@ export const Field = styled(FormFieldComponent)`
     padding: 8.5px 10px;
     background-color: transparent;
     border: ${({ error }) =>
-        error ? '0.5px solid #cc0000' : '0.5px solid rgba(255, 255, 255, 1)'};
+        error ? '2px solid #cc0000' : '1px solid rgba(255, 255, 255, 0.2)'};
     color: white;
     min-width: 250px;
 
@@ -33,7 +33,7 @@ export const Label = styled.label`
 
 export const Button = styled.button.attrs({ type: 'submit' })`
     padding: 9px;
-    border: 0.5px solid rgba(255, 255, 255, 1);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
     background-color: transparent;
     color: white;
     transition: all 0.2s ease;

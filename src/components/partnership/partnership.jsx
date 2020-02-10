@@ -34,10 +34,16 @@ export const Partnership = ({ primary: partnerShip, items: partners }) => {
                     </ColumnContainer>
                 </FlexContainer>
                 {isOpen ? (
-                    <ArrowUp onClick={() => setIsOpen(!isOpen)} />
+                    <>
+                        <ArrowUp onClick={() => setIsOpen(!isOpen)} style={{ marginTop: '50px' }} />
+                        <span style={{ display: 'block', color: 'white', fontSize: '16px', alignSelf: 'center' }}>See Less</span>
+                    </>
                 ) : (
-                    <ArrowDown onClick={() => setIsOpen(!isOpen)} />
-                )}
+                        <>
+                            <span style={{ display: 'inline', color: 'white', fontSize: '16px', alignSelf: 'center', marginTop: '50px' }}>See more</span>
+                            <ArrowDown onClick={() => setIsOpen(!isOpen)} />
+                        </>
+                    )}
             </ColumnContainer>
             <PartnerContainer isShown={isOpen}>
                 {partners.map(p => (

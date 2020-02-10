@@ -4,12 +4,14 @@ import Img from 'gatsby-image';
 import {
     IoIosArrowDropupCircle,
     IoIosArrowDropdownCircle,
+    IoIosArrowDown,
+    IoIosArrowUp,
 } from 'react-icons/io';
 
 export const Container = styled.div`
     display: flex;
-    padding: 35px;
-    border: 1px solid white;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.2);
     flex-direction: column;
     margin: 0 0 30px 0;
 
@@ -61,7 +63,7 @@ export const Text = styled.p`
     font-size: 14px;
     line-height: 24.5px;
     max-width: 800px;
-    color: white;
+    color: rgba(255,255,255,0.5);
 
     ${media.sm(`
         margin: 0;
@@ -91,17 +93,23 @@ const arrowStyle = css`
     width: 35px;
     align-self: center;
     cursor: pointer;
-    margin-top: 50px;
 `;
 
-export const ArrowDown = styled(IoIosArrowDropdownCircle)`
+export const ArrowDown = styled(IoIosArrowDown)`
     ${arrowStyle}
 `;
 
-export const ArrowUp = styled(IoIosArrowDropupCircle)`
+export const ArrowUp = styled(IoIosArrowUp)`
     ${arrowStyle}
 `;
 
+export const SeeMoreButton = styled.button`
+    display: inline;
+    height: 100%;
+    flex-direction: column;    
+    background: transparent;
+    border: none;
+`
 export const PartnerContainer = styled.div`
     display: ${({ isShown }) => (isShown ? 'block' : 'none')};
     margin-top: 50px;
