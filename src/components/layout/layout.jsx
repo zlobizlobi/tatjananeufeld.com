@@ -1,30 +1,35 @@
 import React from 'react';
-import { GlobalStyle } from '@styles';
+import { GlobalStyle, media } from '@styles';
 import { MobileNavigation, DesktopNavigation } from '../navigation';
 import { Footer } from '../footer';
+import styled from 'styled-components';
 
+const AppContainer = styled.div`
+    height: 100%;
+    position: relative;
+`
+
+const Main = styled.main`
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 520px;
+
+    ${media.md(`
+        padding-bottom: 300px;
+    `)}
+`
 export const Layout = ({ children }) => {
-    // const data = useStaticQuery(graphql`
-    //   query SiteTitleQuery {
-    //     site {
-    //       siteMetadata {
-    //         title
-    //       }
-    //     }
-    //   }
-    // `)
-
     return (
-        <>
+        <AppContainer>
             <GlobalStyle />
             {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
             <MobileNavigation />
             {/* <DesktopMenu /> */}
             <DesktopNavigation />
-            <main style={{ display: 'flex', flexDirection: 'column' }}>
+            <Main>
                 {children}
-            </main>
-            <Footer />
-        </>
+            </Main>
+            {/* <Footer /> */}
+        </AppContainer>
     );
 };

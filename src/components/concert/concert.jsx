@@ -50,8 +50,6 @@ export const Concert = ({
         setIsExtended(!isExtended);
     };
 
-    debugger;
-    console.log(vendors);
     const parsedVendors = jsonParse(vendors);
 
     const parentContainerRef = useRef();

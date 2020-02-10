@@ -51,9 +51,6 @@ export const Footer = () => {
     };
 
     return (
-        <>
-            {/* //     <Location>
-        //         {({ location }) => ( */}
             <FooterComponent>
                 <Name>Tatjana Neufeld</Name>
                 <NavList>
@@ -87,8 +84,5 @@ export const Footer = () => {
                     </a>
                 </CopyRighText>
             </FooterComponent>
-            )}
-            {/* </Location> */}
-        </>
     );
 };

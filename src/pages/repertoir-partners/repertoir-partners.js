@@ -9,7 +9,7 @@ const PageContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 150px;
+    padding: 150px 0;
 `;
 
 const RepertoirPartners = () => {
@@ -59,7 +59,7 @@ const RepertoirPartners = () => {
     return (
         <Layout>
             <PageContainer>
-                <Heading>Repertoir/Partnerships</Heading>
+                <Heading>Partnerships</Heading>
                 <Container>
                     {partnerships.map(p => (
                         <Partnership {...p} />

@@ -40,6 +40,7 @@ export const GlobalStyle = createGlobalStyle`
         background-color: black;
         font-family: 'Montserrat';
         width: 100%;
+        min-height: 100% !important;
     }
 
     button, input, textarea{

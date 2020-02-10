@@ -7,11 +7,17 @@ export const FooterComponent = styled.footer`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px;
+    justify-content: center;
+    height: 520px;
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: -2px -7px 18px -13px rgba(255, 255, 255, 0.75);
     width: 100%;
-    margin-top: 300px;
+    position: absolute;
+    bottom: 0;
+
+    ${media.md(`
+        height: 300px;
+    `)}
 `;
 
 export const IconContainer = styled.div`

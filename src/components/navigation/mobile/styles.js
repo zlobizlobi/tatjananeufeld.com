@@ -80,14 +80,14 @@ export const HamburgerInput = styled.input.attrs({ type: 'checkbox' })`
 export const Navigation = styled.ul`
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     position: absolute;
     display: none;
     left: 0;
     top: 0px;
     width: 100vw;
     height: 100vh;
-    padding: 100px 0;
+    padding: 100px 0 80px 60px;
     background: black;
     list-style-type: none;
     opacity: ${({ isOpen }) => (isOpen ? '0.85' : '0')};

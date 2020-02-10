@@ -46,7 +46,7 @@ export const Name = styled.h3`
     font-weight: bolder;
     color: white;
     margin-bottom: 20px;
-
+    
     ${media.md(`
         margin: 0;
     `)}

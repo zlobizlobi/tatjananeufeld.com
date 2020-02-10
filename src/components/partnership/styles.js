@@ -34,12 +34,21 @@ export const FlexContainer = styled.div`
     `)}
 `;
 export const Image = styled(Img)`
-    width: 200px;
+    min-width: 150px;
     height: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+
+    > picture > img {
+        object-fit: contain !important;
+        object-position: left !important;
+    }
 
     ${media.lg(`
-        margin-right: 40px;
+        margin-right: 20px;
+        > picture > img {
+            object-fit: cover !important;
+            object-position: center center !important;
+        }
     `)}
 `;
 
@@ -62,16 +71,17 @@ export const Text = styled.p`
 
 export const PartnershipName = styled.h2`
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    text-decoration: underline;
+    font-weight: normal;
     letter-spacing: 1px;
     font-size: 15px;
     color: white;
     margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
 
     ${media.md(`
         font-size: 22px;
-        margin-bottom: 10px;
+        margin-bottom: 25px;
     `)}
 `;
 
