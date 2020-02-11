@@ -1,7 +1,8 @@
 import React from 'react';
-import { Layout } from '@components';
+import { Layout, } from '@components';
 import { useStaticQuery, graphql } from 'gatsby';
-import { PortretImage, ContentWrapper, Text, LandingImage, CTAContainer } from '../styles/pageStyles/tatyana-podyomova/styles';
+
+import { PortretImage, ContentWrapper, Text, LandingImage, CTAContainer, Overlay, Arrow, CTAText } from '../styles/pageStyles/tatyana-podyomova/styles';
 
 const TatyanaPodyomova = () => {
 
@@ -60,8 +61,12 @@ const TatyanaPodyomova = () => {
       <ContentWrapper>
         <PortretImage fluid={tatyanaImageSrc} />
         <Text>{landing_text}</Text>
-        <CTAContainer>
+        <CTAContainer href="#">
           <LandingImage fluid={landingImageSrc}></LandingImage>
+          <Overlay>
+            <CTAText>See more on Tatyana Podyoma</CTAText>
+            <Arrow />
+          </Overlay>
         </CTAContainer>
       </ContentWrapper>
     </Layout>

@@ -1,6 +1,8 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Img from 'gatsby-image'
 import { media } from '@styles'
+import { IoIosArrowRoundForward } from 'react-icons/io'
+
 
 export const ContentWrapper = styled.section`
     display: flex;
@@ -35,6 +37,7 @@ export const LandingImage = styled(Img).attrs({
     width: 100%;
     height: auto;
     opacity: 0.7;
+    transition: all 0.2s ease-in-out; 
 
     ${media.md(`
         width: 600px;
@@ -55,24 +58,65 @@ export const Text = styled.p`
     `)}
 `;
 
-const Overlay = styled.div`
-    background-color: rgba(0,0,0,0.2);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+export const arrowRight = keyframes`
+    from {
+      left: 0px;
+    }
+    to {
+      right: 20px;
+    }
+`;
 
+export const Arrow = styled(IoIosArrowRoundForward)`
+    position: relative;
+    left: -5px;
+    color: rgba(255,255,255,0.8);
+    width: 35px;
+    height: 35px;
+    margin-right: 30px;
+    transition: all 0.1s ease;
+    opacity: 0;
+`
+
+export const Overlay = styled.div`
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    height: 50%;
+    transition: all 0.2s ease;
 `
 export const CTAContainer = styled.a`
-    display: flex;
-    justify-content: space-between;
+    position: relative;
     overflow: hidden;
-    transition: transform 0.2s ease; 
-    
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+
     &:hover {
         ${LandingImage} {
             transform: scale(1.1);
         }
+        ${Arrow} {
+            opacity: 1;
+            animation: ${arrowRight} 0.3s infinite alternate;
+        }
     }
+
+    ${media.md(`
+        width: 600px;
+        height: 250px;
+    `)}
 `
+
+export const CTAText = styled.span`
+    font-size: 14px;
+    color: white;
+    margin-right: 10px;
+`
+
