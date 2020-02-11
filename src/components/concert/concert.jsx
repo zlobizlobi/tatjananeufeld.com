@@ -80,12 +80,14 @@ export const Concert = ({
                             {name}
                         </Name>
                         <DateContainer>
-                            <FormattedDate
-                                value={pureDate}
-                                year="numeric"
-                                month="long"
-                                day="2-digit"
-                            />
+                            <div style={{ marginRight: '10px' }}>
+                                <FormattedDate
+                                    value={pureDate}
+                                    year="numeric"
+                                    month="long"
+                                    day="2-digit"
+                                />
+                            </div>
                             <TimeContainer>
                                 <FormattedTime value={date} />
                                 <Divider />
