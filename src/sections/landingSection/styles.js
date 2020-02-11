@@ -154,7 +154,7 @@ export const Gradient = styled.div`
     height: 100vh;
     display: none;
 
-    ${media.md(`
+    ${media.lg(`
     display: block;
   `)}
 `

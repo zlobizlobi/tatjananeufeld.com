@@ -56,28 +56,9 @@ export const DesktopNavigation = (props) => {
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
-    const handleLoad = () => {
-
-        const lastPage = localStorage.getItem('page')
-
-        console.log(lastPage, 'lala')
-        if (!lastPage) {
-            return;
-        }
-
-        setIsActive([lastPage.toLowerCase()])
-    }
-
-    // React.useEffect(() => {
-    //     window.addEventListener('load', handleLoad)
-
-    //     return () => window.removeEventListener('load', handleLoad);
-    // }, [window]);
-
     return (
         <Location>
             {({ location }) => {
-                console.log(location)
                 return (
                     <Nav isScrolled={isScrolled}>
                         <NavList>
@@ -93,7 +74,6 @@ export const DesktopNavigation = (props) => {
                                     <NavLink
                                         onClick={(e) => {
                                             if (location.pathname === `/${locale}/tatyana-podyomova/` || location.pathname === `/${locale}/partnerships/`) {
-                                                localStorage.setItem('page', e.target.textContent);
                                                 navigate('/')
                                                 return;
                                             }

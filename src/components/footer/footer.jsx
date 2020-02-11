@@ -10,7 +10,9 @@ import {
     CopyRighText,
     PageLink
 } from './styles';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
+import { Location } from '@reach/router'
+import { navigate } from 'gatsby'
 
 const navLinks = [
     'home',
@@ -24,46 +26,59 @@ const navLinks = [
 
 export const Footer = () => {
     const [isActive, setIsActive] = useState(['home']);
+
+    const { locale } = useIntl();
+
     return (
-        <FooterComponent>
-            <Name>Tatjana Neufeld</Name>
-            <NavList>
-                {navLinks.map(navLink => {
-                    if (navLink === "partnerships" || navLink === "tatyana-podyomova") {
-                        return (
-                            <PageLink to={`/${navLink}`}>
-                                <FormattedMessage id={navLink} />
-                            </PageLink>)
-                    }
-                    return (
-                        <NavLink
-                            onClick={() => setIsActive([navLink])}
-                            key={navLink}
-                            name={navLink}
+        <Location>
+            {({ location }) => (
+                <FooterComponent>
+                    <Name>Tatjana Neufeld</Name>
+                    <NavList>
+                        {navLinks.map(navLink => {
+                            if (navLink === "partnerships" || navLink === "tatyana-podyomova") {
+                                return (
+                                    <PageLink to={`/${navLink}`}>
+                                        <FormattedMessage id={navLink} />
+                                    </PageLink>)
+                            }
+                            return (
+                                <NavLink
+                                    onClick={() => {
+                                        if (location.pathname === `/${locale}/tatyana-podyomova/` || location.pathname === `/${locale}/partnerships/`) {
+                                            navigate('/')
+                                            return;
+                                        }
+                                        setIsActive([navLink])
+                                    }
+                                    } key={navLink}
+                                    name={navLink}
+                                >
+                                    <FormattedMessage id={navLink} />
+                                </NavLink>)
+                        })}
+                    </NavList>
+                    <IconContainer>
+                        <a href="https://youtube.com">
+                            <Youtube />
+                        </a>
+                        <a href="https://youtube.com">
+                            <Facebook />
+                        </a>
+                    </IconContainer>
+                    <CopyRighText>
+                        © Copyright Tatjana Neufeld 2020, Made by{' '}
+                        <a
+                            href="https://github.com/zlobizlobi"
+                            style={{
+                                color: 'white',
+                            }}
                         >
-                            <FormattedMessage id={navLink} />
-                        </NavLink>)
-                })}
-            </NavList>
-            <IconContainer>
-                <a href="https://youtube.com">
-                    <Youtube />
-                </a>
-                <a href="https://youtube.com">
-                    <Facebook />
-                </a>
-            </IconContainer>
-            <CopyRighText>
-                © Copyright Tatjana Neufeld 2020, Made by{' '}
-                <a
-                    href="https://github.com/zlobizlobi"
-                    style={{
-                        color: 'white',
-                    }}
-                >
-                    zlobizlobi
-                    </a>
-            </CopyRighText>
-        </FooterComponent>
+                            zlobizlobi
+         </a>
+                    </CopyRighText>
+                </FooterComponent >
+            )}
+        </Location>
     );
 };
