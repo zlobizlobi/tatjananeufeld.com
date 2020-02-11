@@ -68,11 +68,11 @@ export const DesktopNavigation = (props) => {
         setIsActive([lastPage.toLowerCase()])
     }
 
-    React.useEffect(() => {
-        window.addEventListener('load', handleLoad)
+    // React.useEffect(() => {
+    //     window.addEventListener('load', handleLoad)
 
-        return () => window.removeEventListener('load', handleLoad);
-    }, [window]);
+    //     return () => window.removeEventListener('load', handleLoad);
+    // }, [window]);
 
     return (
         <Location>
