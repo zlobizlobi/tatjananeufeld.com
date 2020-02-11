@@ -32,7 +32,7 @@ export const LandingSection = () => {
       }
     }
   `)
-  
+
 
   const {
     prismicMainPage: {
@@ -47,20 +47,20 @@ export const LandingSection = () => {
   } = landingPageImageSource
 
   const items = [
-  <Name>
-    <FormattedMessage id="landing_section_heading" />
-  </Name>,
-  <SubHeading>
-    <FormattedMessage id="landing_section_subheading" />
-  </SubHeading>,
-  <Scroll.Link to="concerts" smooth duration={1100}>
-    <Button aria-label="Go to the concert dates">
-      <span>
-        <FormattedMessage id="landing_section_button" />
-      </span>
-      <FiCalendar />
-    </Button>
-  </Scroll.Link>
+    <Name>
+      <FormattedMessage id="landing_section_heading" />
+    </Name>,
+    <SubHeading>
+      <FormattedMessage id="landing_section_subheading" />
+    </SubHeading>,
+    <Scroll.Link to="concerts" smooth duration={1100}>
+      <Button aria-label="Go to the concert dates">
+        <span>
+          <FormattedMessage id="landing_section_button" />
+        </span>
+        <FiCalendar />
+      </Button>
+    </Scroll.Link>
   ]
 
   const trail = useTrail(items.length, {
@@ -75,9 +75,9 @@ export const LandingSection = () => {
       <Image fluid={fluid} />
       <Gradient />
       <NameContainer>
-      {trail.map((styles, i) => (
-        <animated.div style={styles}>{items[i]}</animated.div>
-      ))}
+        {trail.map((styles, i) => (
+          <animated.div style={styles}>{items[i]}</animated.div>
+        ))}
       </NameContainer>
     </Section>
   )

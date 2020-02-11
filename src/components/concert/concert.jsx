@@ -113,28 +113,28 @@ export const Concert = ({
                                         ticketUrl = '',
                                         telephoneNumber = '',
                                     }) => (
-                                        <>
-                                            {ticketUrl ? (
-                                                <VendorContainer
-                                                    href={ticketUrl}
-                                                    as="a"
-                                                    key={vendor}
-                                                >
-                                                    <span>{vendor}</span>
-                                                    <GetTicketsButton>
-                                                        Tickets
+                                            <>
+                                                {ticketUrl ? (
+                                                    <VendorContainer
+                                                        href={ticketUrl}
+                                                        as="a"
+                                                        key={vendor}
+                                                    >
+                                                        <span>{vendor}</span>
+                                                        <GetTicketsButton>
+                                                            Tickets
                                                     </GetTicketsButton>
-                                                </VendorContainer>
-                                            ) : (
-                                                <VendorContainer key={vendor}>
-                                                    <span>{vendor}</span>
-                                                    <span>
-                                                        {telephoneNumber}
-                                                    </span>
-                                                </VendorContainer>
-                                            )}
-                                        </>
-                                    )
+                                                    </VendorContainer>
+                                                ) : (
+                                                        <VendorContainer key={vendor}>
+                                                            <span>{vendor}</span>
+                                                            <span>
+                                                                {telephoneNumber}
+                                                            </span>
+                                                        </VendorContainer>
+                                                    )}
+                                            </>
+                                        )
                                 )}
                             </HiddenSubContainer>
                         </>
@@ -144,7 +144,7 @@ export const Concert = ({
                         <HiddenSubContainer>
                             <Program>{program}</Program>
                         </HiddenSubContainer>
-                        {file && (
+                        {file.url && (
                             <DownloadLink
                                 href={file.url}
                                 target="_blank"

@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import { useStaticQuery, graphql } from 'gatsby'
 import { ArrowPrevious, ArrowNext, Image } from './styles'
 
-const settings = {
+const carousselSettings = {
     speed: 500,
     infinite: true,
     slidesToShow: 1,
@@ -44,7 +44,7 @@ export const Caroussel = () => {
     console.log(image_collection)
 
     return (
-        <Slider style={{ width: '100%', height: '100%' }} {...settings}>
+        <Slider style={{ width: '100%', height: '100%' }} {...carousselSettings}>
             {image_collection.map(
                 ({
                     image: {
@@ -53,8 +53,8 @@ export const Caroussel = () => {
                         },
                     },
                 }) => (
-                    <Image fluid={fluid} />
-                )
+                        <Image fluid={fluid} />
+                    )
             )}
         </Slider>
     )

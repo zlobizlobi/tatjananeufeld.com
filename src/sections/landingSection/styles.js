@@ -22,10 +22,9 @@ export const Image = styled(Img)`
 `
 
 export const Section = styled.section`
-    z-index: 0;
+    display: flex;
     width: 100%;
     height: 100vh;
-    display: flex;
     justify-content: flex-start;
 
     ${media.sm(`
@@ -158,4 +157,3 @@ export const Gradient = styled.div`
     display: block;
   `)}
 `
-export const ContentContainer = styled.div``
