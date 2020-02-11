@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { Heading as HeadingComponent } from '@components'
-import { FiPhoneCall } from 'react-icons/fi'
+import { IoIosPhonePortrait } from 'react-icons/io'
 import { media } from '@styles'
+
 export const Section = styled.section`
     display: inline-flex;
     flex-direction: column;
@@ -45,7 +46,7 @@ export const Email = styled.h6`
     font-size: 16px;
 `
 
-export const PhoneIcon = styled(FiPhoneCall)`
+export const PhoneIcon = styled(IoIosPhonePortrait)`
     color: white;
     width: 30px;
     height: 30px;

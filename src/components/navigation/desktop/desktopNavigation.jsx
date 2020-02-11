@@ -1,11 +1,32 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { NavLink, LanguageSwitch, Nav, NavList } from './styles';
-import { navigate } from 'gatsby';
 import { useIntl } from 'react-intl';
 import { Location } from '@reach/router';
+import styled from 'styled-components';
+import { Link } from 'gatsby'
+import { media } from '@styles';
+import { navigate } from 'gatsby'
+import { createHistory } from '@reach/router'
 
-export const DesktopNavigation = props => {
+export const PageLink = styled(Link)`
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0 0 30px 0;
+    font-size: 12px;
+    letter-spacing: 2.5px; 
+    color: rgba(255,255,255,0.7);
+    
+    ${media.md(`
+        margin: 1px 10px 0 10px;
+
+        &:last-child{
+        margin: 0;
+        }
+  `)}
+`
+
+export const DesktopNavigation = (props) => {
     const [isActive, setIsActive] = React.useState(['home']);
     const { locale } = useIntl();
 
@@ -16,7 +37,7 @@ export const DesktopNavigation = props => {
         'concerts',
         'biography',
         'gallery',
-        'repertoir-partners',
+        'partnerships',
         'tatyana-podyomova',
         'contact',
     ];
@@ -35,46 +56,61 @@ export const DesktopNavigation = props => {
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
-    const handleOnClick = async (navLink, location) => {
-        if (
-            navLink === 'repertoir-partners' ||
-            navLink === 'tatyana-podyomova'
-        ) {
-            navigate(navLink);
+    const handleLoad = () => {
+
+        const lastPage = localStorage.getItem('page')
+
+        console.log(lastPage, 'lala')
+        if (!lastPage) {
             return;
         }
 
-        if (
-            location.pathname === `/${locale}/tatyana-podyomova/` ||
-            location.pathname === `/${locale}/repertoir-partners/`
-        ) {
-            await navigate('/');
-            setIsActive([navLink]);
-            return;
-        }
+        setIsActive([lastPage.toLowerCase()])
+    }
 
-        setIsActive([navLink]);
-    };
+    React.useEffect(() => {
+        window.addEventListener('load', handleLoad)
+
+        return () => window.removeEventListener('load', handleLoad);
+    }, [window]);
 
     return (
         <Location>
-            {({ location }) => (
-                <Nav isScrolled={isScrolled}>
-                    <NavList>
-                        {navLinks.map(navLink => (
-                            <NavLink
-                                onClick={() => handleOnClick(navLink, location)}
-                                key={navLink}
-                                name={navLink}
-                                isActive={isActive.includes(navLink)}
-                            >
-                                <FormattedMessage id={navLink} />
-                            </NavLink>
-                        ))}
-                    </NavList>
-                    <LanguageSwitch />
-                </Nav>
-            )}
+            {({ location }) => {
+                console.log(location)
+                return (
+                    <Nav isScrolled={isScrolled}>
+                        <NavList>
+                            {navLinks.map(navLink => {
+                                if (navLink === "partnerships" || navLink === "tatyana-podyomova") {
+                                    return (
+                                        <PageLink to={`/${navLink}`}>
+                                            <FormattedMessage id={navLink} />
+                                        </PageLink>
+                                    )
+                                }
+                                return (
+                                    <NavLink
+                                        onClick={(e) => {
+                                            if (location.pathname === `/${locale}/tatyana-podyomova/` || location.pathname === `/${locale}/partnerships/`) {
+                                                localStorage.setItem('page', e.target.textContent);
+                                                navigate('/')
+                                                return;
+                                            }
+                                            setIsActive([navLink])
+                                        }
+                                        }
+                                        key={navLink}
+                                        name={navLink}
+                                    >
+                                        <FormattedMessage id={navLink} />
+                                    </NavLink>)
+                            })}
+                        </NavList>
+                        <LanguageSwitch />
+                    </Nav>
+                )
+            }}
         </Location>
     );
 };

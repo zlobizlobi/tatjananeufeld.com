@@ -34,14 +34,14 @@ export const MobileNavigation = () => {
         'concerts',
         'biography',
         'gallery',
-        'repertoir-partners',
+        'partnerships',
         'tatyana-podyomova',
         'contact',
     ];
 
     const handleOnClick = async (navLink, location) => {
         if (
-            navLink === 'repertoir-partners' ||
+            navLink === 'partnerships' ||
             navLink === 'tatyana-podyomova'
         ) {
             navigate(navLink);
@@ -75,8 +75,10 @@ export const MobileNavigation = () => {
                         <Navigation isOpen={isOpen}>
                             {navLinks.map(navLink => (
                                 <NavLink
-                                    onClick={() =>
+                                    onClick={() => {
+                                        setIsOpen(!isOpen)
                                         handleOnClick(navLink, location)
+                                    }
                                     }
                                     key={navLink}
                                     name={navLink}
@@ -89,7 +91,8 @@ export const MobileNavigation = () => {
                     </Hamburger>
                     <LanguageSwitch />
                 </Nav>
-            )}
-        </Location>
+            )
+            }
+        </Location >
     );
 };

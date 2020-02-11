@@ -29,7 +29,7 @@ export const Footer = () => {
             <Name>Tatjana Neufeld</Name>
             <NavList>
                 {navLinks.map(navLink => {
-                    if (navLink === "repertoir-partners" || navLink === "tatyana-podyomova") {
+                    if (navLink === "partnerships" || navLink === "tatyana-podyomova") {
                         return (
                             <PageLink to={`/${navLink}`}>
                                 <FormattedMessage id={navLink} />

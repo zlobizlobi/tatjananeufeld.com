@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, Partnership } from '@components';
-import { Heading, Container } from './styles';
+import { Heading, Container } from '../styles/pageStyles/partnerships';
+
 import styled from 'styled-components';
 
 import { useStaticQuery, graphql } from 'gatsby';
@@ -12,7 +13,7 @@ const PageContainer = styled.div`
     padding: 150px 0;
 `;
 
-const RepertoirPartners = () => {
+const Partnerships = () => {
     const partnershipsData = useStaticQuery(graphql`
         query Partnerships {
             prismicPartnerships {
@@ -70,4 +71,4 @@ const RepertoirPartners = () => {
     );
 };
 
-export default RepertoirPartners;
+export default Partnerships;

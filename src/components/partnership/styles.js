@@ -45,7 +45,7 @@ export const Image = styled(Img)`
 
     ${media.lg(`
         margin-right: 30px;
-        
+
         > picture > img {
             object-fit: cover !important;
             object-position: center center !important;
@@ -72,14 +72,15 @@ export const Text = styled.p`
 
 export const PartnershipName = styled.h2`
     font-family: 'Montserrat', sans-serif;
-    font-weight: normal;
+    font-weight: lighter;
     letter-spacing: 1px;
     font-size: 15px;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding-bottom: 5px;
-    border-bottom: 1px solid white;
-    align-self: flex-start;
+    align-self: flex-start; 
+    text-transform: uppercase;
+
     ${media.md(`
         font-size: 22px;
         margin-bottom: 10px;
