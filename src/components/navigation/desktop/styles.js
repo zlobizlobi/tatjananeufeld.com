@@ -38,7 +38,6 @@ export const Nav = styled.nav`
     transition: all 0.3s ease;
     padding: 15px 10px;
     line-height: 25px;
-    flex-wrap: wrap;
 
     ${({ isScrolled }) =>
         isScrolled &&
@@ -47,10 +46,11 @@ export const Nav = styled.nav`
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         `}
 
-    ${media.md(`
+    ${media.lg(`
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
   `)}
 `
 

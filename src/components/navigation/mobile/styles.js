@@ -12,7 +12,7 @@ export const Nav = styled.nav`
     position: absolute;
     background-color: black;
 
-    ${media.md(`
+    ${media.lg(`
         display: none;
     `)}
 `
@@ -84,7 +84,7 @@ export const Navigation = styled.ul`
     position: absolute;
     display: none;
     left: 0;
-    top: 0px;
+    top: 0;
     width: 100vw;
     height: 100vh;
     padding: 100px 0 80px 60px;

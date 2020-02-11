@@ -79,7 +79,7 @@ export const PageLink = styled(Link)`
     letter-spacing: 2.5px;
 
     ${media.md(`
-        margin: 0 10px;
+        margin: 0 15px 0 0;
 
         &:last-child{
         margin: 0;
@@ -100,12 +100,12 @@ export const NavLink = styled(NavLinkComponent)`
     }
 
     ${media.md(`
-    margin: 0 10px;
+        margin: 0 15px 0 0;
 
-    &:last-child{
-      margin: 0;
-    }
-  `)}
+        &:last-child{
+            margin: 0;
+        }
+    `)}
 `;
 
 export const CopyRighText = styled.h6`

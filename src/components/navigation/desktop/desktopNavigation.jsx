@@ -18,7 +18,7 @@ export const PageLink = styled(Link)`
     color: rgba(255,255,255,0.7);
     
     ${media.md(`
-        margin: 1px 10px 0 10px;
+        margin: 1.5px 15px 0 0;
 
         &:last-child{
         margin: 0;

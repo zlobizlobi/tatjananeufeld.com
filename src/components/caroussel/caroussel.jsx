@@ -41,8 +41,6 @@ export const Caroussel = () => {
         },
     } = carousselQuery
 
-    console.log(image_collection)
-
     return (
         <Slider style={{ width: '100%', height: '100%' }} {...carousselSettings}>
             {image_collection.map(
