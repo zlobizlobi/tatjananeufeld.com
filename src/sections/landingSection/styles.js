@@ -145,15 +145,15 @@ export const Gradient = styled.div`
     background: rgb(59, 60, 62);
     background: linear-gradient(
         90deg,
-        rgba(59, 60, 62, 0.45) 39%,
+        rgba(59, 60, 62, 0.45) 10%,
         rgba(59, 60, 62, 1) 50%,
         rgba(59, 60, 62, 1) 455%
     );
     width: 100vw;
     height: 100vh;
     display: none;
-
     ${media.lg(`
     display: block;
+    
   `)}
 `
