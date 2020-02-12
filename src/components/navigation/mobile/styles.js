@@ -17,90 +17,47 @@ export const Nav = styled.nav`
     `)}
 `
 
-export const Hamburger = styled.button`
+export const HamburgerButton = styled.button`
     display: flex;
     flex-direction: column;
-    border: none;
+    justify-content: space-between;
+    height: 15px; 
+    width: 25px;
     margin-left: 30px;
-    background-color: transparent;
+    cursor: pointer;
+    z-index: 10;
+    background-color: transparent; 
+    border: none; 
 `
-
-export const Bars = styled.span`
-    width: 30px;
-    height: 2px;
-    border-top: 2px solid rgba(255, 255, 255, 1);
-    margin: 4px 0;
-    transform-origin: 4px 0px;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-        opacity 0.2s ease;
-    position: relative;
-    z-index: 6;
-
-    &:first-child {
-        transform-origin: 0% 0%;
-    }
-
-    &:nth-last-child(2) {
-        transform-origin: 0% 100%;
-    }
-`
-
-export const HamburgerInput = styled.input.attrs({ type: 'checkbox' })`
-      appearance: none;
-      width: 28px;
-      height: 28px;
-      position: absolute;
-      z-index: 7;
-      cursor pointer;
-
-      :focus {
-        outline: none;
-      }
-
-      &:checked ~ span {
-        opacity: 1;
-        transform: rotate(45deg) translate(6px, -2px);
-      }
-
-      &:checked ~ span:nth-last-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-      }
-
-      :checked ~ span:nth-last-child(2){
-        transform: rotate(-45deg) translate(4px,5px);
-        }
-
-    &:checked ~ ul {
-        transform: none;
-        display: flex;
-    }
+export const HamburgerBar = styled.div`
+    width: 25px;
+    height: 1px;
+    border-top: 2px solid white;
 `
 
 export const Navigation = styled.ul`
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: flex-start;
+    justify-content: space-between;
     position: absolute;
-    display: none;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-    padding: 100px 0 80px 60px;
-    background: black;
+    padding: 200px 0 200px 60px;
+    background-color: grey;
+    opacity: 0;
     list-style-type: none;
-    opacity: ${({ isOpen }) => (isOpen ? '0.85' : '0')};
-    font-smoothing: antialiased;
-    transform-origin: 0% 0%;
-    transition: all 0.3s ease;
-    z-index: 4;
+    z-index: -1;
 `
 
 export const NavLink = styled(NavLinkComponent)`
     color: rgba(255, 255, 255, 0.6);
     font-family: 'Montserrat';
-
+     > a {
+         font-size: 20px;
+        }
     ${({ isActive }) =>
         isActive &&
         css`

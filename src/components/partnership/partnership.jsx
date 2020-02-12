@@ -13,6 +13,7 @@ import {
 import { Partner } from './partner';
 
 export const Partnership = ({ primary: partnerShip, items: partners }) => {
+
     const [isOpen, setIsOpen] = useState(false);
 
     const {
@@ -36,11 +37,11 @@ export const Partnership = ({ primary: partnerShip, items: partners }) => {
                 {isOpen ? (
                     <>
                         <ArrowUp onClick={() => setIsOpen(!isOpen)} style={{ marginTop: '50px' }} />
-                        <span style={{ display: 'block', color: 'white', fontSize: '16px', alignSelf: 'center' }}>See Less</span>
+                        <span style={{ display: 'block', color: 'white', fontSize: '12px', alignSelf: 'center' }}>See Less</span>
                     </>
                 ) : (
                         <>
-                            <span style={{ display: 'inline', color: 'white', fontSize: '14px', alignSelf: 'center', marginTop: '50px' }}>See more</span>
+                            <span style={{ display: 'inline', color: 'white', fontSize: '12px', alignSelf: 'center', marginTop: '50px' }}>See more</span>
                             <ArrowDown onClick={() => setIsOpen(!isOpen)} />
                         </>
                     )}

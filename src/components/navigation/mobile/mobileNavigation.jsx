@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {
-    Hamburger,
-    HamburgerInput,
-    Bars,
-    Navigation,
+    HamburgerBar,
+    HamburgerButton,
+    Navigation as NavigationComponent,
     Nav,
     NavLink,
     LanguageSwitch,
@@ -11,6 +10,11 @@ import {
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import { navigate } from 'gatsby';
 import { Location } from '@reach/router';
+import { animated, useSpring, useTrail } from 'react-spring'
+
+const Hamburgerbar = animated(props => {
+    return <HamburgerBar {...props} />
+})
 
 export const MobileNavigation = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -28,6 +32,18 @@ export const MobileNavigation = () => {
             document.body.style.overflow = 'unset';
         };
     }, [isOpen]);
+
+    const animationUpperBar = useSpring({
+        transform: isOpen ? ' translateY(8.5px) rotate(135deg)' : 'translateY(0px) rotate(0deg)',
+    })
+
+    const animationLowerBar = useSpring({
+        transform: isOpen ? 'translateY(-4.5px) rotate(-135deg)' : 'translateY(0px) rotate(0deg)',
+    })
+
+    const opacityAnimation = useSpring({
+        opacity: isOpen ? '1' : '0',
+    })
 
     const navLinks = [
         'home',
@@ -60,35 +76,125 @@ export const MobileNavigation = () => {
         setIsActive([navLink]);
     };
 
+    const Navigation = animated(props => <NavigationComponent {...props} />)
+
+    const NavigationList = ({ location }) => {
+        const items = [
+            <NavLink
+                onClick={() => {
+                    setIsOpen(!isOpen)
+                    handleOnClick('home', location)
+                }
+                }
+                key={'home'}
+                name={'home'}
+                isActive={isActive.includes('home')}
+            >
+                <FormattedMessage id='home' />
+            </NavLink>,
+            <NavLink
+                onClick={() => {
+                    setIsOpen(!isOpen)
+                    handleOnClick('concerts', location)
+                }
+                }
+                key={'concerts'}
+                name={'concerts'}
+                isActive={isActive.includes('concerts')}
+            >
+                <FormattedMessage id='concerts' />
+            </NavLink>,
+            <NavLink
+                onClick={() => {
+                    setIsOpen(!isOpen)
+                    handleOnClick('biography', location)
+                }
+                }
+                key={'biography'}
+                name={'biography'}
+                isActive={isActive.includes('biography')}
+            >
+                <FormattedMessage id='biography' />
+            </NavLink>,
+            <NavLink
+                onClick={() => {
+                    setIsOpen(!isOpen)
+                    handleOnClick('gallery', location)
+                }
+                }
+                key={'gallery'}
+                name={'gallery'}
+                isActive={isActive.includes('gallery')}
+            >
+                <FormattedMessage id='gallery' />
+            </NavLink>,
+            <NavLink
+                onClick={() => {
+                    setIsOpen(!isOpen)
+                    handleOnClick('partnerships', location)
+                }
+                }
+                key={'partnerships'}
+                name={'partnerships'}
+                isActive={isActive.includes('partnerships')}
+            >
+                <FormattedMessage id='partnerships' />
+            </NavLink>,
+            <NavLink
+                onClick={() => {
+                    setIsOpen(!isOpen)
+                    handleOnClick('tatyana-podyomova', location)
+                }
+                }
+                key={'tatyana-podyomova'}
+                name={'tatyana-podyomova'}
+                isActive={isActive.includes('tatyana-podyomova')}
+            >
+                <FormattedMessage id='tatyana-podyomova' />
+            </NavLink>,
+            <NavLink
+                onClick={() => {
+                    setIsOpen(!isOpen)
+                    handleOnClick('contacts', location)
+                }
+                }
+                key={'contacts'}
+                name={'contacts'}
+                isActive={isActive.includes('contacts')}
+            >
+                <FormattedMessage id='contact' />
+            </NavLink>,
+        ]
+
+        const trail = useTrail(items.length, {
+            from: { opacity: 0, transform: 'translate3d(-30px,0px,0)' },
+            opacity: 1,
+            transform: 'translate3d(0px,0px,0)',
+            config: { mass: 1, tension: 400, friction: 30 },
+        })
+
+        return (
+            <>
+                {trail.map((styles, i) => (
+                    <animated.div style={styles}>{items[i]}</animated.div>
+                ))}
+            </>
+        )
+    }
+
     return (
         <Location>
             {({ location }) => (
                 <Nav>
-                    <Hamburger>
-                        <HamburgerInput
-                            onChange={() => setIsOpen(!isOpen)}
-                            checked={isOpen}
-                        />
-                        <Bars />
-                        <Bars />
-                        <Bars />
-                        <Navigation isOpen={isOpen}>
-                            {navLinks.map(navLink => (
-                                <NavLink
-                                    onClick={() => {
-                                        setIsOpen(!isOpen)
-                                        handleOnClick(navLink, location)
-                                    }
-                                    }
-                                    key={navLink}
-                                    name={navLink}
-                                    isActive={isActive.includes(navLink)}
-                                >
-                                    <FormattedMessage id={navLink} />
-                                </NavLink>
-                            ))}
+                    <HamburgerButton
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        <Hamburgerbar style={{ ...animationUpperBar }} />
+                        <Hamburgerbar style={{ ...animationLowerBar }} />
+                        <Navigation isOpen={isOpen} style={{ ...opacityAnimation }}>
+                            {isOpen && <NavigationList location={location} />}
                         </Navigation>
-                    </Hamburger>
+                    </HamburgerButton>
                     <LanguageSwitch />
                 </Nav>
             )

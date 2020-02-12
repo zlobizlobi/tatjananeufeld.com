@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Partnership } from '@components';
 import { Heading, Container } from '../styles/pageStyles/partnerships';
-
+import { FormattedMessage } from 'react-intl'
 import styled from 'styled-components';
 
 import { useStaticQuery, graphql } from 'gatsby';
@@ -60,7 +60,9 @@ const Partnerships = () => {
     return (
         <Layout>
             <PageContainer>
-                <Heading>Partnerships</Heading>
+                <Heading>
+                    <FormattedMessage id="partnerships_heading" />
+                </Heading>
                 <Container>
                     {partnerships.map(p => (
                         <Partnership {...p} />
