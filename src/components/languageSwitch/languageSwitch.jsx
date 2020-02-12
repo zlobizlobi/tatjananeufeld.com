@@ -5,7 +5,8 @@ import { changeLocale, useIntl } from "gatsby-plugin-intl"
 export const LanguageSwitch = ({ className }) => {
   const intl = useIntl();
 
-  const languages = ["en", "de", "ru"]
+  const languages = ["en", "de", "ru"];
+
 
   return (
     <Container className={className}>
