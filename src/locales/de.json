@@ -14,5 +14,10 @@
   "concert_button_more": "Mehr",
   "concert_button_less": "Weniger",
   "biography_heading": "Biografie",
-  "partnerships_heading": "Partnerschaften"
+  "partnerships_heading": "Partnerschaften",
+  "contact_heading": "Kontakt",
+  "contact_cta": "Oder füllen Sie dieses Formular aus, ich melde mich umgehend bei Ihnen",
+  "placeholder_message": "Schreiben Sie hier eine Nachricht...",
+  "placeholder_name": "Vollständiger Name",
+  "placeholder_email": "E-Mail-Addresse"
 }

@@ -14,5 +14,10 @@
     "concert_button_more": "More",
     "concert_button_less": "Less",
     "biography_heading": "Biography",
-    "partnerships_heading": "Partnerships"
+    "partnerships_heading": "Partnerships",
+    "contact_heading": "Contact",
+    "contact_cta": "Or fill out this form, I'll quickly get back to you",
+    "placeholder_message": "Write a message here...",
+    "placeholder_name": "Full name",
+    "placeholder_email": "Email address"
 }

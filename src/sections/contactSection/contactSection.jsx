@@ -9,11 +9,14 @@ import {
     FormHeading,
 } from './styles'
 import { ContactForm as Form } from '@components'
+import { FormattedMessage } from 'react-intl';
 
 export const ContactSection = () => {
     return (
         <Section name="contact">
-            <Heading>Contact</Heading>
+            <Heading>
+                <FormattedMessage id="contact_heading" />
+            </Heading>
             <SubContainer>
                 <Number>+31 (6) 29840232</Number>
                 <Email>info@tatjananeufeld.com</Email>
@@ -22,7 +25,7 @@ export const ContactSection = () => {
                 <PhoneIcon />
             </a>
             <FormHeading>
-                Or fill out this form, I'll quickly get back to you
+                <FormattedMessage id="contact_cta" />
             </FormHeading>
             <Form />
         </Section>

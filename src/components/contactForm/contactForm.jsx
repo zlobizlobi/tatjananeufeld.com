@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import { Form, Field, Button, FieldContainer, ErrorWrapper } from './styles';
 import * as yup from 'yup';
+import { useIntl } from 'react-intl';
 
 export const validationSchema = yup.object({
     name: yup.string().required("What's your name?"),
@@ -29,8 +30,14 @@ const handleSubmit = (values, { resetForm }) => {
         });
 };
 
-export const ContactForm = () => (
-    <Formik
+export const ContactForm = () => {
+    const intl = useIntl();
+
+    const placeholderName = intl.formatMessage({ id: 'placeholder_name' });
+    const placeholderEmail = intl.formatMessage({ id: 'placeholder_email' });
+    const placeholderMessage = intl.formatMessage({ id: 'placeholder_message' });
+
+    return (<Formik
         initialValues={{
             name: '',
             email: '',
@@ -46,7 +53,7 @@ export const ContactForm = () => (
                         name="name"
                         type="text"
                         error={touched.name && errors.name}
-                        placeholder="Full name"
+                        placeholder={placeholderName}
                     />
                     <ErrorWrapper>
                         <ErrorMessage name="name" />
@@ -57,7 +64,7 @@ export const ContactForm = () => (
                         name="email"
                         type="email"
                         error={touched.email && errors.email}
-                        placeholder="Email address"
+                        placeholder={placeholderEmail}
                     />
                     <ErrorWrapper>
                         <ErrorMessage name="email" />
@@ -68,7 +75,7 @@ export const ContactForm = () => (
                         name="message"
                         component="textarea"
                         error={touched.message && errors.message}
-                        placeholder="Write a message here..."
+                        placeholder={placeholderMessage}
                         style={{ minHeight: '150px', resize: 'none' }}
                     />
                     <ErrorWrapper>
@@ -81,4 +88,6 @@ export const ContactForm = () => (
             </Form>
         )}
     </Formik>
-);
+
+    )
+}

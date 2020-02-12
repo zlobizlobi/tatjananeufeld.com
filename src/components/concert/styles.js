@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { media } from '@styles';
+import Img from 'gatsby-image'
 
 export const ContentContainer = styled.div`
     display: flex;
@@ -90,7 +91,7 @@ export const VenueItem = styled.span`
   `)}
 `;
 
-export const Poster = styled.img`
+export const Poster = styled(Img)`
     margin-right: 20px;
     object-fit: cover;
     width: 80px;

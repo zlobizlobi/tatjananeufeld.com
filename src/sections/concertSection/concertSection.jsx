@@ -22,7 +22,13 @@ export const ConcertSection = () => {
                                 url
                             }
                             poster {
-                                url
+                            localFile {
+                                    childImageSharp {
+                                        fluid(quality: 100){
+                                        ...GatsbyImageSharpFluid
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

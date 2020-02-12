@@ -34,7 +34,13 @@ export const Concert = ({
     date,
     program,
     vendors,
-    poster: { url },
+    poster: {
+        localFile: {
+            childImageSharp: {
+                fluid
+            }
+        }
+    },
     file,
 }) => {
     const pureDate = formatToPureDate(date);
@@ -72,7 +78,7 @@ export const Concert = ({
             <ContentContainer>
                 <Flex>
                     <Poster
-                        src={url ? url : thumbnailImage}
+                        fluid={fluid ? fluid : thumbnailImage}
                         alt="Concert poster"
                     />
                     <NameDateContainer>

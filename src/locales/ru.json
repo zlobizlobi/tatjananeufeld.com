@@ -14,5 +14,10 @@
   "concert_button_more": "Больше",
   "concert_button_less": "Меньше",
   "biography_heading": "Биография",
-  "partnerships_heading": "Cотрудничествa"
+  "contact_heading": "Контакты",
+  "partnerships_heading": "Cотрудничествa",
+  "contact_cta": "Или заполните эту форму, я вам быстро перезвоню",
+  "placeholder_message": "Напишите сообщение...",
+  "placeholder_name": "Полное имя",
+  "placeholder_email": "Адрес @-почты"
 }
