@@ -22,6 +22,7 @@ export const Field = styled(FormFieldComponent)`
 
     ::placeholder {
         letter-spacing: 1px;
+        color: rgba(255,255,255,0.6);
     }
 `
 

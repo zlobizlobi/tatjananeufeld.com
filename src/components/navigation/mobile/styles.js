@@ -57,6 +57,10 @@ export const Navigation = styled.ul`
 export const NavLink = styled(NavLinkComponent)`
     color: rgba(255, 255, 255, 0.6);
     font-family: 'Montserrat';
+    position: relative;
+    left: 0;
+    transition: left 0.2s ease-in-out;
+
      > a {
          font-size: 20px;
         }
@@ -68,6 +72,7 @@ export const NavLink = styled(NavLinkComponent)`
 
     :hover {
         color: white;
+        left: 10px;
     }
 `
 
