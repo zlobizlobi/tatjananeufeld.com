@@ -72,7 +72,7 @@ export const DesktopNavigation = (props) => {
                                 }
                                 return (
                                     <NavLink
-                                        onClick={(e) => {
+                                        onClick={() => {
                                             if (location.pathname === `/${locale}/tatyana-podyomova/` || location.pathname === `/${locale}/partnerships/`) {
                                                 navigate('/')
                                                 return;
@@ -82,9 +82,8 @@ export const DesktopNavigation = (props) => {
                                         }
                                         key={navLink}
                                         name={navLink}
-                                    >
-                                        <FormattedMessage id={navLink} />
-                                    </NavLink>)
+                                    />
+                                )
                             })}
                         </NavList>
                         <LanguageSwitch />

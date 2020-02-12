@@ -29,6 +29,7 @@ export const HamburgerButton = styled.button`
     border: none; 
     position: relative;
     z-index: 3;
+    outline: none;
 `
 export const HamburgerBar = styled.div`
     width: 25px;

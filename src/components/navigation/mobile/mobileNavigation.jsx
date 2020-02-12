@@ -56,116 +56,21 @@ export const MobileNavigation = () => {
         'contact',
     ];
 
-    const handleOnClick = async (navLink, location) => {
-        if (
-            navLink === 'partnerships' ||
-            navLink === 'tatyana-podyomova'
-        ) {
-            navigate(navLink);
-            return;
-        }
-
-        if (
-            location.pathname === `/${locale}/tatyana-podyomova/` ||
-            location.pathname === `/${locale}/repertoir-partners/`
-        ) {
-            await navigate('/');
-            setIsActive([navLink]);
-            return;
-        }
-
-        setIsActive([navLink]);
-    };
-
     const Navigation = animated(props => <NavigationComponent {...props} />)
 
     const NavigationList = ({ location }) => {
-        const items = [
-            <NavLink
+        const items = navLinks.map(navLink =>
+            <NavLink key={navLink} name={navLink}
                 onClick={() => {
+                    if (location.pathname === `/${locale}/tatyana-podyomova/` || location.pathname === `/${locale}/partnerships/`) {
+                        navigate('/')
+                        return;
+                    }
                     setIsOpen(!isOpen)
-                    handleOnClick('home', location)
-                }
-                }
-                key={'home'}
-                name={'home'}
-                isActive={isActive.includes('home')}
-            >
-                <FormattedMessage id='home' />
-            </NavLink>,
-            <NavLink
-                onClick={() => {
-                    setIsOpen(!isOpen)
-                    handleOnClick('concerts', location)
-                }
-                }
-                key={'concerts'}
-                name={'concerts'}
-                isActive={isActive.includes('concerts')}
-            >
-                <FormattedMessage id='concerts' />
-            </NavLink>,
-            <NavLink
-                onClick={() => {
-                    setIsOpen(!isOpen)
-                    handleOnClick('biography', location)
-                }
-                }
-                key={'biography'}
-                name={'biography'}
-                isActive={isActive.includes('biography')}
-            >
-                <FormattedMessage id='biography' />
-            </NavLink>,
-            <NavLink
-                onClick={() => {
-                    setIsOpen(!isOpen)
-                    handleOnClick('gallery', location)
-                }
-                }
-                key={'gallery'}
-                name={'gallery'}
-                isActive={isActive.includes('gallery')}
-            >
-                <FormattedMessage id='gallery' />
-            </NavLink>,
-            <NavLink
-                onClick={() => {
-                    setIsOpen(!isOpen)
-                    handleOnClick('partnerships', location)
-                }
-                }
-                key={'partnerships'}
-                name={'partnerships'}
-                isActive={isActive.includes('partnerships')}
-            >
-                <FormattedMessage id='partnerships' />
-            </NavLink>,
-            <NavLink
-                onClick={() => {
-                    setIsOpen(!isOpen)
-                    handleOnClick('tatyana-podyomova', location)
-                }
-                }
-                key={'tatyana-podyomova'}
-                name={'tatyana-podyomova'}
-                isActive={isActive.includes('tatyana-podyomova')}
-            >
-                <FormattedMessage id='tatyana-podyomova' />
-            </NavLink>,
-            <NavLink
-                onClick={() => {
-                    setIsOpen(!isOpen)
-                    handleOnClick('contacts', location)
-                }
-                }
-                key={'contacts'}
-                name={'contacts'}
-                isActive={isActive.includes('contacts')}
-            >
-                <FormattedMessage id='contact' />
-            </NavLink>,
-        ]
+                    setIsActive([navLink])
+                }}
+                isActive={isActive.includes(NavLink)} />
+        )
 
         const trail = useTrail(items.length, {
             from: { opacity: 0, transform: 'translate3d(-30px,0px,0)' },
@@ -187,9 +92,7 @@ export const MobileNavigation = () => {
         <Location>
             {({ location }) => (
                 <Nav>
-                    <HamburgerButton
-                        onClick={() => setIsOpen(!isOpen)}
-                    >
+                    <HamburgerButton onClick={() => setIsOpen(!isOpen)}>
                         <Hamburgerbar style={{ ...animationUpperBar }} />
                         <Hamburgerbar style={{ ...animationLowerBar }} />
                         <Navigation isOpen={isOpen} style={{ ...visibilityAnimation }}>

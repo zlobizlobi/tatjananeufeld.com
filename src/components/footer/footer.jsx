@@ -53,9 +53,8 @@ export const Footer = () => {
                                     }
                                     } key={navLink}
                                     name={navLink}
-                                >
-                                    <FormattedMessage id={navLink} />
-                                </NavLink>)
+                                />
+                            )
                         })}
                     </NavList>
                     <IconContainer>
