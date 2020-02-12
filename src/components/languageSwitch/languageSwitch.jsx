@@ -3,7 +3,7 @@ import { Button, Container } from "./styles"
 import { changeLocale, useIntl } from "gatsby-plugin-intl"
 
 export const LanguageSwitch = ({ className }) => {
-  const intl = useIntl()
+  const intl = useIntl();
 
   const languages = ["en", "de", "ru"]
 

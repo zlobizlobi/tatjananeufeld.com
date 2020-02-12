@@ -45,8 +45,6 @@ module.exports = {
                 path: `${__dirname}/src/locales`,
                 // supported language
                 languages: [`en`, `de`, `ru`],
-                // language file path
-                defaultLanguage: `en`,
                 // option to redirect to `/ko` when connecting `/`
                 redirect: true,
             },
