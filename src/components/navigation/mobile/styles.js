@@ -54,7 +54,7 @@ export const Navigation = styled.ul`
 `
 
 export const NavLink = styled(NavLinkComponent)`
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255,255,255,0.8);
     font-family: 'Montserrat';
     position: relative;
     left: 0;
