@@ -7,7 +7,7 @@ import {
     NavLink,
     LanguageSwitch,
 } from './styles';
-import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
+import { useIntl } from 'gatsby-plugin-intl';
 import { navigate } from 'gatsby';
 import { Location } from '@reach/router';
 import { animated, useSpring, useTrail } from 'react-spring'
@@ -42,8 +42,8 @@ export const MobileNavigation = () => {
     })
 
     const visibilityAnimation = useSpring({
+        visibility: isOpen ? 'visible' : 'hidden',
         opacity: isOpen ? '1' : '0',
-        visibility: isOpen ? 'visible' : 'hidden'
     })
 
     const navLinks = [

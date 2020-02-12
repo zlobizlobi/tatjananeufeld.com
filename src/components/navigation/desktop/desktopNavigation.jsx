@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import { Link } from 'gatsby'
 import { media } from '@styles';
 import { navigate } from 'gatsby'
-import { createHistory } from '@reach/router'
 
 export const PageLink = styled(Link)`
     text-decoration: none;

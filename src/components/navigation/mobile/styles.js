@@ -27,7 +27,6 @@ export const HamburgerButton = styled.button`
     cursor: pointer;
     background-color: transparent; 
     border: none; 
-    position: relative;
     z-index: 3;
     outline: none;
 `
@@ -43,15 +42,15 @@ export const Navigation = styled.ul`
     align-items: flex-start;
     justify-content: space-between;
     position: absolute;
-    left: -30px;
-    top: -30px;
+    left: 0;
+    top: 0;
     width: 100vw;
     height: 100vh;
     background-color: grey;
     opacity: 0;
     list-style-type: none;
     z-index: -1;
-    padding: 180px 0 180px 65px;
+    padding: 120px 0  120px 40px;
 `
 
 export const NavLink = styled(NavLinkComponent)`
