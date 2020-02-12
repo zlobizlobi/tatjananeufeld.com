@@ -70,9 +70,9 @@ export const arrowRight = keyframes`
 export const Arrow = styled(IoIosArrowRoundForward)`
     position: relative;
     left: -5px;
-    color: rgba(255,255,255,0.8);
-    width: 35px;
-    height: 35px;
+    color: white;
+    width: 30px;
+    height: 30px;
     margin-right: 30px;
     transition: all 0.1s ease;
     opacity: 0;
@@ -118,5 +118,8 @@ export const CTAText = styled.span`
     font-size: 14px;
     color: white;
     margin-right: 10px;
+    text-transform: uppercase;
+    padding-bottom: 2.5px;
+    border-bottom: 1px solid white;
 `
 

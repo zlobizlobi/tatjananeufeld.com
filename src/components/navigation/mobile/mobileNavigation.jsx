@@ -41,8 +41,9 @@ export const MobileNavigation = () => {
         transform: isOpen ? 'translateY(-4.5px) rotate(-135deg)' : 'translateY(0px) rotate(0deg)',
     })
 
-    const opacityAnimation = useSpring({
+    const visibilityAnimation = useSpring({
         opacity: isOpen ? '1' : '0',
+        visibility: isOpen ? 'visible' : 'hidden'
     })
 
     const navLinks = [
@@ -191,7 +192,7 @@ export const MobileNavigation = () => {
                     >
                         <Hamburgerbar style={{ ...animationUpperBar }} />
                         <Hamburgerbar style={{ ...animationLowerBar }} />
-                        <Navigation isOpen={isOpen} style={{ ...opacityAnimation }}>
+                        <Navigation isOpen={isOpen} style={{ ...visibilityAnimation }}>
                             {isOpen && <NavigationList location={location} />}
                         </Navigation>
                     </HamburgerButton>

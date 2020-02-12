@@ -25,13 +25,14 @@ export const HamburgerButton = styled.button`
     width: 25px;
     margin-left: 30px;
     cursor: pointer;
-    z-index: 10;
     background-color: transparent; 
     border: none; 
+    position: relative;
+    z-index: 3;
 `
 export const HamburgerBar = styled.div`
     width: 25px;
-    height: 1px;
+    height: 2px;
     border-top: 2px solid white;
 `
 
@@ -41,15 +42,15 @@ export const Navigation = styled.ul`
     align-items: flex-start;
     justify-content: space-between;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -30px;
+    top: -30px;
     width: 100vw;
     height: 100vh;
-    padding: 200px 0 200px 60px;
     background-color: grey;
     opacity: 0;
     list-style-type: none;
     z-index: -1;
+    padding: 180px 0 180px 65px;
 `
 
 export const NavLink = styled(NavLinkComponent)`
