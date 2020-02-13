@@ -168,8 +168,8 @@ export const Concert = ({
                 <FormattedMessage
                     id={
                         isExtended
-                            ? 'concert_button_less'
-                            : 'concert_button_more'
+                            ? 'button_less'
+                            : 'button_more'
                     }
                 />
             </Button>

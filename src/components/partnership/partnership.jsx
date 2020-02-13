@@ -37,11 +37,15 @@ export const Partnership = ({ primary: partnerShip, items: partners }) => {
                 {isOpen ? (
                     <>
                         <ArrowUp onClick={() => setIsOpen(!isOpen)} style={{ marginTop: '50px' }} />
-                        <span style={{ display: 'block', color: 'white', fontSize: '12px', alignSelf: 'center' }}>See Less</span>
+                        <span style={{ display: 'block', color: 'white', fontSize: '12px', alignSelf: 'center' }}>
+                            <FormattedMessage id="button_less" />
+                        </span>
                     </>
                 ) : (
                         <>
-                            <span style={{ display: 'inline', color: 'white', fontSize: '12px', alignSelf: 'center', marginTop: '50px' }}>See more</span>
+                            <span style={{ display: 'inline', color: 'white', fontSize: '12px', alignSelf: 'center', marginTop: '50px' }}>
+                                <FormattedMessage id="button_more" />
+                            </span>
                             <ArrowDown onClick={() => setIsOpen(!isOpen)} />
                         </>
                     )}
