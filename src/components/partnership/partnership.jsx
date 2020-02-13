@@ -10,7 +10,10 @@ import {
     ArrowUp,
     PartnerContainer,
 } from './styles';
+
 import { Partner } from './partner';
+
+import { FormattedMessage } from 'react-intl';
 
 export const Partnership = ({ primary: partnerShip, items: partners }) => {
 
