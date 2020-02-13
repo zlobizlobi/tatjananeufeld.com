@@ -79,6 +79,7 @@ export const VenueContainer = styled.div`
 export const VenueItem = styled.span`
     margin-right: 5px;
     font-style: italic;
+    white-space: pre-wrap;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     color: #808080;

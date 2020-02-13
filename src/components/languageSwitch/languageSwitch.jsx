@@ -7,6 +7,7 @@ export const LanguageSwitch = ({ className }) => {
 
   const languages = ["en", "de", "ru"];
 
+  console.log(intl.locale);
 
   return (
     <Container className={className}>
