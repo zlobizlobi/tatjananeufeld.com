@@ -8,7 +8,12 @@ export const LanguageSwitch = ({ className }) => {
   const intl = useIntl();
 
   React.useEffect(() => {
+
+    console.log(intl.locale, 'locale');
+
     setLanguage(intl.locale);
+
+    console.log(pageLanguage, 'pageLanguage');
   }, [intl.locale])
 
   const languages = ["en", "de", "ru"];
