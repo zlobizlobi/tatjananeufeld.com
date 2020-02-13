@@ -14,7 +14,7 @@ export const LanguageSwitch = ({ className }) => {
     setLanguage(intl.locale);
 
     console.log(pageLanguage, 'pageLanguage');
-  }, [intl.locale])
+  }, [])
 
   const languages = ["en", "de", "ru"];
 
@@ -23,7 +23,7 @@ export const LanguageSwitch = ({ className }) => {
       {languages.map(language => (
         <Button
           key={language}
-          isActive={intl.locale === pageLanguage}
+          isActive={language === pageLanguage}
           onClick={() => changeLocale(language)}
         >
           {language}
