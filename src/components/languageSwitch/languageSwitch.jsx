@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Button, Container } from "./styles"
 import { changeLocale, useIntl } from "gatsby-plugin-intl"
 
@@ -8,12 +8,7 @@ export const LanguageSwitch = ({ className }) => {
   const intl = useIntl();
 
   React.useEffect(() => {
-
-    console.log(intl.locale, 'locale');
-
     setLanguage(intl.locale);
-
-    console.log(pageLanguage, 'pageLanguage');
   }, [])
 
   const languages = ["en", "de", "ru"];
