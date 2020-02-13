@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, } from '@components';
 import { useStaticQuery, graphql } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 
 import { PortretImage, ContentWrapper, Text, LandingImage, CTAContainer, Overlay, Arrow, CTAText } from '../styles/pageStyles/tatyana-podyomova/styles';
 
@@ -64,7 +65,9 @@ const TatyanaPodyomova = () => {
         <CTAContainer href="#">
           <LandingImage fluid={landingImageSrc}></LandingImage>
           <Overlay>
-            <CTAText>See more on Tatyana Podyoma</CTAText>
+            <CTAText>
+              <FormattedMessage id="see_more_podyomova" />
+            </CTAText>
             <Arrow />
           </Overlay>
         </CTAContainer>
