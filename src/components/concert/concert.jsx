@@ -60,6 +60,13 @@ export const Concert = ({
 
     const parentContainerRef = useRef();
 
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    // const month = monthNames[pureDate.getMonth()];
+
+    // console.log(month);
     const hiddenContainerRef = useRef();
 
     useEffect(() => {
@@ -68,6 +75,14 @@ export const Concert = ({
             parentContainer: parentContainerRef.current.clientHeight,
         });
     }, [hiddenContainerRef, parentContainerRef]);
+
+    const dateParsedFirst = new Date(date)
+
+    const dateParsedSecond = dateParsedFirst.toString().split(" ");
+
+    const dateDay = dateParsedSecond[2];
+
+    const dateMonth = dateParsedSecond[1];
 
     return (
         <Container
@@ -86,13 +101,9 @@ export const Concert = ({
                             {name}
                         </Name>
                         <DateContainer>
-                            <div style={{ marginRight: '10px' }}>
-                                <FormattedDate
-                                    value={pureDate}
-                                    year="numeric"
-                                    month="long"
-                                    day="2-digit"
-                                />
+                            <div style={{ marginRight: '5px' }}>
+                                <span style={{ marginRight: '5px' }}>{dateDay}</span>
+                                <span>{dateMonth}</span>
                             </div>
                             <TimeContainer>
                                 <FormattedTime value={date} />
