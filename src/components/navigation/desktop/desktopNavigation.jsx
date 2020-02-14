@@ -81,6 +81,7 @@ export const DesktopNavigation = (props) => {
                                         }
                                         key={navLink}
                                         name={navLink}
+                                        isActive={isActive.includes(navLink)}
                                     />
                                 )
                             })}

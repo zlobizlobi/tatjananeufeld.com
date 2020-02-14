@@ -111,8 +111,7 @@ export const MobileNavigation = () => {
                     </HamburgerButton>
                     <LanguageSwitch />
                 </Nav>
-            )
-            }
+            )}
         </Location >
     );
 };

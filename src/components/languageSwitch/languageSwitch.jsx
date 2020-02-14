@@ -9,7 +9,7 @@ export const LanguageSwitch = ({ className }) => {
 
   useEffect(() => {
     setLanguage(intl.locale);
-  })
+  }, [intl.locale])
 
   const languages = ["en", "de", "ru"];
 

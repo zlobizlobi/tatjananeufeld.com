@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     FooterComponent,
     Name,
@@ -25,8 +25,6 @@ const navLinks = [
 ];
 
 export const Footer = () => {
-    const [isActive, setIsActive] = useState(['home']);
-
     const { locale } = useIntl();
 
     return (
@@ -49,7 +47,6 @@ export const Footer = () => {
                                             navigate('/')
                                             return;
                                         }
-                                        setIsActive([navLink])
                                     }
                                     } key={navLink}
                                     name={navLink}

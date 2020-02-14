@@ -44,25 +44,25 @@ export const Navigation = styled.ul`
     position: absolute;
     left: 0;
     top: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    background-color: grey;
+    background-color: #48464D;
     opacity: 0;
     list-style-type: none;
     z-index: -1;
-    padding: 120px 0  120px 40px;
+    padding: 120px 40px 120px;
 `
 
 export const NavLink = styled(NavLinkComponent)`
     color: rgba(255,255,255,0.7);
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     position: relative;
     left: 0;
     transition: left 0.2s ease-in-out;
 
      > a {
          font-size: 20px;
-        }
+    }
 
     ${({ isActive }) =>
         isActive &&
