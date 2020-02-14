@@ -9,3 +9,4 @@ export { Footer } from './footer';
 export { NavLink } from './navLink';
 export { ContactForm } from './contactForm';
 export { Partnership } from './partnership';
+export { PageLink } from './pageLink'

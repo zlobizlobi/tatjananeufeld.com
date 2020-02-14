@@ -6,25 +6,27 @@ import {
     Nav,
     NavLink,
     LanguageSwitch,
+    PageLink
 } from './styles';
 import { useIntl, FormattedMessage } from 'gatsby-plugin-intl';
-import { navigate, Link } from 'gatsby';
+import { navigate } from 'gatsby';
 import { Location } from '@reach/router';
 import { animated, useSpring, useTrail } from 'react-spring'
-import styled from 'styled-components'
-import { media } from '@styles'
-const Hamburgerbar = animated(props => {
+
+const Navigation = animated(props => <NavigationComponent {...props} />) // To animate navigation
+
+const Bar = animated(props => { // To animate the hamburgerBars
     return <HamburgerBar {...props} />
 })
 
 export const MobileNavigation = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false); // State for whether the menu is open or not
 
     const { locale } = useIntl();
 
-    const [isActive, setIsActive] = useState(['home']);
+    const [isActive, setIsActive] = useState(['home']); // State for the active state of the navLinks
 
-    useEffect(() => {
+    useEffect(() => { // Locks the screen when menu isOpen
         if (isOpen) {
             document.body.style.overflow = 'hidden';
         }
@@ -57,34 +59,11 @@ export const MobileNavigation = () => {
         'contact',
     ];
 
-    const Navigation = animated(props => <NavigationComponent {...props} />)
 
-    const PageLink = styled(Link)`
-    text-decoration: none;
-    margin: 0 0 30px 0;
-    font-size: 20px;
-    letter-spacing: 2.5px; 
-    color: rgba(255,255,255,0.8);
-    position: relative;
-    left: 0;
-    transition: all 0.2s ease-in-out;
-
-    :hover {
-        color: white;
-        left: 10px
-    }
-
-    ${media.md(`
-        margin: 1.5px 15px 0 0;
-
-        &:last-child{
-        margin: 0;
-        }
-  `)}
-`
     const NavigationList = ({ location }) => {
+
         const items = navLinks.map(navLink => {
-            if (navLink === "partnerships" || navLink === "tatyana-podyomova") {
+            if (navLink === "partnerships" || navLink === "tatyana-podyomova") { // Some links are page links and require a gatsby Link component
                 return (
                     <PageLink to={`/${navLink}`}>
                         <FormattedMessage id={navLink} />
@@ -100,7 +79,7 @@ export const MobileNavigation = () => {
                     setIsOpen(!isOpen)
                     setIsActive([navLink])
                 }}
-                isActive={isActive.includes(NavLink)} />
+                isActive={isActive.includes(navLink)} />
         })
 
         const trail = useTrail(items.length, {
@@ -124,8 +103,8 @@ export const MobileNavigation = () => {
             {({ location }) => (
                 <Nav>
                     <HamburgerButton onClick={() => setIsOpen(!isOpen)}>
-                        <Hamburgerbar style={{ ...animationUpperBar }} />
-                        <Hamburgerbar style={{ ...animationLowerBar }} />
+                        <Bar style={{ ...animationUpperBar }} />
+                        <Bar style={{ ...animationLowerBar }} />
                         <Navigation isOpen={isOpen} style={{ ...visibilityAnimation }}>
                             {isOpen && <NavigationList location={location} />}
                         </Navigation>

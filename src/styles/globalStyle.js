@@ -38,12 +38,12 @@ export const GlobalStyle = createGlobalStyle`
 
     body, html {
         background-color: black;
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         width: 100%;
-        min-height: 100% !important;
+        min-height: 100%;
     }
 
-    button, input, textarea{
+    button, input, textarea {
         font-family: inherit;
         font-weight: inherit;
     }

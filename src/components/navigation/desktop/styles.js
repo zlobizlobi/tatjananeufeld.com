@@ -28,15 +28,12 @@ export const LanguageSwitch = styled(LanguageSwitchComponent)`
 `
 
 export const Nav = styled.nav`
-    width: 100%;
-    background-color: ${({ isScrolled }) =>
-        isScrolled ? '#0d0d0d' : 'transparent'};
-    position: ${({ isScrolled }) => (isScrolled ? 'fixed' : 'absolute')};
     display: none;
-    color: white;
+    width: 100%;
+    position: ${({ isScrolled }) => (isScrolled ? 'fixed' : 'absolute')};
     z-index: 2;
     transition: all 0.3s ease;
-    padding: 15px 10px;
+    padding: 15px 0;
     line-height: 25px;
 
     ${({ isScrolled }) =>
@@ -44,6 +41,7 @@ export const Nav = styled.nav`
         css`
             animation: 0.3s ${navbarAnimation} ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: black;
         `}
 
     ${media.lg(`
@@ -62,14 +60,13 @@ export const NavList = styled.ul`
 `
 
 export const NavLink = styled(NavLinkComponent)`
-    font-family: 'Montserrat', serif;
     transition: left 0.3s ease-in-out;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
     margin-right: 15px;
     text-transform: uppercase;
+    transition: color 0.3s ease;
 
     :hover {
-        left: 10px;
         color: rgba(255, 255, 255, 1);
     }
 
@@ -77,11 +74,7 @@ export const NavLink = styled(NavLinkComponent)`
         isActive &&
         css`
             color: white;
-        `}
-
-    > a {
-        font-size: 12px;
-    }
+    `}
 
     &:last-child {
         margin: 0;

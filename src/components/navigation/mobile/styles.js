@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 import { NavLink as NavLinkComponent } from '../../navLink'
 import { media } from '@styles'
 import { LanguageSwitch as LanguageSwitchComponent } from '../../languageSwitch'
+import { PageLink as PageLinkComponent } from '../../pageLink'
 
 export const Nav = styled.nav`
     display: flex;
@@ -10,7 +11,6 @@ export const Nav = styled.nav`
     height: 75px;
     width: 100vw;
     position: absolute;
-    background-color: black;
 
     ${media.lg(`
         display: none;
@@ -54,7 +54,7 @@ export const Navigation = styled.ul`
 `
 
 export const NavLink = styled(NavLinkComponent)`
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.7);
     font-family: 'Montserrat';
     position: relative;
     left: 0;
@@ -63,6 +63,7 @@ export const NavLink = styled(NavLinkComponent)`
      > a {
          font-size: 20px;
         }
+
     ${({ isActive }) =>
         isActive &&
         css`
@@ -77,4 +78,16 @@ export const NavLink = styled(NavLinkComponent)`
 
 export const LanguageSwitch = styled(LanguageSwitchComponent)`
     margin: 0 30px 0 0;
+`
+export const PageLink = styled(PageLinkComponent)`
+    font-size: 20px;
+    color: rgba(255,255,255,0.7);
+    position: relative;
+    left: 0;
+    transition: left 0.2s ease-in-out;
+
+    :hover {
+        color: white;
+        left: 10px;
+    }
 `

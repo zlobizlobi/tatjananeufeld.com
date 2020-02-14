@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { media } from '@styles';
 import { NavLink as NavLinkComponent } from '../navLink';
 import { TiSocialFacebook, TiSocialYoutube } from 'react-icons/ti';
-import { Link } from 'gatsby'
+import { PageLink as PageLinkComponent } from '../pageLink'
 
 export const FooterComponent = styled.footer`
     display: flex;
@@ -70,21 +70,10 @@ export const NavList = styled.ul`
   `)}
 `;
 
-export const PageLink = styled(Link)`
-    text-decoration: none;
+export const PageLink = styled(PageLinkComponent)`
+    font-size: 12px;
     color: white;
     text-transform: uppercase;
-    margin: 0 0 30px 0;
-    font-size: 12px;
-    letter-spacing: 2.5px;
-
-    ${media.md(`
-        margin: 0 15px 0 0;
-
-        &:last-child{
-        margin: 0;
-        }
-  `)}
 `
 export const NavLink = styled(NavLinkComponent)`
     margin: 0 0 30px 0;
