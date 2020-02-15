@@ -35,59 +35,61 @@ export const ContactForm = () => {
 
     const placeholderName = intl.formatMessage({ id: 'placeholder_name' });
     const placeholderEmail = intl.formatMessage({ id: 'placeholder_email' });
-    const placeholderMessage = intl.formatMessage({ id: 'placeholder_message' });
+    const placeholderMessage = intl.formatMessage({
+        id: 'placeholder_message',
+    });
 
-    return (<Formik
-        initialValues={{
-            name: '',
-            email: '',
-            message: '',
-        }}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-    >
-        {({ isSubmitting, errors, touched }) => (
-            <Form>
-                <FieldContainer>
-                    <Field
-                        name="name"
-                        type="text"
-                        error={touched.name && errors.name}
-                        placeholder={placeholderName}
-                    />
-                    <ErrorWrapper>
-                        <ErrorMessage name="name" />
-                    </ErrorWrapper>
-                </FieldContainer>
-                <FieldContainer>
-                    <Field
-                        name="email"
-                        type="email"
-                        error={touched.email && errors.email}
-                        placeholder={placeholderEmail}
-                    />
-                    <ErrorWrapper>
-                        <ErrorMessage name="email" />
-                    </ErrorWrapper>
-                </FieldContainer>
-                <FieldContainer>
-                    <Field
-                        name="message"
-                        component="textarea"
-                        error={touched.message && errors.message}
-                        placeholder={placeholderMessage}
-                        style={{ minHeight: '150px', resize: 'none' }}
-                    />
-                    <ErrorWrapper>
-                        <ErrorMessage name="message" />
-                    </ErrorWrapper>
-                </FieldContainer>
-                <Button type="submit" disabled={isSubmitting}>
-                    Send
-                </Button>
-            </Form>
-        )}
-    </Formik>
-
-    )
-}
+    return (
+        <Formik
+            initialValues={{
+                name: '',
+                email: '',
+                message: '',
+            }}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit}
+        >
+            {({ isSubmitting, errors, touched }) => (
+                <Form>
+                    <FieldContainer>
+                        <Field
+                            name="name"
+                            type="text"
+                            error={touched.name && errors.name}
+                            placeholder={placeholderName}
+                        />
+                        <ErrorWrapper>
+                            <ErrorMessage name="name" />
+                        </ErrorWrapper>
+                    </FieldContainer>
+                    <FieldContainer>
+                        <Field
+                            name="email"
+                            type="email"
+                            error={touched.email && errors.email}
+                            placeholder={placeholderEmail}
+                        />
+                        <ErrorWrapper>
+                            <ErrorMessage name="email" />
+                        </ErrorWrapper>
+                    </FieldContainer>
+                    <FieldContainer>
+                        <Field
+                            name="message"
+                            component="textarea"
+                            error={touched.message && errors.message}
+                            placeholder={placeholderMessage}
+                            style={{ minHeight: '150px', resize: 'none' }}
+                        />
+                        <ErrorWrapper>
+                            <ErrorMessage name="message" />
+                        </ErrorWrapper>
+                    </FieldContainer>
+                    <Button type="submit" disabled={isSubmitting}>
+                        Send
+                    </Button>
+                </Form>
+            )}
+        </Formik>
+    );
+};

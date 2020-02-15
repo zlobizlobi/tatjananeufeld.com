@@ -60,13 +60,6 @@ export const Concert = ({
 
     const parentContainerRef = useRef();
 
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
-
-    // const month = monthNames[pureDate.getMonth()];
-
-    // console.log(month);
     const hiddenContainerRef = useRef();
 
     useEffect(() => {

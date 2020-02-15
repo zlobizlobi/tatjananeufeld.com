@@ -24,7 +24,7 @@ const TatyanaPodyomova = () => {
             tatyana_image {
               localFile {
                 childImageSharp {
-                    fluid(quality: 100, traceSVG: {background: "black"}){
+                    fluid(quality: 100, traceSVG: { background: "black" }){
                         ...GatsbyImageSharpFluid_tracedSVG
                     }
                 }
@@ -34,8 +34,6 @@ const TatyanaPodyomova = () => {
         }
       }
     `)
-
-  console.log(data);
 
   const { prismicTatyanaPodyomova: {
     data: {
