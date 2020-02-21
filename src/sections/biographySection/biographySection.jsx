@@ -70,9 +70,9 @@ export const BiographySection = () => {
                 <FormattedMessage id="biography_heading" />
             </Heading>
             <ContentContainer>
-                <FirstImage fluid={firstImageFluid} />
+                <FirstImage loading="lazy" fluid={firstImageFluid} />
                 <Text>{firstParagraphText}</Text>
-                <SecondImage fluid={secondImageFluid} />
+                <SecondImage loading="lazy" fluid={secondImageFluid} />
                 <Text>{secondParagraphText}</Text>
             </ContentContainer>
         </Section>

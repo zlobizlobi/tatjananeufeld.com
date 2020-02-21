@@ -1,10 +1,11 @@
 import React from 'react';
 import { Layout, Partnership } from '@components';
 import { Heading, Container } from '../styles/pageStyles/partnerships';
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
 import { useStaticQuery, graphql } from 'gatsby';
+import { SEO } from '../components/seo/seo';
 
 const PageContainer = styled.div`
     display: flex;
@@ -59,6 +60,12 @@ const Partnerships = () => {
 
     return (
         <Layout>
+            <SEO
+                title="Partnerships | Tatjana Neufeld"
+                meta=""
+                description="Next to solo performance T.Neufeld also stars in partnerships with other concert performers.
+             Frequent concerts with different concert performers. See for partnerships "
+            />
             <PageContainer>
                 <Heading>
                     <FormattedMessage id="partnerships_heading" />

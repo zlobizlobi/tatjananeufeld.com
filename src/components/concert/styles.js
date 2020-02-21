@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { media } from '@styles';
-import Img from 'gatsby-image'
+import Img from 'gatsby-image';
 
 export const ContentContainer = styled.div`
     display: flex;
@@ -113,7 +113,6 @@ export const Flex = styled.div`
 `;
 
 export const ContainerDivider = styled.span`
-    display: inline;
     height: 1px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     width: 100%;

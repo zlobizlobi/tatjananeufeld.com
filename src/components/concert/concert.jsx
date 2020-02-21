@@ -21,11 +21,12 @@ import {
     DownloadLink,
     Flex,
 } from './styles';
-import { FormattedDate, FormattedTime, FormattedMessage } from 'react-intl';
-import { jsonParse, formatToPureDate } from '../../helpers';
+import { FormattedTime, FormattedMessage } from 'react-intl';
+import { jsonParse } from '../../helpers';
 import { useEffect } from 'react';
 import { FiDownload } from 'react-icons/fi';
 import thumbnailImage from '../../images/thumbnail.svg';
+
 export const Concert = ({
     name,
     city,
@@ -36,15 +37,11 @@ export const Concert = ({
     vendors,
     poster: {
         localFile: {
-            childImageSharp: {
-                fluid
-            }
-        }
+            childImageSharp: { fluid },
+        },
     },
     file,
 }) => {
-    const pureDate = formatToPureDate(date);
-
     const [isExtended, setIsExtended] = useState(false);
 
     const [heightsContainers, setHeightsContainer] = useState({
@@ -69,9 +66,9 @@ export const Concert = ({
         });
     }, [hiddenContainerRef, parentContainerRef]);
 
-    const dateParsedFirst = new Date(date)
+    const dateParsedFirst = new Date(date);
 
-    const dateParsedSecond = dateParsedFirst.toString().split(" ");
+    const dateParsedSecond = dateParsedFirst.toString().split(' ');
 
     const dateDay = dateParsedSecond[2];
 
@@ -86,6 +83,7 @@ export const Concert = ({
             <ContentContainer>
                 <Flex>
                     <Poster
+                        loading="lazy"
                         fluid={fluid ? fluid : thumbnailImage}
                         alt="Concert poster"
                     />
@@ -95,7 +93,9 @@ export const Concert = ({
                         </Name>
                         <DateContainer>
                             <div style={{ marginRight: '5px' }}>
-                                <span style={{ marginRight: '5px' }}>{dateDay}</span>
+                                <span style={{ marginRight: '5px' }}>
+                                    {dateDay}
+                                </span>
                                 <span>{dateMonth}</span>
                             </div>
                             <TimeContainer>
@@ -125,28 +125,28 @@ export const Concert = ({
                                         ticketUrl = '',
                                         telephoneNumber = '',
                                     }) => (
-                                            <>
-                                                {ticketUrl ? (
-                                                    <VendorContainer
-                                                        href={ticketUrl}
-                                                        as="a"
-                                                        key={vendor}
-                                                    >
-                                                        <span>{vendor}</span>
-                                                        <GetTicketsButton>
-                                                            Tickets
+                                        <>
+                                            {ticketUrl ? (
+                                                <VendorContainer
+                                                    href={ticketUrl}
+                                                    as="a"
+                                                    key={vendor}
+                                                >
+                                                    <span>{vendor}</span>
+                                                    <GetTicketsButton>
+                                                        Tickets
                                                     </GetTicketsButton>
-                                                    </VendorContainer>
-                                                ) : (
-                                                        <VendorContainer key={vendor}>
-                                                            <span>{vendor}</span>
-                                                            <span>
-                                                                {telephoneNumber}
-                                                            </span>
-                                                        </VendorContainer>
-                                                    )}
-                                            </>
-                                        )
+                                                </VendorContainer>
+                                            ) : (
+                                                <VendorContainer key={vendor}>
+                                                    <span>{vendor}</span>
+                                                    <span>
+                                                        {telephoneNumber}
+                                                    </span>
+                                                </VendorContainer>
+                                            )}
+                                        </>
+                                    )
                                 )}
                             </HiddenSubContainer>
                         </>
@@ -170,11 +170,7 @@ export const Concert = ({
             </ContentContainer>
             <Button onClick={() => handleOnClick()}>
                 <FormattedMessage
-                    id={
-                        isExtended
-                            ? 'button_less'
-                            : 'button_more'
-                    }
+                    id={isExtended ? 'button_less' : 'button_more'}
                 />
             </Button>
             <ContainerDivider />
