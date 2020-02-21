@@ -161,6 +161,7 @@ export const Concert = ({
                                 href={file.url}
                                 target="_blank"
                                 download
+                                rel="noopener"
                             >
                                 <FiDownload /> Download full program
                             </DownloadLink>
