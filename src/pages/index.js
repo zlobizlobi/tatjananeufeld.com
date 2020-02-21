@@ -13,15 +13,6 @@ import {
 
 const IndexPage = () => {
     const { locale } = useIntl();
-
-    React.useEffect(() => {
-        const pageHistoryReference = localStorage
-            .getItem('clicked')
-            .toLowerCase();
-        const scroll = Scroll.animateScroll;
-        const reference = pageHistoryReference.toLowerCase();
-    });
-
     return (
         <Layout>
             <SEO
