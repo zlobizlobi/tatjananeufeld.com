@@ -61,7 +61,7 @@ const Partnerships = () => {
     return (
         <Layout>
             <SEO
-                title="Partnerships | Tatjana Neufeld"
+                title="Partnerships"
                 meta=""
                 description="Next to solo performance T.Neufeld also stars in partnerships with other concert performers.
              Frequent concerts with different concert performers. See for partnerships "
