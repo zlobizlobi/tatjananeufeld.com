@@ -17,8 +17,6 @@ export const SEO = ({ description, lang, meta, title }) => {
         `
     );
 
-    const metaDescription = description || site.siteMetadata.description;
-
     return (
         <Helmet
             htmlAttributes={{
@@ -28,8 +26,12 @@ export const SEO = ({ description, lang, meta, title }) => {
             titleTemplate={`%s | ${site.siteMetadata.title}`}
             meta={[
                 {
+                    name: `keywords`,
+                    content: 'Tatjana Neufeld, Neufeld, Piano concerts',
+                },
+                {
                     name: `description`,
-                    content: metaDescription,
+                    content: description,
                 },
                 {
                     property: `og:title`,
@@ -37,7 +39,7 @@ export const SEO = ({ description, lang, meta, title }) => {
                 },
                 {
                     property: `og:description`,
-                    content: metaDescription,
+                    content: description,
                 },
                 {
                     property: `og:type`,

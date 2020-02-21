@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout, SEO } from '@components';
 import { useIntl } from 'react-intl';
+import * as Scroll from 'react-scroll';
 
 import {
     LandingSection,
@@ -12,6 +13,15 @@ import {
 
 const IndexPage = () => {
     const { locale } = useIntl();
+
+    React.useEffect(() => {
+        const pageHistoryReference = localStorage
+            .getItem('clicked')
+            .toLowerCase();
+        const scroll = Scroll.animateScroll;
+        const reference = pageHistoryReference.toLowerCase();
+    });
+
     return (
         <Layout>
             <SEO

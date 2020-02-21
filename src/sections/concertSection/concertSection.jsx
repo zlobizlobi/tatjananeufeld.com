@@ -22,10 +22,10 @@ export const ConcertSection = () => {
                                 url
                             }
                             poster {
-                            localFile {
+                                localFile {
                                     childImageSharp {
-                                        fluid(quality: 100){
-                                        ...GatsbyImageSharpFluid
+                                        fluid(quality: 100) {
+                                            ...GatsbyImageSharpFluid
                                         }
                                     }
                                 }
