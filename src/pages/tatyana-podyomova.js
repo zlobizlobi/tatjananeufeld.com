@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from '@components';
+import { Layout, SEO } from '@components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
