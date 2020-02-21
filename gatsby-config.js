@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     siteMetadata: {
-        title: `Tatjana Neufeld`,
+        title: 'Tatjana Neufeld',
         description: ``,
         author: `@zlobizlobi`,
     },
@@ -24,18 +24,6 @@ module.exports = {
             options: {
                 repositoryName: `tatjananeufeld`,
                 accessToken: `MC5YWi1mTGhFQUFDUUFBaTdS.77-9d--_ve-_vUbvv70K77-977-977-977-9YUx5BGLvv70iB--_ve-_ve-_vVjvv73vv70oCe-_vVkHRe-_vQ`,
-            },
-        },
-        {
-            resolve: `gatsby-plugin-manifest`,
-            options: {
-                name: `gatsby-starter-default`,
-                short_name: `starter`,
-                start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
-                display: `minimal-ui`,
-                icon: `src/images/gatsby-icon.png`,
             },
         },
         {
