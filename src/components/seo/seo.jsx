@@ -53,6 +53,10 @@ export const SEO = ({
                 content={ogDescription || metaOgDescription}
             />
             <meta property="og:image" content={image} />
+            <meta
+                name="google-site-verification"
+                content="hiS3QamKVs9x2E5-rxbLPU9AOi8Ix3WgQFoV1S8-Ncw"
+            />
         </Helmet>
     );
 };
