@@ -2,50 +2,68 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-export const SEO = ({ description, lang, meta, title }) => {
+export const SEO = ({
+    description,
+    keywords,
+    title,
+    meta = [],
+    ogTitle,
+    ogDescription,
+}) => {
     const { site } = useStaticQuery(
         graphql`
             query {
                 site {
                     siteMetadata {
-                        title
-                        description
-                        author
+                        metaTitle
+                        metaDescription
+                        metaAuthor
+                        metaKeywords
+                        metaOgDescription
+                        metaOgTitle
                     }
                 }
             }
         `
     );
 
+    const {
+        siteMetadata: {
+            metaTitle,
+            metaDescription,
+            metaKeywords,
+            metaOgTitlte,
+            metaOgDescription,
+        },
+    } = site;
+
+    const seoKeywords = (keywords || metaKeywords).join(',');
+
     return (
         <Helmet
-            htmlAttributes={{
-                lang,
-            }}
-            title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            title={`Tatjana Neufeld | ${title || metaTitle}`}
             meta={[
                 {
                     name: `keywords`,
-                    content: 'Tatjana Neufeld, Neufeld, Piano concerts',
+                    content: seoKeywords,
                 },
                 {
                     name: `description`,
-                    content: description,
+                    content: description || metaDescription,
                 },
                 {
                     property: `og:title`,
-                    content: title,
+                    content: ogTitle || metaOgTitlte,
                 },
                 {
                     property: `og:description`,
-                    content: description,
+                    content: ogDescription || metaOgDescription,
                 },
                 {
                     property: `og:type`,
                     content: `website`,
                 },
-            ].concat(meta)}
+            ]}
         />
     );
 };
