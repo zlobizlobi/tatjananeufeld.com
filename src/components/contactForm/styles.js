@@ -1,12 +1,12 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import { Form as FormComponent, Field as FormFieldComponent } from 'formik'
+import { Form as FormComponent, Field as FormFieldComponent } from 'formik';
 
 export const Form = styled(FormComponent)`
     display: flex;
     flex-direction: column;
     margin-top: 60px;
-`
+`;
 export const Field = styled(FormFieldComponent)`
     margin-bottom: 5px;
     padding: 8.5px 10px;
@@ -22,15 +22,15 @@ export const Field = styled(FormFieldComponent)`
 
     ::placeholder {
         letter-spacing: 1px;
-        color: rgba(255,255,255,0.6);
+        color: rgba(255, 255, 255, 0.6);
     }
-`
+`;
 
 export const Label = styled.label`
     color: white;
     font-size: 12px;
     margin-bottom: 5px;
-`
+`;
 
 export const Button = styled.button.attrs({ type: 'submit' })`
     padding: 9px;
@@ -45,7 +45,7 @@ export const Button = styled.button.attrs({ type: 'submit' })`
         background-color: white;
         color: black;
     }
-`
+`;
 
 export const FieldContainer = styled.div`
     display: flex;
@@ -55,9 +55,9 @@ export const FieldContainer = styled.div`
     &:last-child {
         margin: 0;
     }
-`
+`;
 
 export const ErrorWrapper = styled.span`
-    font-size: 10px;
+    font-size: 11px;
     color: #cc0000;
-`
+`;

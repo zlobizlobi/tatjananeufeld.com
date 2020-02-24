@@ -1,8 +1,8 @@
-import { createGlobalStyle } from 'styled-components'
-import MontserratRegular from './fonts/Montserrat-Regular.ttf'
-import MontserratLight from './fonts/Montserrat-Light.ttf'
-import MontserratBold from './fonts/Montserrat-Bold.ttf'
-import MontserratSemiBold from './fonts/Montserrat-SemiBold.ttf'
+import { createGlobalStyle } from 'styled-components';
+import MontserratRegular from './fonts/Montserrat-Regular.ttf';
+import MontserratLight from './fonts/Montserrat-Light.ttf';
+import MontserratBold from './fonts/Montserrat-Bold.ttf';
+import MontserratSemiBold from './fonts/Montserrat-SemiBold.ttf';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -46,5 +46,6 @@ export const GlobalStyle = createGlobalStyle`
     button, input, textarea {
         font-family: inherit;
         font-weight: inherit;
+        appearance: none;
     }
-`
+`;

@@ -1,12 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import image from '../../images/gatsby-astronaut.png';
 
 export const SEO = ({
     description,
     keywords,
     title,
-    meta = [],
     ogTitle,
     ogDescription,
 }) => {
@@ -32,7 +32,7 @@ export const SEO = ({
             metaTitle,
             metaDescription,
             metaKeywords,
-            metaOgTitlte,
+            metaOgTitle,
             metaOgDescription,
         },
     } = site;
@@ -40,30 +40,19 @@ export const SEO = ({
     const seoKeywords = (keywords || metaKeywords).join(',');
 
     return (
-        <Helmet
-            title={`Tatjana Neufeld | ${title || metaTitle}`}
-            meta={[
-                {
-                    name: `keywords`,
-                    content: seoKeywords,
-                },
-                {
-                    name: `description`,
-                    content: description || metaDescription,
-                },
-                {
-                    property: `og:title`,
-                    content: ogTitle || metaOgTitlte,
-                },
-                {
-                    property: `og:description`,
-                    content: ogDescription || metaOgDescription,
-                },
-                {
-                    property: `og:type`,
-                    content: `website`,
-                },
-            ]}
-        />
+        <Helmet title={`Tatjana Neufeld | ${title || metaTitle}`}>
+            <meta property="keywords" content={seoKeywords} />
+            <meta
+                property="description"
+                content={description || metaDescription}
+            />
+            <meta property="image" content={image} />
+            <meta property="og:title" content={ogTitle || metaOgTitle} />
+            <meta
+                property="og:description"
+                content={ogDescription || metaOgDescription}
+            />
+            <meta property="og:image" content={image} />
+        </Helmet>
     );
 };

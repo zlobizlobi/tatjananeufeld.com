@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { media } from '@styles';
 import { NavLink as NavLinkComponent } from '../navLink';
 import { TiSocialFacebook, TiSocialYoutube } from 'react-icons/ti';
-import { PageLink as PageLinkComponent } from '../pageLink'
+import { PageLink as PageLinkComponent } from '../pageLink';
 
 export const FooterComponent = styled.footer`
     display: flex;
@@ -24,6 +24,8 @@ export const FooterComponent = styled.footer`
 export const IconContainer = styled.div`
     display: flex;
     align-items: center;
+    margin-top: 30px;
+    padding: 20px;
 
     > a {
         text-decoration: none;
@@ -34,14 +36,11 @@ export const IconContainer = styled.div`
 export const Facebook = styled(TiSocialFacebook)`
     color: white;
     font-size: 25px;
-    margin-top: 29px;
 `;
 
 export const Youtube = styled(TiSocialYoutube)`
     color: white;
     font-size: 25px;
-    margin-top: 30px;
-    margin-right: 10px;
 `;
 
 export const Name = styled.h1`
@@ -74,12 +73,13 @@ export const PageLink = styled(PageLinkComponent)`
     font-size: 12px;
     color: white;
     text-transform: uppercase;
-`
+`;
+
 export const NavLink = styled(NavLinkComponent)`
     margin: 0 0 30px 0;
     text-transform: uppercase;
     color: white;
-    
+
     > a {
         font-size: 12px;
     }
@@ -98,7 +98,7 @@ export const NavLink = styled(NavLinkComponent)`
 `;
 
 export const CopyRighText = styled.h6`
-    font-size: 10px;
+    font-size: 11px;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;

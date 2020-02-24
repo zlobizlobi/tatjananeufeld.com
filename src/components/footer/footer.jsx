@@ -8,11 +8,11 @@ import {
     Youtube,
     Facebook,
     CopyRighText,
-    PageLink
+    PageLink,
 } from './styles';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { Location } from '@reach/router'
-import { navigate } from 'gatsby'
+import { Location } from '@reach/router';
+import { navigate } from 'gatsby';
 
 const navLinks = [
     'home',
@@ -34,31 +34,46 @@ export const Footer = () => {
                     <Name>Tatjana Neufeld</Name>
                     <NavList>
                         {navLinks.map(navLink => {
-                            if (navLink === "partnerships" || navLink === "tatyana-podyomova") {
+                            if (
+                                navLink === 'partnerships' ||
+                                navLink === 'tatyana-podyomova'
+                            ) {
                                 return (
                                     <PageLink to={`/${navLink}`}>
                                         <FormattedMessage id={navLink} />
-                                    </PageLink>)
+                                    </PageLink>
+                                );
                             }
                             return (
                                 <NavLink
                                     onClick={() => {
-                                        if (location.pathname === `/${locale}/tatyana-podyomova/` || location.pathname === `/${locale}/partnerships/`) {
-                                            navigate('/')
+                                        if (
+                                            location.pathname ===
+                                                `/${locale}/tatyana-podyomova/` ||
+                                            location.pathname ===
+                                                `/${locale}/partnerships/`
+                                        ) {
+                                            navigate('/');
                                             return;
                                         }
-                                    }
-                                    } key={navLink}
+                                    }}
+                                    key={navLink}
                                     name={navLink}
                                 />
-                            )
+                            );
                         })}
                     </NavList>
                     <IconContainer>
-                        <a href="https://youtube.com">
+                        <a
+                            style={{ padding: '10px 10px' }}
+                            href="https://youtube.com"
+                        >
                             <Youtube />
                         </a>
-                        <a href="https://youtube.com">
+                        <a
+                            style={{ padding: '10px 10px' }}
+                            href="https://youtube.com"
+                        >
                             <Facebook />
                         </a>
                     </IconContainer>
@@ -71,9 +86,9 @@ export const Footer = () => {
                             }}
                         >
                             zlobizlobi
-         </a>
+                        </a>
                     </CopyRighText>
-                </FooterComponent >
+                </FooterComponent>
             )}
         </Location>
     );

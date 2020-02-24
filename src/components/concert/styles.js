@@ -53,11 +53,11 @@ export const DateContainer = styled.div`
     font-weight: lighter;
     align-items: center;
     margin-bottom: 10px;
-    font-size: 10px;
+    font-size: 11px;
     line-height: 25px;
 
     ${media.md(`
-    font-size: 13px;
+        font-size: 13px;
   `)}
 `;
 
@@ -81,14 +81,14 @@ export const VenueItem = styled.span`
     font-style: italic;
     white-space: pre-wrap;
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 11px;
     color: #808080;
     &:last-child {
         margin: 0;
     }
 
     ${media.md(`
-    font-size: 11px;
+    font-size: 12px;
   `)}
 `;
 
@@ -130,7 +130,7 @@ export const Button = styled.button`
     cursor: pointer;
     position: relative;
     z-index: 1;
-    font-size: 10px;
+    font-size: 11px;
     margin-top: 30px;
     letter-spacing: 1px;
 
@@ -188,7 +188,7 @@ export const VendorContainer = styled.div`
     text-decoration: none;
 
     > button {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     &:last-child {
@@ -197,7 +197,7 @@ export const VendorContainer = styled.div`
 
     ${media.md(`
         > button {
-            font-size: 13px;  
+            font-size: 14px;  
         }
   `)}
 `;
@@ -218,7 +218,7 @@ export const GetTicketsButton = styled.button`
 `;
 
 export const HiddenSubContainer = styled.div`
-    font-size: 11px;
+    font-size: 12px;
     margin-bottom: 50px;
 
     &:last-child {
@@ -234,7 +234,7 @@ export const HiddenSubContainer = styled.div`
 export const DownloadLink = styled.a`
     display: inline-flex;
     align-items: center;
-    font-size: 11px;
+    font-size: 12px;
     cursor: pointer;
     text-decoration: underline;
     color: white;

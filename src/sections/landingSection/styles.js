@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import Img from 'gatsby-image'
-import { media } from '@styles'
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+import { media } from '@styles';
 
 export const Image = styled(Img)`
     width: 100%;
@@ -19,7 +19,7 @@ export const Image = styled(Img)`
             width: 100vw !important;
         }
     `)}
-`
+`;
 
 export const Section = styled.section`
     display: flex;
@@ -30,7 +30,7 @@ export const Section = styled.section`
     ${media.sm(`
         justify-content: center;
     `)}
-`
+`;
 
 export const NameContainer = styled.div`
     display: inline-flex;
@@ -56,7 +56,7 @@ export const NameContainer = styled.div`
       padding: 0px;
       background-color: transparent;
     `)}
-`
+`;
 export const Name = styled.h1`
     color: white;
     text-transform: uppercase;
@@ -69,7 +69,7 @@ export const Name = styled.h1`
     ${media.lg(`
         font-size: 2em;
     `)}
-`
+`;
 
 export const SubHeading = styled.h6`
     font-family: 'Montserrat', sans-serif;
@@ -89,7 +89,7 @@ export const SubHeading = styled.h6`
         color: #a6a6a6;
         font-size: 0.67em;
     `)}
-`
+`;
 
 export const Button = styled.button`
     display: flex;
@@ -102,7 +102,7 @@ export const Button = styled.button`
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
 
@@ -137,7 +137,7 @@ export const Button = styled.button`
     ${media.lg(`
         font-size: 12px;
     `)}
-`
+`;
 export const Gradient = styled.div`
     position: absolute;
     left: 0;
@@ -156,4 +156,4 @@ export const Gradient = styled.div`
     display: block;
     
   `)}
-`
+`;
