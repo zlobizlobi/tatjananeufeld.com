@@ -41,16 +41,20 @@ export const ContactForm = () => {
 
     return (
         <Formik
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
             initialValues={{
                 name: '',
                 email: '',
                 message: '',
+                'bot-field': '',
             }}
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
         >
             {({ isSubmitting, errors, touched }) => (
-                <Form>
+                <Form data-netlify={true} name="contact">
+                    <input type="hidden" name="form-name" value="contact" />
                     <FieldContainer>
                         <Field
                             name="name"

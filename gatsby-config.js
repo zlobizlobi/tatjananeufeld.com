@@ -22,12 +22,13 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-styled-components`,
         `gatsby-transformer-json`,
+        `gatsby-plugin-sitemap`,
         {
             resolve: 'gatsby-plugin-robots-txt',
             options: {
                 host: 'https://www.tatjananeufeld.com',
                 sitemap: 'https://www.tatjananeufeld.com/sitemap.xml',
-                policy: [{ userAgent: '*', allow: '/' }],
+                policy: [{ userAgent: '*', allow: '/en' }],
             },
         },
         {
@@ -63,14 +64,10 @@ module.exports = {
         {
             resolve: `gatsby-plugin-intl`,
             options: {
-                // language JSON resource path
                 path: `${__dirname}/src/locales`,
-                // supported language
                 languages: [`en`, `de`, `ru`],
-                // language file path
                 defaultLanguage: `en`,
                 redirect: true,
-                // option to redirect to `/ko` when connecting `/`
             },
         },
         {
