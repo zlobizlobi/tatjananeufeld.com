@@ -37,7 +37,7 @@ export const SEO = ({
         },
     } = site;
 
-    const seoKeywords = (keywords || metaKeywords).join(',');
+    const seoKeywords = (keywords || metaKeywords).join(', ');
 
     return (
         <Helmet title={`Tatjana Neufeld | ${title || metaTitle}`}>
