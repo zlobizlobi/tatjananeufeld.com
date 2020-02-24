@@ -28,7 +28,7 @@ module.exports = {
             options: {
                 host: 'https://www.tatjananeufeld.com',
                 sitemap: 'https://www.tatjananeufeld.com/sitemap.xml',
-                policy: [{ userAgent: '*', allow: '/en' }],
+                policy: [{ userAgent: '*', allow: ['/en/', '/de/', '/ru/'] }],
             },
         },
         {

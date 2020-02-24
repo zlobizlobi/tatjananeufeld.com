@@ -41,6 +41,10 @@ export const SEO = ({
 
     return (
         <Helmet title={`Tatjana Neufeld | ${title || metaTitle}`}>
+            <meta
+                name="google-site-verification"
+                content="hiS3QamKVs9x2E5-rxbLPU9AOi8Ix3WgQFoV1S8-Ncw"
+            />
             <meta property="keywords" content={seoKeywords} />
             <meta
                 property="description"
@@ -53,10 +57,6 @@ export const SEO = ({
                 content={ogDescription || metaOgDescription}
             />
             <meta property="og:image" content={image} />
-            <meta
-                name="google-site-verification"
-                content="hiS3QamKVs9x2E5-rxbLPU9AOi8Ix3WgQFoV1S8-Ncw"
-            />
         </Helmet>
     );
 };
