@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import image from '../../images/gatsby-astronaut.png';
+import image from '../../images/metaImage.jpg';
 
 export const SEO = ({
     description,
