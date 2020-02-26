@@ -29,7 +29,6 @@ export const SEO = ({
 
     const {
         siteMetadata: {
-            metaTitle,
             metaDescription,
             metaKeywords,
             metaOgTitle,
@@ -40,7 +39,11 @@ export const SEO = ({
     const seoKeywords = (keywords || metaKeywords).join(', ');
 
     return (
-        <Helmet title={`Tatjana Neufeld | ${title || metaTitle}`}>
+        <Helmet
+            title={`Tatjana Neufeld${
+                title ? ` | ${title}` : ': Official Website'
+            }`}
+        >
             <meta
                 name="google-site-verification"
                 content="hiS3QamKVs9x2E5-rxbLPU9AOi8Ix3WgQFoV1S8-Ncw"

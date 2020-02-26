@@ -74,7 +74,6 @@ const TatyanaPodyomova = () => {
         <Layout>
             <SEO
                 title="T. Podyomova"
-                meta=""
                 description="Next to solo performance T.Neufeld is also involved in didactic practices and thus gives piano lessons to children."
             />
             <ContentWrapper>
