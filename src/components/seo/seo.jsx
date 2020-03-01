@@ -15,7 +15,6 @@ export const SEO = ({
             query {
                 site {
                     siteMetadata {
-                        metaTitle
                         metaDescription
                         metaAuthor
                         metaKeywords

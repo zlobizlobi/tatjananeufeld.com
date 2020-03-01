@@ -1,17 +1,31 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path');
 
-// You can delete this file if you're not using it
+const fs = require('fs-extra');
 
-const path = require("path")
-const fs = require("fs-extra")
+const { formatLocale } = require('./src/helpers/formatLocale');
+
 exports.onPostBuild = () => {
-  console.log("Copying locales")
-  fs.copySync(
-    path.join(__dirname, "/src/locales"),
-    path.join(__dirname, "/public/locales")
-  )
-}
+    console.log('Copying locales');
+    fs.copySync(
+        path.join(__dirname, '/src/locales'),
+        path.join(__dirname, '/public/locales')
+    );
+};
+
+const locales = ['en-us', 'de-de', 'ru'];
+
+exports.onCreatePage = ({ page, actions }) => {
+    const { createPage, deletePage } = actions;
+
+    deletePage(page);
+
+    locales.forEach(locale => {
+        createPage({
+            ...page,
+            context: {
+                ...page.context,
+                locale: formatLocale(page.context.intl.language),
+            },
+        });
+    });
+};

@@ -1,48 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Concert } from '@components';
-import { useStaticQuery, graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import { Section, Heading } from './styles';
 
-export const ConcertSection = () => {
-    const prismicRowData = useStaticQuery(graphql`
-        query Concertss {
-            prismicMainPage {
-                data {
-                    body {
-                        primary {
-                            name
-                            city
-                            venue
-                            hall
-                            date
-                            program
-                            vendors
-                            file {
-                                url
-                            }
-                            poster {
-                                localFile {
-                                    childImageSharp {
-                                        fluid(quality: 100) {
-                                            ...GatsbyImageSharpFluid
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    `);
-
-    const {
-        prismicMainPage: {
-            data: { body: concerts },
-        },
-    } = prismicRowData;
-
+export const ConcertSection = ({ concerts }) => {
     return (
         <Section name="concerts">
             <Heading>
