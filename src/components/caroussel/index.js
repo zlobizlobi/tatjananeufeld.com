@@ -1,1 +1,1 @@
-export {Caroussel} from './caroussel'
+export { Caroussel } from './caroussel';

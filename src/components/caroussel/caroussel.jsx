@@ -1,21 +1,20 @@
-import React from 'react'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import { useStaticQuery, graphql } from 'gatsby'
-import { ArrowPrevious, ArrowNext, Image } from './styles'
+import React from 'react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { useStaticQuery, graphql } from 'gatsby';
+import { ArrowPrevious, ArrowNext, Image, Slider } from './styles';
 
-const carousselSettings = {
+const CAROUSSEL_SETTINGS = {
     speed: 500,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     prevArrow: <ArrowPrevious />,
     nextArrow: <ArrowNext />,
-}
+};
 
 export const Caroussel = () => {
-    const carousselQuery = useStaticQuery(graphql`
+    const galleryQuery = useStaticQuery(graphql`
         query myCaroussel {
             prismicGallery {
                 data {
@@ -33,27 +32,27 @@ export const Caroussel = () => {
                 }
             }
         }
-    `)
+    `);
 
     const {
         prismicGallery: {
-            data: { image_collection },
+            data: { image_collection: galleryImages },
         },
-    } = carousselQuery
+    } = galleryQuery;
 
     return (
-        <Slider style={{ width: '100%', height: '100%' }} {...carousselSettings}>
-            {image_collection.map(
-                ({
+        <Slider {...CAROUSSEL_SETTINGS}>
+            {galleryImages.map(galleryImage => {
+                const {
                     image: {
                         localFile: {
                             childImageSharp: { fluid },
                         },
                     },
-                }) => (
-                        <Image fluid={fluid} />
-                    )
-            )}
+                } = galleryImage;
+
+                return <Image fluid={fluid} />;
+            })}
         </Slider>
-    )
-}
+    );
+};
