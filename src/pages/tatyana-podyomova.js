@@ -74,7 +74,15 @@ const TatyanaPodyomova = () => {
         <Layout>
             <SEO
                 title="T. Podyomova"
-                description="Next to solo performance T.Neufeld is also involved in didactic practices and thus gives piano lessons to children."
+                description="Next to solo performance T.Neufeld gives piano lessons to children and involves herself in didactic practices."
+                ogDescription="Next to solo performance T.Neufeld gives piano lessons to children and involves herself in didactic practices."
+                ogTitle="T. Podyomova"
+                keywords={[
+                    'Tatjana Podyomova',
+                    'Piano Lesssons',
+                    'Neufeld',
+                    'Piano teacher',
+                ]}
             />
             <ContentWrapper>
                 <PortretImage fluid={tatyanaImageSrc} />

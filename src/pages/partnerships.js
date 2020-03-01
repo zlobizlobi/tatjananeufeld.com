@@ -62,9 +62,17 @@ const Partnerships = () => {
         <Layout>
             <SEO
                 title="Partnerships"
-                meta=""
                 description="Next to solo performance T.Neufeld also stars in partnerships with other concert performers.
-             Frequent concerts with different concert performers. See for partnerships "
+                Frequent concerts with different concert performers. See for Partnerships"
+                ogDescription="Next to solo performance T.Neufeld also stars in partnerships with other concert performers.
+                Frequent concerts with different concert performers. See for Partnerships"
+                ogTitle="Partnerships"
+                keywords={[
+                    'Tatjana Neufeld',
+                    'Tatjana Neufeld Partners',
+                    'Tatjana Neufeld Program',
+                    'Tatjana Neufeld Partnerships',
+                ]}
             />
             <PageContainer>
                 <Heading>

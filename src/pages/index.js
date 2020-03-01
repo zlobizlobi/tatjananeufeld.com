@@ -1,6 +1,5 @@
 import React from 'react';
 import { Layout, SEO } from '@components';
-import { formatLocale } from '../helpers';
 import { graphql } from 'gatsby';
 
 import {
@@ -12,7 +11,7 @@ import {
 } from '../sections';
 
 const IndexPage = ({ pageContext: { locale }, data }) => {
-    // locale is not use as it's interpolated into the graphql query. This is graphql syntax.
+    // locale is not used as it's interpolated under the hood into the graphql query. This is graphql syntax.
     const {
         prismicMainPage: {
             data: { body: concerts },
