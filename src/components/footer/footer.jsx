@@ -64,16 +64,10 @@ export const Footer = () => {
                         })}
                     </NavList>
                     <IconContainer>
-                        <a
-                            style={{ padding: '10px 10px' }}
-                            href="https://youtube.com"
-                        >
+                        <a href="https://youtube.com">
                             <Youtube />
                         </a>
-                        <a
-                            style={{ padding: '10px 10px' }}
-                            href="https://youtube.com"
-                        >
+                        <a href="https://youtube.com">
                             <Facebook />
                         </a>
                     </IconContainer>

@@ -15,7 +15,7 @@ export const FooterComponent = styled.footer`
     width: 100%;
     position: absolute;
     bottom: 0;
-
+    box-sizing: border-box;
     ${media.md(`
         height: 300px;
     `)}
@@ -24,12 +24,15 @@ export const FooterComponent = styled.footer`
 export const IconContainer = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 30px;
-    padding: 20px;
-
+    margin-top: 20px;
     > a {
         text-decoration: none;
         color: white;
+        margin-right: 5px;
+
+        &:last-child {
+            margin: 0;
+        }
     }
 `;
 
@@ -51,7 +54,7 @@ export const Name = styled.h1`
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: normal;
-    margin-bottom: 30px;
+    margin: 20px 0;
     font-weight: normal;
 `;
 
@@ -62,10 +65,10 @@ export const NavList = styled.ul`
     flex-direction: column;
 
     ${media.md(`
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    line-height: 22px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        line-height: 22px;
   `)}
 `;
 
@@ -99,10 +102,12 @@ export const NavLink = styled(NavLinkComponent)`
 
 export const CopyRighText = styled.h6`
     font-size: 11px;
-    color: white;
+    color: hsl(0, 0%, 50%);
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
-    margin-top: 30px;
+    margin: 20px 0;
     line-height: 20px;
     text-align: center;
+    letter-spacing: 2.5px;
+    max-width: 95%;
 `;

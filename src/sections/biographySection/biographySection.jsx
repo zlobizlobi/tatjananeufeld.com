@@ -9,6 +9,7 @@ import {
     SecondImage,
 } from './styles';
 import { useStaticQuery, graphql } from 'gatsby';
+
 export const BiographySection = () => {
     const data = useStaticQuery(graphql`
         query MyQuery {
