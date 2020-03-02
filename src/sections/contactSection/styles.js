@@ -58,5 +58,6 @@ export const FormHeading = styled.h3`
 
     ${media.md(`
       font-size: 23px;
+      max-width: 600px;
     `)}
 `;
