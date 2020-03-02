@@ -34,7 +34,9 @@ export const ContactForm = () => {
     const intl = useIntl();
 
     const placeholderName = intl.formatMessage({ id: 'placeholder_name' });
+
     const placeholderEmail = intl.formatMessage({ id: 'placeholder_email' });
+
     const placeholderMessage = intl.formatMessage({
         id: 'placeholder_message',
     });
@@ -47,14 +49,12 @@ export const ContactForm = () => {
                 name: '',
                 email: '',
                 message: '',
-                'bot-field': '',
             }}
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
         >
             {({ isSubmitting, errors, touched }) => (
-                <Form data-netlify={true} name="contact">
-                    <input type="hidden" name="form-name" value="contact" />
+                <Form name="contact">
                     <FieldContainer>
                         <Field
                             name="name"
