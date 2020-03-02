@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-
 import { Form as FormComponent, Field as FormFieldComponent } from 'formik';
 
 export const Form = styled(FormComponent)`
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 30px;
 `;
+
 export const Field = styled(FormFieldComponent)`
     margin-bottom: 5px;
     padding: 8.5px 10px;
@@ -16,20 +16,9 @@ export const Field = styled(FormFieldComponent)`
     color: white;
     min-width: 250px;
 
-    &:last-child {
-        margin: 0;
-    }
-
     ::placeholder {
-        letter-spacing: 1px;
         color: rgba(255, 255, 255, 0.6);
     }
-`;
-
-export const Label = styled.label`
-    color: white;
-    font-size: 12px;
-    margin-bottom: 5px;
 `;
 
 export const Button = styled.button.attrs({ type: 'submit' })`
@@ -39,6 +28,7 @@ export const Button = styled.button.attrs({ type: 'submit' })`
     color: white;
     transition: all 0.2s ease;
     cursor: pointer;
+    font-weight: lighter;
     text-transform: uppercase;
 
     :hover {
@@ -50,14 +40,20 @@ export const Button = styled.button.attrs({ type: 'submit' })`
 export const FieldContainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
     &:last-child {
         margin: 0;
+    }
+
+    > textarea {
+        min-height: 150px;
+        resize: none;
     }
 `;
 
 export const ErrorWrapper = styled.span`
     font-size: 11px;
-    color: #cc0000;
+    color: #808080;
+    padding-left: 10px;
 `;

@@ -83,7 +83,6 @@ export const ContactForm = () => {
                             component="textarea"
                             error={touched.message && errors.message}
                             placeholder={placeholderMessage}
-                            style={{ minHeight: '150px', resize: 'none' }}
                         />
                         <ErrorWrapper>
                             <ErrorMessage name="message" />
