@@ -43,8 +43,6 @@ export const ContactForm = () => {
 
     return (
         <Formik
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
             initialValues={{
                 name: '',
                 email: '',

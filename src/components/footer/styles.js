@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { media } from '@styles';
 import { NavLink as NavLinkComponent } from '../navLink';
 import { TiSocialFacebook, TiSocialYoutube } from 'react-icons/ti';
@@ -10,12 +10,11 @@ export const FooterComponent = styled.footer`
     align-items: center;
     justify-content: center;
     height: 520px;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: -2px -7px 18px -13px rgba(255, 255, 255, 0.75);
     width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     position: absolute;
     bottom: 0;
-    box-sizing: border-box;
+
     ${media.md(`
         height: 300px;
     `)}
@@ -23,27 +22,28 @@ export const FooterComponent = styled.footer`
 
 export const IconContainer = styled.div`
     display: flex;
-    align-items: center;
     margin-top: 20px;
-    > a {
-        text-decoration: none;
-        color: white;
-        margin-right: 5px;
 
-        &:last-child {
-            margin: 0;
-        }
+    > a {
+        margin-right: 5px;
+    }
+
+    &:last-child {
+        margin: 0;
     }
 `;
 
-export const Facebook = styled(TiSocialFacebook)`
+const iconStyle = css`
     color: white;
     font-size: 25px;
 `;
 
+export const Facebook = styled(TiSocialFacebook)`
+    ${iconStyle}
+`;
+
 export const Youtube = styled(TiSocialYoutube)`
-    color: white;
-    font-size: 25px;
+    ${iconStyle}
 `;
 
 export const Name = styled.h1`
@@ -51,11 +51,9 @@ export const Name = styled.h1`
     text-transform: uppercase;
     letter-spacing: 2.5px;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 10px;
     font-size: 18px;
     font-weight: normal;
     margin: 20px 0;
-    font-weight: normal;
 `;
 
 export const NavList = styled.ul`
@@ -69,7 +67,7 @@ export const NavList = styled.ul`
         flex-wrap: wrap;
         justify-content: center;
         line-height: 22px;
-  `)}
+    `)}
 `;
 
 export const PageLink = styled(PageLinkComponent)`
@@ -94,7 +92,7 @@ export const NavLink = styled(NavLinkComponent)`
     ${media.md(`
         margin: 0 15px 0 0;
 
-        &:last-child{
+        &:last-child {
             margin: 0;
         }
     `)}
@@ -105,9 +103,9 @@ export const CopyRighText = styled.h6`
     color: hsl(0, 0%, 50%);
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
-    margin: 20px 0;
-    line-height: 20px;
-    text-align: center;
-    letter-spacing: 2.5px;
+    margin-top: 20px;
+    letter-spacing: 1.5px;
     max-width: 95%;
+    text-align: center;
+    line-height: 20px;
 `;
