@@ -86,6 +86,6 @@ export const PageLink = styled(Link)`
     color: rgba(255, 255, 255, 0.7);
 
     ${media.md(`
-        margin: 1px 15px 0 0;
-  `)}
+        margin: 1.5px 15px 0 0;
+    `)}
 `;

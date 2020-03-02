@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const Button = styled.button`
     background-color: ${({ isActive }) => (isActive ? 'white' : 'transparent')};

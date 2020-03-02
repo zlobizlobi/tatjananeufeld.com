@@ -9,14 +9,13 @@ import {
     ArrowDown,
     ArrowUp,
     PartnerContainer,
+    SeeMoreButton,
 } from './styles';
 
 import { Partner } from './partner';
-
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'gatsby-plugin-intl';
 
 export const Partnership = ({ primary: partnerShip, items: partners }) => {
-
     const [isOpen, setIsOpen] = useState(false);
 
     const {
@@ -37,21 +36,17 @@ export const Partnership = ({ primary: partnerShip, items: partners }) => {
                         <Text>{partnerShip.partnership_story}</Text>
                     </ColumnContainer>
                 </FlexContainer>
-                {isOpen ? (
-                    <>
-                        <ArrowUp onClick={() => setIsOpen(!isOpen)} style={{ marginTop: '50px' }} />
-                        <span style={{ display: 'block', color: 'white', fontSize: '12px', alignSelf: 'center' }}>
-                            <FormattedMessage id="button_less" />
-                        </span>
-                    </>
-                ) : (
-                        <>
-                            <span style={{ display: 'inline', color: 'white', fontSize: '12px', alignSelf: 'center', marginTop: '50px' }}>
-                                <FormattedMessage id="button_more" />
-                            </span>
-                            <ArrowDown onClick={() => setIsOpen(!isOpen)} />
-                        </>
-                    )}
+                <SeeMoreButton
+                    onClick={() => setIsOpen(!isOpen)}
+                    style={{ marginTop: '50px' }}
+                >
+                    {isOpen ? <ArrowUp /> : <ArrowDown />}
+                    <span>
+                        <FormattedMessage
+                            id={isOpen ? 'button_less' : 'button_more'}
+                        />
+                    </span>
+                </SeeMoreButton>
             </ColumnContainer>
             <PartnerContainer isShown={isOpen}>
                 {partners.map(p => (

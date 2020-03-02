@@ -1,16 +1,11 @@
 import styled, { css } from 'styled-components';
 import { media } from '@styles';
 import Img from 'gatsby-image';
-import {
-    IoIosArrowDown,
-    IoIosArrowUp,
-} from 'react-icons/io';
+import { FiPlusCircle, FiMinusCircle } from 'react-icons/fi';
 
 export const Container = styled.div`
-    display: flex;
     padding: 30px;
-    border: 1px solid rgba(255,255,255,0.2);
-    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     margin: 0 0 30px 0;
 
     &:last-child {
@@ -19,6 +14,7 @@ export const Container = styled.div`
 
     ${media.lg(`
         margin: 0 30px 0 0;
+
         &:last-child {
             margin: 0;
         }
@@ -33,6 +29,7 @@ export const FlexContainer = styled.div`
         flex-direction: row;
     `)}
 `;
+
 export const Image = styled(Img)`
     min-width: 150px;
     height: 200px;
@@ -62,54 +59,52 @@ export const Text = styled.p`
     font-size: 14px;
     line-height: 24.5px;
     max-width: 800px;
-    color: rgba(255,255,255,0.5);
-
-    ${media.sm(`
-        margin: 0;
-        padding: 0;
-    `)}
+    color: #808080;
 `;
 
 export const PartnershipName = styled.h2`
     font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
-    letter-spacing: 1px;
     font-size: 15px;
     color: white;
     margin-bottom: 15px;
-    padding-bottom: 5px;
-    align-self: flex-start; 
     text-transform: uppercase;
 
     ${media.md(`
         font-size: 22px;
-        margin-bottom: 10px;
     `)}
 `;
 
 const arrowStyle = css`
-    color: white;
-    height: 35px;
-    width: 35px;
-    align-self: center;
-    cursor: pointer;
+    color: #808080;
+    height: 25px;
+    width: 25px;
+    margin-bottom: 10px;
 `;
 
-export const ArrowDown = styled(IoIosArrowDown)`
+export const ArrowDown = styled(FiPlusCircle)`
     ${arrowStyle}
 `;
 
-export const ArrowUp = styled(IoIosArrowUp)`
+export const ArrowUp = styled(FiMinusCircle)`
     ${arrowStyle}
 `;
 
 export const SeeMoreButton = styled.button`
-    display: inline;
-    height: 100%;
-    flex-direction: column;    
-    background: transparent;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
     border: none;
-`
+
+    &:last-child {
+        color: white;
+        text-transform: uppercase;
+        margin-top: 10px;
+    }
+`;
+
 export const PartnerContainer = styled.div`
     display: ${({ isShown }) => (isShown ? 'block' : 'none')};
     margin-top: 50px;

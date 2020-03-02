@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Text, Image, Name } from './styles';
+import { Container, Text, Image, Name, FlexContainer } from './styles';
 
 export const Partner = ({
     partner_image: image,
@@ -15,16 +15,10 @@ export const Partner = ({
     return (
         <Container>
             <Text>{biography}</Text>
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-end',
-                }}
-            >
+            <FlexContainer>
                 <Image fluid={fluid} />
                 <Name>{name}</Name>
-            </div>
+            </FlexContainer>
         </Container>
     );
 };

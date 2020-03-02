@@ -7,12 +7,8 @@ export const Container = styled.div`
     flex-direction: column-reverse;
     margin-bottom: 30px;
 
-    &:only-child {
-        margin: 0;
-    }
     ${media.md(`
         flex-direction: row;
-        
     `)}
 
     &:last-child {
@@ -23,31 +19,32 @@ export const Container = styled.div`
 export const Text = styled.p`
     font-size: 14px;
     line-height: 24.5px;
-    max-width: 600px;
-    color: rgba(255,255,255,0.5);
-
-    ${media.sm(`
-        margin: 0;
-        padding: 0;
-    `)}
+    color: #808080;
+    max-width: 800px;
 `;
 
 export const Image = styled(Img)`
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 20px 0;
 
     ${media.md(`
-        margin: 0 0 30px 30px;
+        margin: 0 0 15px 30px;
     `)}
 `;
 
 export const Name = styled.h3`
-    font-weight: bolder;
+    font-weight: lighter;
     color: white;
     margin-bottom: 20px;
 
     ${media.md(`
         margin: 0;
     `)}
+`;
+
+export const FlexContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 `;

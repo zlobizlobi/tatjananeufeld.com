@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { media } from '@styles'
-import { Link } from 'gatsby'
+import styled from 'styled-components';
+import { media } from '@styles';
+import { Link } from 'gatsby';
 
 export const PageLink = styled(Link)`
     text-decoration: none;
@@ -14,6 +14,4 @@ export const PageLink = styled(Link)`
             margin: 0;
         }
   `)}
-`
-
-
+`;
