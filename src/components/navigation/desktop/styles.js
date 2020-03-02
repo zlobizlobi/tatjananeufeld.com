@@ -2,6 +2,7 @@ import styled, { keyframes, css } from 'styled-components';
 import { NavLink as NavLinkComponent } from '../../navLink';
 import { LanguageSwitch as LanguageSwitchComponent } from '../../languageSwitch';
 import { media } from '@styles';
+import { Link } from 'gatsby';
 
 const navbarAnimation = keyframes`
   0% {
@@ -18,10 +19,10 @@ export const LanguageSwitch = styled(LanguageSwitchComponent)`
     margin: 15px 0 0 0;
 
     ${media.lg(`
-    padding-left: 15px;
-    border-left: 1px solid rgba(255, 255, 255, 0.7);
-    margin: 0 0 0 15px;
-  `)}
+        padding-left: 15px;
+        border-left: 1px solid rgba(255, 255, 255, 0.7);
+        margin: 0 0 0 15px;
+    `)}
 `;
 
 export const Nav = styled.nav`
@@ -45,7 +46,6 @@ export const Nav = styled.nav`
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
   `)}
 `;
 
@@ -76,4 +76,16 @@ export const NavLink = styled(NavLinkComponent)`
     &:last-child {
         margin: 0;
     }
+`;
+
+export const PageLink = styled(Link)`
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    color: rgba(255, 255, 255, 0.7);
+
+    ${media.md(`
+        margin: 1px 15px 0 0;
+  `)}
 `;

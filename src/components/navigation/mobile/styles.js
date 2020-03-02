@@ -9,7 +9,7 @@ export const Nav = styled.nav`
     align-items: center;
     justify-content: space-between;
     height: 75px;
-    width: 100vw;
+    width: 100%;
     position: absolute;
 
     ${media.lg(`
@@ -28,8 +28,8 @@ export const HamburgerButton = styled.button`
     background-color: transparent;
     border: none;
     z-index: 3;
-    outline: none;
     border-radius: 0;
+    outline: none;
 `;
 
 export const HamburgerBar = styled.div`
@@ -81,6 +81,7 @@ export const NavLink = styled(NavLinkComponent)`
 export const LanguageSwitch = styled(LanguageSwitchComponent)`
     margin: 0 30px 0 0;
 `;
+
 export const PageLink = styled(PageLinkComponent)`
     font-size: 20px;
     color: rgba(255, 255, 255, 0.7);

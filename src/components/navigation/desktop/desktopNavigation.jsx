@@ -1,32 +1,13 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { NavLink, LanguageSwitch, Nav, NavList } from './styles';
+import { NavLink, LanguageSwitch, Nav, NavList, PageLink } from './styles';
 import { useIntl } from 'react-intl';
 import { Location } from '@reach/router';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import { media } from '@styles';
 import { navigate } from 'gatsby';
 
-export const PageLink = styled(Link)`
-    text-decoration: none;
-    text-transform: uppercase;
-    margin: 0 0 30px 0;
-    font-size: 12px;
-    letter-spacing: 2.5px;
-    color: rgba(255, 255, 255, 0.7);
-
-    ${media.md(`
-        margin: 1.5px 15px 0 0;
-
-        &:last-child{
-        margin: 0;
-        }
-  `)}
-`;
-
-export const DesktopNavigation = props => {
+export const DesktopNavigation = () => {
     const [isActive, setIsActive] = React.useState(['home']);
+
     const { locale } = useIntl();
 
     const [isScrolled, setIsScrolled] = React.useState(false);
@@ -74,7 +55,6 @@ export const DesktopNavigation = props => {
                                 }
                                 return (
                                     <NavLink
-                                        href="#"
                                         onClick={e => {
                                             if (
                                                 location.pathname ===
