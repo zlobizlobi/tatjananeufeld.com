@@ -1,2 +1,1 @@
-export { Visible } from "./visible"
-export { Hidden } from "./hidden"
+export { Visible } from './visible';

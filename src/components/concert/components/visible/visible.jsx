@@ -1,28 +1,55 @@
-import React from "react"
+import React from 'react';
+import {
+    Flex,
+    Poster,
+    NameDateContainer,
+    Name,
+    DateContainer,
+    TimeContainer,
+    VenueContainer,
+    VenueItem,
+    Divider,
+} from './styles';
+import { FormattedTime } from 'gatsby-plugin-intl';
 
-export const Visible = () => (
-  <Flex>
-    <Poster src={url} alt="Concert poster" />
-    <NameDateContainer>
-      <Name onClick={() => setIsExtended(!isExtended)}>{name}</Name>
-      <DateContainer>
-        <FormattedDate
-          value={pureDate}
-          year="numeric"
-          month="long"
-          day="2-digit"
-        />
-        <TimeContainer>
-          <FormattedTime value={date} />
-          <Divider />
-          {city}
-        </TimeContainer>
-        q
-      </DateContainer>
-      <VenueContainer>
-        <VenueItem>{venue},</VenueItem>
-        <VenueItem>{hall}</VenueItem>
-      </VenueContainer>
-    </NameDateContainer>
-  </Flex>
-)
+export const Visible = ({
+    posterSrc,
+    onClick,
+    name,
+    date,
+    city,
+    venue,
+    hall,
+}) => {
+    const formattedDate = new Date(date);
+
+    const splittedDate = formattedDate.toString().split(' ');
+
+    const dateDay = splittedDate[2];
+
+    const dateMonth = splittedDate[1];
+
+    return (
+        <Flex>
+            <Poster fluid={posterSrc} alt="Concert poster" />
+            <NameDateContainer>
+                <Name onClick={onClick}>{name}</Name>
+                <DateContainer>
+                    <div style={{ marginRight: '5px' }}>
+                        <span style={{ marginRight: '5px' }}>{dateDay}</span>
+                        <span>{dateMonth}</span>
+                    </div>
+                    <TimeContainer>
+                        <FormattedTime value={date} />
+                        <Divider />
+                        {city}
+                    </TimeContainer>
+                </DateContainer>
+                <VenueContainer>
+                    <VenueItem>{venue},</VenueItem>
+                    <VenueItem>{hall}</VenueItem>
+                </VenueContainer>
+            </NameDateContainer>
+        </Flex>
+    );
+};

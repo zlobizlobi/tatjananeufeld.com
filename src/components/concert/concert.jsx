@@ -3,17 +3,9 @@ import {
     Program,
     Container,
     ContentContainer,
-    Name,
-    NameDateContainer,
-    DateContainer,
-    Divider,
-    VenueContainer,
-    VenueItem,
-    Poster,
     Button,
     ContainerDivider,
     GetTicketsButton,
-    TimeContainer,
     HiddenContainer,
     HiddenHeading,
     VendorContainer,
@@ -21,11 +13,12 @@ import {
     DownloadLink,
     Flex,
 } from './styles';
-import { FormattedTime, FormattedMessage } from 'react-intl';
-import { jsonParse } from '../../helpers';
+import { FormattedMessage } from 'react-intl';
 import { useEffect } from 'react';
-import { FiDownload } from 'react-icons/fi';
+import { FiDownload, FiPlus, FiMinus } from 'react-icons/fi';
 import thumbnailImage from '../../images/thumbnail.svg';
+import { Visible } from './components';
+import { jsonParse } from '../../helpers';
 
 export const Concert = ({
     name,
@@ -66,14 +59,6 @@ export const Concert = ({
         });
     }, [hiddenContainerRef, parentContainerRef]);
 
-    const dateParsedFirst = new Date(date);
-
-    const dateParsedSecond = dateParsedFirst.toString().split(' ');
-
-    const dateDay = dateParsedSecond[2];
-
-    const dateMonth = dateParsedSecond[1];
-
     return (
         <Container
             heightsContainers={heightsContainers}
@@ -81,35 +66,15 @@ export const Concert = ({
             isExtended={isExtended}
         >
             <ContentContainer>
-                <Flex>
-                    <Poster
-                        loading="lazy"
-                        fluid={fluid ? fluid : thumbnailImage}
-                        alt="Concert poster"
-                    />
-                    <NameDateContainer>
-                        <Name onClick={() => setIsExtended(!isExtended)}>
-                            {name}
-                        </Name>
-                        <DateContainer>
-                            <div style={{ marginRight: '5px' }}>
-                                <span style={{ marginRight: '5px' }}>
-                                    {dateDay}
-                                </span>
-                                <span>{dateMonth}</span>
-                            </div>
-                            <TimeContainer>
-                                <FormattedTime value={date} />
-                                <Divider />
-                                {city}
-                            </TimeContainer>
-                        </DateContainer>
-                        <VenueContainer>
-                            <VenueItem>{venue},</VenueItem>
-                            <VenueItem>{hall}</VenueItem>
-                        </VenueContainer>
-                    </NameDateContainer>
-                </Flex>
+                <Visible
+                    posterSrc={fluid ? fluid : thumbnailImage}
+                    name={name}
+                    onClick={() => setIsExtended(!isExtended)}
+                    date={date}
+                    city={city}
+                    hall={hall}
+                    venue={venue}
+                />
                 <HiddenContainer
                     height={heightsContainers.hiddenContainer}
                     isExtended={isExtended}
@@ -151,7 +116,7 @@ export const Concert = ({
                             </HiddenSubContainer>
                         </>
                     )}
-                    <Flex flexDirection="column">
+                    <Flex>
                         <HiddenHeading>Program</HiddenHeading>
                         <HiddenSubContainer>
                             <Program>{program}</Program>
@@ -168,12 +133,14 @@ export const Concert = ({
                         )}
                     </Flex>
                 </HiddenContainer>
+                <Button onClick={handleOnClick}>
+                    <FormattedMessage
+                        id={isExtended ? 'button_less' : 'button_more'}
+                    />
+                    &nbsp;
+                    {isExtended ? <FiMinus /> : <FiPlus />}
+                </Button>
             </ContentContainer>
-            <Button onClick={() => handleOnClick()}>
-                <FormattedMessage
-                    id={isExtended ? 'button_less' : 'button_more'}
-                />
-            </Button>
             <ContainerDivider />
         </Container>
     );
