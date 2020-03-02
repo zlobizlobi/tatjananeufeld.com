@@ -1,7 +1,7 @@
 import React from 'react';
-import { Concert } from '@components';
+import { Concert, Section } from '@components';
 import { FormattedMessage } from 'react-intl';
-import { Section, Heading } from './styles';
+import { Heading } from './styles';
 
 export const ConcertSection = ({ concerts }) => (
     <Section name="concerts">

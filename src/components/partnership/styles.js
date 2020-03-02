@@ -94,9 +94,7 @@ export const SeeMoreButton = styled.button`
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
+    align-self: center;
 
     &:last-child {
         color: white;

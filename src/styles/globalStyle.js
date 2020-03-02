@@ -48,4 +48,10 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: inherit;
         appearance: none;
     }
+
+    button {
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+    }
 `;

@@ -24,10 +24,8 @@ export const Field = styled(FormFieldComponent)`
 export const Button = styled.button.attrs({ type: 'submit' })`
     padding: 9px;
     border: 0.5px solid rgba(255, 255, 255, 0.2);
-    background-color: transparent;
     color: white;
     transition: all 0.2s ease;
-    cursor: pointer;
     font-weight: lighter;
     text-transform: uppercase;
 

@@ -24,9 +24,6 @@ export const HamburgerButton = styled.button`
     height: 15px;
     width: 25px;
     margin-left: 30px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
     z-index: 3;
     border-radius: 0;
     outline: none;

@@ -1,18 +1,8 @@
 import React from 'react';
-import { Layout, Partnership } from '@components';
+import { Layout, Partnership, Section, SEO } from '@components';
 import { Heading, Container } from '../styles/pageStyles/partnerships';
-import { FormattedMessage } from 'react-intl';
-import styled from 'styled-components';
-
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import { useStaticQuery, graphql } from 'gatsby';
-import { SEO } from '../components/seo/seo';
-
-const PageContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 150px 0;
-`;
 
 const Partnerships = () => {
     const partnershipsData = useStaticQuery(graphql`
@@ -74,7 +64,7 @@ const Partnerships = () => {
                     'Tatjana Neufeld Partnerships',
                 ]}
             />
-            <PageContainer>
+            <Section>
                 <Heading>
                     <FormattedMessage id="partnerships_heading" />
                 </Heading>
@@ -83,7 +73,7 @@ const Partnerships = () => {
                         <Partnership {...p} />
                     ))}
                 </Container>
-            </PageContainer>
+            </Section>
         </Layout>
     );
 };

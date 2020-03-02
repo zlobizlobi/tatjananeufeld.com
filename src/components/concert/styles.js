@@ -5,14 +5,14 @@ export const ContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     color: #fff;
-    padding: 40px 15px 40px 15px;
+    padding: 40px 0 40px 0;
 
     &:last-child {
-        padding: 40px 15px 0 15px;
+        padding: 40px 0 0 0;
     }
 
     ${media.md(`
-        padding: 80px 15px 80px 15px;
+        padding: 80px 0 80px 0;
     `)}
 `;
 
@@ -38,14 +38,12 @@ export const ContainerDivider = styled.span`
 `;
 
 export const Button = styled.button`
-    background-color: transparent;
     padding: 5px 7.5px;
     align-self: flex-end;
     display: flex;
     align-items: center;
     color: white;
     transition: all 0.3s ease;
-    cursor: pointer;
     z-index: 1;
     font-size: 9px;
     margin-top: 30px;
@@ -123,11 +121,9 @@ export const Program = styled.span`
 `;
 
 export const GetTicketsButton = styled.button`
-    border: none;
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.8);
     padding-bottom: 2px;
     color: white;
-    background-color: transparent;
     z-index: -1;
 `;
 

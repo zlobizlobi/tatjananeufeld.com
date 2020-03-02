@@ -2,7 +2,16 @@ const path = require('path');
 
 const fs = require('fs-extra');
 
-const { formatLocale } = require('./src/helpers/formatLocale');
+const formatLocale = locale => {
+    switch (locale) {
+        case 'en':
+            return 'en-us';
+        case 'de':
+            return 'de-de';
+        default:
+            return 'ru';
+    }
+};
 
 exports.onPostBuild = () => {
     console.log('Copying locales');

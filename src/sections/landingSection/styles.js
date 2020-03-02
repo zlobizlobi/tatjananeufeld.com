@@ -96,11 +96,9 @@ export const Button = styled.button`
     align-items: center;
     justify-content: center;
     padding: 12.5px 17.5px;
-    background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
     font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
     transition: all 0.3s ease;
     font-size: 11px;
     letter-spacing: 2.5px;
@@ -138,6 +136,7 @@ export const Button = styled.button`
         font-size: 12px;
     `)}
 `;
+
 export const Gradient = styled.div`
     position: absolute;
     left: 0;
@@ -152,8 +151,8 @@ export const Gradient = styled.div`
     width: 100vw;
     height: 100vh;
     display: none;
+
     ${media.lg(`
-    display: block;
-    
-  `)}
+        display: block;
+    `)}
 `;

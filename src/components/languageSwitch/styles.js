@@ -7,9 +7,7 @@ export const Button = styled.button`
     font-family: 'Montserrat', sans-serif;
     width: 25px;
     height: 22.5px;
-    cursor: pointer;
     transition: color 0.2s ease-in-out, background-color 0.4s ease;
-    border: none;
 
     &:last-child {
         margin: 0;

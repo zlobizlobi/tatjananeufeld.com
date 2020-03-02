@@ -1,5 +1,5 @@
 export const jsonParse = string => {
-  const stringJsonStringified = JSON.stringify(string)
+    const jsonStringifiedString = JSON.stringify(string);
 
-  return JSON.parse(JSON.parse(stringJsonStringified))
-}
+    return JSON.parse(JSON.parse(jsonStringifiedString));
+};

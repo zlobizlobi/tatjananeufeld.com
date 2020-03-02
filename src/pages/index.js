@@ -1,7 +1,6 @@
 import React from 'react';
 import { Layout, SEO } from '@components';
 import { graphql } from 'gatsby';
-
 import {
     LandingSection,
     ConcertSection,
@@ -9,28 +8,6 @@ import {
     GallerySection,
     ContactSection,
 } from '../sections';
-
-const IndexPage = ({ pageContext: { locale }, data }) => {
-    // locale is not used as it's interpolated under the hood into the graphql query. This is graphql syntax.
-    const {
-        prismicMainPage: {
-            data: { body: concerts },
-        },
-    } = data;
-
-    return (
-        <Layout>
-            <SEO />
-            <LandingSection />
-            <ConcertSection concerts={concerts} />
-            <BiographySection />
-            <GallerySection />
-            <ContactSection />
-        </Layout>
-    );
-};
-
-export default IndexPage;
 
 export const data = graphql`
     query Concerts($locale: String!) {
@@ -63,3 +40,25 @@ export const data = graphql`
         }
     }
 `;
+
+const IndexPage = ({ pageContext: { locale }, data }) => {
+    // locale is not used as it's interpolated under the hood into the graphql query. This is graphql syntax.
+    const {
+        prismicMainPage: {
+            data: { body: concerts },
+        },
+    } = data;
+
+    return (
+        <Layout>
+            <SEO />
+            <LandingSection />
+            <ConcertSection concerts={concerts} />
+            <BiographySection />
+            <GallerySection />
+            <ContactSection />
+        </Layout>
+    );
+};
+
+export default IndexPage;
