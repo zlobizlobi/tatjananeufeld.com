@@ -22,8 +22,8 @@ export const Caroussel = () => {
                         image {
                             localFile {
                                 childImageSharp {
-                                    fluid(quality: 100) {
-                                        ...GatsbyImageSharpFluid
+                                    fixed(quality: 100) {
+                                        ...GatsbyImageSharpFixed
                                     }
                                 }
                             }
@@ -46,12 +46,12 @@ export const Caroussel = () => {
                 const {
                     image: {
                         localFile: {
-                            childImageSharp: { fluid },
+                            childImageSharp: { fixed },
                         },
                     },
                 } = galleryImage;
 
-                return <Image fluid={fluid} />;
+                return <Image fixed={fixed} />;
             })}
         </Slider>
     );

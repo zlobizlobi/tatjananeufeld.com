@@ -40,6 +40,8 @@ export const GlobalStyle = createGlobalStyle`
         background-color: black;
         font-family: 'Montserrat', sans-serif;
         width: 100%;
+        min-width: 100%;
+        overflow-x: hidden;
         min-height: 100%;
     }
 
