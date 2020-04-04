@@ -42,7 +42,7 @@ export const data = graphql`
 `;
 
 const IndexPage = ({ pageContext: { locale }, data }) => {
-    // locale is not used as it's interpolated under the hood into the graphql query. This is graphql syntax.
+    // locale is not highlighted as used here as it's interpolated under the hood into the graphql query. This is graphql syntax.
     const {
         prismicMainPage: {
             data: { body: concerts },

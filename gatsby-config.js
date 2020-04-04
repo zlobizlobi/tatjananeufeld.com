@@ -1,5 +1,9 @@
 const path = require('path');
 
+// require('dotenv').config({
+//     path: `.env.${process.env.NODE_ENV}`,
+// });
+
 module.exports = {
     siteMetadata: {
         siteUrl: 'https://www.tatjananeufeld.com',
@@ -45,7 +49,7 @@ module.exports = {
             resolve: `gatsby-source-prismic`,
             options: {
                 repositoryName: `tatjananeufeld`,
-                accessToken: `MC5YWi1mTGhFQUFDUUFBaTdS.77-9d--_ve-_vUbvv70K77-977-977-977-9YUx5BGLvv70iB--_ve-_ve-_vVjvv73vv70oCe-_vVkHRe-_vQ`,
+                accessToken: process.env.API_KEY,
             },
         },
         {

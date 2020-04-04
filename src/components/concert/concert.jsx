@@ -67,7 +67,7 @@ export const Concert = ({
         >
             <ContentContainer>
                 <Visible
-                    posterSrc={fluid ? fluid : thumbnailImage}
+                    posterSrc={fluid || thumbnailImage}
                     name={name}
                     onClick={() => setIsExtended(!isExtended)}
                     date={date}

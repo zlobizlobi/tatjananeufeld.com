@@ -14,15 +14,15 @@ export const Text = styled.p`
     max-width: 800px;
 `;
 
-export const FirstImage = styled(Img)`
+export const FirstImage = styled(Img).attrs({
+    imgStyle: {
+        objectFit: 'cover',
+        objectPosition: '0%, 0%',
+    },
+})`
     width: 200px;
     height: 200px;
     margin: 20px 0;
-
-    > picture > img {
-        object-fit: cover !important;
-        object-position: 0% 0% !important;
-    }
 
     ${media.sm(`
         margin: 7.5px 15px 7.5px 0 ;

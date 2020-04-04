@@ -51,13 +51,11 @@ export const BiographySection = () => {
                 second_paragraph: { text: secondParagraphText },
                 first_image: {
                     localFile: {
-                        // query for the first image
                         childImageSharp: { fluid: firstImageFluid },
                     },
                 },
                 second_image: {
                     localFile: {
-                        // query for the second image
                         childImageSharp: { fluid: secondImageFluid },
                     },
                 },
