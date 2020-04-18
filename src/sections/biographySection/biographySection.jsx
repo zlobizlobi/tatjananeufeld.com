@@ -47,8 +47,8 @@ export const BiographySection = () => {
     const {
         prismicBiography: {
             data: {
-                first_paragraph: { text: firstParagraphText },
-                second_paragraph: { text: secondParagraphText },
+                first_paragraph,
+                second_paragraph,
                 first_image: {
                     localFile: {
                         childImageSharp: { fluid: firstImageFluid },
@@ -70,9 +70,9 @@ export const BiographySection = () => {
             </Heading>
             <ContentContainer>
                 <FirstImage loading="lazy" fluid={firstImageFluid} />
-                <Text>{firstParagraphText}</Text>
+                <Text>{firstParagraph}</Text>
                 <SecondImage loading="lazy" fluid={secondImageFluid} />
-                <Text>{secondParagraphText}</Text>
+                <Text>{secondParagraph}</Text>
             </ContentContainer>
         </Section>
     );
