@@ -15,12 +15,8 @@ export const BiographySection = () => {
         query MyQuery {
             prismicBiography {
                 data {
-                    first_paragraph {
-                        text
-                    }
-                    second_paragraph {
-                        text
-                    }
+                    first_paragraph
+                    second_paragraph
                     first_image {
                         localFile {
                             childImageSharp {
@@ -70,9 +66,9 @@ export const BiographySection = () => {
             </Heading>
             <ContentContainer>
                 <FirstImage loading="lazy" fluid={firstImageFluid} />
-                <Text>{firstParagraph}</Text>
+                <Text>{first_paragraph}</Text>
                 <SecondImage loading="lazy" fluid={secondImageFluid} />
-                <Text>{secondParagraph}</Text>
+                <Text>{second_paragraph}</Text>
             </ContentContainer>
         </Section>
     );
