@@ -22,8 +22,8 @@ export const Caroussel = () => {
                         image {
                             localFile {
                                 childImageSharp {
-                                    fixed(quality: 100) {
-                                        ...GatsbyImageSharpFixed
+                                    fluid(quality: 100) {
+                                        ...GatsbyImageSharpFluid
                                     }
                                 }
                             }
@@ -40,18 +40,21 @@ export const Caroussel = () => {
         },
     } = galleryQuery;
 
+    console.log(galleryQuery);
+    debugger;
+
     return (
         <Slider {...CAROUSSEL_SETTINGS}>
             {galleryImages.map(galleryImage => {
                 const {
                     image: {
                         localFile: {
-                            childImageSharp: { fixed },
+                            childImageSharp: { fluid },
                         },
                     },
                 } = galleryImage;
 
-                return <Image fixed={fixed} />;
+                return <Image fluid={fluid} />;
             })}
         </Slider>
     );

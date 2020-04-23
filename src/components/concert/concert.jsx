@@ -46,6 +46,8 @@ export const Concert = ({
         setIsExtended(!isExtended);
     };
 
+    console.log(vendors)
+
     const parsedVendors = jsonParse(vendors);
 
     const parentContainerRef = useRef();
@@ -90,28 +92,28 @@ export const Concert = ({
                                         ticketUrl = '',
                                         telephoneNumber = '',
                                     }) => (
-                                        <>
-                                            {ticketUrl ? (
-                                                <VendorContainer
-                                                    href={ticketUrl}
-                                                    as="a"
-                                                    key={vendor}
-                                                >
-                                                    <span>{vendor}</span>
-                                                    <GetTicketsButton>
-                                                        Tickets
+                                            <>
+                                                {ticketUrl ? (
+                                                    <VendorContainer
+                                                        href={ticketUrl}
+                                                        as="a"
+                                                        key={vendor}
+                                                    >
+                                                        <span>{vendor}</span>
+                                                        <GetTicketsButton>
+                                                            Tickets
                                                     </GetTicketsButton>
-                                                </VendorContainer>
-                                            ) : (
-                                                <VendorContainer key={vendor}>
-                                                    <span>{vendor}</span>
-                                                    <span>
-                                                        {telephoneNumber}
-                                                    </span>
-                                                </VendorContainer>
-                                            )}
-                                        </>
-                                    )
+                                                    </VendorContainer>
+                                                ) : (
+                                                        <VendorContainer key={vendor}>
+                                                            <span>{vendor}</span>
+                                                            <span>
+                                                                {telephoneNumber}
+                                                            </span>
+                                                        </VendorContainer>
+                                                    )}
+                                            </>
+                                        )
                                 )}
                             </HiddenSubContainer>
                         </>
