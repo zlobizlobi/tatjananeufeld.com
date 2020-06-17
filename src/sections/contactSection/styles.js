@@ -3,16 +3,12 @@ import {
     Heading as HeadingComponent,
     Section as SectionComponent,
 } from '@components';
-import { IoIosPhonePortrait } from 'react-icons/io';
 import { media } from '@styles';
 
 export const Section = styled(SectionComponent)`
     color: white;
     align-self: center;
     padding: 0 20px 150px 20px;
-    ${media.md(`
-        min-width: 600px;
-    `)}
 `;
 
 export const Heading = styled(HeadingComponent)`
@@ -25,39 +21,64 @@ export const SubContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin: 50px 0;
 `;
 
-export const Number = styled.h2`
-    font-size: 16px;
+export const Contact = styled.h2`
+    display: flex;
+    align-items: center;
+    font-size: 13px;
     font-weight: normal;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    color: #A8A8A8;
+
+    &:last-child {
+        margin: 0;
+    }
 
     ${media.md(`
-        font-size: 25px;        
+        font-size: 16px;        
     `)}
+
+    > a {
+        text-decoration: none;
+        color: #A8A8A8;
+    }
 `;
 
+export const ContactType = styled.span`
+    padding-left: 10px;
+    border-left: 1px solid #A8A8A8;
+    margin-left: 10px;
+
+    &:last-child {
+        display: flex;
+        align-items: center;
+        
+        > img {
+            margin-left: 10px;  
+        }
+    }
+`
+
 export const Email = styled.h6`
-    color: rgba(255, 255, 255, 0.4);
+    color: white;
     font-weight: normal;
     font-size: 16px;
 `;
 
-export const PhoneIcon = styled(IoIosPhonePortrait)`
-    color: white;
-    width: 30px;
-    height: 30px;
-    margin: 30px 0;
-`;
-
+export const FormContainer = styled.div`
+    margin-top: 30px;
+    width: 100%;
+`
 export const FormHeading = styled.h3`
     font-weight: lighter;
     text-align: center;
     font-size: 16px;
 
     ${media.md(`
-      font-size: 23px;
-      max-width: 600px;
+      font-size: 20px;
+      font-weight: 600; 
     `)}
 `;
+

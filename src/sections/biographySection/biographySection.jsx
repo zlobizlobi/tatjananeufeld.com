@@ -6,7 +6,6 @@ import {
     Section,
     FirstImage,
     ContentContainer,
-    SecondImage,
 } from './styles';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -25,16 +24,6 @@ export const BiographySection = () => {
                         }
                     }
                     first_paragraph
-                    second_image {
-                        localFile {
-                            childImageSharp {
-                                fluid(quality: 100) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                    second_paragraph
                 }
             }
         }
@@ -49,12 +38,6 @@ export const BiographySection = () => {
                     },
                 },
                 first_paragraph,
-                second_image: {
-                    localFile: {
-                        childImageSharp: { fluid: secondImageFluid },
-                    },
-                },
-                second_paragraph,
             },
         },
     } = data;
@@ -68,8 +51,6 @@ export const BiographySection = () => {
             <ContentContainer>
                 <FirstImage loading="lazy" fluid={firstImageFluid} />
                 <Text>{first_paragraph}</Text>
-                <SecondImage loading="lazy" fluid={secondImageFluid} />
-                <Text>{second_paragraph}</Text>
             </ContentContainer>
         </Section>
     );

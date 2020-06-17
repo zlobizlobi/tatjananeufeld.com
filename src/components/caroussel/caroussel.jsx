@@ -40,9 +40,6 @@ export const Caroussel = () => {
         },
     } = galleryQuery;
 
-    console.log(galleryQuery);
-    debugger;
-
     return (
         <Slider {...CAROUSSEL_SETTINGS}>
             {galleryImages.map(galleryImage => {

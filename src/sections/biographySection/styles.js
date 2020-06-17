@@ -30,18 +30,6 @@ export const FirstImage = styled(Img).attrs({
     `)}
 `;
 
-export const SecondImage = styled(FirstImage)`
-    margin: 20px 0;
-
-    &:last-child {
-        margin: 40px 0 0 0;
-    }
-
-    ${media.sm(`
-       display: none;
-    `)}
-`;
-
 export const ContentContainer = styled.div`
     display: flex;
     flex-direction: column-reverse;
