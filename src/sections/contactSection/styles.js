@@ -22,6 +22,7 @@ export const SubContainer = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 50px 0;
+    
     img {
         margin-bottom: 20px;  
     }
@@ -37,7 +38,6 @@ export const Contact = styled.h2`
  
     &:last-child {
         margin: 0;
-        border-bottom: 1px solid white;
     }
 
     ${media.md(`

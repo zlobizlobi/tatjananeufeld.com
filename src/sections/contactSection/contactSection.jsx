@@ -22,7 +22,7 @@ export const ContactSection = () => (
             <Contact><a href="tel:+491762438 5653">+49 (176) 2438 5653</a></Contact>
             <Contact>tatjananeufeld2020@gmail.com</Contact>
             <img src={aljosjaImage} alt="Aljosja logo" />
-            <Contact><a href="https://aljosja.art">Agent Aljosja Art</a></Contact>
+            <Contact>Agent Aljosja Art</Contact>
         </SubContainer>
         <FormHeading>
             <FormattedMessage id="contact_cta" />
@@ -30,5 +30,5 @@ export const ContactSection = () => (
         <FormContainer>
             <Form />
         </FormContainer>
-    </Section>
+    </Section >
 );
