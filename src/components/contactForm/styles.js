@@ -7,7 +7,6 @@ export const Form = styled(FormComponent)`
     margin-top: 30px;
 `;
 
-
 export const ErrorWrapper = styled.span`
     font-size: 11px;
     color: #808080;
@@ -56,4 +55,3 @@ export const FieldContainer = styled.div`
         resize: none;
     }
 `;
-

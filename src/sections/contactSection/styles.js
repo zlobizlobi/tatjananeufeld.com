@@ -31,9 +31,13 @@ export const Contact = styled.h2`
     font-weight: normal;
     margin-bottom: 20px;
     color: #A8A8A8;
-
+ 
     &:last-child {
         margin: 0;
+        border-bottom: 1px solid white;
+        > img {
+            margin-left: 10px;  
+        }
     }
 
     ${media.md(`
@@ -54,10 +58,6 @@ export const ContactType = styled.span`
     &:last-child {
         display: flex;
         align-items: center;
-        
-        > img {
-            margin-left: 10px;  
-        }
     }
 `
 
