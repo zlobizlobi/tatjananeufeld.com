@@ -1,2 +1,2 @@
-export { MobileNavigation } from "./mobile"
-export { DesktopNavigation } from "./desktop"
+export { MobileNavigation } from './mobile';
+export { DesktopNavigation } from './desktop';

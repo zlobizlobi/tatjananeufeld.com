@@ -14,7 +14,7 @@ import { Location } from '@reach/router';
 import { animated, useSpring, useTrail } from 'react-spring';
 import { useScrollLock } from '../useScrollLock';
 
-const Navigation = animated(props => <NavigationComponent {...props} />); // To animate navigation
+const Navigation = animated(props => <NavigationComponent {...props} />);
 
 const Bar = animated(props => {
     // To animate the hamburgerBars
@@ -74,7 +74,7 @@ export const MobileNavigation = () => {
                     onClick={() => {
                         if (
                             location.pathname ===
-                                `/${locale}/tatyana-podyomova/` ||
+                            `/${locale}/tatyana-podyomova/` ||
                             location.pathname === `/${locale}/partnerships/`
                         ) {
                             navigate('/');

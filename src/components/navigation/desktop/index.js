@@ -1,1 +1,1 @@
-export { DesktopNavigation } from './desktopNavigation'
+export { DesktopNavigation } from './desktopNavigation';

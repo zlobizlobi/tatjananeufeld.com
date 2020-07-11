@@ -5,8 +5,8 @@ import {
     LandingSection,
     ConcertSection,
     BiographySection,
-    GallerySection,
     ContactSection,
+    GallerySection
 } from '../sections';
 
 export const data = graphql`

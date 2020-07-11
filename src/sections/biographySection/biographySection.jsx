@@ -1,12 +1,7 @@
 import React from 'react';
 import { Heading } from '@components';
 import { FormattedMessage } from 'react-intl';
-import {
-    Text,
-    Section,
-    FirstImage,
-    ContentContainer,
-} from './styles';
+import { Text, Section, FirstImage, ContentContainer } from './styles';
 import { useStaticQuery, graphql } from 'gatsby';
 
 export const BiographySection = () => {
@@ -41,7 +36,6 @@ export const BiographySection = () => {
             },
         },
     } = data;
-
 
     return (
         <Section name="biography">

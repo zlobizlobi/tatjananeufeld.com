@@ -45,7 +45,7 @@ export const FieldContainer = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
-    
+
     &:last-child {
         margin: 0;
     }

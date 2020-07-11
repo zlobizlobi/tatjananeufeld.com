@@ -39,9 +39,7 @@ export const GlobalStyle = createGlobalStyle`
     body, html {
         background-color: black;
         font-family: 'Montserrat', sans-serif;
-        width: 100%;
         min-width: 100%;
-        overflow-x: hidden;
         min-height: 100%;
     }
 
@@ -55,5 +53,10 @@ export const GlobalStyle = createGlobalStyle`
         background-color: transparent;
         cursor: pointer;
         border: none;
+    }
+
+    ul {
+        margin: !important;
+        padding: !important;
     }
 `;

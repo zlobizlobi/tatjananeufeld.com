@@ -1,1 +1,1 @@
-export { GallerySection } from './gallerySection'
+export { GallerySection } from './gallerySection';

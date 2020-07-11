@@ -90,8 +90,7 @@ export const ContactForm = () => {
                         Send
                     </Button>
                 </Form>
-            )
-            }
-        </Formik >
+            )}
+        </Formik>
     );
 };

@@ -1,1 +1,1 @@
-export { Heading, Container } from './partnerships' 
+export { Heading, Container } from './partnerships';

@@ -1,1 +1,1 @@
-export { PageLink } from './pageLink'
+export { PageLink } from './pageLink';

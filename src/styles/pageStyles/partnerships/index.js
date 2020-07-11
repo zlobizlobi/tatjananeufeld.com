@@ -1,1 +1,1 @@
-export { Heading, Container } from './styles'
+export { Heading, Container } from './styles';
