@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Carousel as CarouselComponent } from 'react-responsive-carousel';
-import { media } from '@styles';
 
 const Carousel = styled(CarouselComponent)`
     width: 100%;

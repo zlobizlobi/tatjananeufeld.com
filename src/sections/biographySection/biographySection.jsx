@@ -38,7 +38,7 @@ export const BiographySection = () => {
     } = data;
 
     return (
-        <Section name="biography">
+        <Section id="biography">
             <Heading>
                 <FormattedMessage id="biography_heading" />
             </Heading>

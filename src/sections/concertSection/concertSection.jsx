@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { Heading } from './styles';
 
 export const ConcertSection = ({ concerts }) => (
-    <Section name="concerts">
+    <Section id="concerts">
         <Heading>
             <FormattedMessage id="concert_heading" />
         </Heading>

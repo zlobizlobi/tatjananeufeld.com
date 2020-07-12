@@ -3,87 +3,49 @@ import {
     FooterComponent,
     Name,
     NavList,
-    NavLink,
     IconContainer,
     Youtube,
     Facebook,
     CopyRighText,
-    PageLink,
 } from './styles';
-import { FormattedMessage, useIntl } from 'react-intl';
-import { Location } from '@reach/router';
-import { navigate } from 'gatsby';
-
-const navLinks = [
-    'home',
-    'concerts',
-    'biography',
-    'gallery',
-    'partnerships',
-    'tatyana-podyomova',
-    'contact',
-];
+import { useIntl } from 'react-intl';
+import { NavLink } from '../navLink';
 
 export const Footer = () => {
     const { locale } = useIntl();
 
     return (
-        <Location>
-            {({ location }) => (
-                <FooterComponent>
-                    <Name>Tatjana Neufeld</Name>
-                    <NavList>
-                        {navLinks.map(navLink => {
-                            if (
-                                navLink === 'partnerships' ||
-                                navLink === 'tatyana-podyomova'
-                            ) {
-                                return (
-                                    <PageLink to={`/${navLink}`}>
-                                        <FormattedMessage id={navLink} />
-                                    </PageLink>
-                                );
-                            }
-                            return (
-                                <NavLink
-                                    onClick={() => {
-                                        if (
-                                            location.pathname ===
-                                                `/${locale}/tatyana-podyomova/` ||
-                                            location.pathname ===
-                                                `/${locale}/partnerships/`
-                                        ) {
-                                            navigate('/');
-                                            return;
-                                        }
-                                    }}
-                                    key={navLink}
-                                    name={navLink}
-                                />
-                            );
-                        })}
-                    </NavList>
-                    <IconContainer>
-                        <a href="https://youtube.com">
-                            <Youtube />
+        <FooterComponent>
+            <Name>Tatjana Neufeld</Name>
+            <NavList>
+                <NavLink title="home" />
+                <NavLink title="concerts" />
+                <NavLink title="biography" />
+                <NavLink title="gallery" />
+                <NavLink title="partnerships" />
+                <NavLink title="tatyana-podyomova" />
+                <NavLink title="gallery" />
+                <NavLink title="contact" />
+            </NavList>
+            <IconContainer>
+                <a href="https://youtube.com">
+                    <Youtube />
+                </a>
+                <a href="https://youtube.com">
+                    <Facebook />
+                </a>
+            </IconContainer>
+            <CopyRighText>
+                © Copyright Tatjana Neufeld 2020, Made by{' '}
+                <a
+                    href="https://github.com/zlobizlobi"
+                    style={{
+                        color: 'white',
+                    }}
+                >
+                    zlobizlobi
                         </a>
-                        <a href="https://youtube.com">
-                            <Facebook />
-                        </a>
-                    </IconContainer>
-                    <CopyRighText>
-                        © Copyright Tatjana Neufeld 2020, Made by{' '}
-                        <a
-                            href="https://github.com/zlobizlobi"
-                            style={{
-                                color: 'white',
-                            }}
-                        >
-                            zlobizlobi
-                        </a>
-                    </CopyRighText>
-                </FooterComponent>
-            )}
-        </Location>
+            </CopyRighText>
+        </FooterComponent>
     );
 };

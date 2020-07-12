@@ -4,15 +4,12 @@ import {
     HamburgerButton,
     Navigation as NavigationComponent,
     Nav,
-    NavLink,
     LanguageSwitch,
-    PageLink,
 } from './styles';
-import { useIntl, FormattedMessage } from 'gatsby-plugin-intl';
-import { navigate } from 'gatsby';
-import { Location } from '@reach/router';
+import { useIntl } from 'gatsby-plugin-intl';
 import { animated, useSpring, useTrail } from 'react-spring';
 import { useScrollLock } from '../useScrollLock';
+import { NavLink } from '../../navLink';
 
 const Navigation = animated(props => <NavigationComponent {...props} />);
 
@@ -47,46 +44,17 @@ export const MobileNavigation = () => {
         opacity: isOpen ? '1' : '0',
     });
 
-    const navLinks = [
-        'home',
-        'concerts',
-        'biography',
-        'gallery',
-        'partnerships',
-        'tatyana-podyomova',
-        'contact',
-    ];
-
-    const NavigationList = ({ location }) => {
-        const items = navLinks.map(navLink => {
-            if (navLink === 'partnerships' || navLink === 'tatyana-podyomova') {
-                // Some links are page links and require a gatsby Link component
-                return (
-                    <PageLink to={`/${navLink}`}>
-                        <FormattedMessage id={navLink} />
-                    </PageLink>
-                );
-            }
-            return (
-                <NavLink
-                    key={navLink}
-                    name={navLink}
-                    onClick={() => {
-                        if (
-                            location.pathname ===
-                            `/${locale}/tatyana-podyomova/` ||
-                            location.pathname === `/${locale}/partnerships/`
-                        ) {
-                            navigate('/');
-                            return;
-                        }
-                        setIsOpen(!isOpen);
-                        setIsActive([navLink]);
-                    }}
-                    isActive={isActive.includes(navLink)}
-                />
-            );
-        });
+    const NavigationList = () => {
+        const items = [
+            <NavLink title="home" />,
+            <NavLink title="concerts" />,
+            <NavLink title="biography" />,
+            <NavLink title="gallery" />,
+            <NavLink title="partnerships" />,
+            <NavLink title="tatyana-podyomova" />,
+            <NavLink title="gallery" />,
+            <NavLink title="contact" />
+        ]
 
         const trail = useTrail(items.length, {
             from: { opacity: 0, transform: 'translate3d(-30px, 0px, 0)' },
@@ -105,22 +73,18 @@ export const MobileNavigation = () => {
     };
 
     return (
-        <Location>
-            {({ location }) => (
-                <Nav>
-                    <HamburgerButton onClick={() => setIsOpen(!isOpen)}>
-                        <Bar style={{ ...animationUpperBar }} />
-                        <Bar style={{ ...animationLowerBar }} />
-                        <Navigation
-                            isOpen={isOpen}
-                            style={{ ...visibilityAnimation }}
-                        >
-                            {isOpen && <NavigationList location={location} />}
-                        </Navigation>
-                    </HamburgerButton>
-                    <LanguageSwitch />
-                </Nav>
-            )}
-        </Location>
+        <Nav>
+            <HamburgerButton onClick={() => setIsOpen(!isOpen)}>
+                <Bar style={{ ...animationUpperBar }} />
+                <Bar style={{ ...animationLowerBar }} />
+                <Navigation
+                    isOpen={isOpen}
+                    style={{ ...visibilityAnimation }}
+                >
+                    {isOpen && <NavigationList />}
+                </Navigation>
+            </HamburgerButton>
+            <LanguageSwitch />
+        </Nav>
     );
 };

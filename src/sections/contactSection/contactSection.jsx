@@ -13,7 +13,7 @@ import { FormattedMessage } from 'gatsby-plugin-intl';
 import aljosjaImage from '../../images/aljosja.svg';
 
 export const ContactSection = () => (
-    <Section name="contact">
+    <Section id="contact">
         <Heading>
             <FormattedMessage id="contact_heading" />
         </Heading>

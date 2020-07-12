@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 import { media } from '@styles';
-import { NavLink as NavLinkComponent } from '../navLink';
 import { TiSocialFacebook, TiSocialYoutube } from 'react-icons/ti';
-import { PageLink as PageLinkComponent } from '../pageLink';
 
 export const FooterComponent = styled.footer`
     display: flex;
@@ -70,33 +68,33 @@ export const NavList = styled.ul`
     `)}
 `;
 
-export const PageLink = styled(PageLinkComponent)`
-    font-size: 12px;
-    color: white;
-    text-transform: uppercase;
-`;
+// export const PageLink = styled(PageLinkComponent)`
+//     font-size: 12px;
+//     color: white;
+//     text-transform: uppercase;
+// `;
 
-export const NavLink = styled(NavLinkComponent)`
-    margin: 0 0 30px 0;
-    text-transform: uppercase;
-    color: white;
+// export const NavLink = styled(NavLinkComponent)`
+//     margin: 0 0 30px 0;
+//     text-transform: uppercase;
+//     color: white;
 
-    > a {
-        font-size: 12px;
-    }
+//     > a {
+//         font-size: 12px;
+//     }
 
-    &:last-child {
-        margin: 0;
-    }
+//     &:last-child {
+//         margin: 0;
+//     }
 
-    ${media.md(`
-        margin: 0 15px 0 0;
+//     ${media.md(`
+//         margin: 0 15px 0 0;
 
-        &:last-child {
-            margin: 0;
-        }
-    `)}
-`;
+//         &:last-child {
+//             margin: 0;
+//         }
+//     `)}
+// `;
 
 export const CopyRighText = styled.h6`
     font-size: 11px;

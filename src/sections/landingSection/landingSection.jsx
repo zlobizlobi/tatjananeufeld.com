@@ -11,7 +11,6 @@ import {
     Gradient,
 } from './styles';
 import { FormattedMessage } from 'gatsby-plugin-intl';
-import Scroll from 'react-scroll';
 import { FiCalendar } from 'react-icons/fi';
 
 export const LandingSection = () => {
@@ -52,14 +51,14 @@ export const LandingSection = () => {
         <SubHeading>
             <FormattedMessage id="landing_section_subheading" />
         </SubHeading>,
-        <Scroll.Link to="concerts" smooth duration={1100}>
+        <a href="#concerts" style={{ textDecoration: 'none' }}>
             <Button aria-label="Go to the concert dates">
                 <span>
                     <FormattedMessage id="landing_section_button" />
                 </span>
                 <FiCalendar />
             </Button>
-        </Scroll.Link>,
+        </a>,
     ];
 
     const trail = useTrail(items.length, {
@@ -70,7 +69,7 @@ export const LandingSection = () => {
     });
 
     return (
-        <Section name="home">
+        <Section id="home">
             <Image fluid={fluid} />
             <Gradient />
             <NameContainer>

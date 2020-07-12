@@ -1,26 +1,11 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import { NavLink, LanguageSwitch, Nav, NavList, PageLink } from './styles';
-import { useIntl } from 'react-intl';
-import { Location } from '@reach/router';
-import { navigate } from 'gatsby';
+import React, { useEffect, useState } from 'react';
+import { LanguageSwitch, Nav, NavList } from './styles';
+import { NavLink } from '../../navLink';
 
 export const DesktopNavigation = () => {
-    const [isActive, setIsActive] = React.useState(['home']);
 
-    const { locale } = useIntl();
 
-    const [isScrolled, setIsScrolled] = React.useState(false);
-
-    const navLinks = [
-        'home',
-        'concerts',
-        'biography',
-        'gallery',
-        'partnerships',
-        'tatyana-podyomova',
-        'contact',
-    ];
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const handleScroll = () => {
         if (window.pageYOffset > 350) {
@@ -30,58 +15,24 @@ export const DesktopNavigation = () => {
         }
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
     return (
-        <Location>
-            {({ location }) => {
-                return (
-                    <Nav isScrolled={isScrolled}>
-                        <NavList>
-                            {navLinks.map(navLink => {
-                                if (
-                                    navLink === 'partnerships' ||
-                                    navLink === 'tatyana-podyomova'
-                                ) {
-                                    return (
-                                        <PageLink to={`/${navLink}`}>
-                                            <FormattedMessage id={navLink} />
-                                        </PageLink>
-                                    );
-                                }
-                                return (
-                                    <NavLink
-                                        onClick={e => {
-                                            if (
-                                                location.pathname ===
-                                                    `/${locale}/tatyana-podyomova/` ||
-                                                location.pathname ===
-                                                    `/${locale}/partnerships/`
-                                            ) {
-                                                localStorage.setItem(
-                                                    'clicked',
-                                                    e.target.textContent
-                                                );
-                                                navigate('/');
-                                                return;
-                                            }
-                                            setIsActive([navLink]);
-                                        }}
-                                        key={navLink}
-                                        name={navLink}
-                                        isActive={isActive.includes(navLink)}
-                                    />
-                                );
-                            })}
-                        </NavList>
-                        <LanguageSwitch />
-                    </Nav>
-                );
-            }}
-        </Location>
+        <Nav isScrolled={isScrolled}>
+            <NavList>
+                <NavLink title="home" />
+                <NavLink title="concerts" />
+                <NavLink title="biography" />
+                <NavLink title="gallery" />
+                <NavLink title="partnerships" />
+                <NavLink title="tatyana-podyomova" />
+                <NavLink title="contact" />
+            </NavList>
+            <LanguageSwitch />
+        </Nav>
     );
-};
+}

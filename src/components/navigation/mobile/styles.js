@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import { NavLink as NavLinkComponent } from '../../navLink';
 import { media } from '@styles';
 import { LanguageSwitch as LanguageSwitchComponent } from '../../languageSwitch';
-import { PageLink as PageLinkComponent } from '../../pageLink';
 
 export const Nav = styled.nav`
     display: flex;
@@ -79,15 +78,15 @@ export const LanguageSwitch = styled(LanguageSwitchComponent)`
     margin: 0 30px 0 0;
 `;
 
-export const PageLink = styled(PageLinkComponent)`
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.7);
-    position: relative;
-    left: 0;
-    transition: left 0.2s ease-in-out;
+// export const PageLink = styled(PageLinkComponent)`
+//     font-size: 20px;
+//     color: rgba(255, 255, 255, 0.7);
+//     position: relative;
+//     left: 0;
+//     transition: left 0.2s ease-in-out;
 
-    :hover {
-        color: white;
-        left: 10px;
-    }
-`;
+//     :hover {
+//         color: white;
+//         left: 10px;
+//     }
+// `;
