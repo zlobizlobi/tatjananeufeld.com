@@ -44,6 +44,10 @@ export const ContactOption = styled.h2`
     }
 `;
 
+export const LogoContainer = styled.a`
+    margin-bottom: 20px;
+`
+
 export const FormHeading = styled.h3`
     font-weight: lighter;
     text-align: center;

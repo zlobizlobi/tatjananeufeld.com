@@ -15,7 +15,7 @@ const Carousel = styled(CarouselComponent)`
 
 const Image = styled.img`
     object-fit: contain;
-    max-height: 550px;
+    max-height: 600px;
     width: 100%;
 `;
 

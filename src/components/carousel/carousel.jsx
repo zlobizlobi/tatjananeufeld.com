@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { ArrowPrevious, ArrowNext, Image, Carousel as CarouselComponent } from './styles';
+import { Image, Carousel as CarouselComponent } from './styles';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 export const Carousel = () => {
@@ -45,16 +45,14 @@ export const Carousel = () => {
                     const embeddedSrc = src.replace('watch?v=', 'embed/') + '?controls=0&modestbranding=1'
 
                     return (
-                        <div style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
-                            <iframe
-                                title="Youtube video player"
-                                key={itemName}
-                                src={embeddedSrc}
-                                allowFullScreen="0"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            />
-                        </div>
+                        <iframe
+                            title="Youtube video player"
+                            key={itemName}
+                            src={embeddedSrc}
+                            allowFullScreen="0"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        />
 
                     );
                 })

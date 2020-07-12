@@ -6,8 +6,9 @@ import {
     ContactOption,
     FormHeading,
     FormContainer,
+    LogoContainer
 } from './styles';
-import { ContactForm as Form } from '@components';
+import { ContactForm as Form, } from '@components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import aljosjaImage from '../../images/aljosja.svg';
 
@@ -28,9 +29,9 @@ export const ContactSection = () => (
                     tatjananeufeld2020@gmail.com
                 </a>
             </ContactOption>
-            <a href="https://aljosja.art">
+            <LogoContainer href="https://aljosja.art">
                 <img src={aljosjaImage} alt="Aljosja logo" />
-            </a>
+            </LogoContainer>
             <ContactOption>
                 <a href="https://aljosja.art">Agent Aljosja Art</a>
             </ContactOption>

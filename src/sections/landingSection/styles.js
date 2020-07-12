@@ -113,7 +113,7 @@ export const Button = styled.button`
     & > svg {
         position: relative;
         margin-left: 10px;
-        font-size: 14px;
+        font-size: 13px;
         left: 0;
         bottom: 1px;
         transition: all 0.2s ease;
