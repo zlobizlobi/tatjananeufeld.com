@@ -69,8 +69,8 @@ const Partnerships = () => {
                     <FormattedMessage id="partnerships_heading" />
                 </Heading>
                 <Container>
-                    {partnerships.map(p => (
-                        <Partnership {...p} />
+                    {partnerships.map((p, index) => (
+                        <Partnership {...p} key={index} />
                     ))}
                 </Container>
             </Section>

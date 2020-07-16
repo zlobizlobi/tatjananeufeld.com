@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Layout, SEO } from '@components';
 import { graphql } from 'gatsby';
 import {
@@ -49,11 +49,13 @@ const IndexPage = ({ pageContext: { locale }, data }) => {
         },
     } = data;
 
+    const concertRef = useRef(null);
+
     return (
         <Layout>
             <SEO />
-            <LandingSection />
-            <ConcertSection concerts={concerts} />
+            <LandingSection ref={concertRef} />
+            <ConcertSection ref={concertRef} concerts={concerts} />
             <BiographySection />
             <GallerySection />
             <ContactSection />

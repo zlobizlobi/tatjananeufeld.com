@@ -94,15 +94,17 @@ export const SubHeading = styled.h6`
 export const Button = styled.button`
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 12.5px 17.5px;
+    padding: 15px 17.5px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    font-family: 'Montserrat', sans-serif;
     transition: all 0.3s ease;
     font-size: 11px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
+    z-index: 1000;
+    text-align: left;
+    max-width: 450px;
+    line-height: 19px;
 
     & > span {
         position: relative;
@@ -112,11 +114,10 @@ export const Button = styled.button`
 
     & > svg {
         position: relative;
-        margin-left: 10px;
-        font-size: 13px;
+        margin-left: 15px;
+        font-size: 22px;
         left: 0;
-        bottom: 1px;
-        transition: all 0.2s ease;
+        transition: left 0.2s ease;
     }
 
     :hover {

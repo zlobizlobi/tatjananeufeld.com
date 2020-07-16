@@ -16,7 +16,7 @@ export const Footer = () =>
     <FooterComponent>
         <Name>Tatjana Neufeld</Name>
         <NavList>
-            {NAV_TITLES.map(title => <NavLink title={title} />)}
+            {NAV_TITLES.map(title => <NavLink key={title} title={title} />)}
         </NavList>
         <IconContainer>
             <a href="https://youtube.com">

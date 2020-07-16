@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, Fragment } from 'react';
 import {
     Program,
     Container,
@@ -90,28 +90,27 @@ export const Concert = ({
                                         ticketUrl = '',
                                         telephoneNumber = '',
                                     }) => (
-                                        <>
-                                            {ticketUrl ? (
-                                                <VendorContainer
-                                                    href={ticketUrl}
-                                                    as="a"
-                                                    key={vendor}
-                                                >
-                                                    <span>{vendor}</span>
-                                                    <GetTicketsButton>
-                                                        Tickets
+                                            <Fragment key={vendor}>
+                                                {ticketUrl ? (
+                                                    <VendorContainer
+                                                        href={ticketUrl}
+                                                        as="a"
+                                                    >
+                                                        <span>{vendor}</span>
+                                                        <GetTicketsButton>
+                                                            Tickets
                                                     </GetTicketsButton>
-                                                </VendorContainer>
-                                            ) : (
-                                                <VendorContainer key={vendor}>
-                                                    <span>{vendor}</span>
-                                                    <span>
-                                                        {telephoneNumber}
-                                                    </span>
-                                                </VendorContainer>
-                                            )}
-                                        </>
-                                    )
+                                                    </VendorContainer>
+                                                ) : (
+                                                        <VendorContainer>
+                                                            <span>{vendor}</span>
+                                                            <span>
+                                                                {telephoneNumber}
+                                                            </span>
+                                                        </VendorContainer>
+                                                    )}
+                                            </Fragment>
+                                        )
                                 )}
                             </HiddenSubContainer>
                         </>

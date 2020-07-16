@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { useTrail, animated } from 'react-spring';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import {
     Image,
     Name,
@@ -13,25 +13,25 @@ import {
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import { FiCalendar } from 'react-icons/fi';
 
-export const LandingSection = () => {
-    const landingPageImageSource = useStaticQuery(graphql`
-        query landingPageQuery {
-            prismicMainPage {
-                data {
-                    landing_page_image {
-                        localFile {
-                            childImageSharp {
-                                fluid(quality: 100) {
-                                    ...GatsbyImageSharpFluid
-                                }
+export const LandingSection = forwardRef((props, ref) => {
+    const query = useStaticQuery(graphql`
+    query landingPageQuery {
+        prismicMainPage {
+            data {
+                landing_page_image {
+                    localFile {
+                        childImageSharp {
+                            fluid(quality: 100) {
+                                ...GatsbyImageSharpFluid
                             }
                         }
                     }
                 }
+                button_text
             }
         }
-    `);
-
+    }`
+    )
     const {
         prismicMainPage: {
             data: {
@@ -40,9 +40,12 @@ export const LandingSection = () => {
                         childImageSharp: { fluid },
                     },
                 },
+                button_text
             },
         },
-    } = landingPageImageSource;
+    } = query
+
+    console.log(button_text);
 
     const items = [
         <Name>
@@ -51,14 +54,12 @@ export const LandingSection = () => {
         <SubHeading>
             <FormattedMessage id="landing_section_subheading" />
         </SubHeading>,
-        <a href="#concerts" style={{ textDecoration: 'none' }}>
-            <Button aria-label="Go to the concert dates">
-                <span>
-                    <FormattedMessage id="landing_section_button" />
-                </span>
-                <FiCalendar />
-            </Button>
-        </a>,
+        <Button aria-label="Go to first concert" onClick={() => window.scrollTo({ left: 0, top: ref.current.offsetTop, behavior: 'smooth' })}>
+            <span>
+                {button_text}
+            </span>
+            <FiCalendar />
+        </Button>
     ];
 
     const trail = useTrail(items.length, {
@@ -74,9 +75,9 @@ export const LandingSection = () => {
             <Gradient />
             <NameContainer>
                 {trail.map((styles, i) => (
-                    <animated.div style={styles}>{items[i]}</animated.div>
+                    <animated.div key={i} style={styles}>{items[i]}</animated.div>
                 ))}
             </NameContainer>
         </Section>
     );
-};
+})

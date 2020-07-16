@@ -5,6 +5,5 @@ export const NAV_TITLES = [
     "gallery",
     "partnerships",
     "tatyana-podyomova",
-    "gallery",
     "contact"
 ]

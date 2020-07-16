@@ -10,7 +10,8 @@ export const Nav = styled.nav`
     height: 75px;
     width: 100%;
     position: absolute;
-
+    z-index: 1;
+    
     ${media.lg(`
         display: none;
     `)}

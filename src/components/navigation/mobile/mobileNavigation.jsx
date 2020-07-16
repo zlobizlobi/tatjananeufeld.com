@@ -33,13 +33,12 @@ export const MobileNavigation = () => {
     });
 
     const visibilityAnimation = useSpring({
-        visibility: isOpen ? 'visible' : 'hidden',
         opacity: isOpen ? '1' : '0',
     });
 
     const NavigationList = () => {
 
-        const navLinks = NAV_TITLES.map(title => <NavLink title={title} />);
+        const navLinks = NAV_TITLES.map(title => <NavLink key={title} title={title} />);
 
         const trail = useTrail(navLinks.length, {
             from: { opacity: 0, transform: 'translate3d(-30px, 0px, 0)' },
@@ -51,7 +50,7 @@ export const MobileNavigation = () => {
         return (
             <>
                 {trail.map((styles, i) => (
-                    <animated.div style={styles}>{navLinks[i]}</animated.div>
+                    <animated.div key={i} style={styles}>{navLinks[i]}</animated.div>
                 ))}
             </>
         );

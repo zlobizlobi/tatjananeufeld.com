@@ -27,7 +27,7 @@ export const Carousel = () => {
     } = galleryQuery;
 
     return (
-        <CarouselComponent showStatus={false} emulateTouch>
+        <CarouselComponent showStatus={false} emulateTouch showThumbs={false}>
             {
                 carousselItems.map(item => {
                     const src = item.collection_item.url;
@@ -36,7 +36,7 @@ export const Carousel = () => {
 
                     if (srcType === 'Media') {
                         return (
-                            <div style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
+                            <div key={itemName} style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
                                 <Image key={itemName} src={src} />
                             </div>
                         );
