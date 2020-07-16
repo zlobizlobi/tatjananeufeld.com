@@ -8,44 +8,37 @@ import {
     Facebook,
     CopyRighText,
 } from './styles';
-import { useIntl } from 'react-intl';
-import { NavLink } from '../navLink';
+import { NavLink as NavLinkComponent } from '../navLink';
+import { NAV_TITLES } from '../../constants/navTitles';
+import styled from 'styled-components';
 
-export const Footer = () => {
-    const { locale } = useIntl();
-
-    return (
-        <FooterComponent>
-            <Name>Tatjana Neufeld</Name>
-            <NavList>
-                <NavLink title="home" />
-                <NavLink title="concerts" />
-                <NavLink title="biography" />
-                <NavLink title="gallery" />
-                <NavLink title="partnerships" />
-                <NavLink title="tatyana-podyomova" />
-                <NavLink title="gallery" />
-                <NavLink title="contact" />
-            </NavList>
-            <IconContainer>
-                <a href="https://youtube.com">
-                    <Youtube />
-                </a>
-                <a href="https://youtube.com">
-                    <Facebook />
-                </a>
-            </IconContainer>
-            <CopyRighText>
-                © Copyright Tatjana Neufeld 2020, Made by{' '}
-                <a
-                    href="https://github.com/zlobizlobi"
-                    style={{
-                        color: 'white',
-                    }}
-                >
-                    zlobizlobi
+export const Footer = () =>
+    <FooterComponent>
+        <Name>Tatjana Neufeld</Name>
+        <NavList>
+            {NAV_TITLES.map(title => <NavLink title={title} />)}
+        </NavList>
+        <IconContainer>
+            <a href="https://youtube.com">
+                <Youtube />
+            </a>
+            <a href="https://youtube.com">
+                <Facebook />
+            </a>
+        </IconContainer>
+        <CopyRighText>
+            © Copyright Tatjana Neufeld 2020, Made by{' '}
+            <a
+                href="https://github.com/zlobizlobi"
+                style={{
+                    color: 'white',
+                }}
+            >
+                zlobizlobi
                         </a>
-            </CopyRighText>
-        </FooterComponent>
-    );
-};
+        </CopyRighText>
+    </FooterComponent>
+
+const NavLink = styled(NavLinkComponent)`
+    font-size: 10px;
+`

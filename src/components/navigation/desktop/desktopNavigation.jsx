@@ -33,7 +33,7 @@ export const DesktopNavigation = () => {
     return (
         <Nav isScrolled={isScrolled}>
             <NavList>
-                {navTitles.map(title => <NavLink key={title} title={title} active={active.includes(title)} />)}
+                {navTitles.map(title => <NavLink key={title} title={title} />)}
             </NavList>
             <LanguageSwitch />
         </Nav>

@@ -9,17 +9,7 @@ import {
 import { animated, useSpring, useTrail } from 'react-spring';
 import { useScrollLock } from '../useScrollLock';
 import { NavLink } from '../../navLink';
-
-const navTitles = [
-    "home",
-    "concerts",
-    "biography",
-    "gallery",
-    "partnerships",
-    "tatyana-podyomova",
-    "gallery",
-    "contact"
-]
+import { NAV_TITLES } from '../../../constants/navTitles';
 
 const Navigation = animated(props => <NavigationComponent {...props} />);
 
@@ -49,7 +39,7 @@ export const MobileNavigation = () => {
 
     const NavigationList = () => {
 
-        const navLinks = navTitles.map(title => <NavLink title={title} />);
+        const navLinks = NAV_TITLES.map(title => <NavLink title={title} />);
 
         const trail = useTrail(navLinks.length, {
             from: { opacity: 0, transform: 'translate3d(-30px, 0px, 0)' },

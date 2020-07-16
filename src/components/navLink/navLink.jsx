@@ -5,18 +5,18 @@ import styled, { css } from 'styled-components';
 import { Link as LinkComponent } from 'gatsby';
 import { media } from '@styles';
 
-export const NavLink = ({ title }) => {
+export const NavLink = ({ title, className }) => {
     const { locale } = useIntl();
 
     return (
         <li>
             {(title === 'tatyana-podyomova' || title === 'partnerships') ?
                 (
-                    <PageLink to={`/${title}`}>
+                    <PageLink className={className} to={`/${title}`}>
                         <FormattedMessage id={title} />
                     </PageLink>
                 ) : (
-                    <AnchorLink active={active} to={`/${locale}/#${title}`}>
+                    <AnchorLink className={className} to={`/${locale}/#${title}`}>
                         <FormattedMessage id={title} />
                     </AnchorLink>
                 )}

@@ -1,8 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
-import { NavLink as NavLinkComponent } from '../../navLink';
 import { LanguageSwitch as LanguageSwitchComponent } from '../../languageSwitch';
 import { media } from '@styles';
-import { Link } from 'gatsby';
 
 const navbarAnimation = keyframes`
   0% {

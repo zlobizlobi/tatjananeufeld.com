@@ -7,20 +7,26 @@ export const FooterComponent = styled.footer`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 520px;
     width: 100%;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     position: absolute;
     bottom: 0;
+    padding: 25px 0;
+`;
 
-    ${media.md(`
-        height: 300px;
-    `)}
+export const Name = styled.h1`
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 20px;
 `;
 
 export const IconContainer = styled.div`
     display: flex;
-    margin-top: 20px;
+    margin: 20px 0;
 
     > a {
         margin-right: 5px;
@@ -44,16 +50,6 @@ export const Youtube = styled(TiSocialYoutube)`
     ${iconStyle}
 `;
 
-export const Name = styled.h1`
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: normal;
-    margin: 20px 0;
-`;
-
 export const NavList = styled.ul`
     display: flex;
     list-style-type: none;
@@ -64,46 +60,12 @@ export const NavList = styled.ul`
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        line-height: 22px;
     `)}
 `;
-
-// export const PageLink = styled(PageLinkComponent)`
-//     font-size: 12px;
-//     color: white;
-//     text-transform: uppercase;
-// `;
-
-// export const NavLink = styled(NavLinkComponent)`
-//     margin: 0 0 30px 0;
-//     text-transform: uppercase;
-//     color: white;
-
-//     > a {
-//         font-size: 12px;
-//     }
-
-//     &:last-child {
-//         margin: 0;
-//     }
-
-//     ${media.md(`
-//         margin: 0 15px 0 0;
-
-//         &:last-child {
-//             margin: 0;
-//         }
-//     `)}
-// `;
 
 export const CopyRighText = styled.h6`
     font-size: 11px;
     color: hsl(0, 0%, 50%);
-    font-family: 'Montserrat', sans-serif;
     font-weight: normal;
-    margin-top: 20px;
-    letter-spacing: 1.5px;
-    max-width: 95%;
     text-align: center;
-    line-height: 20px;
 `;
