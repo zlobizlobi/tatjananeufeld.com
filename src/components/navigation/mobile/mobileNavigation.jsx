@@ -6,24 +6,27 @@ import {
     Nav,
     LanguageSwitch,
 } from './styles';
-import { useIntl } from 'gatsby-plugin-intl';
 import { animated, useSpring, useTrail } from 'react-spring';
 import { useScrollLock } from '../useScrollLock';
 import { NavLink } from '../../navLink';
 
+const navTitles = [
+    "home",
+    "concerts",
+    "biography",
+    "gallery",
+    "partnerships",
+    "tatyana-podyomova",
+    "gallery",
+    "contact"
+]
+
 const Navigation = animated(props => <NavigationComponent {...props} />);
 
-const Bar = animated(props => {
-    // To animate the hamburgerBars
-    return <HamburgerBar {...props} />;
-});
+const Bar = animated(props => <HamburgerBar {...props} />);
 
 export const MobileNavigation = () => {
-    const [isOpen, setIsOpen] = useState(false); // State for whether the menu is open or not
-
-    const { locale } = useIntl();
-
-    const [isActive, setIsActive] = useState(['home']); // State for the active state of the navLinks
+    const [isOpen, setIsOpen] = useState(false);
 
     useScrollLock(isOpen);
 
@@ -45,18 +48,10 @@ export const MobileNavigation = () => {
     });
 
     const NavigationList = () => {
-        const items = [
-            <NavLink title="home" />,
-            <NavLink title="concerts" />,
-            <NavLink title="biography" />,
-            <NavLink title="gallery" />,
-            <NavLink title="partnerships" />,
-            <NavLink title="tatyana-podyomova" />,
-            <NavLink title="gallery" />,
-            <NavLink title="contact" />
-        ]
 
-        const trail = useTrail(items.length, {
+        const navLinks = navTitles.map(title => <NavLink title={title} />);
+
+        const trail = useTrail(navLinks.length, {
             from: { opacity: 0, transform: 'translate3d(-30px, 0px, 0)' },
             opacity: 1,
             transform: 'translate3d(0px,0px,0)',
@@ -66,7 +61,7 @@ export const MobileNavigation = () => {
         return (
             <>
                 {trail.map((styles, i) => (
-                    <animated.div style={styles}>{items[i]}</animated.div>
+                    <animated.div style={styles}>{navLinks[i]}</animated.div>
                 ))}
             </>
         );

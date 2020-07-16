@@ -16,7 +16,7 @@ export const NavLink = ({ title }) => {
                         <FormattedMessage id={title} />
                     </PageLink>
                 ) : (
-                    <AnchorLink to={`/${locale}/#${title}`}>
+                    <AnchorLink active={active} to={`/${locale}/#${title}`}>
                         <FormattedMessage id={title} />
                     </AnchorLink>
                 )}
@@ -29,10 +29,10 @@ const navLinkStyles = css`
     letter-spacing: 2.5px;
     text-transform: uppercase;
     transition: color 0.3s ease;
-    color: rgba(255,255,255,0.7);
     font-size: 16px;
-    
-    &:hover {
+    color: rgba(255,255,255,0.7);
+
+    :hover {
         color: rgba(255, 255, 255, 1);
     }
 
@@ -40,16 +40,11 @@ const navLinkStyles = css`
         margin: 0 15px 0 0;
     `)}
 `
-const AnchorLink = styled(AnchorLinkComponent)`
-    font-size: 12px;
 
+const AnchorLink = styled(AnchorLinkComponent)`
     ${navLinkStyles}
 `;
 
-export const PageLink = styled(LinkComponent).attrs({
-    activeStyle: {
-        color: 'white'
-    }
-})`
+export const PageLink = styled(LinkComponent)`
     ${navLinkStyles}
 `;
