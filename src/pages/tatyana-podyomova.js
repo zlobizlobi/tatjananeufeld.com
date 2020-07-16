@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, SEO } from '@components';
+import { SEO } from '@components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
@@ -71,7 +71,7 @@ const TatyanaPodyomova = () => {
     } = data;
 
     return (
-        <Layout>
+        <>
             <SEO
                 title="T. Podyomova"
                 description="Next to solo performance T.Neufeld gives piano lessons to children and involves herself in didactic practices."
@@ -97,7 +97,7 @@ const TatyanaPodyomova = () => {
                     </Overlay>
                 </CTAContainer>
             </ContentWrapper>
-        </Layout>
+        </>
     );
 };
 

@@ -1,19 +1,16 @@
 import styled from 'styled-components';
-import { media } from '@styles';
 
 const AppContainer = styled.div`
-    height: 100%;
-    position: relative;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    width: 100%;
 `;
 
 const Main = styled.main`
     display: flex;
     flex-direction: column;
-    padding-bottom: 520px;
-
-    ${media.md(`
-        padding-bottom: 300px;
-    `)}
+    flex: 1;
 `;
 
 export { AppContainer, Main };

@@ -1,14 +1,18 @@
 import React from 'react';
-import { GlobalStyle } from '@styles';
 import { MobileNavigation, DesktopNavigation } from '../navigation';
 import { Footer } from '../footer';
 import { Main, AppContainer } from './styles';
+import { GlobalStyle } from '../../styles';
 
-export const Layout = ({ children }) =>
+const Layout = ({ children }) =>
     <AppContainer>
         <GlobalStyle />
-        <MobileNavigation />
-        <DesktopNavigation />
+        <header>
+            <MobileNavigation />
+            <DesktopNavigation />
+        </header>
         <Main>{children}</Main>
         <Footer />
     </AppContainer>
+
+export default Layout

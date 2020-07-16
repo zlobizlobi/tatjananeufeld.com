@@ -11,11 +11,11 @@ export const LanguageSwitch = ({ className }) => {
         setLanguage(locale);
     }, [locale]);
 
-    const languages = ['en', 'de', 'ru'];
+    console.log(pageLanguage);
 
     return (
         <Container className={className}>
-            {languages.map(language => (
+            {['en', 'de', 'ru'].map(language => (
                 <Button
                     key={language}
                     isActive={language === pageLanguage}

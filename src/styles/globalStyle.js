@@ -40,9 +40,14 @@ export const GlobalStyle = createGlobalStyle`
         background-color: black;
         font-family: 'Montserrat', sans-serif;
         min-width: 100%;
-        min-height: 100%;
+        min-height: 100vh;
         scroll-behavior: auto;
     }
+
+     body {
+        display: flex;
+        flex-direction: column;
+     }
 
     button, input, textarea {
         font-family: inherit;

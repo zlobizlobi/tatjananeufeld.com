@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Partnership, Section, SEO } from '@components';
+import { Partnership, Section, SEO } from '@components';
 import { Heading, Container } from '../styles/pageStyles/partnerships';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -49,7 +49,7 @@ const Partnerships = () => {
     } = partnershipsData;
 
     return (
-        <Layout>
+        <>
             <SEO
                 title="Partnerships"
                 description="Next to solo performance T.Neufeld also stars in partnerships with other concert performers.
@@ -74,7 +74,7 @@ const Partnerships = () => {
                     ))}
                 </Container>
             </Section>
-        </Layout>
+        </>
     );
 };
 

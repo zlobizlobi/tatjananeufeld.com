@@ -8,6 +8,7 @@ export const ContentWrapper = styled.section`
     flex-direction: column;
     align-items: center;
     padding: 100px 0;
+    min-height: 100vh;
 `;
 
 const imgStyle = {

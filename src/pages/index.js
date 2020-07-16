@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Layout, SEO } from '@components';
+import { SEO } from '@components';
 import { graphql } from 'gatsby';
 import {
     LandingSection,
@@ -52,14 +52,14 @@ const IndexPage = ({ pageContext: { locale }, data }) => {
     const concertRef = useRef(null);
 
     return (
-        <Layout>
+        <>
             <SEO />
             <LandingSection ref={concertRef} />
             <ConcertSection ref={concertRef} concerts={concerts} />
             <BiographySection />
             <GallerySection />
             <ContactSection />
-        </Layout>
+        </>
     );
 };
 

@@ -9,8 +9,6 @@ export const FooterComponent = styled.footer`
     justify-content: center;
     width: 100%;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    position: absolute;
-    bottom: 0;
     padding: 25px 0;
 `;
 
