@@ -34,6 +34,9 @@ export const MobileNavigation = () => {
 
     const visibilityAnimation = useSpring({
         opacity: isOpen ? '1' : '0',
+        transform: isOpen
+            ? 'translateX(0)'
+            : 'translateX(-100%)',
     });
 
     const NavigationList = () => {
@@ -41,7 +44,7 @@ export const MobileNavigation = () => {
         const navLinks = NAV_TITLES.map(title => <NavLink key={title} title={title} />);
 
         const trail = useTrail(navLinks.length, {
-            from: { opacity: 0, transform: 'translate3d(-30px, 0px, 0)' },
+            from: { opacity: 0, transform: 'translate3d(-100px, 0px, 0)' },
             opacity: 1,
             transform: 'translate3d(0px,0px,0)',
             config: { mass: 1, tension: 400, friction: 30 },

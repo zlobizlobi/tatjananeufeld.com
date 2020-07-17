@@ -9,9 +9,13 @@ import {
     Button,
     Section,
     Gradient,
+    CopyrightImage,
+    CopyrightText,
+    CopyrightContainer
 } from './styles';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import { FiCalendar } from 'react-icons/fi';
+import copyrightImage from '../../images/eduardusLee.png';
 
 export const LandingSection = forwardRef((props, ref) => {
     const query = useStaticQuery(graphql`
@@ -45,8 +49,6 @@ export const LandingSection = forwardRef((props, ref) => {
         },
     } = query
 
-    console.log(button_text);
-
     const items = [
         <Name>
             <FormattedMessage id="landing_section_heading" />
@@ -78,6 +80,9 @@ export const LandingSection = forwardRef((props, ref) => {
                     <animated.div key={i} style={styles}>{items[i]}</animated.div>
                 ))}
             </NameContainer>
+            <CopyrightContainer>
+                <CopyrightImage src={copyrightImage} /><CopyrightText>Eduardus Lee Photography</CopyrightText>
+            </CopyrightContainer>
         </Section>
     );
-})
+})  

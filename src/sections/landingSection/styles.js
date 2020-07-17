@@ -26,7 +26,7 @@ export const Section = styled.section`
     width: 100%;
     height: 100vh;
     justify-content: flex-start;
-
+    position: relative;
     ${media.sm(`
         justify-content: center;
     `)}
@@ -37,14 +37,14 @@ export const NameContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     flex-wrap: wrap;
-    position: absolute;
-    z-index: 1;
+    position: absolute;     
+    z-index: 0;
     box-sizing: border-box;
     align-self: center;
     margin-top: 140px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.2);
-    margin: 140px 20px 0 20px;
+    margin: 100px 20px 0 20px;
 
     ${media.sm(`
       align-self: center;
@@ -101,7 +101,6 @@ export const Button = styled.button`
     font-size: 11px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    z-index: 1000;
     text-align: left;
     max-width: 450px;
     line-height: 19px;
@@ -114,8 +113,8 @@ export const Button = styled.button`
 
     & > svg {
         position: relative;
-        margin-left: 15px;
-        font-size: 22px;
+        margin-left: 10px;
+        font-size: 35px;
         left: 0;
         transition: left 0.3s ease;
     }
@@ -135,6 +134,11 @@ export const Button = styled.button`
 
     ${media.lg(`
         font-size: 12px;
+
+        & > svg {
+            font-size: 22px;
+            margin-left: 10px;  
+        }
     `)}
 `;
 
@@ -157,3 +161,30 @@ export const Gradient = styled.div`
         display: block;
     `)}
 `;
+
+export const CopyrightImage = styled.img`
+    width: 25px;
+    height: 25px;
+    opacity: 0.5;
+    margin-right: 5px;
+
+    ${media.lg(`
+        width: 47px;
+        height: 47px;
+    `)}     
+`
+
+export const CopyrightContainer = styled.div`
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+`
+
+export const CopyrightText = styled.span`
+    color: white;
+    font-style: italic;
+    font-size: 10px;
+    max-width: 70px;
+`
