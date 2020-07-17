@@ -11,8 +11,6 @@ export const LanguageSwitch = ({ className }) => {
         setLanguage(locale);
     }, [locale]);
 
-    console.log(pageLanguage);
-
     return (
         <Container className={className}>
             {['en', 'de', 'ru'].map(language => (

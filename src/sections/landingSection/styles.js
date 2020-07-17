@@ -109,7 +109,7 @@ export const Button = styled.button`
     & > span {
         position: relative;
         left: 0;
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
     }
 
     & > svg {
@@ -117,7 +117,7 @@ export const Button = styled.button`
         margin-left: 15px;
         font-size: 22px;
         left: 0;
-        transition: left 0.2s ease;
+        transition: left 0.3s ease;
     }
 
     :hover {

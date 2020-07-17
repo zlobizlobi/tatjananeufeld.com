@@ -63,12 +63,6 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-layout`,
-            options: {
-                component: require.resolve(`./src/components/layout/layout.jsx`),
-            },
-        },
-        {
             resolve: `gatsby-plugin-intl`,
             options: {
                 path: `${__dirname}/src/locales`,
