@@ -16,23 +16,25 @@ export const Text = styled.p`
 
 export const FirstImage = styled(Img).attrs({
     imgStyle: {
-        objectFit: 'cover',
-        objectPosition: '0%, 0%',
+        objectFit: 'contain',
     },
 })`
+    margin-bottom: 10px;
+    border-radius: 1px;
     width: 200px;
     height: 200px;
-    margin: 20px 0;
 
     ${media.sm(`
-        margin: 7.5px 15px 7.5px 0 ;
+        margin: 7.5px 15px 0 0;
         float: left;
+        width: 200px;
+        height: auto;
     `)}
 `;
 
 export const ContentContainer = styled.div`
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
 
     ${media.sm(`

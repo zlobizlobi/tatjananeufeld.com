@@ -5,9 +5,9 @@ export const Section = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 150px 20px;
+    padding: 75px 20px;
 
     ${media.sm(`
-        padding: 150px 0px;
+        padding: 75px 0px;
     `)}
 `;

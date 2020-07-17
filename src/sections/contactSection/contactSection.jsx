@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    Section,
     Heading,
     SubContainer,
     ContactOption,
@@ -8,7 +7,7 @@ import {
     FormContainer,
     LogoContainer
 } from './styles';
-import { ContactForm as Form, } from '@components';
+import { ContactForm as Form, Section } from '@components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import aljosjaImage from '../../images/aljosja.svg';
 
