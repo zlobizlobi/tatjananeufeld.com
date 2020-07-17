@@ -49,5 +49,9 @@ export const FormHeading = styled.h3`
 export const FormContainer = styled.div`
     margin-top: 30px;
     width: 100%;
+
+    ${media.xs(`
+        width: 350px;
+    `)}
 `;
 
