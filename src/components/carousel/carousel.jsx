@@ -27,7 +27,7 @@ export const Carousel = () => {
     } = galleryQuery;
 
     return (
-        <CarouselComponent showStatus={false} emulateTouch showThumbs={false}>
+        <CarouselComponent showStatus={false} showThumbs={false}>
             {
                 carousselItems.map(item => {
                     const src = item.collection_item.url;
