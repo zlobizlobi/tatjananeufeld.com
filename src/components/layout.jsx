@@ -1,7 +1,6 @@
 import React from 'react';
 import { MobileNavigation, DesktopNavigation } from './navigation';
 import { Footer } from './footer';
-import { GlobalStyle } from '../styles';
 import styled from 'styled-components';
 import { IntlProvider } from 'react-intl';
 
@@ -10,7 +9,6 @@ export default ({ children, pageContext }) => {
     return (
         <IntlProvider locale={language} messages={messages} defaultLocale={defaultLocale}>
             <AppContainer>
-                <GlobalStyle />
                 <MobileNavigation />
                 <DesktopNavigation />
                 <Main>{children}</Main>
