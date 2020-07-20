@@ -12,7 +12,7 @@ export const NavLink = ({ title, className }) => {
         <li>
             {(title === 'tatyana-podyomova' || title === 'partnerships') ?
                 (
-                    <PageLink className={className} to={`/${title}`}>
+                    <PageLink className={className} to={`/${title}`} language={locale}>
                         <FormattedMessage id={title} />
                     </PageLink>
                 ) : (

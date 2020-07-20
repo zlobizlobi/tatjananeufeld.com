@@ -41,7 +41,7 @@ export const SEO = ({
         <Helmet
             title={`Tatjana Neufeld${
                 title ? ` | ${title}` : ': Official Website'
-            }`}
+                }`}
         >
             <meta
                 name="google-site-verification"

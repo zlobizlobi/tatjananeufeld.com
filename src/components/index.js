@@ -1,4 +1,3 @@
-export { Layout } from './layout';
 export { SEO } from './seo';
 export { MobileNavigation, DesktopNavigation } from './navigation';
 export { Concert } from './concert';

@@ -50,7 +50,7 @@ export const FormContainer = styled.div`
     margin-top: 30px;
     width: 100%;
 
-    ${media.xs(`
+    ${media.sm(`
         width: 350px;
     `)}
 `;
