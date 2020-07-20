@@ -11,7 +11,8 @@ export const replaceComponentRenderer = ({ props: { pageResources, ...pageProps 
     <LayoutRenderer PageComponent={pageResources.component} pageProps={pageProps} />
 
 export const wrapRootElement = ({ element }) => (
-    <GlobalStyle>
+    <>
+        <GlobalStyle />
         {element}
-    </GlobalStyle>
+    </>
 )
