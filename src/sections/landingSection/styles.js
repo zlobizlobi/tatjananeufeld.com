@@ -162,29 +162,3 @@ export const Gradient = styled.div`
     `)}
 `;
 
-export const CopyrightImage = styled.img`
-    width: 25px;
-    height: 25px;
-    opacity: 0.5;
-    margin-right: 5px;
-
-    ${media.lg(`
-        width: 47px;
-        height: 47px;
-    `)}     
-`
-
-export const CopyrightContainer = styled.div`
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-`
-
-export const CopyrightText = styled.span`
-    color: white;
-    font-style: italic;
-    font-size: 10px;
-    max-width: 70px;
-`

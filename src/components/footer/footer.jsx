@@ -6,11 +6,15 @@ import {
     IconContainer,
     Youtube,
     Facebook,
-    CopyRighText,
+    CopyrightText,
+    CopyrightImage,
+    CopyrightImageContainer,
+    CopyrightImageText
 } from './styles';
 import { NavLink as NavLinkComponent } from '../navLink';
 import { NAV_TITLES } from '../../constants/navTitles';
 import styled from 'styled-components';
+import copyrightImage from '../../images/eduardusLee.png';
 
 export const Footer = () =>
     <FooterComponent>
@@ -26,7 +30,7 @@ export const Footer = () =>
                 <Facebook />
             </a>
         </IconContainer>
-        <CopyRighText>
+        <CopyrightText>
             © Copyright Tatjana Neufeld 2020, Made by{' '}
             <a
                 href="https://github.com/zlobizlobi"
@@ -36,7 +40,10 @@ export const Footer = () =>
             >
                 zlobizlobi
                         </a>
-        </CopyRighText>
+        </CopyrightText>
+        <CopyrightImageContainer href="https://www.instagram.com/eduarduslee" target="_blank">
+            <CopyrightImage src={copyrightImage} /><CopyrightImageText>Eduardus Lee Photography</CopyrightImageText>
+        </CopyrightImageContainer>
     </FooterComponent>
 
 const NavLink = styled(NavLinkComponent)`

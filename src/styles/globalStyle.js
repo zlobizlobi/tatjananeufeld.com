@@ -65,4 +65,9 @@ export const GlobalStyle = createGlobalStyle`
         margin: !important;
         padding: !important;
     }
+
+    .carousel .control-dots {
+        z-index: 1 !important;   
+    } 
+    
 `;

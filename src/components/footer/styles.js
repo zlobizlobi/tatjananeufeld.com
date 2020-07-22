@@ -61,9 +61,38 @@ export const NavList = styled.ul`
     `)}
 `;
 
-export const CopyRighText = styled.h6`
+export const CopyrightText = styled.h6`
     font-size: 11px;
     color: hsl(0, 0%, 50%);
     font-weight: normal;
     text-align: center;
 `;
+
+export const CopyrightImage = styled.img`
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    
+    ${media.lg(`
+        width: 30px;
+        height: 30px;
+    `)}     
+`
+
+export const CopyrightImageContainer = styled.a`
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    text-decoration: none;
+    cursor: pointer;
+`
+
+export const CopyrightImageText = styled.span`
+    color: white;
+    font-style: italic;
+    font-size: 10px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid white;
+`

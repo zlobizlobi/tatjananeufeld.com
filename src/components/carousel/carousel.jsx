@@ -1,6 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Image, Carousel as CarouselComponent } from './styles';
+import { Image, Carousel as CarouselComponent, DownloadLink } from './styles';
+import { FiDownload } from 'react-icons/fi';
+
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 export const Carousel = () => {
@@ -8,18 +10,31 @@ export const Carousel = () => {
         query Caroussel {
             prismicGallery {
                 data {
-                    gallery_collection {
-                        collection_item {
-                            url
-                            link_type
-                            name
+                  gallery_collection {
+                    image {
+                      localFile {
+                        childImageSharp {
+                          fluid(toFormatBase64: WEBP, quality: 100) {
+                            src
+                            srcSet
+                            srcWebp
+                            srcSetWebp
+                            originalName
+                            base64
+                          }
                         }
+                      }
                     }
+                    video {
+                      embed_url
+                    }
+                  }
                 }
-            }
+              } 
         }
     `);
 
+    console.log(galleryQuery);
     const {
         prismicGallery: {
             data: { gallery_collection: carousselItems },
@@ -29,31 +44,40 @@ export const Carousel = () => {
     return (
         <CarouselComponent showStatus={false} showThumbs={false}>
             {
-                carousselItems.map(item => {
-                    const src = item.collection_item.url;
-                    const srcType = item.collection_item.link_type;
-                    const itemName = item.collection_item.name;
+                carousselItems.map((item, index) => {
+                    console.log(item);
+                    if (!(item.video.embed_url)) {
+                        const fluid = item.image.localFile.childImageSharp.fluid;
+                        const downloadSrc = item.image.localFile.childImageSharp.fluid.src
 
-                    if (srcType === 'Media') {
                         return (
-                            <div key={itemName} style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
-                                <Image key={itemName} src={src} />
+                            <div key={index} style={{ height: '100%', width: '100%', display: 'flex', alignItems: 'center', position: 'relative' }}>
+                                <Image fluid={fluid} alt="Image of Tatjana" />
+                                {downloadSrc && (
+                                    <DownloadLink
+                                        href={downloadSrc}
+                                        download={downloadSrc}
+                                        target="_blank"
+                                    >
+                                        <FiDownload />
+                                    </DownloadLink>
+                                )}
                             </div>
                         );
                     }
 
-                    const embeddedSrc = src.replace('watch?v=', 'embed/') + '?controls=0&modestbranding=1'
+                    const embeddedSrc = item.video.embed_url.replace('watch?v=', 'embed/') + '?controls=1&modestbranding=1'
 
                     return (
-                        <iframe
-                            title="Youtube video player"
-                            key={itemName}
-                            src={embeddedSrc}
-                            allowFullScreen="0"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        />
-
+                        <div key={index} style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
+                            <iframe
+                                title="Youtube video player"
+                                src={embeddedSrc}
+                                allowFullScreen="0"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            />
+                        </div>
                     );
                 })
             }
