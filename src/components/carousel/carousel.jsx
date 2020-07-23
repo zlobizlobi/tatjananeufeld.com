@@ -19,8 +19,6 @@ export const Carousel = () => {
                             srcSet
                             srcWebp
                             srcSetWebp
-                            originalName
-                            base64
                           }
                         }
                       }
@@ -50,6 +48,7 @@ export const Carousel = () => {
                         const fluid = item.image.localFile.childImageSharp.fluid;
                         const downloadSrc = item.image.localFile.childImageSharp.fluid.src
 
+                        console.log(fluid);
                         return (
                             <div key={index} style={{ height: '100%', width: '100%', display: 'flex', alignItems: 'center', position: 'relative' }}>
                                 <Image fluid={fluid} alt="Image of Tatjana" />

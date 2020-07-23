@@ -1,7 +1,6 @@
 import React from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { AnchorLink as AnchorLinkComponent } from "gatsby-plugin-anchor-links";
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link as LinkComponent } from 'gatsby';
 import { media } from '@styles';
 
@@ -10,21 +9,14 @@ export const NavLink = ({ title, className }) => {
 
     return (
         <li>
-            {(title === 'tatyana-podyomova' || title === 'partnerships') ?
-                (
-                    <PageLink className={className} to={`/${title}`} language={locale}>
-                        <FormattedMessage id={title} />
-                    </PageLink>
-                ) : (
-                    <AnchorLink className={className} to={`/${locale}/#${title}`}>
-                        <FormattedMessage id={title} />
-                    </AnchorLink>
-                )}
+            <PageLink className={className} to={(title === 'tatyana-podyomova' || title === 'partnerships') ? `/${title}` : `/${locale}/#${title}`}>
+                <FormattedMessage id={title} />
+            </PageLink>
         </li>
     )
 }
 
-const navLinkStyles = css`
+export const PageLink = styled(LinkComponent)`
     text-decoration: none;
     letter-spacing: 2.5px;
     text-transform: uppercase;
@@ -39,12 +31,4 @@ const navLinkStyles = css`
     ${media.md(`
         margin: 0 15px 0 0;
     `)}
-`
-
-const AnchorLink = styled(AnchorLinkComponent)`
-    ${navLinkStyles}
-`;
-
-export const PageLink = styled(LinkComponent)`
-    ${navLinkStyles}
 `;

@@ -41,7 +41,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
         min-width: 100%;
         min-height: 100vh;
-        scroll-behavior: auto;
+        scroll-behavior: smooth;
     }
 
      body {
