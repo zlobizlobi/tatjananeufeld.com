@@ -18,7 +18,7 @@ export const data = graphql`
                         name
                         city
                         venue
-                        hall
+                        address
                         date
                         program
                         vendors

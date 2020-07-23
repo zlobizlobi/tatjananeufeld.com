@@ -18,6 +18,7 @@ export const Carousel = () => {
                             src
                             srcSet
                             srcWebp
+                            originalName
                             srcSetWebp
                           }
                         }
@@ -47,15 +48,15 @@ export const Carousel = () => {
                     if (!(item.video.embed_url)) {
                         const fluid = item.image.localFile.childImageSharp.fluid;
                         const downloadSrc = item.image.localFile.childImageSharp.fluid.src
-
+                        const name = item.image.localFile.childImageSharp.fluid.originalName
                         console.log(fluid);
                         return (
-                            <div key={index} style={{ height: '100%', width: '100%', display: 'flex', alignItems: 'center', position: 'relative' }}>
+                            <div key={index} style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
                                 <Image fluid={fluid} alt="Image of Tatjana" />
                                 {downloadSrc && (
                                     <DownloadLink
                                         href={downloadSrc}
-                                        download={downloadSrc}
+                                        download={name}
                                         target="_blank"
                                     >
                                         <FiDownload />

@@ -6,7 +6,6 @@ import {
     Name,
     DateContainer,
     TimeContainer,
-    VenueContainer,
     VenueItem,
 } from './styles';
 import { FormattedTime } from 'gatsby-plugin-intl';
@@ -17,8 +16,8 @@ export const Visible = ({
     name,
     date,
     city,
+    address,
     venue,
-    hall,
 }) => {
     const formattedDate = new Date(date);
 
@@ -43,10 +42,10 @@ export const Visible = ({
                         <span style={{ marginLeft: '5px' }}>{city}</span>
                     </TimeContainer>
                 </DateContainer>
-                <VenueContainer>
-                    <VenueItem>{venue},</VenueItem>
-                    <VenueItem>{hall}</VenueItem>
-                </VenueContainer>
+                <div>
+                    {venue && <VenueItem>{venue}</VenueItem>}
+                    <VenueItem>{address}</VenueItem>
+                </div>
             </NameDateContainer>
         </Flex>
     );

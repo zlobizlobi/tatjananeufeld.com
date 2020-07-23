@@ -32,15 +32,16 @@ const NameDateContainer = styled.div`
     flex-direction: column;
 `;
 
-const VenueContainer = styled.div`
-    display: flex;
-`;
-
 const VenueItem = styled.p`
     white-space: pre-wrap;
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     color: #808080;
+    margin-bottom: 5px;
+
+    &:last-child {
+        margin: 0;
+    }
 
     ${media.md(`
         font-size: 12px;
@@ -73,7 +74,6 @@ export {
     Flex,
     Poster,
     VenueItem,
-    VenueContainer,
     NameDateContainer,
     DateContainer,
     Name,

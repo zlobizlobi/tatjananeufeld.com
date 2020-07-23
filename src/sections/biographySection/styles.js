@@ -14,7 +14,7 @@ export const Text = styled.p`
     max-width: 800px;
 `;
 
-export const FirstImage = styled(Img).attrs({
+export const Image = styled(Img).attrs({
     imgStyle: {
         objectFit: 'contain',
     },

@@ -23,8 +23,8 @@ import { jsonParse } from '../../helpers';
 export const Concert = ({
     name,
     city,
+    address,
     venue,
-    hall = '',
     date,
     program,
     vendors,
@@ -72,8 +72,8 @@ export const Concert = ({
                     onClick={() => setIsExtended(!isExtended)}
                     date={date}
                     city={city}
-                    hall={hall}
                     venue={venue}
+                    address={address}
                 />
                 <HiddenContainer
                     height={heightsContainers.hiddenContainer}

@@ -38,22 +38,19 @@ export const ContainerDivider = styled.span`
 `;
 
 export const Button = styled.button`
-    padding: 5px 7.5px;
     align-self: flex-end;
     display: flex;
     align-items: center;
     color: white;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     z-index: 1;
     font-size: 9px;
     margin-top: 30px;
-    border: 1px solid #808080;
     text-transform: uppercase;
     letter-spacing: 1px;
 
     :hover {
         color: #808080;
-        background-color: white;
 
         > svg {
             color: #808080;
@@ -61,7 +58,8 @@ export const Button = styled.button`
     }
 
     > svg {
-        color: #808080;
+        transition: color 0.3s ease;
+        color: white;
         font-size: 14px;
     }
 
