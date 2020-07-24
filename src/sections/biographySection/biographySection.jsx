@@ -9,7 +9,7 @@ export const BiographySection = () => {
         query MyQuery {
             prismicBiography {
                 data {
-                    first_image {
+                    foto {
                         localFile {
                             childImageSharp {
                                 fluid(quality: 100) {
@@ -18,7 +18,7 @@ export const BiographySection = () => {
                             }
                         }
                     }
-                    first_paragraph
+                    text
                 }
             }
         }
@@ -27,12 +27,14 @@ export const BiographySection = () => {
     const {
         prismicBiography: {
             data: {
-                first_image: {
+                foto: {
                     localFile: {
-                        childImageSharp: { fluid: firstImageFluid },
+                        childImageSharp: {
+                            fluid
+                        },
                     },
                 },
-                first_paragraph,
+                text,
             },
         },
     } = data;
@@ -43,8 +45,8 @@ export const BiographySection = () => {
                 <FormattedMessage id="biography_heading" />
             </Heading>
             <ContentContainer>
-                <Image loading="lazy" fluid={firstImageFluid} />
-                <Text>{first_paragraph}</Text>
+                <Image loading="lazy" fluid={fluid} />
+                <Text>{text}</Text>
             </ContentContainer>
         </Section>
     );

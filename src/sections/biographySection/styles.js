@@ -21,13 +21,13 @@ export const Image = styled(Img).attrs({
 })`
     margin-bottom: 10px;
     border-radius: 1px;
-    width: 200px;
-    height: 200px;
+    min-width: 200px;
+    height: auto;
 
     ${media.sm(`
         margin: 7.5px 15px 0 0;
         float: left;
-        width: 200px;
+        min-width: 200px;
         height: auto;
     `)}
 `;

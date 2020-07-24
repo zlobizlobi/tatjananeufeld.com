@@ -18,7 +18,7 @@ export const SubContainer = styled.div`
 
 export const ContactOption = styled.h4`
     font-weight: normal;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #a8a8a8;
 
     &:last-child {
@@ -28,6 +28,8 @@ export const ContactOption = styled.h4`
     > a {
         text-decoration: none;
         color: #a8a8a8;
+        padding-bottom: 3px;
+        border-bottom: 1px solid white;
     }
 `;
 
