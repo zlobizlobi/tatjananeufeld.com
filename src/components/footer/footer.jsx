@@ -14,7 +14,8 @@ import {
 import { NavLink as NavLinkComponent } from '../navLink';
 import { NAV_TITLES } from '../../constants/navTitles';
 import styled from 'styled-components';
-import copyrightImage from '../../images/eduardusLee.png';
+import copyrightImageEduardus from '../../images/eduardusLee.png';
+import copyrightImageMarie from '../../images/mariejeanne.jpg';
 
 export const Footer = () =>
     <FooterComponent>
@@ -41,8 +42,11 @@ export const Footer = () =>
                 zlobizlobi
                         </a>
         </CopyrightText>
+        <CopyrightImageContainer href="https://www.instagram.com/mjvhovelltwesterflier" target="_blank">
+            <CopyrightImage src={copyrightImageMarie} /><CopyrightImageText>Marie-Jeanne van Hövell Photography</CopyrightImageText>
+        </CopyrightImageContainer>
         <CopyrightImageContainer href="https://www.instagram.com/eduarduslee" target="_blank">
-            <CopyrightImage src={copyrightImage} /><CopyrightImageText>Eduardus Lee Photography</CopyrightImageText>
+            <CopyrightImage src={copyrightImageEduardus} /><CopyrightImageText>Eduardus Lee Photography</CopyrightImageText>
         </CopyrightImageContainer>
     </FooterComponent>
 
