@@ -7,7 +7,9 @@ export const Heading = styled.h1`
     text-transform: uppercase;
     font-weight: normal;
     letter-spacing: 2.5px;
-
+    padding-bottom: 2px;
+    border-bottom: 1px solid white;
+    
     ${media.md(`
         font-size: 55px;
     `)}

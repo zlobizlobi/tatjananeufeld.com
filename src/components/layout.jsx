@@ -1,6 +1,5 @@
 import React from 'react';
 import { MobileNavigation, DesktopNavigation } from './navigation';
-import { Footer } from './footer';
 import styled from 'styled-components';
 import { IntlProvider } from 'react-intl';
 
@@ -12,7 +11,6 @@ export default ({ children, pageContext }) => {
                 <MobileNavigation />
                 <DesktopNavigation />
                 <Main>{children}</Main>
-                <Footer />
             </AppContainer >
         </IntlProvider>
     )

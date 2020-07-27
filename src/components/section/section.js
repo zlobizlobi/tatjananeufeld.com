@@ -7,7 +7,7 @@ export const Section = styled.section`
     align-items: center;
     padding: 75px 20px;
 
-    ${media.sm(`
+    ${media.md(`
         padding: 75px 0px;
     `)}
 `;

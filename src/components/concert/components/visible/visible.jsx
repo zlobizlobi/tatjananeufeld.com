@@ -1,14 +1,8 @@
 import React from 'react';
-import {
-    Flex,
-    Poster,
-    NameDateContainer,
-    Name,
-    DateContainer,
-    TimeContainer,
-    VenueItem,
-} from './styles';
 import { FormattedTime } from 'gatsby-plugin-intl';
+import { media } from '@styles';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
 
 export const Visible = ({
     posterSrc,
@@ -19,34 +13,75 @@ export const Visible = ({
     address,
     venue,
 }) => {
+
     const formattedDate = new Date(date);
 
     const splittedDate = formattedDate.toString().split(' ');
 
-    const dateDay = splittedDate[2];
+    let day = splittedDate[2];
 
-    const dateMonth = splittedDate[1];
+    if (day.charAt(0) === '0') {
+        day = day.slice(1);
+    }
+
+    const month = splittedDate[1];
 
     return (
-        <Flex>
-            <Poster fluid={posterSrc} alt="Concert poster" />
-            <NameDateContainer>
+        <Container>
+            <Image fluid={posterSrc} alt="Concert poster" />
+            <Column>
                 <Name onClick={onClick}>{name}</Name>
-                <DateContainer>
-                    <div style={{ marginRight: '5px' }}>
-                        <span style={{ marginRight: '5px' }}>{dateDay}</span>
-                        <span>{dateMonth}</span>
-                    </div>
-                    <TimeContainer>
-                        <FormattedTime value={date} />,
-                        <span style={{ marginLeft: '5px' }}>{city}</span>
-                    </TimeContainer>
-                </DateContainer>
-                <div>
-                    {venue && <VenueItem>{venue}</VenueItem>}
-                    <VenueItem>{address}</VenueItem>
-                </div>
-            </NameDateContainer>
-        </Flex>
+                <Text>{day}&nbsp;{month}&nbsp;<FormattedTime value={date} /></Text>
+                <Text>{city}</Text>
+                {venue && <Text>{venue}</Text>}
+                {address && <Text>{address}</Text>}
+            </Column>
+        </Container>
     );
 };
+
+const Container = styled.div`
+    display: flex;
+`
+
+const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+const Name = styled.h2`
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-weight: normal;
+
+    ${media.md(`
+        font-size: 24px;
+    `)}
+`;
+
+const Image = styled(Img)`
+    margin-right: 20px;
+    object-fit: contain;
+    min-width: 100px;
+    min-height: 150px;
+    align-self: flex-start;
+    border-radius: 1px;
+
+    ${media.md(`    
+        width: 150px;
+        height: 200px;
+    `)}
+`;
+
+const Text = styled.p`
+    white-space: pre-wrap;
+    font-size: 13px;
+    color: #808080;
+    margin-bottom: 5px;
+    
+
+    ${media.md(`
+        font-size: 16px;
+    `)}
+`;

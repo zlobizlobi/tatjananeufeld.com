@@ -8,6 +8,7 @@ import {
     ContactSection,
     GallerySection
 } from '../sections';
+import { Footer } from '@components';
 
 export const data = graphql`
     query Concerts($locale: String!) {
@@ -59,6 +60,7 @@ const IndexPage = ({ pageContext: { locale }, data }) => {
             <BiographySection />
             <GallerySection />
             <ContactSection />
+            <Footer />
         </>
     );
 };

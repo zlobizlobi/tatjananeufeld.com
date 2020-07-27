@@ -1,5 +1,5 @@
 import React from 'react';
-import { Partnership, Section, SEO } from '@components';
+import { Partnership, Section, SEO, Footer } from '@components';
 import { Heading, Container } from '../styles/pageStyles/partnerships';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -74,6 +74,7 @@ const Partnerships = () => {
                     ))}
                 </Container>
             </Section>
+            <Footer />
         </>
     );
 };

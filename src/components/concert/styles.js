@@ -1,28 +1,16 @@
 import styled from 'styled-components';
 import { media } from '@styles';
 
-export const ContentContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-    padding: 40px 0 40px 0;
-
-    &:last-child {
-        padding: 40px 0 0 0;
-    }
-
-    ${media.md(`
-        padding: 80px 0 80px 0;
-    `)}
-`;
-
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
+    color: white;
+    padding: 20px 0;
 
-    :last-child > span {
-        display: none;
-    }
+    ${media.md(`
+        padding: 80px;
+    `)}
 `;
 
 export const Flex = styled.div`
@@ -30,53 +18,11 @@ export const Flex = styled.div`
     flex-direction: column;
 `;
 
-export const ContainerDivider = styled.span`
-    height: 2px;
-    border-top: 2px solid rgba(255, 255, 255, 0.1);
-    align-self: center;
-    width: 100%;
-`;
-
-export const Button = styled.button`
-    align-self: flex-end;
-    display: flex;
-    align-items: center;
-    color: white;
-    transition: color 0.3s ease;
-    z-index: 1;
-    font-size: 9px;
-    margin-top: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-
-    :hover {
-        color: #808080;
-
-        > svg {
-            color: #808080;
-        }
-    }
-
-    > svg {
-        transition: color 0.3s ease;
-        color: white;
-        font-size: 14px;
-    }
-
-    ${media.md(`
-        font-size: 10px;
-
-        > svg {
-            font-size: 17px;
-        }
-    `)}
-`;
 
 export const HiddenContainer = styled.div`
     flex-direction: column;
     z-index: 0;
-    width: 100%;
-    display: ${({ isExtended }) => (isExtended ? 'flex' : 'none')};
+    display: flex;
     margin-top: 30px;
 `;
 
@@ -118,11 +64,11 @@ export const Program = styled.span`
     color: #808080;
 `;
 
-export const GetTicketsButton = styled.button`
+export const GetTicketsButton = styled.a`
+    text-decoration: none;
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.8);
     padding-bottom: 2px;
     color: white;
-    z-index: -1;
 `;
 
 export const HiddenSubContainer = styled.div`

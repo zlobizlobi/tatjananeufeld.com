@@ -75,7 +75,7 @@ export const CopyrightImage = styled.img`
     border-radius: 50%;
     border: 1px solid white;
     object-fit: cover;
-    width: 100%;
+    
     ${media.lg(`
         width: 30px;
         height: 30px;

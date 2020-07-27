@@ -1,10 +1,7 @@
-import React, { useState, useRef, Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import {
     Program,
     Container,
-    ContentContainer,
-    Button,
-    ContainerDivider,
     GetTicketsButton,
     HiddenContainer,
     HiddenHeading,
@@ -13,12 +10,12 @@ import {
     DownloadLink,
     Flex,
 } from './styles';
-import { FormattedMessage } from 'react-intl';
-import { useEffect } from 'react';
 import { FiDownload, FiPlus, FiMinus } from 'react-icons/fi';
 import thumbnailImage from '../../images/thumbnail.svg';
 import { Visible } from './components';
 import { jsonParse } from '../../helpers';
+import styled, { css } from 'styled-components';
+import { media } from '@styles';
 
 export const Concert = ({
     name,
@@ -35,86 +32,52 @@ export const Concert = ({
     },
     file,
 }) => {
-    const [isExtended, setIsExtended] = useState(false);
-
-    const [heightsContainers, setHeightsContainer] = useState({
-        hiddenContainer: 0,
-        parentContainer: 0,
-    });
-
-    const handleOnClick = () => {
-        setIsExtended(!isExtended);
-    };
+    const [extended, setExtended] = useState(false);
 
     const parsedVendors = jsonParse(vendors);
 
-    const parentContainerRef = useRef();
-
-    const hiddenContainerRef = useRef();
-
-    useEffect(() => {
-        setHeightsContainer({
-            hiddenContainer: hiddenContainerRef.current.clientHeight,
-            parentContainer: parentContainerRef.current.clientHeight,
-        });
-    }, [hiddenContainerRef, parentContainerRef]);
-
     return (
-        <Container
-            heightsContainers={heightsContainers}
-            ref={parentContainerRef}
-            isExtended={isExtended}
-        >
-            <ContentContainer>
-                <Visible
-                    posterSrc={fluid || thumbnailImage}
-                    name={name}
-                    onClick={() => setIsExtended(!isExtended)}
-                    date={date}
-                    city={city}
-                    venue={venue}
-                    address={address}
-                />
-                <HiddenContainer
-                    height={heightsContainers.hiddenContainer}
-                    isExtended={isExtended}
-                    ref={hiddenContainerRef}
-                >
-                    {parsedVendors && (
-                        <>
-                            <HiddenHeading>Tickets</HiddenHeading>
-                            <HiddenSubContainer>
-                                {parsedVendors.map(
-                                    ({
-                                        vendor,
-                                        ticketUrl = '',
-                                        telephoneNumber = '',
-                                    }) => (
-                                            <Fragment key={vendor}>
-                                                {ticketUrl ? (
-                                                    <VendorContainer
-                                                        href={ticketUrl}
-                                                        as="a"
-                                                    >
-                                                        <span>{vendor}</span>
-                                                        <GetTicketsButton>
-                                                            Tickets
-                                                    </GetTicketsButton>
-                                                    </VendorContainer>
-                                                ) : (
-                                                        <VendorContainer>
-                                                            <span>{vendor}</span>
-                                                            <span>
-                                                                {telephoneNumber}
-                                                            </span>
-                                                        </VendorContainer>
-                                                    )}
-                                            </Fragment>
-                                        )
-                                )}
-                            </HiddenSubContainer>
-                        </>
-                    )}
+        <Container>
+            <Visible
+                posterSrc={fluid || thumbnailImage}
+                name={name}
+                onClick={() => setExtended(!extended)}
+                date={date}
+                city={city}
+                venue={venue}
+                address={address}
+            />
+            {parsedVendors && extended && (
+                <HiddenContainer>
+                    <HiddenHeading>Tickets</HiddenHeading>
+                    <HiddenSubContainer>
+                        {parsedVendors.map(
+                            ({
+                                vendor,
+                                ticketUrl = '',
+                                telephoneNumber = '',
+                            }) => (
+                                    <Fragment key={vendor}>
+                                        {ticketUrl ? (
+                                            <VendorContainer
+                                            >
+                                                <span>{vendor}</span>
+                                                <GetTicketsButton href={ticketUrl}>
+                                                    Tickets
+                                                </GetTicketsButton>
+                                            </VendorContainer>
+                                        ) : (
+                                                <VendorContainer>
+                                                    <span>{vendor}</span>
+                                                    <span>
+                                                        {telephoneNumber}
+                                                    </span>
+                                                </VendorContainer>
+                                            )}
+                                    </Fragment>
+                                )
+                        )}
+                    </HiddenSubContainer>
                     <Flex>
                         <HiddenHeading>Program</HiddenHeading>
                         <HiddenSubContainer>
@@ -132,15 +95,41 @@ export const Concert = ({
                         )}
                     </Flex>
                 </HiddenContainer>
-                <Button onClick={handleOnClick}>
-                    <FormattedMessage
-                        id={isExtended ? 'button_less' : 'button_more'}
-                    />
-                    &nbsp;
-                    {isExtended ? <FiMinus /> : <FiPlus />}
-                </Button>
-            </ContentContainer>
-            <ContainerDivider />
-        </Container>
+            )}
+            <MoreButton onClick={() => setExtended(!extended)}>
+                {extended ? <Minus /> : <Plus />}
+            </MoreButton>
+        </Container >
     );
 };
+
+const MoreButton = styled.button`
+    align-self: flex-end;
+    display: inline-flex;
+    color: white;
+    z-index: 1;
+    transition: color 0.3s ease;
+    margin-top: 20px;
+    
+    :hover {
+        color: #808080;
+    }
+`;
+
+const iconStyles = css`
+    width: 20px;
+    height: 20px;
+
+    ${media.sm(`
+        width: 30px;
+        height: 30px;
+    `)}
+`
+
+const Minus = styled(FiMinus)`
+    ${iconStyles}
+`
+
+const Plus = styled(FiPlus)`
+    ${iconStyles}
+`

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SEO } from '@components';
+import { SEO, Footer } from '@components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
@@ -97,6 +97,7 @@ const TatyanaPodyomova = () => {
                     </Overlay>
                 </CTAContainer>
             </ContentWrapper>
+            <Footer />
         </>
     );
 };

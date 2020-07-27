@@ -13,6 +13,12 @@ const Carousel = styled(CarouselComponent)`
     }
 `;
 
+const CarouselItemContainer = styled.div`
+    display: flex;
+    align-items: center;
+    height: 100%;
+`
+
 const Image = styled(Img).attrs({
     imgStyle: {
         objectFit: 'contain',
@@ -51,4 +57,4 @@ const DownloadLink = styled.a`
 `;
 
 
-export { Image, Carousel, DownloadLink };
+export { Image, Carousel, DownloadLink, CarouselItemContainer };
