@@ -28,8 +28,6 @@ export const ContactOption = styled.h4`
     > a {
         text-decoration: none;
         color: #a8a8a8;
-        padding-bottom: 3px;
-        border-bottom: 1px solid white;
     }
 `;
 

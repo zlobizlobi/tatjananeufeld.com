@@ -1,7 +1,7 @@
 import React from 'react';
 import { SEO, Footer } from '@components';
 import { useStaticQuery, graphql } from 'gatsby';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 import {
     PortretImage,
@@ -70,19 +70,15 @@ const TatyanaPodyomova = () => {
         },
     } = data;
 
+    const { formatMessage } = useIntl();
+
+    const seoDescription = formatMessage({ id: 'seoPodyomovaDescription' });
+
     return (
         <>
             <SEO
-                title="T. Podyomova"
-                description="Next to solo performance T.Neufeld gives piano lessons to children and involves herself in didactic practices."
-                ogDescription="Next to solo performance T.Neufeld gives piano lessons to children and involves herself in didactic practices."
-                ogTitle="T. Podyomova"
-                keywords={[
-                    'Tatjana Podyomova',
-                    'Piano Lesssons',
-                    'Neufeld',
-                    'Piano teacher',
-                ]}
+                title="tatyana-podyomova"
+                description={seoDescription}
             />
             <ContentWrapper>
                 <PortretImage fluid={tatyanaImageSrc} />

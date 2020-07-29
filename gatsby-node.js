@@ -29,10 +29,14 @@ exports.onCreatePage = async ({ page, actions }) => {
     await deletePage(page);
 
     locales.forEach(locale => {
+
+        const originalPath = page.path;
+
         createPage({
             ...page,
             context: {
                 ...page.context,
+                originalPath,
                 locale: formatLocale(locale),
             },
         });

@@ -2,6 +2,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import image from '../../images/metaImage.jpg';
+import { useIntl } from 'react-intl';
+import { usePageContext } from '../PageContext';
 
 export const SEO = ({
     description,
@@ -17,6 +19,8 @@ export const SEO = ({
                         author
                         description
                         title
+                        supportedLanguages
+                        siteUrl
                     }
                 }
             }
@@ -27,12 +31,23 @@ export const SEO = ({
         siteMetadata
     } = site;
 
-    const metaDescription = description || siteMetadata.description
+    const { locale: lang, formatMessage } = useIntl();
+
+    const metaDescription = description || formatMessage({ id: 'seoHomeDescription' });
+
+    const host = siteMetadata.siteUrl;
+
+    const { originalPath } = usePageContext();
+
+    const seoTitle = formatMessage({ id: title });
 
     return (
         <Helmet
+            htmlAttributes={{
+                lang
+            }}
             title={title}
-            titleTemplate={`%s | ${siteMetadata.title}`}
+            titleTemplate={`${siteMetadata.title} | ${seoTitle}`}
             meta={[
                 {
                     name: `description`,
@@ -75,6 +90,22 @@ export const SEO = ({
                     content: image,
                 },
             ].concat(meta)}
+            link={[
+                {
+                    rel: 'canonical',
+                    href: `${host}/${lang}${originalPath}`,
+                },
+                {
+                    rel: 'alternate',
+                    hrefLang: 'x-default',
+                    href: `${host}${originalPath}`,
+                },
+                ...site.siteMetadata.supportedLanguages.map(supportedLang => ({
+                    rel: 'alternate',
+                    hrefLang: supportedLang,
+                    href: `${host}${originalPath}`,
+                })),
+            ]}
         />
     );
 };

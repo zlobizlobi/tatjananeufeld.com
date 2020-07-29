@@ -7,6 +7,7 @@ export const wrapPageElement = ({ element, props }) =>
         {element}
     </Layout>
 
+
 export const wrapRootElement = ({ element }) => (
     <>
         <GlobalStyle />

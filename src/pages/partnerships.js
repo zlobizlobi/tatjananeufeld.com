@@ -1,7 +1,7 @@
 import React from 'react';
 import { Partnership, Section, SEO, Footer } from '@components';
 import { Heading, Container } from '../styles/pageStyles/partnerships';
-import { FormattedMessage } from 'gatsby-plugin-intl';
+import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const Partnerships = () => {
@@ -48,21 +48,16 @@ const Partnerships = () => {
         },
     } = partnershipsData;
 
+    const { formatMessage } = useIntl();
+
+    const seoDescription = formatMessage({ id: 'seoPartnershipsDescription' });
+
+    console.log(seoDescription);
     return (
         <>
             <SEO
-                title="Partnerships"
-                description="Next to solo performance T.Neufeld also stars in partnerships with other concert performers.
-                Frequent concerts with different concert performers. See for Partnerships"
-                ogDescription="Next to solo performance T.Neufeld also stars in partnerships with other concert performers.
-                Frequent concerts with different concert performers. See for Partnerships"
-                ogTitle="Partnerships"
-                keywords={[
-                    'Tatjana Neufeld',
-                    'Tatjana Neufeld Partners',
-                    'Tatjana Neufeld Program',
-                    'Tatjana Neufeld Partnerships',
-                ]}
+                title="partnerships"
+                description={seoDescription}
             />
             <Section>
                 <Heading>

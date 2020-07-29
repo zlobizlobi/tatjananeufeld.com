@@ -54,7 +54,7 @@ const IndexPage = ({ pageContext: { locale }, data }) => {
 
     return (
         <>
-            <SEO />
+            <SEO title="home" />
             <LandingSection ref={concertRef} />
             <ConcertSection ref={concertRef} concerts={concerts} />
             <BiographySection />

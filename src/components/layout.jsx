@@ -2,17 +2,20 @@ import React from 'react';
 import { MobileNavigation, DesktopNavigation } from './navigation';
 import styled from 'styled-components';
 import { IntlProvider } from 'react-intl';
+import { PageContextProvider } from './PageContext';
 
-export default ({ children, pageContext }) => {
+export default ({ children, pageContext, pathContext }) => {
     const { language, messages, defaultLocale } = pageContext.intl;
     return (
-        <IntlProvider locale={language} messages={messages} defaultLocale={defaultLocale}>
-            <AppContainer>
-                <MobileNavigation />
-                <DesktopNavigation />
-                <Main>{children}</Main>
-            </AppContainer >
-        </IntlProvider>
+        <PageContextProvider pathContext={pathContext}>
+            <IntlProvider locale={language} messages={messages} defaultLocale={defaultLocale}>
+                <AppContainer>
+                    <MobileNavigation />
+                    <DesktopNavigation />
+                    <Main>{children}</Main>
+                </AppContainer >
+            </IntlProvider>
+        </PageContextProvider>
     )
 }
 

@@ -5,7 +5,7 @@ import { FiDownload } from 'react-icons/fi';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 export const Carousel = () => {
-    const galleryQuery = useStaticQuery(graphql`
+  const galleryQuery = useStaticQuery(graphql`
         query Caroussel {
             prismicGallery {
                 data {
@@ -17,10 +17,11 @@ export const Carousel = () => {
                           localFile {
                             childImageSharp {
                               fluid(quality: 100, toFormatBase64: WEBP) {
-                                src
-                                srcSet
-                                srcSetWebp
-                                srcWebp
+                                base64 
+                                aspectRatio 
+                                src 
+                                srcSet 
+                                sizes 
                                 originalName
                               }
                             }
@@ -44,61 +45,59 @@ export const Carousel = () => {
         }
     `);
 
-    const {
-        prismicGallery: {
-            data: {
-                body: slices
-            },
-        },
-    } = galleryQuery;
+  const {
+    prismicGallery: {
+      data: {
+        body: slices
+      },
+    },
+  } = galleryQuery;
 
+  return (
+    <CarouselComponent showStatus={false} showThumbs={false}>
+      {
+        slices.map(item => {
+          const { primary, slice_type, id } = item;
 
-    return (
-        <CarouselComponent showStatus={false} showThumbs={false}>
-            {
-                slices.map(item => {
-                    const { primary, slice_type, id } = item;
+          if (slice_type === 'image') {
+            const fluid = item.primary.image.localFile.childImageSharp.fluid;
 
-                    if (slice_type === 'image') {
-                        const fluid = item.primary.image.localFile.childImageSharp.fluid;
+            const downloadSrc = fluid.src
 
-                        const downloadSrc = fluid.src
+            const name = fluid.originalName
 
-                        const name = fluid.originalName
+            return (
+              <CarouselItemContainer key={id}>
+                <Image fluid={fluid && fluid} alt="Image of Tatjana" />
+                {downloadSrc && (
+                  <DownloadLink
+                    href={downloadSrc}
+                    download={name}
+                    target="_blank"
+                  >
+                    <FiDownload />
+                  </DownloadLink>
+                )}
+              </CarouselItemContainer>
+            );
+          }
 
-                        return (
-                            <CarouselItemContainer key={id}>
-                                <Image fluid={fluid && fluid} alt="Image of Tatjana" />
-                                {downloadSrc && (
-                                    <DownloadLink
-                                        href={downloadSrc}
-                                        download={name}
-                                        target="_blank"
-                                    >
-                                        <FiDownload />
-                                    </DownloadLink>
-                                )}
-                            </CarouselItemContainer>
-                        );
-                    }
+          const video = primary.video;
 
-                    const video = primary.video;
+          const modifiedEmbedUrl = video.embed_url.replace('watch?v=', 'embed/') + '?controls=1&modestbranding=1'
 
-                    const modifiedEmbedUrl = video.embed_url.replace('watch?v=', 'embed/') + '?controls=1&modestbranding=1'
-
-                    return (
-                        <CarouselItemContainer key={id}>
-                            <iframe
-                                title="Youtube video player"
-                                src={modifiedEmbedUrl}
-                                allowFullScreen="0"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            />
-                        </CarouselItemContainer>
-                    );
-                })
-            }
-        </CarouselComponent >
-    );
+          return (
+            <CarouselItemContainer key={id}>
+              <iframe
+                title="Youtube video player"
+                src={modifiedEmbedUrl}
+                allowFullScreen="0"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              />
+            </CarouselItemContainer>
+          );
+        })}
+    </CarouselComponent >
+  );
 };
