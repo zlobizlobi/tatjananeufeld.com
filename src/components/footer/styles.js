@@ -94,6 +94,4 @@ export const CopyrightImageText = styled.span`
     color: white;
     font-style: italic;
     font-size: 10px;
-    padding-bottom: 1px;
-    border-bottom: 1px solid white;
 `

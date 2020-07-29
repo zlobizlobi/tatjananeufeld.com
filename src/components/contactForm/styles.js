@@ -4,7 +4,6 @@ import { Form as FormComponent, Field as FormFieldComponent } from 'formik';
 export const Form = styled(FormComponent)`
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
 `;
 
 export const ErrorWrapper = styled.span`

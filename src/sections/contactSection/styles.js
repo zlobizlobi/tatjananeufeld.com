@@ -35,13 +35,13 @@ export const LogoContainer = styled.a`
 `
 
 export const FormHeading = styled.h3`
-    font-weight: lighter;
     text-align: center;
     font-size: 16px;
+    color: white;
+    font-weight: 100; 
 
     ${media.md(`
-      font-size: 20px;
-      font-weight: 600; 
+      font-size: 22px;
     `)}
 `;
 

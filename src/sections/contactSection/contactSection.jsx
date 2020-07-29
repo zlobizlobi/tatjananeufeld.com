@@ -36,7 +36,7 @@ export const ContactSection = () => (
             </ContactOption>
         </SubContainer>
         <FormHeading>
-            <FormattedMessage id="contact_cta" />
+            <FormattedMessage id="contact_cta" />...
         </FormHeading>
         <FormContainer>
             <Form />
