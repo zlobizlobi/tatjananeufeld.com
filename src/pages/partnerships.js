@@ -1,6 +1,7 @@
 import React from 'react';
-import { Partnership, Section, SEO, Footer } from '@components';
-import { Heading, Container } from '../styles/pageStyles/partnerships';
+import { Partnership, Section, SEO, Footer, Heading as HeadingComponent } from '@components';
+import { media } from '@styles';
+import styled from 'styled-components';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -52,7 +53,6 @@ const Partnerships = () => {
 
     const seoDescription = formatMessage({ id: 'seoPartnershipsDescription' });
 
-    console.log(seoDescription);
     return (
         <>
             <SEO
@@ -75,3 +75,21 @@ const Partnerships = () => {
 };
 
 export default Partnerships;
+
+const Heading = styled(HeadingComponent)`
+    && {
+        color: white;
+        margin: 0;
+    }
+`;
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+
+    ${media.lg(`
+        flex-direction: row;
+    `)}
+`;

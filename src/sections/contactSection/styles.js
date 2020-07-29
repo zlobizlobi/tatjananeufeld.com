@@ -5,7 +5,6 @@ import {
 import { media } from '@styles';
 
 export const Heading = styled(HeadingComponent)`
-    color: white;
     margin: 0;
 `;
 
