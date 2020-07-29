@@ -1,39 +1,45 @@
 import styled from 'styled-components';
 import { Carousel as CarouselComponent } from 'react-responsive-carousel';
 import Img from 'gatsby-image';
+import { media } from '@styles';
 
 const Carousel = styled(CarouselComponent)`
     width: 100%;
     position: relative;
 
-    iframe {
-        margin: 0 !important;
-        width: 100% !important;
-        min-height: 550px;
+    .carousel .slide iframe {
+        margin: 0;
+        width: 100%;
+        height: 100%;
     }
 `;
 
 const CarouselItemContainer = styled.div`
     display: flex;
-    align-items: center;
-    height: 100%;
+    justify-content: center;
+
+    height: 400px;
+    width: 100%; 
+
+    ${media.sm(`
+        height: 600px;
+        width: 100%; 
+    `)}
 `
 
 const Image = styled(Img).attrs({
     imgStyle: {
         objectFit: 'contain',
-        height: '100%',
-        width: '100%'
     }
 })`
     height: 100%;
-    width: 100%; 
+    width: 100%;
 `
 
 const DownloadLink = styled.a`
     display: block;
     position: absolute;
-    bottom: 50px;
+    bottom: 35px;
     z-index: 1000;
     width: 100%;
     left: 0;

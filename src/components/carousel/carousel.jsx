@@ -2,7 +2,6 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Image, Carousel as CarouselComponent, DownloadLink, CarouselItemContainer } from './styles';
 import { FiDownload } from 'react-icons/fi';
-
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 export const Carousel = () => {
@@ -10,49 +9,66 @@ export const Carousel = () => {
         query Caroussel {
             prismicGallery {
                 data {
-                  gallery_collection {
-                    image {
-                      localFile {
-                        childImageSharp {
-                          fluid(toFormatBase64: WEBP, quality: 100) {
-                            src
-                            srcSet
-                            srcWebp
-                            originalName
-                            srcSetWebp
+                  body {
+                    ... on PrismicGalleryBodyImage {
+                      id
+                      primary {
+                        image {
+                          localFile {
+                            childImageSharp {
+                              fluid(quality: 100, toFormatBase64: WEBP) {
+                                src
+                                srcSet
+                                srcSetWebp
+                                srcWebp
+                                originalName
+                              }
+                            }
                           }
                         }
                       }
+                      slice_type
                     }
-                    video {
-                      embed_url
+                    ... on PrismicGalleryBodyVideo {
+                      primary {
+                        video {
+                          embed_url
+                        }
+                      }
+                      id
+                      slice_type
                     }
                   }
                 }
-              } 
+            }
         }
     `);
 
     const {
         prismicGallery: {
-            data: { gallery_collection: carousselItems },
+            data: {
+                body: slices
+            },
         },
     } = galleryQuery;
+
 
     return (
         <CarouselComponent showStatus={false} showThumbs={false}>
             {
-                carousselItems.map((item, index) => {
-                    if (!(item.video.embed_url)) {
-                        const fluid = item.image.localFile.childImageSharp.fluid;
+                slices.map(item => {
+                    const { primary, slice_type, id } = item;
 
-                        const downloadSrc = item.image.localFile.childImageSharp.fluid.src
+                    if (slice_type === 'image') {
+                        const fluid = item.primary.image.localFile.childImageSharp.fluid;
 
-                        const name = item.image.localFile.childImageSharp.fluid.originalName
+                        const downloadSrc = fluid.src
+
+                        const name = fluid.originalName
 
                         return (
-                            <CarouselItemContainer key={index}>
-                                <Image fluid={fluid} alt="Image of Tatjana" />
+                            <CarouselItemContainer key={id}>
+                                <Image fluid={fluid && fluid} alt="Image of Tatjana" />
                                 {downloadSrc && (
                                     <DownloadLink
                                         href={downloadSrc}
@@ -66,13 +82,15 @@ export const Carousel = () => {
                         );
                     }
 
-                    const embeddedSrc = item.video.embed_url.replace('watch?v=', 'embed/') + '?controls=1&modestbranding=1'
+                    const video = primary.video;
+
+                    const modifiedEmbedUrl = video.embed_url.replace('watch?v=', 'embed/') + '?controls=1&modestbranding=1'
 
                     return (
-                        <CarouselItemContainer key={index}>
+                        <CarouselItemContainer key={id}>
                             <iframe
                                 title="Youtube video player"
-                                src={embeddedSrc}
+                                src={modifiedEmbedUrl}
                                 allowFullScreen="0"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

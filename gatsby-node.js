@@ -23,17 +23,17 @@ exports.onPostBuild = () => {
 
 const locales = ['en-us', 'de-de', 'ru'];
 
-exports.onCreatePage = ({ page, actions }) => {
+exports.onCreatePage = async ({ page, actions }) => {
     const { createPage, deletePage } = actions;
 
-    deletePage(page);
+    await deletePage(page);
 
     locales.forEach(locale => {
         createPage({
             ...page,
             context: {
                 ...page.context,
-                locale: formatLocale(page.context.intl.language),
+                locale: formatLocale(locale),
             },
         });
     });

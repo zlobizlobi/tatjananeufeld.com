@@ -5,21 +5,18 @@ import image from '../../images/metaImage.jpg';
 
 export const SEO = ({
     description,
-    keywords,
+    author,
     title,
-    ogTitle,
-    ogDescription,
+    meta = []
 }) => {
     const { site } = useStaticQuery(
         graphql`
             query {
                 site {
                     siteMetadata {
-                        metaDescription
-                        metaAuthor
-                        metaKeywords
-                        metaOgDescription
-                        metaOgTitle
+                        author
+                        description
+                        title
                     }
                 }
             }
@@ -27,38 +24,57 @@ export const SEO = ({
     );
 
     const {
-        siteMetadata: {
-            metaDescription,
-            metaKeywords,
-            metaOgTitle,
-            metaOgDescription,
-        },
+        siteMetadata
     } = site;
 
-    const seoKeywords = (keywords || metaKeywords).join(', ');
+    const metaDescription = description || siteMetadata.description
 
     return (
         <Helmet
-            title={`Tatjana Neufeld${
-                title ? ` | ${title}` : ': Official Website'
-                }`}
-        >
-            <meta
-                name="google-site-verification"
-                content="hiS3QamKVs9x2E5-rxbLPU9AOi8Ix3WgQFoV1S8-Ncw"
-            />
-            <meta property="keywords" content={seoKeywords} />
-            <meta
-                property="description"
-                content={description || metaDescription}
-            />
-            <meta property="image" content={image} />
-            <meta property="og:title" content={ogTitle || metaOgTitle} />
-            <meta
-                property="og:description"
-                content={ogDescription || metaOgDescription}
-            />
-            <meta property="og:image" content={image} />
-        </Helmet>
+            title={title}
+            titleTemplate={`%s | ${siteMetadata.title}`}
+            meta={[
+                {
+                    name: `description`,
+                    content: metaDescription,
+                },
+                {
+                    property: `og:title`,
+                    content: title,
+                },
+                {
+                    property: `og:description`,
+                    content: metaDescription,
+                },
+                {
+                    property: `og:type`,
+                    content: `website`,
+                },
+                {
+                    name: `twitter:card`,
+                    content: `summary`,
+                },
+                {
+                    name: `twitter:creator`,
+                    content: author,
+                },
+                {
+                    name: `twitter:title`,
+                    content: title,
+                },
+                {
+                    name: `twitter:description`,
+                    content: metaDescription,
+                },
+                {
+                    name: `image`,
+                    content: image,
+                },
+                {
+                    name: `og:image`,
+                    content: image,
+                },
+            ].concat(meta)}
+        />
     );
 };
