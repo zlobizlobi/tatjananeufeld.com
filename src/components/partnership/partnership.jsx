@@ -38,7 +38,6 @@ export const Partnership = ({ primary: partnerShip, items: partners }) => {
                 </FlexContainer>
                 <SeeMoreButton
                     onClick={() => setIsOpen(!isOpen)}
-                    style={{ marginTop: '50px' }}
                 >
                     {isOpen ? <ArrowUp /> : <ArrowDown />}
                     <span>

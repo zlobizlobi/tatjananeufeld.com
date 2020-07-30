@@ -66,8 +66,11 @@ export const GlobalStyle = createGlobalStyle`
         padding: !important;
     }
 
-    .carousel .control-dots {
-        z-index: 1 !important;   
-    } 
-    
+    .carousel.carousel-slider {
+        overflow: visible !important;
+    }
+
+    .carousel .slider-wrapper {
+        overflow: visible !important;
+    }
 `;

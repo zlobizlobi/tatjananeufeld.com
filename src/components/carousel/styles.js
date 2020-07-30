@@ -10,7 +10,7 @@ const Carousel = styled(CarouselComponent)`
     .carousel .slide iframe {
         margin: 0;
         width: 100%;
-        height: 100%;
+        min-height: 100%;
     }
 `;
 
@@ -30,21 +30,23 @@ const CarouselItemContainer = styled.div`
 const Image = styled(Img).attrs({
     imgStyle: {
         objectFit: 'contain',
+        overflow: 'visible'
     }
 })`
     height: 100%;
     width: 100%;
+    overflow: visible !important;
 `
 
 const DownloadLink = styled.a`
     display: block;
     position: absolute;
-    bottom: 35px;
+    bottom: -50px;
     z-index: 1000;
     width: 100%;
     left: 0;
     cursor: pointer;
-
+    z
     :hover {
         > svg {
             opacity: 1;

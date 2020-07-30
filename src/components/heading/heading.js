@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { media } from '@styles';
 
 export const Heading = styled.h1`
-    margin-bottom: 20px;
+    margin: 30px 0;
     font-size: 26px;
     text-transform: uppercase;
     font-weight: normal;

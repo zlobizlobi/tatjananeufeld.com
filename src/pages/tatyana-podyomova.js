@@ -1,5 +1,5 @@
 import React from 'react';
-import { SEO, Footer, Section, Heading } from '@components';
+import { SEO, Footer, Section, Heading as HeadingComponent } from '@components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { FormattedMessage, useIntl } from 'react-intl';
 import styled, { keyframes } from 'styled-components';
@@ -74,7 +74,7 @@ const TatyanaPodyomova = () => {
                 description={seoDescription}
             />
             <ContentWrapper>
-                <Heading><FormattedMessage id="tatyana-podyomova" /></Heading>
+                <Heading ><FormattedMessage id="tatyana-podyomova" /></Heading>
                 <PortretImage fluid={tatyanaImageSrc} />
                 <Text>{landing_text}</Text>
                 <CTAContainer href="#">
@@ -101,6 +101,14 @@ const ContentWrapper = styled(Section)`
     align-items: center;
 `;
 
+const Heading = styled(HeadingComponent)`
+    && {
+        color: white;
+        margin-top: 30px;
+    }
+`;
+
+
 const imgStyle = {
     objectPosition: 'left left',
     objectFit: 'scale-down',
@@ -113,11 +121,11 @@ const PortretImage = styled(Img).attrs({
 })`
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
-
+    
     ${media.md(`
         width: 600px;
         height: 400px;
+        margin: 50px 0 20px 0;
     `)}
 `;
 
