@@ -66,11 +66,12 @@ export const GlobalStyle = createGlobalStyle`
         padding: !important;
     }
 
-    .carousel.carousel-slider {
-        overflow: visible !important;
+    .carousel.carousel-slider{
+        display: flex;
+        justify-content: center;
     }
 
-    .carousel .slider-wrapper {
-        overflow: visible !important;
+    .control-dots {
+        width: unset !important;
     }
-`;
+`;  

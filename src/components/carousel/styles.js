@@ -5,48 +5,42 @@ import { media } from '@styles';
 
 const Carousel = styled(CarouselComponent)`
     width: 100%;
-    position: relative;
+    height: auto;
 
     .carousel .slide iframe {
         margin: 0;
         width: 100%;
-        min-height: 100%;
+        height: 100%;
     }
+    
 `;
 
 const CarouselItemContainer = styled.div`
     display: flex;
     justify-content: center;
-
-    height: 400px;
-    width: 100%; 
-
-    ${media.sm(`
-        height: 600px;
-        width: 100%; 
-    `)}
+    width: 100%;
+    max-height: 700px;
 `
 
 const Image = styled(Img).attrs({
     imgStyle: {
-        objectFit: 'contain',
-        overflow: 'visible'
+        objectFit: 'contain'
     }
-})`
-    height: 100%;
-    width: 100%;
-    overflow: visible !important;
+})` 
+   max-height: 100%;
+   width: 100%;
 `
 
 const DownloadLink = styled.a`
-    display: block;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px 10px 0;
     position: absolute;
-    bottom: -50px;
-    z-index: 1000;
+    bottom: 0;
+    z-index: 1000 !important;
     width: 100%;
-    left: 0;
     cursor: pointer;
-    z
+
     :hover {
         > svg {
             opacity: 1;
@@ -57,11 +51,16 @@ const DownloadLink = styled.a`
         color: white;
         transition: opacity 0.3s ease-in-out;
         opacity: 0.7;
-        width: 40px;
-        height: 40px;
-        padding: 10px;
-        background-color: rgba(0,0,0,0.5);
+        width: 20px;
+        height: 20px;
     }
+
+    ${media.sm(`
+        > svg {
+            width: 25px;
+            height: 25px;  
+        }
+    `)}
 `;
 
 

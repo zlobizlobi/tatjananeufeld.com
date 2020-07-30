@@ -16,8 +16,7 @@ export const Carousel = () => {
                         image {
                           localFile {
                             childImageSharp {
-                              fluid(quality: 100, toFormatBase64: WEBP) {
-                                base64 
+                              fluid(quality: 100, toFormatBase64: WEBP, maxWidth: 700) {
                                 aspectRatio 
                                 src 
                                 srcSet 
@@ -54,7 +53,7 @@ export const Carousel = () => {
   } = galleryQuery;
 
   return (
-    <CarouselComponent showStatus={false} showThumbs={false}>
+    <CarouselComponent showStatus={false} showThumbs={false} infiniteLoop dynamicHeight>
       {
         slices.map(item => {
           const { primary, slice_type, id } = item;
@@ -68,7 +67,7 @@ export const Carousel = () => {
 
             return (
               <CarouselItemContainer key={id}>
-                <Image fluid={fluid && fluid} alt="Image of Tatjana" />
+                <Image fluid={fluid} alt="Image of Tatjana" />
                 {downloadSrc && (
                   <DownloadLink
                     href={downloadSrc}
