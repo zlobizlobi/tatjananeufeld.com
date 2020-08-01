@@ -8,11 +8,10 @@ const Carousel = styled(CarouselComponent)`
     height: auto;
 
     .carousel .slide iframe {
+        display: inline-block;
         margin: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
+        width: calc(100% - 80px);
+    }   
 `;
 
 const CarouselItemContainer = styled.div`

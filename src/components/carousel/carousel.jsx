@@ -86,12 +86,14 @@ export const Carousel = () => {
           const modifiedEmbedUrl = video.embed_url.replace('watch?v=', 'embed/') + '?controls=1&modestbranding=1'
 
           return (
-            <CarouselItemContainer key={id}>
+            <CarouselItemContainer key={id} style={{ height: '100%' }}>
               <iframe
                 title="Youtube video player"
                 src={modifiedEmbedUrl}
-                allowFullScreen="0"
+                allowFullScreen="1"
                 frameBorder="0"
+                width="100%"
+                height="100%"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               />
             </CarouselItemContainer>
