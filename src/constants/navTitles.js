@@ -1,5 +1,4 @@
 export const NAV_TITLES = [
-    "home",
     "concerts",
     "biography",
     "gallery",

@@ -64,6 +64,7 @@ export const GlobalStyle = createGlobalStyle`
     ul {
         margin: !important;
         padding: !important;
+        list-style-type: none;
     }
 
     .carousel.carousel-slider{

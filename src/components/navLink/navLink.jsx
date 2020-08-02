@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import styled from 'styled-components';
 import { Link as LinkComponent } from 'gatsby';
 import { media } from '@styles';
@@ -21,7 +21,7 @@ export const PageLink = styled(LinkComponent)`
     letter-spacing: 2.5px;
     text-transform: uppercase;
     transition: color 0.3s ease;
-    font-size: 16px;
+    font-size: 15px;
     color: rgba(255,255,255,0.7);
 
     :hover {
@@ -29,6 +29,6 @@ export const PageLink = styled(LinkComponent)`
     }
 
     ${media.md(`
-        margin: 0 15px 0 0;
+        margin: 0 10px 0 0;
     `)}
 `;
