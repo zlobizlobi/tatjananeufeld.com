@@ -1,57 +1,115 @@
-import React, { useState } from 'react';
-import {
-    Container,
-    Image,
-    Text,
-    PartnershipName,
-    ColumnContainer,
-    FlexContainer,
-    ArrowDown,
-    ArrowUp,
-    PartnerContainer,
-    SeeMoreButton,
-} from './styles';
-
+import React from 'react';
+import { InformationRow } from './InformationRow'
+import { media } from '@styles';
 import { Partner } from './partner';
-import { FormattedMessage } from 'gatsby-plugin-intl';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
 
-export const Partnership = ({ primary: partnerShip, items: partners }) => {
-    const [isOpen, setIsOpen] = useState(false);
+export const Partnership = ({ data: { announcement, body, image, name } }) => {
 
-    const {
-        localFile: {
-            childImageSharp: { fluid },
-        },
-    } = partnerShip.partnership_image;
+    console.log(body);
+    const fluid = image.localFile.childImageSharp.fluid;
 
     return (
         <Container>
-            <ColumnContainer>
+            <Column>
                 <FlexContainer>
                     <Image fluid={fluid} />
-                    <ColumnContainer>
-                        <PartnershipName>
-                            {partnerShip.partnership_name}
-                        </PartnershipName>
-                        <Text>{partnerShip.partnership_story}</Text>
-                    </ColumnContainer>
+                    <Column>
+                        <Name>
+                            {name}
+                        </Name>
+                        <Text>{announcement}</Text>
+                    </Column>
                 </FlexContainer>
-                <SeeMoreButton
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    {isOpen ? <ArrowUp /> : <ArrowDown />}
-                    <span>
-                        <FormattedMessage
-                            id={isOpen ? 'button_less' : 'button_more'}
-                        />
-                    </span>
-                </SeeMoreButton>
-            </ColumnContainer>
-            <PartnerContainer isShown={isOpen}>
-                {partners.map(p => (
-                    <Partner {...p} />
-                ))}
-            </PartnerContainer>
+                <InformationRow title="partnership_program" content={body} />
+            </Column>
         </Container>
     );
 };
+
+
+export const Container = styled.div`
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 40px;
+    width: 100%;
+    padding: 20px;
+    align-self: center;
+
+    ${media.md(`
+        padding: 80px;
+        width: calc(100% - 160px);
+    `)}
+
+    &:last-child {
+        margin: 0;
+    }
+`;
+
+export const FlexContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    ${media.md(`
+        flex-direction: row;
+    `)}
+`;
+
+export const Image = styled(Img).attrs({
+    imgStyle: {
+        objectFit: 'cover',
+        objectPosition: 'center 15%'
+    }
+})`
+    width: 100%;
+    height: 150px;
+    margin: 0 20px 20px 0;
+
+    ${media.md(`
+        max-width: 150px;
+        min-height: 200px;
+        height: 100%;
+    `)}
+`;
+
+export const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+export const Text = styled.p`
+    font-size: 14px;
+    line-height: 24.5px;
+    color: #808080;
+`;
+
+export const Name = styled.h2`
+    font-weight: lighter;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    ${media.md(`
+        font-size: 22px;
+    `)}
+`;
+
+export const SeeMoreButton = styled.button`
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+
+    &:last-child {
+        color: white;
+        text-transform: uppercase;
+        margin-top: 10px;
+    }
+`;
+
+export const PartnerContainer = styled.div`
+    display: ${({ isShown }) => (isShown ? 'block' : 'none')};
+    margin-top: 50px;
+`;
+

@@ -1,0 +1,1 @@
+export { InformationRow } from './InformationRow'
