@@ -37,7 +37,7 @@ export const NameContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     flex-wrap: wrap;
-    position: absolute;     
+    position: absolute;
     z-index: 0;
     box-sizing: border-box;
     align-self: center;
@@ -162,4 +162,3 @@ export const Gradient = styled.div`
         display: block;
     `)}
 `;
-

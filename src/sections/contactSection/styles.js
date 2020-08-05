@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import {
-    Heading as HeadingComponent,
-} from '@components';
+import { Heading as HeadingComponent } from '@components';
 import { media } from '@styles';
 
 export const Heading = styled(HeadingComponent)`
@@ -18,7 +16,6 @@ export const SubContainer = styled.div`
 export const ContactOption = styled.h4`
     font-weight: normal;
     margin-bottom: 25px;
-    color: #a8a8a8;
 
     &:last-child {
         margin: 0;
@@ -26,19 +23,19 @@ export const ContactOption = styled.h4`
 
     > a {
         text-decoration: none;
-        color: #a8a8a8;
+        color: #b7b7b7;
     }
 `;
 
 export const LogoContainer = styled.a`
     margin-bottom: 20px;
-`
+`;
 
 export const FormHeading = styled.h3`
     text-align: center;
     font-size: 16px;
     color: white;
-    font-weight: 100; 
+    font-weight: 100;
 
     ${media.md(`
       font-size: 22px;
@@ -53,4 +50,3 @@ export const FormContainer = styled.div`
         width: 350px;
     `)}
 `;
-

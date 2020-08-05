@@ -8,7 +8,7 @@ export const Form = styled(FormComponent)`
 
 export const ErrorWrapper = styled.span`
     font-size: 11px;
-    color: #808080;
+    color: #b7b7b7;
     margin-top: 5px;
 `;
 

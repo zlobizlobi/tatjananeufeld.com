@@ -1,1 +1,1 @@
-export { PageContextProvider, usePageContext } from './Context'
+export { PageContextProvider, usePageContext } from './Context';

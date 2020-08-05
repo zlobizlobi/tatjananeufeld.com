@@ -75,12 +75,12 @@ export const CopyrightImage = styled.img`
     border-radius: 50%;
     border: 1px solid white;
     object-fit: cover;
-    
+
     ${media.lg(`
         width: 30px;
         height: 30px;
-    `)}     
-`
+    `)}
+`;
 
 export const CopyrightImageContainer = styled.a`
     display: flex;
@@ -88,10 +88,10 @@ export const CopyrightImageContainer = styled.a`
     margin-top: 20px;
     text-decoration: none;
     cursor: pointer;
-`
+`;
 
 export const CopyrightImageText = styled.span`
     color: white;
     font-style: italic;
     font-size: 10px;
-`
+`;

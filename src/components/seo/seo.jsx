@@ -5,12 +5,7 @@ import image from '../../images/metaImage.jpg';
 import { useIntl } from 'react-intl';
 import { usePageContext } from '../PageContext';
 
-export const SEO = ({
-    description,
-    author,
-    title,
-    meta = []
-}) => {
+export const SEO = ({ description, author, title, meta = [] }) => {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -27,13 +22,12 @@ export const SEO = ({
         `
     );
 
-    const {
-        siteMetadata
-    } = site;
+    const { siteMetadata } = site;
 
     const { locale: lang, formatMessage } = useIntl();
 
-    const metaDescription = description || formatMessage({ id: 'seoHomeDescription' });
+    const metaDescription =
+        description || formatMessage({ id: 'seoHomeDescription' });
 
     const host = siteMetadata.siteUrl;
 
@@ -44,7 +38,7 @@ export const SEO = ({
     return (
         <Helmet
             htmlAttributes={{
-                lang
+                lang,
             }}
             title={title}
             titleTemplate={`${siteMetadata.title} | ${seoTitle}`}

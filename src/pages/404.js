@@ -4,6 +4,6 @@ const NotFound = () => (
     <div>
         <p>Oops, this pages does not exist.</p>
     </div>
-)
+);
 
-export default NotFound
+export default NotFound;

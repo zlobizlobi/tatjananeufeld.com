@@ -69,12 +69,11 @@ const TatyanaPodyomova = () => {
 
     return (
         <>
-            <SEO
-                title="tatyana-podyomova"
-                description={seoDescription}
-            />
+            <SEO title="tatyana-podyomova" description={seoDescription} />
             <ContentWrapper>
-                <Heading ><FormattedMessage id="tatyana-podyomova" /></Heading>
+                <Heading>
+                    <FormattedMessage id="tatyana-podyomova" />
+                </Heading>
                 <PortretImage fluid={tatyanaImageSrc} />
                 <Text>{landing_text}</Text>
                 <CTAContainer href="#">
@@ -94,7 +93,6 @@ const TatyanaPodyomova = () => {
 
 export default TatyanaPodyomova;
 
-
 const ContentWrapper = styled(Section)`
     display: flex;
     flex-direction: column;
@@ -108,7 +106,6 @@ const Heading = styled(HeadingComponent)`
     }
 `;
 
-
 const imgStyle = {
     objectPosition: 'left left',
     objectFit: 'scale-down',
@@ -121,7 +118,7 @@ const PortretImage = styled(Img).attrs({
 })`
     width: 100%;
     height: auto;
-    
+
     ${media.md(`
         width: 600px;
         height: 400px;

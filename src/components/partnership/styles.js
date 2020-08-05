@@ -59,7 +59,7 @@ export const Text = styled.p`
     font-size: 14px;
     line-height: 24.5px;
     max-width: 800px;
-    color: #808080;
+    color: #b7b7b7;
 `;
 
 export const PartnershipName = styled.h2`
@@ -76,7 +76,7 @@ export const PartnershipName = styled.h2`
 `;
 
 const arrowStyle = css`
-    color: #808080;
+    color: #b7b7b7;
     height: 25px;
     width: 25px;
     margin-bottom: 10px;

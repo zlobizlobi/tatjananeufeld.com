@@ -9,7 +9,7 @@ export const Button = styled.button`
     height: 22.5px;
     transition: color 0.2s ease-in-out, background-color 0.4s ease;
     border-radius: 1px;
-    
+
     &:last-child {
         margin: 0;
     }

@@ -34,14 +34,13 @@ export const MobileNavigation = () => {
 
     const visibilityAnimation = useSpring({
         opacity: isOpen ? '1' : '0',
-        transform: isOpen
-            ? 'translateX(0)'
-            : 'translateX(-100%)',
+        transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
     });
 
     const NavigationList = () => {
-
-        const navLinks = NAV_TITLES.map(title => <NavLink key={title} title={title} />);
+        const navLinks = NAV_TITLES.map(title => (
+            <NavLink key={title} title={title} />
+        ));
 
         const trail = useTrail(navLinks.length, {
             from: { opacity: 0, transform: 'translate3d(-100px, 0px, 0)' },
@@ -53,7 +52,9 @@ export const MobileNavigation = () => {
         return (
             <>
                 {trail.map((styles, i) => (
-                    <animated.div key={i} style={styles}>{navLinks[i]}</animated.div>
+                    <animated.div key={i} style={styles}>
+                        {navLinks[i]}
+                    </animated.div>
                 ))}
             </>
         );
@@ -64,10 +65,7 @@ export const MobileNavigation = () => {
             <HamburgerButton onClick={() => setIsOpen(!isOpen)}>
                 <Bar style={{ ...animationUpperBar }} />
                 <Bar style={{ ...animationLowerBar }} />
-                <Navigation
-                    isOpen={isOpen}
-                    style={{ ...visibilityAnimation }}
-                >
+                <Navigation isOpen={isOpen} style={{ ...visibilityAnimation }}>
                     {isOpen && <NavigationList />}
                 </Navigation>
             </HamburgerButton>

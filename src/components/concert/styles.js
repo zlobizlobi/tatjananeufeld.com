@@ -18,7 +18,6 @@ export const Flex = styled.div`
     flex-direction: column;
 `;
 
-
 export const HiddenContainer = styled.div`
     flex-direction: column;
     z-index: 0;
@@ -41,7 +40,7 @@ export const VendorContainer = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    color: #808080;
+    color: #b7b7b7;
     text-decoration: none;
 
     &:last-child {
@@ -61,7 +60,7 @@ export const VendorContainer = styled.div`
 
 export const Program = styled.span`
     white-space: pre-wrap;
-    color: #808080;
+    color: #b7b7b7;
 `;
 
 export const GetTicketsButton = styled.a`

@@ -75,4 +75,4 @@ export const GlobalStyle = createGlobalStyle`
     .control-dots {
         width: unset !important;
     }
-`;  
+`;

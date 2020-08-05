@@ -11,7 +11,7 @@ const Carousel = styled(CarouselComponent)`
         display: inline-block;
         margin: 0;
         width: calc(100% - 80px);
-    }   
+    }
 `;
 
 const CarouselItemContainer = styled.div`
@@ -19,16 +19,16 @@ const CarouselItemContainer = styled.div`
     justify-content: center;
     width: 100%;
     max-height: 700px;
-`
+`;
 
 const Image = styled(Img).attrs({
     imgStyle: {
-        objectFit: 'contain'
-    }
-})` 
-   max-height: 100%;
-   width: 100%;
-`
+        objectFit: 'contain',
+    },
+})`
+    max-height: 100%;
+    width: 100%;
+`;
 
 const DownloadLink = styled.a`
     display: flex;
@@ -61,6 +61,5 @@ const DownloadLink = styled.a`
         }
     `)}
 `;
-
 
 export { Image, Carousel, DownloadLink, CarouselItemContainer };

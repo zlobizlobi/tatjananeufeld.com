@@ -15,23 +15,23 @@ import { FiCalendar } from 'react-icons/fi';
 
 export const LandingSection = forwardRef((props, ref) => {
     const query = useStaticQuery(graphql`
-    query landingPageQuery {
-        prismicMainPage {
-            data {
-                landing_page_image {
-                    localFile {
-                        childImageSharp {
-                            fluid(quality: 100) {
-                                ...GatsbyImageSharpFluid
+        query landingPageQuery {
+            prismicMainPage {
+                data {
+                    landing_page_image {
+                        localFile {
+                            childImageSharp {
+                                fluid(quality: 100) {
+                                    ...GatsbyImageSharpFluid
+                                }
                             }
                         }
                     }
+                    button_text
                 }
-                button_text
             }
         }
-    }`
-    )
+    `);
     const {
         prismicMainPage: {
             data: {
@@ -40,10 +40,10 @@ export const LandingSection = forwardRef((props, ref) => {
                         childImageSharp: { fluid },
                     },
                 },
-                button_text
+                button_text,
             },
         },
-    } = query
+    } = query;
 
     const items = [
         <Name>
@@ -52,12 +52,19 @@ export const LandingSection = forwardRef((props, ref) => {
         <SubHeading>
             <FormattedMessage id="landing_section_subheading" />
         </SubHeading>,
-        <Button aria-label="Go to first concert" onClick={() => window.scrollTo({ left: 0, top: ref.current.offsetTop, behavior: 'smooth' })}>
-            <span>
-                {button_text}
-            </span>
+        <Button
+            aria-label="Go to first concert"
+            onClick={() =>
+                window.scrollTo({
+                    left: 0,
+                    top: ref.current.offsetTop,
+                    behavior: 'smooth',
+                })
+            }
+        >
+            <span>{button_text}</span>
             <FiCalendar />
-        </Button>
+        </Button>,
     ];
 
     const trail = useTrail(items.length, {
@@ -73,9 +80,11 @@ export const LandingSection = forwardRef((props, ref) => {
             <Gradient />
             <NameContainer>
                 {trail.map((styles, i) => (
-                    <animated.div key={i} style={styles}>{items[i]}</animated.div>
+                    <animated.div key={i} style={styles}>
+                        {items[i]}
+                    </animated.div>
                 ))}
             </NameContainer>
         </Section>
     );
-})  
+});

@@ -57,25 +57,22 @@ export const Concert = ({
                                 ticketUrl = '',
                                 telephoneNumber = '',
                             }) => (
-                                    <Fragment key={vendor}>
-                                        {ticketUrl ? (
-                                            <VendorContainer
-                                            >
-                                                <span>{vendor}</span>
-                                                <GetTicketsButton href={ticketUrl}>
-                                                    Tickets
-                                                </GetTicketsButton>
-                                            </VendorContainer>
-                                        ) : (
-                                                <VendorContainer>
-                                                    <span>{vendor}</span>
-                                                    <span>
-                                                        {telephoneNumber}
-                                                    </span>
-                                                </VendorContainer>
-                                            )}
-                                    </Fragment>
-                                )
+                                <Fragment key={vendor}>
+                                    {ticketUrl ? (
+                                        <VendorContainer>
+                                            <span>{vendor}</span>
+                                            <GetTicketsButton href={ticketUrl}>
+                                                Tickets
+                                            </GetTicketsButton>
+                                        </VendorContainer>
+                                    ) : (
+                                        <VendorContainer>
+                                            <span>{vendor}</span>
+                                            <span>{telephoneNumber}</span>
+                                        </VendorContainer>
+                                    )}
+                                </Fragment>
+                            )
                         )}
                     </HiddenSubContainer>
                     <Flex>
@@ -99,7 +96,7 @@ export const Concert = ({
             <MoreButton onClick={() => setExtended(!extended)}>
                 {extended ? <Minus /> : <Plus />}
             </MoreButton>
-        </Container >
+        </Container>
     );
 };
 
@@ -110,7 +107,7 @@ const MoreButton = styled.button`
     z-index: 1;
     transition: color 0.3s ease;
     margin-top: 20px;
-    
+
     :hover {
         color: #808080;
     }
@@ -124,12 +121,12 @@ const iconStyles = css`
         width: 30px;
         height: 30px;
     `)}
-`
+`;
 
 const Minus = styled(FiMinus)`
     ${iconStyles}
-`
+`;
 
 const Plus = styled(FiPlus)`
     ${iconStyles}
-`
+`;

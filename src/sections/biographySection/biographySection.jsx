@@ -1,5 +1,8 @@
 import React from 'react';
-import { Section as SectionComponent, Heading as HeadingComponent } from '@components';
+import {
+    Section as SectionComponent,
+    Heading as HeadingComponent,
+} from '@components';
 import { FormattedMessage } from 'react-intl';
 import { useStaticQuery, graphql } from 'gatsby';
 import { FiDownload } from 'react-icons/fi';
@@ -35,15 +38,11 @@ export const BiographySection = () => {
             data: {
                 foto: {
                     localFile: {
-                        childImageSharp: {
-                            fluid
-                        },
+                        childImageSharp: { fluid },
                     },
                 },
                 text,
-                biography_file: {
-                    url: fileSrc
-                }
+                biography_file: { url: fileSrc },
             },
         },
     } = data;
@@ -57,13 +56,17 @@ export const BiographySection = () => {
                 <Image loading="lazy" fluid={fluid} />
                 <Text>{text}</Text>
                 <ButtonContainer>
-                    <Button href={fileSrc} download="biography.pdf" target="_blank">
+                    <Button
+                        href={fileSrc}
+                        download="biography.pdf"
+                        target="_blank"
+                    >
                         <FiDownload style={{ marginRight: '10px' }} />
                         Download
                     </Button>
                 </ButtonContainer>
             </Container>
-        </Section >
+        </Section>
     );
 };
 
@@ -87,7 +90,7 @@ const Text = styled.p`
 const Image = styled(Img).attrs({
     imgStyle: {
         objectFit: 'cover',
-        objectPosition: '0 20%'
+        objectPosition: '0 20%',
     },
 })`
     border-radius: 1px;
@@ -119,7 +122,7 @@ const ButtonContainer = styled.div`
     width: 100%;
     justify-content: center;
     margin-top: 20px;
-`
+`;
 
 const Button = styled.a`
     padding: 5px 10px;
@@ -132,17 +135,17 @@ const Button = styled.a`
     display: flex;
     align-items: center;
     transition: all 0.3s ease;
-    
+
     :hover {
         background-color: black;
         color: white;
     }
-    
+
     ${media.sm(`    
         font-size: 16px;
         padding: 10px 20px;
     `)}
-`
+`;
 const Heading = styled(HeadingComponent)`
     color: black;
-`
+`;

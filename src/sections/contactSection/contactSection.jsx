@@ -5,7 +5,7 @@ import {
     ContactOption,
     FormHeading,
     FormContainer,
-    LogoContainer
+    LogoContainer,
 } from './styles';
 import { ContactForm as Form, Section } from '@components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
@@ -36,7 +36,8 @@ export const ContactSection = () => (
             </ContactOption>
         </SubContainer>
         <FormHeading>
-            <FormattedMessage id="contact_cta" />...
+            <FormattedMessage id="contact_cta" />
+            ...
         </FormHeading>
         <FormContainer>
             <Form />

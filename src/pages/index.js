@@ -6,7 +6,7 @@ import {
     ConcertSection,
     BiographySection,
     ContactSection,
-    GallerySection
+    GallerySection,
 } from '../sections';
 import { Footer } from '@components';
 

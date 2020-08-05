@@ -8,16 +8,20 @@ export default ({ children, pageContext, pathContext }) => {
     const { language, messages, defaultLocale } = pageContext.intl;
     return (
         <PageContextProvider pathContext={pathContext}>
-            <IntlProvider locale={language} messages={messages} defaultLocale={defaultLocale}>
+            <IntlProvider
+                locale={language}
+                messages={messages}
+                defaultLocale={defaultLocale}
+            >
                 <AppContainer>
                     <MobileNavigation />
                     <DesktopNavigation />
                     <Main>{children}</Main>
-                </AppContainer >
+                </AppContainer>
             </IntlProvider>
         </PageContextProvider>
-    )
-}
+    );
+};
 
 const AppContainer = styled.div`
     display: flex;

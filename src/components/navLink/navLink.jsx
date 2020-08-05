@@ -9,12 +9,19 @@ export const NavLink = ({ title, className }) => {
 
     return (
         <li>
-            <PageLink className={className} to={(title === 'tatyana-podyomova' || title === 'partnerships') ? `/${title}` : `/${locale}/#${title}`}>
+            <PageLink
+                className={className}
+                to={
+                    title === 'tatyana-podyomova' || title === 'partnerships'
+                        ? `/${title}`
+                        : `/${locale}/#${title}`
+                }
+            >
                 <FormattedMessage id={title} />
             </PageLink>
         </li>
-    )
-}
+    );
+};
 
 export const PageLink = styled(LinkComponent)`
     text-decoration: none;
@@ -22,7 +29,7 @@ export const PageLink = styled(LinkComponent)`
     text-transform: uppercase;
     transition: color 0.3s ease;
     font-size: 15px;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
 
     :hover {
         color: rgba(255, 255, 255, 1);

@@ -13,7 +13,6 @@ export const Visible = ({
     address,
     venue,
 }) => {
-
     const formattedDate = new Date(date);
 
     const splittedDate = formattedDate.toString().split(' ');
@@ -31,7 +30,10 @@ export const Visible = ({
             <Image fluid={posterSrc} alt="Concert poster" />
             <Column>
                 <Name onClick={onClick}>{name}</Name>
-                <Text>{day}&nbsp;{month}&nbsp;<FormattedTime value={date} /></Text>
+                <Text>
+                    {day}&nbsp;{month}&nbsp;
+                    <FormattedTime value={date} />
+                </Text>
                 <Text>{city}</Text>
                 {venue && <Text>{venue}</Text>}
                 {address && <Text>{address}</Text>}
@@ -42,7 +44,7 @@ export const Visible = ({
 
 const Container = styled.div`
     display: flex;
-`
+`;
 
 const Column = styled.div`
     display: flex;
@@ -77,9 +79,8 @@ const Image = styled(Img)`
 const Text = styled.p`
     white-space: pre-wrap;
     font-size: 13px;
-    color: #808080;
+    color: #b7b7b7;
     margin-bottom: 5px;
-    
 
     ${media.md(`
         font-size: 16px;

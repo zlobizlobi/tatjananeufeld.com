@@ -33,17 +33,19 @@ export const DesktopNavigation = () => {
                     <FormattedMessage id="tatjana" />
                 </Logo>
                 <NavList>
-                    {NAV_TITLES.map(title => <NavLink key={title} title={title} />)}
+                    {NAV_TITLES.map(title => (
+                        <NavLink key={title} title={title} />
+                    ))}
                 </NavList>
             </NavListContainer>
             <LanguageSwitch />
         </Nav>
     );
-}
+};
 
 const NavListContainer = styled.div`
     display: flex;
-`
+`;
 
 export const Logo = styled(Link)`
     text-decoration: none;

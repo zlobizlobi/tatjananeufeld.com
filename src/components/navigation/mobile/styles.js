@@ -11,7 +11,7 @@ export const Nav = styled.nav`
     width: 100%;
     position: absolute;
     z-index: 1;
-    
+
     ${media.lg(`
         display: none;
     `)}

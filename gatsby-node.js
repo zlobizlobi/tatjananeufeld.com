@@ -29,7 +29,6 @@ exports.onCreatePage = async ({ page, actions }) => {
     await deletePage(page);
 
     locales.forEach(locale => {
-
         const originalPath = page.path;
 
         createPage({

@@ -1,33 +1,40 @@
 import React from 'react';
-import { InformationRow } from './InformationRow'
+import { InformationRow } from './InformationRow';
 import { media } from '@styles';
-import { Partner } from './partner';
+import { Programs } from './Programs';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import { Partners } from './Partners';
+import thumbnail from '../../images/thumbnail.svg';
 
-export const Partnership = ({ data: { announcement, body, image, name } }) => {
+export const Partnership = ({ data: { announcement, biography, body: slices, biography_file, image, name } }) => {
 
-    console.log(body);
-    const fluid = image.localFile.childImageSharp.fluid;
+    const fluid = image.localFile && image.localFile.childImageSharp.fluid;
+
+    const programs = slices.filter(slice => slice.slice_type === "program");
+
+    const artists = slices.filter(slice => slice.slice_type === "artist");
 
     return (
         <Container>
             <Column>
                 <FlexContainer>
-                    <Image fluid={fluid} />
+                    <Image fluid={fluid || thumbnail} />
                     <Column>
-                        <Name>
-                            {name}
-                        </Name>
+                        <Name>{name}</Name>
                         <Text>{announcement}</Text>
                     </Column>
                 </FlexContainer>
-                <InformationRow title="partnership_program" content={body} />
+                <InformationRow title="partnership_program">
+                    <Programs programs={programs} />
+                </InformationRow>
+                {/* <InformationRow title="partnership_artists">
+                    <Partners biography={biography} />
+                </InformationRow> */}
             </Column>
         </Container>
     );
 };
-
 
 export const Container = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -58,8 +65,8 @@ export const FlexContainer = styled.div`
 export const Image = styled(Img).attrs({
     imgStyle: {
         objectFit: 'cover',
-        objectPosition: 'center 15%'
-    }
+        objectPosition: 'center 15%',
+    },
 })`
     width: 100%;
     height: 150px;
@@ -80,7 +87,7 @@ export const Column = styled.div`
 export const Text = styled.p`
     font-size: 14px;
     line-height: 24.5px;
-    color: #808080;
+    color: #b7b7b7;
 `;
 
 export const Name = styled.h2`
@@ -112,4 +119,3 @@ export const PartnerContainer = styled.div`
     display: ${({ isShown }) => (isShown ? 'block' : 'none')};
     margin-top: 50px;
 `;
-
