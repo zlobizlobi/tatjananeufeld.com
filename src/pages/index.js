@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { SEO } from '@components';
+import { Seo } from '@components';
 import { graphql } from 'gatsby';
 import {
     LandingSection,
@@ -9,6 +9,7 @@ import {
     GallerySection,
 } from '../sections';
 import { Footer } from '@components';
+import { useDetectKeyboard } from '../hooks';
 
 export const data = graphql`
     query Concerts($locale: String!) {
@@ -44,6 +45,8 @@ export const data = graphql`
 
 const IndexPage = ({ pageContext: { locale }, data }) => {
     // locale is not highlighted as used here as it's interpolated under the hood into the graphql query. This is graphql syntax.
+    useDetectKeyboard();
+
     const {
         prismicMainPage: {
             data: { body: concerts },
@@ -52,9 +55,10 @@ const IndexPage = ({ pageContext: { locale }, data }) => {
 
     const concertRef = useRef(null);
 
+
     return (
         <>
-            <SEO title="home" />
+            <Seo title="home" />
             <LandingSection ref={concertRef} />
             <ConcertSection ref={concertRef} concerts={concerts} />
             <BiographySection />

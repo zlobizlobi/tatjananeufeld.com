@@ -7,13 +7,21 @@ import Img from 'gatsby-image';
 import { Partners } from './Partners';
 import thumbnail from '../../images/thumbnail.svg';
 
-export const Partnership = ({ data: { announcement, biography, body: slices, biography_file, image, name } }) => {
-
+export const Partnership = ({
+    data: {
+        announcement,
+        biography,
+        body: slices,
+        biography_file,
+        image,
+        name,
+    },
+}) => {
     const fluid = image.localFile && image.localFile.childImageSharp.fluid;
 
-    const programs = slices.filter(slice => slice.slice_type === "program");
+    const programs = slices.filter(slice => slice.slice_type === 'program');
 
-    const artists = slices.filter(slice => slice.slice_type === "artist");
+    const partners = slices.filter(slice => slice.slice_type === 'artist');
 
     return (
         <Container>
@@ -28,9 +36,9 @@ export const Partnership = ({ data: { announcement, biography, body: slices, bio
                 <InformationRow title="partnership_program">
                     <Programs programs={programs} />
                 </InformationRow>
-                {/* <InformationRow title="partnership_artists">
-                    <Partners biography={biography} />
-                </InformationRow> */}
+                <InformationRow title="partnership_artists">
+                    <Partners partners={partners} biography={biography} biographyFile={biography_file} name={name} />
+                </InformationRow>
             </Column>
         </Container>
     );
@@ -100,19 +108,6 @@ export const Name = styled.h2`
     ${media.md(`
         font-size: 22px;
     `)}
-`;
-
-export const SeeMoreButton = styled.button`
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-
-    &:last-child {
-        color: white;
-        text-transform: uppercase;
-        margin-top: 10px;
-    }
 `;
 
 export const PartnerContainer = styled.div`

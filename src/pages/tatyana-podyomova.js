@@ -1,11 +1,12 @@
 import React from 'react';
-import { SEO, Footer, Section, Heading as HeadingComponent } from '@components';
+import { Seo, Footer, Section, Heading as HeadingComponent } from '@components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { FormattedMessage, useIntl } from 'react-intl';
 import styled, { keyframes } from 'styled-components';
 import Img from 'gatsby-image';
 import { media } from '@styles';
 import { FiArrowRight } from 'react-icons/fi';
+import { useDetectKeyboard } from '../hooks'
 
 const TatyanaPodyomova = () => {
     const data = useStaticQuery(graphql`
@@ -63,13 +64,15 @@ const TatyanaPodyomova = () => {
         },
     } = data;
 
+    useDetectKeyboard();
+
     const { formatMessage } = useIntl();
 
-    const seoDescription = formatMessage({ id: 'seoPodyomovaDescription' });
+    const SeoDescription = formatMessage({ id: 'SeoPodyomovaDescription' });
 
     return (
         <>
-            <SEO title="tatyana-podyomova" description={seoDescription} />
+            <Seo title="tatyana-podyomova" description={SeoDescription} />
             <ContentWrapper>
                 <Heading>
                     <FormattedMessage id="tatyana-podyomova" />

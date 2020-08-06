@@ -8,7 +8,7 @@ import {
 } from './styles';
 import { animated, useSpring, useTrail } from 'react-spring';
 import { useScrollLock } from '../useScrollLock';
-import { NavLink } from '../../navLink';
+import { Navlink } from '../../Navlink';
 import { NAV_TITLES } from '../../../constants/navTitles';
 
 const Navigation = animated(props => <NavigationComponent {...props} />);
@@ -39,7 +39,7 @@ export const MobileNavigation = () => {
 
     const NavigationList = () => {
         const navLinks = NAV_TITLES.map(title => (
-            <NavLink key={title} title={title} />
+            <Navlink key={title} title={title} />
         ));
 
         const trail = useTrail(navLinks.length, {

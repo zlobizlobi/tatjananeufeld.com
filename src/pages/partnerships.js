@@ -2,15 +2,14 @@ import React from 'react';
 import {
     Partnership,
     Section,
-    SEO,
+    Seo,
     Footer,
     Heading as HeadingComponent,
 } from '@components';
 import styled from 'styled-components';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import { graphql } from 'gatsby';
-
-
+import { useDetectKeyboard } from '../hooks'
 export const data = graphql`
     query Partnerships($locale: String!) {
         allPrismicPartnerships(filter: { lang: { eq: $locale } }) {
@@ -25,14 +24,14 @@ export const data = graphql`
                     image {
                         localFile {
                             childImageSharp {
-                                fluid(quality: 100){
+                                fluid(quality: 100) {
                                     ...GatsbyImageSharpFluid
                                 }
                             }
                         }
                     }
                     body {
-            ...on PrismicPartnershipsBodyArtist {
+                        ... on PrismicPartnershipsBodyArtist {
                             id
                             slice_type
                             primary {
@@ -45,7 +44,7 @@ export const data = graphql`
                                 artist_image {
                                     localFile {
                                         childImageSharp {
-                                            fluid(quality: 100){
+                                            fluid(quality: 100) {
                                                 aspectRatio
                                                 src
                                                 srcSet
@@ -57,7 +56,7 @@ export const data = graphql`
                                 }
                             }
                         }
-            ...on PrismicPartnershipsBodyProgram {
+                        ... on PrismicPartnershipsBodyProgram {
                             id
                             slice_type
                             items {
@@ -77,19 +76,19 @@ export const data = graphql`
     }
 `;
 
-
-
-
 const Partnerships = ({ pageContext: { locale }, data }) => {
+
+    useDetectKeyboard();
+
     const { formatMessage } = useIntl();
 
     const partnerships = data.allPrismicPartnerships.nodes;
 
-    const seoDescription = formatMessage({ id: 'seoPartnershipsDescription' });
+    const SeoDescription = formatMessage({ id: 'SeoPartnershipsDescription' });
 
     return (
         <>
-            <SEO title="partnerships" description={seoDescription} />
+            <Seo title="partnerships" description={SeoDescription} />
             <Section>
                 <Heading>
                     <FormattedMessage id="partnerships_heading" />

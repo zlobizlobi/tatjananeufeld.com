@@ -57,22 +57,22 @@ export const Concert = ({
                                 ticketUrl = '',
                                 telephoneNumber = '',
                             }) => (
-                                <Fragment key={vendor}>
-                                    {ticketUrl ? (
-                                        <VendorContainer>
-                                            <span>{vendor}</span>
-                                            <GetTicketsButton href={ticketUrl}>
-                                                Tickets
+                                    <Fragment key={vendor}>
+                                        {ticketUrl ? (
+                                            <VendorContainer>
+                                                <span>{vendor}</span>
+                                                <GetTicketsButton href={ticketUrl}>
+                                                    Tickets
                                             </GetTicketsButton>
-                                        </VendorContainer>
-                                    ) : (
-                                        <VendorContainer>
-                                            <span>{vendor}</span>
-                                            <span>{telephoneNumber}</span>
-                                        </VendorContainer>
-                                    )}
-                                </Fragment>
-                            )
+                                            </VendorContainer>
+                                        ) : (
+                                                <VendorContainer>
+                                                    <span>{vendor}</span>
+                                                    <span>{telephoneNumber}</span>
+                                                </VendorContainer>
+                                            )}
+                                    </Fragment>
+                                )
                         )}
                     </HiddenSubContainer>
                     <Flex>

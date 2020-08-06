@@ -5,7 +5,7 @@ import image from '../../images/metaImage.jpg';
 import { useIntl } from 'react-intl';
 import { usePageContext } from '../PageContext';
 
-export const SEO = ({ description, author, title, meta = [] }) => {
+export const Seo = ({ description, author, title, meta = [] }) => {
     const { site } = useStaticQuery(
         graphql`
             query {

@@ -1,10 +1,10 @@
-export { SEO } from './seo';
+export { Seo } from './Seo';
 export { MobileNavigation, DesktopNavigation } from './navigation';
-export { Concert } from './concert';
-export { Heading } from './heading';
+export { Concert } from './Concert';
+export { Heading } from './Heading';
 export { Section } from './section';
-export { Carousel } from './carousel';
+export { Carousel } from './Carousel';
 export { Footer } from './footer';
-export { NavLink } from './navLink';
+export { Navlink } from './Navlink';
 export { ContactForm } from './contactForm';
-export { Partnership } from './partnership';
+export { Partnership } from './Partnership';

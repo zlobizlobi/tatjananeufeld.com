@@ -4,8 +4,7 @@ import { media } from '@styles';
 import { FiDownload } from 'react-icons/fi';
 
 export const Programs = ({ programs }) => {
-
-    const years = programs
+    const sortedYears = programs
         .map(({ primary }) => primary.year)
         .sort((a, b) => Number(a) - Number(b));
 
@@ -15,8 +14,7 @@ export const Programs = ({ programs }) => {
 
     const activeProgram = programs.filter(
         ({ primary }) => primary.year === activeYear
-    )[0]
-
+    )[0];
 
     const { primary } = activeProgram;
 
@@ -25,7 +23,7 @@ export const Programs = ({ programs }) => {
     return (
         <Container>
             <Years>
-                {years.map(year => (
+                {sortedYears.map(year => (
                     <Year
                         key={year}
                         active={activeYear === year}
@@ -35,7 +33,13 @@ export const Programs = ({ programs }) => {
                     </Year>
                 ))}
             </Years>
-            <Content>{activeProgram.items.map(item => <ProgramSuggestion>{item.program}</ProgramSuggestion>)}</Content>
+            <Content>
+                {activeProgram.items.map((item, index) => (
+                    <ProgramSuggestion key={index}>
+                        {item.program}
+                    </ProgramSuggestion>
+                ))}
+            </Content>
             {primary.program_file.url && (
                 <DownloadLink
                     href={primary.program_file.url}
@@ -99,7 +103,7 @@ const Years = styled.div`
 
 const Content = styled.div`
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 
     ${media.sm(`
         flex-direction: row;
@@ -113,9 +117,7 @@ export const DownloadLink = styled.a`
     align-items: center;
     font-size: 12px;
     color: white;
-    margin-top: 30px; 
-
-  
+    margin-top: 30px;
 
     ${media.md(`
         font-size: 13px;
@@ -127,23 +129,22 @@ export const DownloadIcon = styled(FiDownload)`
     width: 25px;
     height: 25px;
 
-
     ${media.md(`
         width: 20px;
         height: 20px;
     `)}
-`
+`;
 
 export const ProgramSuggestion = styled.span`
     color: white;
-    line-height: 24px;  
+    line-height: 24px;
     font-size: 14px;
     max-width: 300px;
     white-space: break-spaces;
     color: #b7b7b7;
-    margin: 0 0 20px 0;
+    margin: 0 0 40px 0;
 
     ${media.sm(`
         margin: 20px;   
     `)}
-`
+`;

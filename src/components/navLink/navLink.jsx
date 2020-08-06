@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link as LinkComponent } from 'gatsby';
 import { media } from '@styles';
 
-export const NavLink = ({ title, className }) => {
+export const Navlink = ({ title, className }) => {
     const { locale } = useIntl();
 
     return (

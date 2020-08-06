@@ -25,7 +25,7 @@ export const Row = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 25px 0;
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
 `;
 
@@ -39,7 +39,7 @@ export const Heading = styled.h4`
     color: white;
     font-weight: normal;
     font-size: 14px;
-    
+
     ${media.sm(`
         font-size: 16px;
     `)}
@@ -47,6 +47,11 @@ export const Heading = styled.h4`
 
 const Button = styled.button`
     display: inline-flex;
+
+    :focus {
+        outline: 2px solid #b7b7b7;
+        border-radius: 1px;
+    }
 `;
 
 const iconStyle = css`

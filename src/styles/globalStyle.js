@@ -36,17 +36,42 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    html {
+        &:not(.user-is-tabbing) {
+            a[href],
+            input:not([disabled]),
+            select:not([disabled]),
+            textarea:not([disabled]),
+            button:not([disabled]),
+            iframe {
+              outline: none;
+            }
+        }
+
+        .user-is-tabbing {
+            a[href],
+            area[href],
+            input,
+            select,
+            textarea,
+            button,
+            iframe {
+                :focus {
+                    outline: 2px solid #b7b7b7;
+                }
+            }
+        }
+    }
+
     body, html {
-        background-color: black;
-        font-family: 'Montserrat', sans-serif;
         min-width: 100%;
         min-height: 100vh;
         scroll-behavior: smooth;
     }
 
      body {
-        display: flex;
-        flex-direction: column;
+        background-color: black;
+        font-family: 'Montserrat', sans-serif;
      }
 
     button, input, textarea {

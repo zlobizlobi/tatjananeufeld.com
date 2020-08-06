@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from '../../navLink';
+import { Navlink } from '../../Navlink';
 import { NAV_TITLES } from '../../../constants/navTitles';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import styled, { keyframes, css } from 'styled-components';
-import { LanguageSwitch as LanguageSwitchComponent } from '../../languageSwitch';
+import { LanguageSwitch as LanguageSwitchComponent } from '../../LanguageSwitch';
 import { media } from '@styles';
 import { Link } from 'gatsby';
 
@@ -34,7 +34,7 @@ export const DesktopNavigation = () => {
                 </Logo>
                 <NavList>
                     {NAV_TITLES.map(title => (
-                        <NavLink key={title} title={title} />
+                        <Navlink key={title} title={title} />
                     ))}
                 </NavList>
             </NavListContainer>

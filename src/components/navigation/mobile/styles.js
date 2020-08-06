@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { NavLink as NavLinkComponent } from '../../navLink';
+import { Navlink as NavlinkComponent } from '../../Navlink';
 import { media } from '@styles';
-import { LanguageSwitch as LanguageSwitchComponent } from '../../languageSwitch';
+import { LanguageSwitch as LanguageSwitchComponent } from '../../LanguageSwitch';
 
 export const Nav = styled.nav`
     display: flex;
@@ -52,7 +52,7 @@ export const Navigation = styled.ul`
     padding: 120px 40px 120px;
 `;
 
-export const NavLink = styled(NavLinkComponent)`
+export const Navlink = styled(NavlinkComponent)`
     color: rgba(255, 255, 255, 0.7);
     font-family: 'Montserrat', sans-serif;
     position: relative;
