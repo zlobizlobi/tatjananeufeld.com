@@ -1,8 +1,8 @@
 export { Seo } from './Seo';
-export { MobileNavigation, DesktopNavigation } from './navigation';
+export { MobileNavigation, DesktopNavigation } from './Navigation';
 export { Concert } from './Concert';
 export { Heading } from './Heading';
-export { Section } from './section';
+export { Section } from './Section';
 export { Carousel } from './Carousel';
 export { Footer } from './Footer';
 export { Navlink } from './Navlink';

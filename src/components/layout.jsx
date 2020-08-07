@@ -1,5 +1,5 @@
 import React from 'react';
-import { MobileNavigation, DesktopNavigation } from './navigation';
+import { MobileNavigation, DesktopNavigation } from './Navigation';
 import styled from 'styled-components';
 import { IntlProvider } from 'react-intl';
 import { PageContextProvider } from './PageContext';
