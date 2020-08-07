@@ -170,20 +170,14 @@ export const ImageFluid = styled(Img).attrs({
     },
 })`
     width: 100%;
-    height: 200px;  
-    min-width: 150px;
+    height: 100%;
 `;
 
 const Image = styled.img`
-    width: 150px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border: 1px solid white;
-    
-    ${media.md(`
-        width: 150px;
-        height: 200px;
-        object-fit: cover;
-    `)}
+    object-fit: cover;
 `;
 
 const CritiqueName = styled.span`
@@ -200,10 +194,17 @@ const CritiqueName = styled.span`
     padding: 0 20px;
 `
 
+
 const Link = styled.a`
-    margin-right: 30px;
+    margin-bottom: 30px;
+    width: 150px;
+    height: 200px;
 
     &:last-child {
         margin: 0;
     }
+
+    ${media.sm(`
+        margin-right: 30px
+    `)}
 `

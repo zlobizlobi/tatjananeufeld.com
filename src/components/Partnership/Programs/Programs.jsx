@@ -18,8 +18,6 @@ export const Programs = ({ programs }) => {
 
     const { primary } = activeProgram;
 
-    console.log(activeProgram);
-
     return (
         <Container>
             <Years>
