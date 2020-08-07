@@ -4,7 +4,7 @@ export { Concert } from './Concert';
 export { Heading } from './Heading';
 export { Section } from './section';
 export { Carousel } from './Carousel';
-export { Footer } from './footer';
+export { Footer } from './Footer';
 export { Navlink } from './Navlink';
 export { ContactForm } from './contactForm';
 export { Partnership } from './Partnership';
