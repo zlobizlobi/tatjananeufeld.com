@@ -19,8 +19,6 @@ export const Partners = ({ partners, biography, biographyFile, name }) => {
 
     const artists = partners.map(({ primary }) => primary.instrument);
 
-    console.log(activeInstrument);
-
     return (
         <Container>
             <ArtistButtons>
