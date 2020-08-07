@@ -6,14 +6,16 @@ import { FiDownload } from 'react-icons/fi';
 import thumbnail from '../../../images/thumbnail.svg';
 
 export const Partners = ({ partners, biography, biographyFile, name }) => {
-
     const [activeArtist, setActiveArtist] = useState(name);
 
-    const activeInstrument = partners.filter(
-        ({ primary }) => primary.instrument === activeArtist
-    )[0] || name;
+    const activeInstrument =
+        partners.filter(
+            ({ primary }) => primary.instrument === activeArtist
+        )[0] || name;
 
-    const activeImage = activeInstrument.primary && activeInstrument.primary.artist_image.localFile.childImageSharp.fluid;
+    const activeImage =
+        activeInstrument.primary &&
+        activeInstrument.primary.artist_image.localFile.childImageSharp.fluid;
 
     const artists = partners.map(({ primary }) => primary.instrument);
 
@@ -37,15 +39,35 @@ export const Partners = ({ partners, biography, biographyFile, name }) => {
                     </ArtistButton>
                 ))}
             </ArtistButtons>
+
             <ArtistContainer>
                 {activeInstrument === name && <Text>{biography}</Text>}
                 {!(activeInstrument === name) && (
                     <>
-                        {activeImage ? <ImageFluid fluid={activeImage} loading="lazy" /> : <Image src={thumbnail} />}
+                        {activeImage ? (
+                            <ImageFluid fluid={activeImage} loading="lazy" />
+                        ) : (
+                                <Image src={thumbnail} />
+                            )}
                         <Text>{activeInstrument.primary.artist_biography}</Text>
                     </>
                 )}
             </ArtistContainer>
+            <DownloadLink
+                href={
+                    !(activeInstrument === name)
+                        ? activeInstrument.primary.artist_biography_file.url
+                        : biographyFile.url
+                }
+                target="_blank"
+                download
+                rel="noopener"
+            >
+                <DownloadIcon />
+                {`Download ${
+                    activeInstrument === name ? name : 'artist'
+                    } Biography`}
+            </DownloadLink>
         </Container>
     );
 };
@@ -65,10 +87,10 @@ const ArtistButtons = styled.div`
     flex-wrap: wrap;
     margin-bottom: 10px;
     line-height: 40px;
+    margin-bottom: 30px;
 
     ${media.md(`
         line-height: unset;
-        margin-bottom: 30px;
 `)}
 `;
 
@@ -100,7 +122,7 @@ const ArtistButton = styled.button`
 export const ImageFluid = styled(Img).attrs({
     imgStyle: {
         objectFit: 'cover',
-        objectPosition: 'center'
+        objectPosition: 'center',
     },
 })`
     height: 150px;
@@ -126,6 +148,21 @@ const Image = styled.img`
     `)}
 `;
 
+const ArtistContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    ${media.sm(`
+        margin: 20px;
+        flex-direction: row;
+    `)}
+`;
+
+const Text = styled.p`
+    color: #b7b7b7;
+    line-height: 30px;
+`;
+
 export const DownloadLink = styled.a`
     display: flex;
     align-items: center;
@@ -140,28 +177,11 @@ export const DownloadLink = styled.a`
 
 export const DownloadIcon = styled(FiDownload)`
     margin-right: 5px;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 
     ${media.md(`
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
     `)}
 `;
-
-
-const ArtistContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-
-    
-    ${media.sm(`
-        margin: 20px;
-        flex-direction: row;
-    `)}
-`
-
-const Text = styled.p`
-    color: #b7b7b7;
-    line-height: 30px;
-`

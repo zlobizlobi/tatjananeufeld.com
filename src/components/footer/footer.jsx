@@ -29,9 +29,7 @@ export const Footer = () => (
             <a href="https://youtube.com">
                 <Youtube />
             </a>
-            <a
-                href="https://www.facebook.com/profile.php?id=100005453388422"
-            >
+            <a href="https://www.facebook.com/profile.php?id=100005453388422">
                 <Facebook />
             </a>
         </IconContainer>

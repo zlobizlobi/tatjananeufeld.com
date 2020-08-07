@@ -9,7 +9,7 @@ import {
 import styled from 'styled-components';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import { graphql } from 'gatsby';
-import { useDetectKeyboard } from '../hooks'
+
 export const data = graphql`
     query Partnerships($locale: String!) {
         allPrismicPartnerships(filter: { lang: { eq: $locale } }) {
@@ -45,11 +45,7 @@ export const data = graphql`
                                     localFile {
                                         childImageSharp {
                                             fluid(quality: 100) {
-                                                aspectRatio
-                                                src
-                                                srcSet
-                                                sizes
-                                                originalName
+                                                ...GatsbyImageSharpFluid
                                             }
                                         }
                                     }
@@ -69,6 +65,49 @@ export const data = graphql`
                                 }
                             }
                         }
+                        ... on PrismicPartnershipsBodyImagePlakat {
+                            id
+                            primary {
+                                plakat_image {
+                                    localFile {
+                                        childImageSharp {
+                                            fluid(quality: 100) {
+                                                ...GatsbyImageSharpFluid
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            slice_type
+                        }
+                        ... on PrismicPartnershipsBodyKritik {
+                            id
+                            slice_type
+                            primary {
+                                critique_name
+                                critique_file {
+                                    url
+                                }
+                                critique_image {
+                                    localFile {
+                                        childImageSharp {
+                                            fluid(quality: 100) {
+                                                ...GatsbyImageSharpFluid
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        ... on PrismicPartnershipsBodyVideo {
+                            id
+                            slice_type
+                            primary {
+                                video {
+                                    embed_url
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -77,8 +116,6 @@ export const data = graphql`
 `;
 
 const Partnerships = ({ pageContext: { locale }, data }) => {
-
-    useDetectKeyboard();
 
     const { formatMessage } = useIntl();
 

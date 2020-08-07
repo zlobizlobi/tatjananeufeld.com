@@ -47,11 +47,6 @@ export const Heading = styled.h4`
 
 const Button = styled.button`
     display: inline-flex;
-
-    :focus {
-        outline: 2px solid #b7b7b7;
-        border-radius: 1px;
-    }
 `;
 
 const iconStyle = css`

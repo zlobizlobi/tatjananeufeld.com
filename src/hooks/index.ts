@@ -1,2 +1,1 @@
-export { useDetectKeyboard } from './useDetectKeyboard';
 

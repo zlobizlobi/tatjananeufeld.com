@@ -2,6 +2,7 @@ import React from 'react';
 import { InformationRow } from './InformationRow';
 import { media } from '@styles';
 import { Programs } from './Programs';
+import { ArchiveItems } from './ArchiveItems';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { Partners } from './Partners';
@@ -23,6 +24,13 @@ export const Partnership = ({
 
     const partners = slices.filter(slice => slice.slice_type === 'artist');
 
+    const archiveItems = slices.filter(
+        slice =>
+            slice.slice_type === 'video' ||
+            slice.slice_type === 'kritik' ||
+            slice.slice_type === 'image_plakat'
+    );
+
     return (
         <Container>
             <Column>
@@ -37,7 +45,15 @@ export const Partnership = ({
                     <Programs programs={programs} />
                 </InformationRow>
                 <InformationRow title="partnership_artists">
-                    <Partners partners={partners} biography={biography} biographyFile={biography_file} name={name} />
+                    <Partners
+                        partners={partners}
+                        biography={biography}
+                        biographyFile={biography_file}
+                        name={name}
+                    />
+                </InformationRow>
+                <InformationRow title="partnership_archive">
+                    <ArchiveItems items={archiveItems} />
                 </InformationRow>
             </Column>
         </Container>

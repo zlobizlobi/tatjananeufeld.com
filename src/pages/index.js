@@ -9,7 +9,6 @@ import {
     GallerySection,
 } from '../sections';
 import { Footer } from '@components';
-import { useDetectKeyboard } from '../hooks';
 
 export const data = graphql`
     query Concerts($locale: String!) {
@@ -45,7 +44,6 @@ export const data = graphql`
 
 const IndexPage = ({ pageContext: { locale }, data }) => {
     // locale is not highlighted as used here as it's interpolated under the hood into the graphql query. This is graphql syntax.
-    useDetectKeyboard();
 
     const {
         prismicMainPage: {
@@ -54,7 +52,6 @@ const IndexPage = ({ pageContext: { locale }, data }) => {
     } = data;
 
     const concertRef = useRef(null);
-
 
     return (
         <>

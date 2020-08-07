@@ -23,7 +23,7 @@ export const HamburgerButton = styled.button`
     justify-content: space-between;
     height: 15px;
     width: 25px;
-    margin-left: 30px;
+    margin-left: 20px;
     z-index: 3;
     border-radius: 0;
     outline: none;
@@ -76,7 +76,7 @@ export const Navlink = styled(NavlinkComponent)`
 `;
 
 export const LanguageSwitch = styled(LanguageSwitchComponent)`
-    margin: 0 30px 0 0;
+    margin: 0 20px  0 0;
 `;
 
 // export const PageLink = styled(PageLinkComponent)`

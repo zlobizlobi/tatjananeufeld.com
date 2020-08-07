@@ -47,7 +47,7 @@ export const Programs = ({ programs }) => {
                     download
                     rel="noopener"
                 >
-                    <DownloadIcon /> Download full program
+                    <DownloadIcon /> Download Full Program
                 </DownloadLink>
             )}
         </Container>
@@ -94,10 +94,10 @@ const Years = styled.div`
     flex-wrap: wrap;
     margin-bottom: 10px;
     line-height: 40px;
+    margin-bottom: 30px;
 
     ${media.md(`
         line-height: unset;
-        margin-bottom: 30px;
     `)}
 `;
 

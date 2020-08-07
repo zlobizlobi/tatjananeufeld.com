@@ -6,7 +6,6 @@ import styled, { keyframes } from 'styled-components';
 import Img from 'gatsby-image';
 import { media } from '@styles';
 import { FiArrowRight } from 'react-icons/fi';
-import { useDetectKeyboard } from '../hooks'
 
 const TatyanaPodyomova = () => {
     const data = useStaticQuery(graphql`
@@ -63,8 +62,6 @@ const TatyanaPodyomova = () => {
             },
         },
     } = data;
-
-    useDetectKeyboard();
 
     const { formatMessage } = useIntl();
 
