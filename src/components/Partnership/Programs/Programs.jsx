@@ -61,16 +61,15 @@ const Container = styled.div`
 `;
 
 const Year = styled.button`
-    background-color: ${({ active }) =>
-        active ? 'white' : 'rgba(255,255,255, 0.7)'};
+    background-color: ${({ active }) => (active ? 'white' : 'transparent')};
+    color: ${({ active }) => (!active ? 'white' : 'black')};
     margin-right: 10px;
     font-size: 11px;
     border-radius: 1px;
-    color: black;
     width: 40px;
     line-height: 25px;
     display: inline;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 
     :last-child {
         margin: 0;
@@ -78,6 +77,7 @@ const Year = styled.button`
 
     :hover {
         background-color: white;
+        color: black;
     }
 
     ${media.md(`

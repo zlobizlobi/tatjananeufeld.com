@@ -30,7 +30,7 @@ export const data = graphql`
                             localFile {
                                 childImageSharp {
                                     fluid(quality: 100) {
-                                        ...GatsbyImageSharpFluid
+                                        ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
                             }

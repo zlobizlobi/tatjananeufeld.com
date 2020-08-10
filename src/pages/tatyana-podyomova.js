@@ -22,7 +22,7 @@ const TatyanaPodyomova = () => {
                                         threshold: 80
                                     }
                                 ) {
-                                    ...GatsbyImageSharpFluid_tracedSVG
+                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                 }
                             }
                         }
@@ -35,7 +35,7 @@ const TatyanaPodyomova = () => {
                                     quality: 100
                                     traceSVG: { background: "black" }
                                 ) {
-                                    ...GatsbyImageSharpFluid_tracedSVG
+                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                 }
                             }
                         }

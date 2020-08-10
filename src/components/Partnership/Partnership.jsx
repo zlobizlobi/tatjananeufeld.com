@@ -52,7 +52,7 @@ export const Partnership = ({
                         name={name}
                     />
                 </InformationRow>
-                <InformationRow title="partnership_archive">
+                <InformationRow title="partnership_archive" className="no-border">
                     <ArchiveItems items={archiveItems} />
                 </InformationRow>
             </Column>

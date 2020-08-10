@@ -19,7 +19,7 @@ export const BiographySection = () => {
                         localFile {
                             childImageSharp {
                                 fluid(quality: 100) {
-                                    ...GatsbyImageSharpFluid
+                                    ...GatsbyImageSharpFluid_withWebp
                                 }
                             }
                         }
@@ -53,7 +53,7 @@ export const BiographySection = () => {
                 <FormattedMessage id="biography_heading" />
             </Heading>
             <Container>
-                <Image loading="lazy" fluid={fluid} />
+                <Image fluid={fluid} />
                 <Text>{text}</Text>
                 <ButtonContainer>
                     <Button

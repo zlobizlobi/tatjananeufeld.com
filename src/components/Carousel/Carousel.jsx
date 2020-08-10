@@ -21,16 +21,8 @@ export const Carousel = () => {
                                 image {
                                     localFile {
                                         childImageSharp {
-                                            fluid(
-                                                quality: 100
-                                                toFormatBase64: WEBP
-                                                maxWidth: 700
-                                            ) {
-                                                aspectRatio
-                                                src
-                                                srcSet
-                                                sizes
-                                                originalName
+                                            fluid(quality: 100) {
+                                                ...GatsbyImageSharpFluid_withWebp
                                             }
                                         }
                                     }

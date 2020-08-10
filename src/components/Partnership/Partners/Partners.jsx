@@ -43,7 +43,7 @@ export const Partners = ({ partners, biography, biographyFile, name }) => {
                 {!(activeInstrument === name) && (
                     <>
                         {activeImage ? (
-                            <ImageFluid fluid={activeImage} loading="lazy" />
+                            <ImageFluid fluid={activeImage} />
                         ) : (
                                 <Image src={thumbnail} />
                             )}
@@ -93,15 +93,14 @@ const ArtistButtons = styled.div`
 `;
 
 const ArtistButton = styled.button`
-    background-color: ${({ active }) =>
-        active ? 'white' : 'rgba(255,255,255, 0.7)'};
+    background-color: ${({ active }) => (active ? 'white' : 'transparent')};
+    color: ${({ active }) => (!active ? 'white' : 'black')};
     margin-right: 10px;
     font-size: 11px;
     border-radius: 1px;
-    color: black;
     line-height: 25px;
     display: inline;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     padding: 1px 10px;
 
     :last-child {
@@ -110,6 +109,7 @@ const ArtistButton = styled.button`
 
     :hover {
         background-color: white;
+        color: black;
     }
 
     ${media.md(`

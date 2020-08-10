@@ -76,7 +76,7 @@ export const Navlink = styled(NavlinkComponent)`
 `;
 
 export const LanguageSwitch = styled(LanguageSwitchComponent)`
-    margin: 0 20px  0 0;
+    margin: 0 20px 0 0;
 `;
 
 // export const PageLink = styled(PageLinkComponent)`

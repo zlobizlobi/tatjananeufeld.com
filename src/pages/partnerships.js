@@ -25,7 +25,7 @@ export const data = graphql`
                         localFile {
                             childImageSharp {
                                 fluid(quality: 100) {
-                                    ...GatsbyImageSharpFluid
+                                    ...GatsbyImageSharpFluid_withWebp
                                 }
                             }
                         }
@@ -45,7 +45,7 @@ export const data = graphql`
                                     localFile {
                                         childImageSharp {
                                             fluid(quality: 100) {
-                                                ...GatsbyImageSharpFluid
+                                                ...GatsbyImageSharpFluid_withWebp
                                             }
                                         }
                                     }
@@ -72,7 +72,7 @@ export const data = graphql`
                                     localFile {
                                         childImageSharp {
                                             fluid(quality: 100) {
-                                                ...GatsbyImageSharpFluid
+                                                ...GatsbyImageSharpFluid_withWebp
                                             }
                                         }
                                     }
@@ -92,7 +92,7 @@ export const data = graphql`
                                     localFile {
                                         childImageSharp {
                                             fluid(quality: 100) {
-                                                ...GatsbyImageSharpFluid
+                                                ...GatsbyImageSharpFluid_withWebp
                                             }
                                         }
                                     }
@@ -116,7 +116,6 @@ export const data = graphql`
 `;
 
 const Partnerships = ({ pageContext: { locale }, data }) => {
-
     const { formatMessage } = useIntl();
 
     const partnerships = data.allPrismicPartnerships.nodes;

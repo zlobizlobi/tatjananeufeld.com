@@ -4,29 +4,25 @@ import styled, { css } from 'styled-components';
 import { media } from '@styles';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 
-export const InformationRow = ({ title, children }) => {
-    const [isOpen, setIsOpen] = useState(false);
+export const InformationRow = ({ title, children, className }) => {
+    const [open, setOpen] = useState(false);
+
     return (
         <Column>
-            <Row>
+            <Row onClick={() => setOpen(!open)} >
                 <Heading>
                     <FormattedMessage id={title} />
                 </Heading>
-                <Button onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <CollapseIcon /> : <ExpandIcon />}
-                </Button>
             </Row>
-            {isOpen && children}
+            {open && children}
         </Column>
     );
 };
 
 export const Row = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 0;
-    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+    padding: 25px;
+    cursor: pointer;
+    border-bottom: 1px solid #b7b7b7;
 `;
 
 export const Column = styled.div`
@@ -39,14 +35,11 @@ export const Heading = styled.h4`
     color: white;
     font-weight: normal;
     font-size: 14px;
+    letter-spacing: 1px;
 
     ${media.sm(`
         font-size: 16px;
     `)}
-`;
-
-const Button = styled.button`
-    display: inline-flex;
 `;
 
 const iconStyle = css`
