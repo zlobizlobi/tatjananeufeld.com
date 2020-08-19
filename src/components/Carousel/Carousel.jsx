@@ -68,14 +68,14 @@ export const Carousel = () => {
                     const downloadSrc = fluid.src;
 
                     const name = fluid.originalName;
-
+                    console.log(downloadSrc);
                     return (
                         <CarouselItemContainer key={id}>
                             <Image fluid={fluid} alt="Image of Tatjana" />
                             {downloadSrc && (
                                 <DownloadLink
                                     href={downloadSrc}
-                                    download={name}
+                                    download
                                     target="_blank"
                                 >
                                     <FiDownload />
