@@ -33,7 +33,7 @@ const Image = styled(Img).attrs({
 const DownloadLink = styled.a`
     display: flex;
     justify-content: flex-end;
-    padding: 0 20px 10px 0;
+    padding: 0 30px 10px 0;
     position: absolute;
     bottom: 0;
     z-index: 1000 !important;

@@ -91,6 +91,7 @@ export const ArchiveItems = ({ items }) => {
                             </Link>
                         );
                     }
+                    return null
                 })}
             </ItemContainer>
         </Container>

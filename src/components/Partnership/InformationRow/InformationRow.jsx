@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { media } from '@styles';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 
-export const InformationRow = ({ title, children, className }) => {
+export const InformationRow = ({ title, children }) => {
     const [open, setOpen] = useState(false);
 
     return (
@@ -20,7 +20,7 @@ export const InformationRow = ({ title, children, className }) => {
 };
 
 export const Row = styled.div`
-    padding: 25px;
+    padding: 25px 0;
     cursor: pointer;
     border-bottom: 1px solid #b7b7b7;
 `;
