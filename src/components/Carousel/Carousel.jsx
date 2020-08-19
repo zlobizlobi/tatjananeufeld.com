@@ -56,7 +56,6 @@ export const Carousel = () => {
             showStatus={false}
             showThumbs={false}
             infiniteLoop={true}
-            dynamicHeight={true}
         >
             {slices.map(item => {
                 const { primary, slice_type, id } = item;
