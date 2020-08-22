@@ -105,7 +105,7 @@ const Content = styled.div`
 
     ${media.sm(`
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         flex-wrap: wrap;
     `)}
 `;
@@ -123,19 +123,14 @@ export const DownloadLink = styled.a`
 `;
 
 export const DownloadIcon = styled(FiDownload)`
-    margin-right: 5px;
-    width: 25px;
-    height: 25px;
-
-    ${media.md(`
-        width: 20px;
-        height: 20px;
-    `)}
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
 `;
 
 export const ProgramSuggestion = styled.span`
     color: white;
-    line-height: 24px;
+    line-height: 20px;
     font-size: 14px;
     max-width: 300px;
     white-space: break-spaces;

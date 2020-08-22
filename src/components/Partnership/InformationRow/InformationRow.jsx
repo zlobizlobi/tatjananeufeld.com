@@ -4,11 +4,11 @@ import styled, { css } from 'styled-components';
 import { media } from '@styles';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 
-export const InformationRow = ({ title, children }) => {
+export const InformationRow = ({ title, children, className }) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <Column>
+        <Column className={className}>
             <Row onClick={() => setOpen(!open)} >
                 <Heading>
                     <FormattedMessage id={title} />

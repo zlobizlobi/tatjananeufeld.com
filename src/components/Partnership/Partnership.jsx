@@ -41,20 +41,20 @@ export const Partnership = ({
                         <Text>{announcement}</Text>
                     </Column>
                 </FlexContainer>
-                <InformationRow title="partnership_program">
+                <StyledInformationRow title="partnership_program">
                     <Programs programs={programs} />
-                </InformationRow>
-                <InformationRow title="partnership_artists">
+                </StyledInformationRow>
+                <StyledInformationRow title="partnership_artists">
                     <Partners
                         partners={partners}
                         biography={biography}
                         biographyFile={biography_file}
                         name={name}
                     />
-                </InformationRow>
-                <InformationRow title="partnership_archive" className="no-border">
+                </StyledInformationRow>
+                <StyledInformationRow title="partnership_archive">
                     <ArchiveItems items={archiveItems} />
-                </InformationRow>
+                </StyledInformationRow>
             </Column>
         </Container>
     );
@@ -88,20 +88,29 @@ export const FlexContainer = styled.div`
 
 export const Image = styled(Img).attrs({
     imgStyle: {
-        objectFit: 'cover',
-        objectPosition: 'center 15%',
+        objectFit: 'contain',
+        objectPosition: 'left top'
     },
 })`
-    width: 100%;
     height: 150px;
-    margin: 0 20px 20px 0;
+    align-self: flex-start;
+    width: 150px;
+    margin-bottom: 20px;
 
     ${media.md(`
+        width: 100%;
+        height: revert;
         max-width: 150px;
         min-height: 200px;
-        height: 100%;
+        margin: 0 20px 0 0;
     `)}
 `;
+
+const StyledInformationRow = styled(InformationRow)`
+    &:last-child {
+        border: none;
+    }
+`
 
 export const Column = styled.div`
     display: flex;
@@ -110,7 +119,7 @@ export const Column = styled.div`
 
 export const Text = styled.p`
     font-size: 14px;
-    line-height: 24.5px;
+    line-height: 32px;
     color: #b7b7b7;
 `;
 

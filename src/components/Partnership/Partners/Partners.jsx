@@ -43,7 +43,8 @@ export const Partners = ({ partners, biography, biographyFile, name }) => {
                 {!(activeInstrument === name) && (
                     <>
                         {activeImage ? (
-                            <ImageFluid fluid={activeImage} />
+                            <ImageFluid fluid={activeImage}
+                            />
                         ) : (
                                 <Image src={thumbnail} />
                             )}
@@ -66,7 +67,7 @@ export const Partners = ({ partners, biography, biographyFile, name }) => {
                     activeInstrument === name ? name : 'artist'
                     } Biography`}
             </DownloadLink>
-        </Container>
+        </Container >
     );
 };
 
@@ -118,47 +119,57 @@ const ArtistButton = styled.button`
 `;
 
 export const ImageFluid = styled(Img).attrs({
-    imgStyle: {
-        objectFit: 'cover',
-        objectPosition: 'center',
-    },
 })`
-    height: 150px;
-    width: 100%;
-    margin: 0 0 20px 0;
+    margin: 7.5px 12.5px 4px 0;
+    float: left;
+    width: 100px;
+    height: auto;
 
     ${media.md(`
-        width: 150px;
-        min-width: 150px;
-        height: 200px;
-        margin: 10px 20px 0 0;
+        width: unset;
+        height: unset;
+        margin: 0 20px 0 0;
+        flex: 20% 0 0;
+        align-self: flex-start;
     `)}
 `;
 
 const Image = styled.img`
     height: 150px;
-    width: 100%;
+    width: 300px;
 
     ${media.md(`
         width: 150px;
-        height: 200px;
-        object-fit: cover;
-    `)}
-`;
-
-const ArtistContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-
-    ${media.sm(`
-        margin: 20px;
-        flex-direction: row;
+        height: 300px;
+        object-fit: contain;
     `)}
 `;
 
 const Text = styled.p`
     color: #b7b7b7;
-    line-height: 30px;
+    line-height: 32px;
+    font-size: calc(0.7vw + 0.7vh + 0.1vmin);
+    white-space: break-spaces;
+    font-size: 14px;
+
+    ${media.md(`
+        font-size: 16px;
+        &:before {
+            content: '';
+            display: block;
+            margin: -0.1em 0;
+        }
+    `)}
+`;
+
+const ArtistContainer = styled.div`
+    display: inline;
+
+    ${media.md(`
+        display: flex;
+        margin: 20px;
+        flex-direction: row;
+    `)}
 `;
 
 export const DownloadLink = styled.a`
@@ -174,12 +185,7 @@ export const DownloadLink = styled.a`
 `;
 
 export const DownloadIcon = styled(FiDownload)`
-    margin-right: 5px;
-    width: 20px;
-    height: 20px;
-
-    ${media.md(`
-        width: 25px;
-        height: 25px;
-    `)}
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
 `;
