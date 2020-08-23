@@ -118,8 +118,8 @@ export const Column = styled.div`
 `;
 
 export const Text = styled.p`
-    font-size: 14px;
     line-height: 32px;
+    font-size: 14px;
     color: #b7b7b7;
 `;
 

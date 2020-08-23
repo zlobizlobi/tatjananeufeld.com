@@ -148,7 +148,6 @@ const Image = styled.img`
 const Text = styled.p`
     color: #b7b7b7;
     line-height: 32px;
-    font-size: calc(0.7vw + 0.7vh + 0.1vmin);
     white-space: break-spaces;
     font-size: 14px;
 

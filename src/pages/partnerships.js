@@ -9,6 +9,7 @@ import {
 import styled from 'styled-components';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import { graphql } from 'gatsby';
+import { useDetectKeyboard } from '../hooks/useDetectKeyboard';
 
 export const data = graphql`
     query Partnerships($locale: String!) {
@@ -116,6 +117,9 @@ export const data = graphql`
 `;
 
 const Partnerships = ({ pageContext: { locale }, data }) => {
+
+    useDetectKeyboard();
+
     const { formatMessage } = useIntl();
 
     const partnerships = data.allPrismicPartnerships.nodes;

@@ -35,6 +35,18 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+      
+      
+    &:not(.user-is-tabbing) {
+        a[href],
+        input:not([disabled]),
+        textarea:not([disabled]),
+        button:not([disabled]),
+        [tabindex],
+        [contentEditable='true'] {
+          outline: none;
+        }
+    }
 
     body, html {
         min-width: 100%;
@@ -45,6 +57,14 @@ export const GlobalStyle = createGlobalStyle`
      body {
         background-color: black;
         font-family: 'Montserrat', sans-serif;
+     }
+
+     body.user-is-tabbing {
+         button,a,textarea,input{
+             :focus {
+                 outline: 1px solid #b7b7b7;
+             }
+         }
      }
 
     button, input, textarea {
