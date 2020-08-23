@@ -19,7 +19,7 @@ export const Carousel = () => {
                             id
                             primary {
                                 image {
-                                    localFile {
+                                   localFile {
                                         childImageSharp {
                                             fluid(quality: 100) {
                                                 ...GatsbyImageSharpFluid_withWebp
@@ -66,8 +66,6 @@ export const Carousel = () => {
 
                     const downloadSrc = fluid.src;
 
-                    const name = fluid.originalName;
-                    console.log(downloadSrc);
                     return (
                         <CarouselItemContainer key={id}>
                             <Image fluid={fluid} alt="Image of Tatjana" />

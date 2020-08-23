@@ -2,7 +2,6 @@ import { useEffect } from "react"
 
 export const useDetectKeyboard = () => {
     function handleFirstTab(e) {
-
         if (e.keyCode === 9) {
             document.body.classList.add('user-is-tabbing');
             window.removeEventListener('keydown', handleFirstTab);
@@ -10,7 +9,6 @@ export const useDetectKeyboard = () => {
     }
 
     function handleMouseMove() {
-        console.log('detected');
         document.body.classList.remove('user-is-tabbing');
         document.body.removeEventListener('mousemove', handleMouseMove);
     }
