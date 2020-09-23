@@ -35,7 +35,6 @@ export const Heading = styled.h4`
     color: white;
     font-weight: normal;
     font-size: 14px;
-    letter-spacing: 1px;
 
     ${media.sm(`
         font-size: 16px;

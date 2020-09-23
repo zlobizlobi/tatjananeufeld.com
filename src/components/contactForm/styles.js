@@ -20,7 +20,6 @@ export const Field = styled(FormFieldComponent)`
         error ? '1px solid #cc0000' : '1px solid rgba(255, 255, 255, 0.5)'};
     border-radius: 1px;
     color: white;
-
     ::placeholder {
         color: rgba(255, 255, 255, 0.6);
     }

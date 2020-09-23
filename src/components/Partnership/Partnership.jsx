@@ -41,20 +41,20 @@ export const Partnership = ({
                         <Text>{announcement}</Text>
                     </Column>
                 </FlexContainer>
-                <StyledInformationRow title="partnership_program">
+                <InformationRow title="partnership_program">
                     <Programs programs={programs} />
-                </StyledInformationRow>
-                <StyledInformationRow title="partnership_artists">
+                </InformationRow>
+                <InformationRow title="partnership_artists">
                     <Partners
                         partners={partners}
                         biography={biography}
                         biographyFile={biography_file}
                         name={name}
                     />
-                </StyledInformationRow>
-                <StyledInformationRow title="partnership_archive">
+                </InformationRow>
+                <InformationRow title="partnership_archive">
                     <ArchiveItems items={archiveItems} />
-                </StyledInformationRow>
+                </InformationRow>
             </Column>
         </Container>
     );
@@ -105,12 +105,6 @@ export const Image = styled(Img).attrs({
         margin: 0 20px 0 0;
     `)}
 `;
-
-const StyledInformationRow = styled(InformationRow)`
-    &:last-child {
-        border: none;
-    }
-`
 
 export const Column = styled.div`
     display: flex;

@@ -61,28 +61,26 @@ const Container = styled.div`
 `;
 
 const Year = styled.button`
-    background-color: ${({ active }) => (active ? 'white' : 'transparent')};
-    color: ${({ active }) => (!active ? 'white' : 'black')};
-    margin-right: 10px;
+    color: ${({ active }) => (!active ? 'rgba(255,255,255,0.7)' : 'white')};
+    font-weight: ${({ active }) => (!active ? 'normal' : 'bold')};
+    margin-right: 20px;
     font-size: 11px;
     border-radius: 1px;
-    width: 40px;
     line-height: 25px;
     display: inline;
     transition: all 0.3s ease;
-
+    letter-spacing: 1px;
+    
     :last-child {
         margin: 0;
     }
 
     :hover {
-        background-color: white;
-        color: black;
+        color: white;
     }
 
     ${media.md(`
         font-size: 14px;
-        width: 60px;
         padding: 1px 0;
     `)}
 `;

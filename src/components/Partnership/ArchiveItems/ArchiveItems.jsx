@@ -87,7 +87,7 @@ export const ArchiveItems = ({ items }) => {
                                 style={{ position: 'relative' }}
                             >
                                 <ImageFluid fluid={fluid} />
-                                <CritiqueName>{name}</CritiqueName>
+                                <Overlay>{name}</Overlay>
                             </Link>
                         );
                     }
@@ -136,8 +136,8 @@ const ItemButtons = styled.div`
 `;
 
 const ItemButton = styled.button`
-    background-color: ${({ active }) => (active ? 'white' : 'transparent')};
-    color: ${({ active }) => (!active ? 'white' : 'black')};
+    color: ${({ active }) => (!active ? 'rgba(255,255,255,0.7)' : 'white')};
+    font-weight: ${({ active }) => (!active ? 'normal' : 'bold')};
     margin-right: 10px;
     font-size: 11px;
     border-radius: 1px;
@@ -151,8 +151,7 @@ const ItemButton = styled.button`
     }
 
     :hover {
-        background-color: white;
-        color: black;
+        color: white;
     }
 
     ${media.md(`
@@ -190,30 +189,35 @@ const Image = styled.img`
     object-fit: cover;
 `;
 
-const CritiqueName = styled.span`
+const Overlay = styled.span`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
-    padding: 0 20px;
-`;
+    overflow: hidden;
+    padding: 0 10px;
+`
 
 const Link = styled.a`
     margin-bottom: 30px;
     width: 150px;
     height: 200px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
     &:last-child {
         margin: 0;
     }
 
     ${media.sm(`
-        margin-right: 30px
+        margin-right: 30px;
     `)}
 `;

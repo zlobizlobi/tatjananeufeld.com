@@ -37,7 +37,6 @@ export const Partners = ({ partners, biography, biographyFile, name }) => {
                     </ArtistButton>
                 ))}
             </ArtistButtons>
-
             <ArtistContainer>
                 {activeInstrument === name && <Text>{biography}</Text>}
                 {!(activeInstrument === name) && (
@@ -63,8 +62,7 @@ export const Partners = ({ partners, biography, biographyFile, name }) => {
                 rel="noopener"
             >
                 <DownloadIcon />
-                {`Download ${
-                    activeInstrument === name ? name : 'artist'
+                {`Download ${activeInstrument === name ? name : 'artist'
                     } Biography`}
             </DownloadLink>
         </Container >
@@ -94,8 +92,8 @@ const ArtistButtons = styled.div`
 `;
 
 const ArtistButton = styled.button`
-    background-color: ${({ active }) => (active ? 'white' : 'transparent')};
-    color: ${({ active }) => (!active ? 'white' : 'black')};
+    color: ${({ active }) => (!active ? 'rgba(255,255,255,0.7)' : 'white')};
+    font-weight: ${({ active }) => (!active ? 'normal' : 'bold')};
     margin-right: 10px;
     font-size: 11px;
     border-radius: 1px;
@@ -109,8 +107,7 @@ const ArtistButton = styled.button`
     }
 
     :hover {
-        background-color: white;
-        color: black;
+        color: white;
     }
 
     ${media.md(`
