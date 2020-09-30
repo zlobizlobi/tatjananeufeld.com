@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { media } from '@styles';
-import { FiDownload } from 'react-icons/fi';
+import { DownloadLink } from '@components';
 
 export const Programs = ({ programs }) => {
     const sortedYears = programs
@@ -45,7 +45,7 @@ export const Programs = ({ programs }) => {
                     download
                     rel="noopener"
                 >
-                    <DownloadIcon /> Download Full Program
+                    Download Full Program
                 </DownloadLink>
             )}
         </Container>
@@ -100,31 +100,8 @@ const Years = styled.div`
 const Content = styled.div`
     display: flex;
     flex-direction: column;
-
-    ${media.sm(`
-        flex-direction: row;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    `)}
 `;
 
-export const DownloadLink = styled.a`
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: white;
-    margin-top: 30px;
-
-    ${media.md(`
-        font-size: 13px;
-    `)}
-`;
-
-export const DownloadIcon = styled(FiDownload)`
-    margin-right: 10px;
-    width: 18px;
-    height: 18px;
-`;
 
 export const ProgramSuggestion = styled.span`
     color: white;

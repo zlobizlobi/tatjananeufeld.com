@@ -1,7 +1,7 @@
 import React from 'react';
 import { Seo, Footer, Section, Heading as HeadingComponent } from '@components';
 import { useStaticQuery, graphql } from 'gatsby';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { useIntl, FormattedMessage } from 'gatsby-plugin-intl';
 import styled, { keyframes } from 'styled-components';
 import Img from 'gatsby-image';
 import { media } from '@styles';

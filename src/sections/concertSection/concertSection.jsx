@@ -5,19 +5,44 @@ import { Heading } from './styles';
 import styled from 'styled-components';
 import { media } from '@styles';
 
-export const ConcertSection = forwardRef((props, ref) => (
-    <Section id="concerts" ref={ref}>
-        <Heading>
-            <FormattedMessage id="concert_heading" />
-        </Heading>
-        {props.concerts.map(({ primary: props }, index) => (
-            <Fragment key={index}>
-                <Concert {...props} />
-                <ContainerDivider />
-            </Fragment>
-        ))}
-    </Section>
-));
+export const ConcertSection = forwardRef((props, ref) => {
+
+    const concerts = props.concerts;
+
+    const currentDate = new Date();
+
+    const comingConcerts = concerts.filter(concert => {
+        const concertDate = new Date(concert.primary.date);
+
+        if (concertDate.getTime() > currentDate.getTime()) {
+            return concert;
+        }
+
+        return null;
+    });
+
+    return (
+        <Section id="concerts" ref={ref}>
+            <Heading>
+                <FormattedMessage id="concert_heading" />
+            </Heading>
+            {concerts.map(({ primary: props }, index) => {
+
+                const concertDateTime = new Date(props.date).getTime();
+
+                const earliestComingConcertTime = new Date(comingConcerts[comingConcerts.length - 1].primary.date).getTime()
+
+                return (
+                    <Fragment key={index}>
+                        <Concert {...props} />
+                        {!(concertDateTime === earliestComingConcertTime) && <ContainerDivider />}
+                        {concertDateTime === earliestComingConcertTime && <DateDivider />}
+                    </Fragment>
+                )
+            })}
+        </Section>
+    )
+});
 
 const ContainerDivider = styled.div`
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -32,3 +57,13 @@ const ContainerDivider = styled.div`
         display: none;
     }
 `;
+
+const DateDivider = styled.div`
+    border-bottom: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 1px;
+    width: 100%;
+
+    ${media.md(`
+        width: calc(100% - 160px);
+    `)}
+`

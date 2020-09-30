@@ -36,7 +36,7 @@ exports.onCreatePage = async ({ page, actions }) => {
             context: {
                 ...page.context,
                 originalPath,
-                locale: formatLocale(locale),
+                locale,
             },
         });
     });

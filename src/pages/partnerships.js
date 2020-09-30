@@ -11,6 +11,34 @@ import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import { graphql } from 'gatsby';
 import { useDetectKeyboard } from '../hooks/useDetectKeyboard';
 
+const Partnerships = ({ pageContext: { locale }, data }) => {
+
+    useDetectKeyboard();
+
+    const { formatMessage } = useIntl();
+
+    const partnerships = data.allPrismicPartnerships.nodes;
+
+    const SeoDescription = formatMessage({ id: 'seoPartnershipsDescription' });
+
+    return (
+        <>
+            <Seo title="partnerships" description={SeoDescription} />
+            <Section>
+                <Heading>
+                    <FormattedMessage id="partnerships_heading" />
+                </Heading>
+                <Container>
+                    {partnerships.map((p, index) => (
+                        <Partnership {...p} key={index} />
+                    ))}
+                </Container>
+            </Section>
+            <Footer />
+        </>
+    );
+};
+
 export const data = graphql`
     query Partnerships($locale: String!) {
         allPrismicPartnerships(filter: { lang: { eq: $locale } }) {
@@ -115,34 +143,6 @@ export const data = graphql`
         }
     }
 `;
-
-const Partnerships = ({ pageContext: { locale }, data }) => {
-
-    useDetectKeyboard();
-
-    const { formatMessage } = useIntl();
-
-    const partnerships = data.allPrismicPartnerships.nodes;
-
-    const SeoDescription = formatMessage({ id: 'SeoPartnershipsDescription' });
-
-    return (
-        <>
-            <Seo title="partnerships" description={SeoDescription} />
-            <Section>
-                <Heading>
-                    <FormattedMessage id="partnerships_heading" />
-                </Heading>
-                <Container>
-                    {partnerships.map((p, index) => (
-                        <Partnership {...p} key={index} />
-                    ))}
-                </Container>
-            </Section>
-            <Footer />
-        </>
-    );
-};
 
 export default Partnerships;
 

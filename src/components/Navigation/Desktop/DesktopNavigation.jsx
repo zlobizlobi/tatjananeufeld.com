@@ -26,6 +26,7 @@ export const DesktopNavigation = () => {
 
     const { locale } = useIntl();
 
+    console.log(locale);
     return (
         <Nav isScrolled={isScrolled}>
             <NavListContainer>
@@ -59,10 +60,6 @@ export const Logo = styled(Link)`
     margin-right: 10px;
     border-right: 1px solid white;
     line-height: 25px;
-
-    :hover {
-        color: rgba(255, 255, 255, 1);
-    }
 `;
 
 const navbarAnimation = keyframes`

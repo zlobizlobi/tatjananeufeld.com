@@ -7,15 +7,15 @@ import {
     HiddenHeading,
     VendorContainer,
     HiddenSubContainer,
-    DownloadLink,
     Flex,
 } from './styles';
-import { FiDownload, FiPlus, FiMinus } from 'react-icons/fi';
+import { FiPlus, FiMinus } from 'react-icons/fi';
 import thumbnailImage from '../../images/thumbnail.svg';
 import { Visible } from './components';
 import { jsonParse } from '../../helpers';
 import styled, { css } from 'styled-components';
 import { media } from '@styles';
+import { DownloadLink } from '@components';
 
 export const Concert = ({
     name,
@@ -57,22 +57,22 @@ export const Concert = ({
                                 ticketUrl = '',
                                 telephoneNumber = '',
                             }) => (
-                                <Fragment key={vendor}>
-                                    {ticketUrl ? (
-                                        <VendorContainer>
-                                            <span>{vendor}</span>
-                                            <GetTicketsButton href={ticketUrl}>
-                                                Tickets
+                                    <Fragment key={vendor}>
+                                        {ticketUrl ? (
+                                            <VendorContainer>
+                                                <span>{vendor}</span>
+                                                <GetTicketsButton href={ticketUrl}>
+                                                    Tickets
                                             </GetTicketsButton>
-                                        </VendorContainer>
-                                    ) : (
-                                        <VendorContainer>
-                                            <span>{vendor}</span>
-                                            <span>{telephoneNumber}</span>
-                                        </VendorContainer>
-                                    )}
-                                </Fragment>
-                            )
+                                            </VendorContainer>
+                                        ) : (
+                                                <VendorContainer>
+                                                    <span>{vendor}</span>
+                                                    <span>{telephoneNumber}</span>
+                                                </VendorContainer>
+                                            )}
+                                    </Fragment>
+                                )
                         )}
                     </HiddenSubContainer>
                     <Flex>
@@ -87,7 +87,7 @@ export const Concert = ({
                                 download
                                 rel="noopener"
                             >
-                                <FiDownload /> Download full program
+                                Download full program
                             </DownloadLink>
                         )}
                     </Flex>

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { media } from '@styles';
 import Img from 'gatsby-image';
-import { FiDownload } from 'react-icons/fi';
 import thumbnail from '../../../images/thumbnail.svg';
+import { DownloadLink } from '@components';
 
 export const Partners = ({ partners, biography, biographyFile, name }) => {
     const [activeArtist, setActiveArtist] = useState(name);
@@ -61,7 +61,6 @@ export const Partners = ({ partners, biography, biographyFile, name }) => {
                 download
                 rel="noopener"
             >
-                <DownloadIcon />
                 {`Download ${activeInstrument === name ? name : 'artist'
                     } Biography`}
             </DownloadLink>
@@ -92,8 +91,8 @@ const ArtistButtons = styled.div`
 `;
 
 const ArtistButton = styled.button`
-    color: ${({ active }) => (!active ? 'rgba(255,255,255,0.7)' : 'white')};
-    font-weight: ${({ active }) => (!active ? 'normal' : 'bold')};
+    color: ${({ active }) => !active ? 'rgba(255,255,255,0.7)' : 'white'};
+    font-weight: ${({ active }) => !active ? 'normal' : 'bold'};
     margin-right: 10px;
     font-size: 11px;
     border-radius: 1px;
@@ -166,22 +165,4 @@ const ArtistContainer = styled.div`
         margin: 20px;
         flex-direction: row;
     `)}
-`;
-
-export const DownloadLink = styled.a`
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: white;
-    margin-top: 30px;
-
-    ${media.md(`
-        font-size: 13px;
-    `)}
-`;
-
-export const DownloadIcon = styled(FiDownload)`
-    margin-right: 10px;
-    width: 18px;
-    height: 18px;
 `;

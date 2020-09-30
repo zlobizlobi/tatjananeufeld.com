@@ -23,6 +23,8 @@ export const Visible = ({
         day = day.slice(1);
     }
 
+    const year = splittedDate[3];
+
     const month = splittedDate[1];
 
     return (
@@ -32,7 +34,8 @@ export const Visible = ({
                 <Name onClick={onClick}>{name}</Name>
                 <Text>
                     {day}&nbsp;{month}&nbsp;
-                    <FormattedTime value={date} />
+                    <FormattedTime value={date} />,&nbsp;
+                    {year}
                 </Text>
                 <Text>{city}</Text>
                 {venue && <Text>{venue}</Text>}
@@ -62,17 +65,18 @@ const Name = styled.h2`
     `)}
 `;
 
-const Image = styled(Img)`
+const Image = styled(Img).attrs({
+    imgStyle: {
+        objectFit: 'contain',
+        objectPosition: 'top'
+    }
+})`
     margin-right: 20px;
-    object-fit: contain;
     min-width: 100px;
-    min-height: 150px;
-    align-self: flex-start;
     border-radius: 1px;
 
     ${media.md(`    
-        width: 150px;
-        height: 200px;
+        min-width: 150px;
     `)}
 `;
 

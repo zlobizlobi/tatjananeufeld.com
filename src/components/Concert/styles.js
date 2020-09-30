@@ -78,19 +78,3 @@ export const HiddenSubContainer = styled.div`
         font-size: 13px;
     `)}
 `;
-
-export const DownloadLink = styled.a`
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: white;
-
-    > svg {
-        margin-right: 10px;
-        font-size: 18px;
-    }
-
-    ${media.md(`
-        font-size: 13px;
-    `)}
-`;

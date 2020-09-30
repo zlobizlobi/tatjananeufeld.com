@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import { Form, Field, Button, FieldContainer, ErrorWrapper } from './styles';
 import * as yup from 'yup';
-import { useIntl } from 'react-intl';
+import { useIntl } from 'gatsby-plugin-intl';
 
 export const validationSchema = yup.object({
     name: yup.string().required("What's your name?"),

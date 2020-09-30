@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import image from '../../images/metaImage.jpg';
-import { useIntl } from 'react-intl';
+import { useIntl } from 'gatsby-plugin-intl';
 import { usePageContext } from '../PageContext';
 
 export const Seo = ({ description, author, title, meta = [] }) => {
