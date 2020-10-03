@@ -7,6 +7,7 @@ import Img from 'gatsby-image';
 import { media } from '@styles';
 import { FiArrowRight } from 'react-icons/fi';
 import { useDetectKeyboard } from '../hooks/useDetectKeyboard';
+import Layout from '../components/layout'
 
 const TatyanaPodyomova = () => {
     const data = useStaticQuery(graphql`
@@ -71,7 +72,7 @@ const TatyanaPodyomova = () => {
     const SeoDescription = formatMessage({ id: 'SeoPodyomovaDescription' });
 
     return (
-        <>
+        <Layout>
             <Seo title="tatyana-podyomova" description={SeoDescription} />
             <ContentWrapper>
                 <Heading>
@@ -90,7 +91,7 @@ const TatyanaPodyomova = () => {
                 </CTAContainer>
             </ContentWrapper>
             <Footer />
-        </>
+        </Layout>
     );
 };
 

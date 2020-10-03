@@ -10,6 +10,7 @@ import styled from 'styled-components';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import { graphql } from 'gatsby';
 import { useDetectKeyboard } from '../hooks/useDetectKeyboard';
+import Layout from '../components/layout'
 
 const Partnerships = ({ pageContext: { locale }, data }) => {
 
@@ -22,7 +23,7 @@ const Partnerships = ({ pageContext: { locale }, data }) => {
     const SeoDescription = formatMessage({ id: 'seoPartnershipsDescription' });
 
     return (
-        <>
+        <Layout>
             <Seo title="partnerships" description={SeoDescription} />
             <Section>
                 <Heading>
@@ -35,7 +36,7 @@ const Partnerships = ({ pageContext: { locale }, data }) => {
                 </Container>
             </Section>
             <Footer />
-        </>
+        </Layout>
     );
 };
 

@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, Container } from './styles';
 import { changeLocale, useIntl } from 'gatsby-plugin-intl';
 
 export const LanguageSwitch = ({ className }) => {
-    const [pageLanguage, setLanguage] = useState('en');
-
     const { locale } = useIntl();
-
-    useEffect(() => {
-        setLanguage(locale);
-    }, [locale]);
 
     return (
         <Container className={className}>
             {['en', 'de', 'ru'].map(language => (
                 <Button
                     key={language}
-                    isActive={language === pageLanguage}
+                    isActive={language === locale}
                     onClick={() => changeLocale(language)}
                 >
                     {language}

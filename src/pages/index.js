@@ -9,6 +9,7 @@ import {
     GallerySection,
 } from '../sections';
 import { Footer } from '@components';
+import Layout from '../components/layout';
 import { useDetectKeyboard } from '../hooks/useDetectKeyboard';
 
 export const data = graphql`
@@ -57,7 +58,7 @@ const IndexPage = ({ pageContext: { locale }, data }) => {
     const concertRef = useRef(null);
 
     return (
-        <>
+        <Layout>
             <Seo title="home" />
             <LandingSection ref={concertRef} />
             <ConcertSection ref={concertRef} concerts={concerts} />
@@ -65,7 +66,7 @@ const IndexPage = ({ pageContext: { locale }, data }) => {
             <GallerySection />
             <ContactSection />
             <Footer />
-        </>
+        </Layout>
     );
 };
 

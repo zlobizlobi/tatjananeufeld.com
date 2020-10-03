@@ -26,7 +26,6 @@ export const DesktopNavigation = () => {
 
     const { locale } = useIntl();
 
-    console.log(locale);
     return (
         <Nav isScrolled={isScrolled}>
             <NavListContainer>

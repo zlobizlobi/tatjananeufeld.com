@@ -1,10 +1,6 @@
 import React from 'react';
-import Layout from './src/components/layout';
 import { GlobalStyle } from './src/styles/globalStyle';
-
-export const wrapPageElement = ({ element, props }) => (
-    <Layout {...props}>{element}</Layout>
-);
+import { PageContextProvider } from './src/components';
 
 export const wrapRootElement = ({ element }) => (
     <>
@@ -12,3 +8,7 @@ export const wrapRootElement = ({ element }) => (
         {element}
     </>
 );
+
+export const wrapPageElement = ({ element, props }) => {
+    return <PageContextProvider context={props.pageContext}>{element}</PageContextProvider>;
+};

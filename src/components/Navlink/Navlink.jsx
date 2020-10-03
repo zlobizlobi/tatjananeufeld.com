@@ -1,22 +1,14 @@
 import React from 'react';
-import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
+import { FormattedMessage, Link as LinkComponent } from 'gatsby-plugin-intl';
 import styled from 'styled-components';
-import { Link as LinkComponent } from 'gatsby';
 import { media } from '@styles';
 
 export const Navlink = ({ title, className }) => {
-    const { locale } = useIntl();
+    const to = title === 'tatyana-podyomova' || title === 'partnerships' ? `/${title}` : `/#${title}`;
 
     return (
         <li>
-            <PageLink
-                className={className}
-                to={
-                    title === 'tatyana-podyomova' || title === 'partnerships'
-                        ? `/${title}`
-                        : `/${locale}/#${title}`
-                }
-            >
+            <PageLink className={className} to={to}>
                 <FormattedMessage id={title} />
             </PageLink>
         </li>
