@@ -1,14 +1,14 @@
 import React from 'react';
 import { GlobalStyle } from './src/styles/globalStyle';
-import { PageContextProvider } from './src/components';
+import { PageContextProvider, ModalProvider } from './src/components';
 
-export const wrapRootElement = ({ element }) => (
-    <>
+export const wrapRootElement = ({ element }) =>
+    <ModalProvider>
         <GlobalStyle />
         {element}
-    </>
-);
+    </ModalProvider>
 
-export const wrapPageElement = ({ element, props }) => {
-    return <PageContextProvider context={props.pageContext}>{element}</PageContextProvider>;
-};
+export const wrapPageElement = ({ element, props }) =>
+    <PageContextProvider context={props.pageContext}>
+        {element}
+    </PageContextProvider>;

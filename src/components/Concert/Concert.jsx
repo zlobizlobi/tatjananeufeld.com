@@ -104,7 +104,7 @@ const MoreButton = styled.button`
     align-self: flex-end;
     display: inline-flex;
     color: white;
-    z-index: 1;
+    z-index: 0;
     transition: color 0.3s ease;
     margin-top: 20px;
 

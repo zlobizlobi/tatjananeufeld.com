@@ -10,3 +10,4 @@ export { ContactForm } from './contactForm';
 export { Partnership } from './Partnership';
 export { DownloadLink } from './DownloadLink';
 export { PageContextProvider } from './PageContext';
+export { ModalProvider } from './Modal';

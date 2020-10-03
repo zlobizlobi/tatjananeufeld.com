@@ -137,7 +137,7 @@ const LandingImage = styled(Img).attrs({
 })`
     width: 100%;
     height: auto;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease   ;
 
     ${media.md(`
         width: 600px;
