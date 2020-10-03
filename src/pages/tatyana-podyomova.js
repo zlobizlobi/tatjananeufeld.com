@@ -81,7 +81,7 @@ const TatyanaPodyomova = () => {
                 <PortretImage fluid={tatyanaImageSrc} />
                 <Text>{landing_text}</Text>
                 <CTAContainer href="#">
-                    <LandingImage fluid={landingImageSrc}></LandingImage>
+                    <LandingImage fluid={landingImageSrc} />
                     <Overlay>
                         <CTAText>
                             <FormattedMessage id="see_more_podyomova" />
@@ -91,7 +91,7 @@ const TatyanaPodyomova = () => {
                 </CTAContainer>
             </ContentWrapper>
             <Footer />
-        </Layout>
+        </Layout >
     );
 };
 
@@ -111,8 +111,8 @@ const Heading = styled(HeadingComponent)`
 `;
 
 const imgStyle = {
-    objectPosition: 'left left',
-    objectFit: 'scale-down',
+    objectPosition: 'left',
+    objectFit: 'contain',
 };
 
 const PortretImage = styled(Img).attrs({
@@ -126,7 +126,7 @@ const PortretImage = styled(Img).attrs({
     ${media.md(`
         width: 600px;
         height: 400px;
-        margin: 50px 0 20px 0;
+        margin: 50px 0 40px 0;
     `)}
 `;
 
@@ -137,24 +137,24 @@ const LandingImage = styled(Img).attrs({
 })`
     width: 100%;
     height: auto;
-    transition: all 0.3s ease   ;
+    transition: all 0.3s ease;
 
     ${media.md(`
-        width: 600px;
         height: 250px;
     `)}
 `;
 
 const Text = styled.p`
     font-size: 14px;
-    line-height: 24.5px;
+    line-height: 30px;
     max-width: 600px;
     color: rgba(255, 255, 255, 0.5);
     padding: 0 20px;
-    margin-bottom: 20px;
+    margin: 20px 0 10px 0;
 
     ${media.md(`
         padding: 0;
+        margin: 0;
     `)}
 `;
 
@@ -171,8 +171,8 @@ const Arrow = styled(FiArrowRight)`
     position: relative;
     left: -5px;
     color: white;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     margin-right: 30px;
     transition: all 0.1s ease;
     opacity: 0;
@@ -193,13 +193,13 @@ const Overlay = styled.div`
 
 const CTAContainer = styled.a`
     position: relative;
-    overflow: hidden;
     cursor: pointer;
     width: 100%;
-
+    margin-top: 50px;   
+    
     &:hover {
         ${LandingImage} {
-            transform: scale(1.1);
+            transform: scale(1);
         }
 
         ${Arrow} {
