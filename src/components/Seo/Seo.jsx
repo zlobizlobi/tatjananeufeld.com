@@ -33,8 +33,6 @@ export const Seo = ({ description, author, title, meta = [] }) => {
 
     const { originalPath } = usePageContext();
 
-    console.log(originalPath);
-
     const seoTitle = formatMessage({ id: title });
 
     return (

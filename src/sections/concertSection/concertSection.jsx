@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import { media } from '@styles';
 
 export const ConcertSection = forwardRef((props, ref) => {
-
     const concerts = props.concerts;
 
     const currentDate = new Date();
@@ -27,21 +26,26 @@ export const ConcertSection = forwardRef((props, ref) => {
                 <FormattedMessage id="concert_heading" />
             </Heading>
             {concerts.map(({ primary: props }, index) => {
-
                 const concertDateTime = new Date(props.date).getTime();
 
-                const earliestComingConcertTime = new Date(comingConcerts[comingConcerts.length - 1].primary.date).getTime()
+                const earliestComingConcertTime = comingConcerts.length && new Date(
+                    comingConcerts[comingConcerts.length - 1].primary.date
+                ).getTime();
 
                 return (
                     <Fragment key={index}>
                         <Concert {...props} />
-                        {!(concertDateTime === earliestComingConcertTime) && <ContainerDivider />}
-                        {concertDateTime === earliestComingConcertTime && <DateDivider />}
+                        {!(concertDateTime === earliestComingConcertTime) && (
+                            <ContainerDivider />
+                        )}
+                        {concertDateTime === earliestComingConcertTime && (
+                            <DateDivider />
+                        )}
                     </Fragment>
-                )
+                );
             })}
         </Section>
-    )
+    );
 });
 
 const ContainerDivider = styled.div`
@@ -66,4 +70,4 @@ const DateDivider = styled.div`
     ${media.md(`
         width: calc(100% - 160px);
     `)}
-`
+`;
