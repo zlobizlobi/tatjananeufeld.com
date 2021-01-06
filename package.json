@@ -6,7 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-plugin-remove-graphql-queries": "^2.7.11",
     "babel-plugin-styled-components": "^1.10.6",
     "formik": "^2.1.3",
