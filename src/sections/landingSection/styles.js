@@ -15,7 +15,7 @@ export const Image = styled(Img)`
     ${media.lg(`
         picture > img {
             object-fit: contain !important;
-            object-position: 0% 0%  !important;
+            object-position: left !important;
             width: 100vw !important;
         }
     `)}

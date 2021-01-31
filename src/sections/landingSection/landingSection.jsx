@@ -23,7 +23,7 @@ export const LandingSection = forwardRef((props, ref) => {
                         localFile {
                             childImageSharp {
                                 fluid(quality: 100) {
-                                    ...GatsbyImageSharpFluid_withWebp
+                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                 }
                             }
                         }
@@ -71,13 +71,13 @@ export const LandingSection = forwardRef((props, ref) => {
     const trail = useTrail(items.length, {
         from: { opacity: 0, transform: 'translate3d(0,90px,0)' },
         opacity: 1,
-        transform: 'translate3d(0,0px,0)',
+        transform: 'translate3d(0,0,0)',
         config: { mass: 1, tension: 200, friction: 30 },
     });
 
     return (
         <Section id="home">
-            <Image fluid={fluid} />
+            <Image objectFit="contain" fluid={fluid} />
             <Gradient />
             <NameContainer>
                 {trail.map((styles, i) => (

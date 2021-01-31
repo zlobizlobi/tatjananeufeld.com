@@ -4,24 +4,21 @@ import { media } from '@styles';
 import { DownloadLink } from '@components';
 
 export const Programs = ({ programs }) => {
-    const sortedYears = programs
-        .map(({ primary }) => primary.year)
-        .sort((a, b) => Number(a) - Number(b));
-
+    
     const currentYear = new Date().getFullYear();
 
     const [activeYear, setActiveYear] = useState(`${currentYear}`);
 
-    const activeProgram = programs.filter(
-        ({ primary }) => primary.year === activeYear
-    )[0];
+    const [ activeProgram ] = programs.filter(
+        ({ primary: { year } }) => year === activeYear
+    )
 
-    const { primary } = activeProgram;
+    console.log({ activeProgram })
 
     return (
         <Container>
             <Years>
-                {sortedYears.map(year => (
+                {programs.map(({ primary: { year } }) => (
                     <Year
                         key={year}
                         active={activeYear === year}

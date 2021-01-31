@@ -9,7 +9,7 @@ import {
 } from './styles';
 import { ContactForm as Form, Section } from '@components';
 import { FormattedMessage } from 'gatsby-plugin-intl';
-import aljosjaImage from '../../images/aljosja.svg';
+import aljosjaImage from '../../images/aljosja.jpg';
 
 export const ContactSection = () => (
     <Section id="contact">
@@ -29,7 +29,7 @@ export const ContactSection = () => (
                 </a>
             </ContactOption>
             <LogoContainer href="https://aljosja.art">
-                <img src={aljosjaImage} alt="Aljosja logo" />
+                <img height="50px" width="50px" src={aljosjaImage} alt="Aljosja logo" />
             </LogoContainer>
             <ContactOption>
                 <a href="https://aljosja.art">Agent Aljosja Art</a>
