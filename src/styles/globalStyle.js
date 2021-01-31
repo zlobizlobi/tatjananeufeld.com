@@ -7,27 +7,32 @@ import MontserratSemiBold from './fonts/Montserrat-SemiBold.ttf';
 export const GlobalStyle = createGlobalStyle`
 
     @font-face {
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', "Arial", sans-serif;
         font-weight: normal;
         src: url(${MontserratRegular});
+        font-display: swap;
     }
 
     @font-face {
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', "Arial", sans-serif;
         font-weight: lighter;
         src: url(${MontserratLight});
+        font-display: swap;
+
     }
 
     @font-face {
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', "Arial", sans-serif;
         font-weight: 600;
         src: url(${MontserratSemiBold});
+        font-display: swap;
     }
 
     @font-face {
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', "Arial", sans-serif;
         font-weight: bold;
         src: url(${MontserratBold});
+        font-display: swap;
     }
 
     * {
@@ -80,8 +85,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     ul {
-        margin: !important;
-        padding: !important;
+        margin: 0;
+        padding: 0;
         list-style-type: none;
     }
 

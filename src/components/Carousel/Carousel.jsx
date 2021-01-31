@@ -74,6 +74,7 @@ export const Carousel = () => {
                                     href={downloadSrc}
                                     download
                                     target="_blank"
+                                    aria-label="Download image"
                                 >
                                     <FiDownload />
                                 </DownloadLink>

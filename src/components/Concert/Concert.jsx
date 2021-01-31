@@ -100,7 +100,7 @@ export const Concert = ({
     );
 };
 
-const MoreButton = styled.button`
+const MoreButton = styled.button.attrs({'aria-label': 'Collapse button'})`
     align-self: flex-end;
     display: inline-flex;
     color: white;

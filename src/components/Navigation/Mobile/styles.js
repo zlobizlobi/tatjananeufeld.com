@@ -17,7 +17,9 @@ export const Nav = styled.nav`
     `)}
 `;
 
-export const HamburgerButton = styled.button`
+export const HamburgerButton = styled.button.attrs({
+    'aria-label': 'Menu button',
+})`
     display: flex;
     flex-direction: column;
     justify-content: space-between;

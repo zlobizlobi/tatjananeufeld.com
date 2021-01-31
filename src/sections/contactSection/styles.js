@@ -13,7 +13,7 @@ export const SubContainer = styled.div`
     margin: 50px 0;
 `;
 
-export const ContactOption = styled.h4`
+export const ContactOption = styled.p`
     font-weight: normal;
     margin-bottom: 25px;
 

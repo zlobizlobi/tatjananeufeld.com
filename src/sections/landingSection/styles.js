@@ -71,8 +71,7 @@ export const Name = styled.h1`
     `)}
 `;
 
-export const SubHeading = styled.h6`
-    font-family: 'Montserrat', sans-serif;
+export const SubHeading = styled.p`
     letter-spacing: 5px;
     color: #a6a6a6;
     line-height: 20px;

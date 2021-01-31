@@ -21,7 +21,10 @@ export const DesktopNavigation = () => {
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () =>
+            window.removeEventListener('scroll', handleScroll, {
+                passive: true,
+            });
     });
 
     const { locale } = useIntl();

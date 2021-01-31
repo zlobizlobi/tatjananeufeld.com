@@ -61,7 +61,7 @@ export const NavList = styled.ul`
     `)}
 `;
 
-export const CopyrightText = styled.h6`
+export const CopyrightText = styled.p`
     font-size: 11px;
     color: hsl(0, 0%, 50%);
     font-weight: normal;
