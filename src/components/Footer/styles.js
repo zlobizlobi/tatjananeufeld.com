@@ -68,9 +68,10 @@ export const CopyrightText = styled.h6`
     text-align: center;
 `;
 
-export const CopyrightImage = styled.img`
-    width: 25px;
-    height: 25px;
+export const CopyrightImage = styled.img.attrs({
+    width: '25px',
+    height: '25px',
+})`
     margin-right: 10px;
     border-radius: 50%;
     border: 1px solid white;

@@ -42,11 +42,10 @@ export const Partners = ({ partners, biography, biographyFile, name }) => {
                 {!(activeInstrument === name) && (
                     <>
                         {activeImage ? (
-                            <ImageFluid fluid={activeImage}
-                            />
+                            <ImageFluid fluid={activeImage} />
                         ) : (
-                                <Image src={thumbnail} />
-                            )}
+                            <Image src={thumbnail} />
+                        )}
                         <Text>{activeInstrument.primary.artist_biography}</Text>
                     </>
                 )}
@@ -61,10 +60,11 @@ export const Partners = ({ partners, biography, biographyFile, name }) => {
                 download
                 rel="noopener"
             >
-                {`Download ${activeInstrument === name ? name : 'artist'
-                    } Biography`}
+                {`Download ${
+                    activeInstrument === name ? name : 'artist'
+                } Biography`}
             </DownloadLink>
-        </Container >
+        </Container>
     );
 };
 
@@ -91,8 +91,8 @@ const ArtistButtons = styled.div`
 `;
 
 const ArtistButton = styled.button`
-    color: ${({ active }) => !active ? 'rgba(255,255,255,0.7)' : 'white'};
-    font-weight: ${({ active }) => !active ? 'normal' : 'bold'};
+    color: ${({ active }) => (!active ? 'rgba(255,255,255,0.7)' : 'white')};
+    font-weight: ${({ active }) => (!active ? 'normal' : 'bold')};
     margin-right: 10px;
     font-size: 11px;
     border-radius: 1px;
@@ -114,8 +114,7 @@ const ArtistButton = styled.button`
     `)}
 `;
 
-export const ImageFluid = styled(Img).attrs({
-})`
+export const ImageFluid = styled(Img).attrs({})`
     margin: 7.5px 12.5px 4px 0;
     float: left;
     width: 100px;

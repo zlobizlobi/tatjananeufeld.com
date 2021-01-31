@@ -1,14 +1,12 @@
 import React, { createContext, useState } from 'react';
 import { Modal } from './Modal';
 
-
 // Modal Context
 export const ModalContext = createContext(undefined);
 
 // Modal Provider
 export const ModalProvider = ({ children }) => {
-
-    const showModal = (modalContent) => {
+    const showModal = modalContent => {
         setModalState({ ...modalState, modalContent, open: true });
     };
 

@@ -3,7 +3,7 @@ import { FormattedTime } from 'gatsby-plugin-intl';
 import { media } from '@styles';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import { useModal } from '@hooks'
+import { useModal } from '@hooks';
 
 export const Visible = ({
     posterSrc,
@@ -32,12 +32,21 @@ export const Visible = ({
 
     return (
         <Container>
-            <Image fluid={posterSrc} alt="Concert poster" onClick={() => showModal(<ModalImage fluid={posterSrc} alt="Concert poster" />)} />
+            <Image
+                fluid={posterSrc}
+                alt="Concert poster"
+                onClick={() =>
+                    showModal(
+                        <ModalImage fluid={posterSrc} alt="Concert poster" />
+                    )
+                }
+            />
             <Column>
                 <Name onClick={onClick}>{name}</Name>
                 <Text>
                     {day}&nbsp;{month}&nbsp;
-                    <FormattedTime value={date} />,&nbsp;
+                    <FormattedTime value={date} />
+                    ,&nbsp;
                     {year}
                 </Text>
                 <Text>{city}</Text>
@@ -71,13 +80,13 @@ const Name = styled.h2`
 const Image = styled(Img).attrs({
     imgStyle: {
         objectFit: 'cover',
-    }
+    },
 })`
     margin-right: 20px;
     min-width: 100px;
     border-radius: 1px;
     cursor: pointer;
-    
+
     ${media.md(`    
         min-width: 150px;
         min-height: 200px;
@@ -98,10 +107,10 @@ const Text = styled.p`
 const ModalImage = styled(Img).attrs({
     imgStyle: {
         minHeight: '100%',
-        objectFit: 'contain'
-    }
+        objectFit: 'contain',
+    },
 })`
     border-radius: 1px;
     height: 100%;
     width: 100%;
-`
+`;

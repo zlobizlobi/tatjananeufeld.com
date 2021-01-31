@@ -50,8 +50,8 @@ export const ArchiveItems = ({ items }) => {
                                 {fluid ? (
                                     <ImageFluid fluid={fluid} />
                                 ) : (
-                                        <Image src={thumbnail} />
-                                    )}
+                                    <Image src={thumbnail} />
+                                )}
                             </Link>
                         );
                     }
@@ -91,7 +91,7 @@ export const ArchiveItems = ({ items }) => {
                             </Link>
                         );
                     }
-                    return null
+                    return null;
                 })}
             </ItemContainer>
         </Container>
@@ -202,7 +202,7 @@ const Overlay = styled.span`
     color: white;
     overflow: hidden;
     padding: 0 10px;
-`
+`;
 
 const Link = styled.a`
     margin-bottom: 30px;
@@ -212,7 +212,7 @@ const Link = styled.a`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    
+
     &:last-child {
         margin: 0;
     }

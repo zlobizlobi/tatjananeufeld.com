@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { useTrail, animated } from 'react-spring';
 import { graphql, useStaticQuery } from 'gatsby';
 import {
@@ -93,4 +93,4 @@ export const LandingSection = forwardRef((props, ref) => {
 const Icon = styled(FiCalendar)`
     min-width: 20px;
     min-height: 20px;
-`
+`;

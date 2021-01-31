@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect } from 'react';
 
 export const useDetectKeyboard = () => {
     function handleFirstTab(e) {
@@ -20,6 +20,6 @@ export const useDetectKeyboard = () => {
         return () => {
             document.body.addEventListener('mousemove', handleMouseMove);
             window.removeEventListener('keydown', handleFirstTab);
-        }
+        };
     });
-}
+};

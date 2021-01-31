@@ -29,7 +29,12 @@ export const ContactSection = () => (
                 </a>
             </ContactOption>
             <LogoContainer href="https://aljosja.art">
-                <img height="50px" width="50px" src={aljosjaImage} alt="Aljosja logo" />
+                <img
+                    height="50px"
+                    width="50px"
+                    src={aljosjaImage}
+                    alt="Aljosja logo"
+                />
             </LogoContainer>
             <ContactOption>
                 <a href="https://aljosja.art">Agent Aljosja Art</a>

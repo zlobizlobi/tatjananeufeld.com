@@ -89,7 +89,7 @@ export const FlexContainer = styled.div`
 export const Image = styled(Img).attrs({
     imgStyle: {
         objectFit: 'contain',
-        objectPosition: 'left top'
+        objectPosition: 'left top',
     },
 })`
     height: 150px;

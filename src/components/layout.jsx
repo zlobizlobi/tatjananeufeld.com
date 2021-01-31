@@ -9,8 +9,8 @@ export default ({ children }) => {
             <DesktopNavigation />
             <Main>{children}</Main>
         </AppContainer>
-    )
-}
+    );
+};
 
 const AppContainer = styled.div`
     display: flex;

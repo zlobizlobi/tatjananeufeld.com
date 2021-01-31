@@ -3,18 +3,19 @@ import styled from 'styled-components';
 import { FiDownload } from 'react-icons/fi';
 import { media } from '@styles';
 
-export const DownloadLink = ({ children, ...props }) =>
+export const DownloadLink = ({ children, ...props }) => (
     <Link {...props}>
         <Icon />
         {children}
     </Link>
+);
 
 const Icon = styled(FiDownload)`
     color: white;
     width: 20px;
     height: 20px;
     margin-right: 10px;
-`
+`;
 
 const Link = styled.a`
     display: flex;

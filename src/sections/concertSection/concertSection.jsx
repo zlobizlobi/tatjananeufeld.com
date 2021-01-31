@@ -28,9 +28,11 @@ export const ConcertSection = forwardRef((props, ref) => {
             {concerts.map(({ primary: props }, index) => {
                 const concertDateTime = new Date(props.date).getTime();
 
-                const earliestComingConcertTime = comingConcerts.length && new Date(
-                    comingConcerts[comingConcerts.length - 1].primary.date
-                ).getTime();
+                const earliestComingConcertTime =
+                    comingConcerts.length &&
+                    new Date(
+                        comingConcerts[comingConcerts.length - 1].primary.date
+                    ).getTime();
 
                 return (
                     <Fragment key={index}>

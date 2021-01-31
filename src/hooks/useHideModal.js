@@ -4,7 +4,7 @@ import { useModal } from './useModal';
 export const useKeyEscapeModal = () => {
     const { hideModal } = useModal();
 
-    const handleOnKeydown = (e) => {
+    const handleOnKeydown = e => {
         if (e.keyCode === 27 && e.key === 'Escape') {
             hideModal();
         }
@@ -17,12 +17,10 @@ export const useKeyEscapeModal = () => {
     });
 };
 
-export const useClickEscapeModal = (
-    modalRef
-) => {
+export const useClickEscapeModal = modalRef => {
     const { hideModal } = useModal();
 
-    const handleOnMouseDown = (e) => {
+    const handleOnMouseDown = e => {
         if (!modalRef.current) {
             return;
         }

@@ -10,10 +10,9 @@ import styled from 'styled-components';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import { graphql } from 'gatsby';
 import { useDetectKeyboard } from '../hooks/useDetectKeyboard';
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 
 const Partnerships = ({ pageContext: { locale }, data }) => {
-
     useDetectKeyboard();
 
     const { formatMessage } = useIntl();

@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
 import { useScrollLock, useHideModal, useModal } from '@hooks';
 import { FiX } from 'react-icons/fi';
-import { useSpring, animated } from 'react-spring'
+import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import { media } from '@styles';
-
 
 export const Modal = ({ children, ...props }) => {
     const { hideModal, open } = useModal();
@@ -29,13 +28,12 @@ export const Modal = ({ children, ...props }) => {
             <IconContainer>
                 <CloseIcon onClick={hideModal} />
             </IconContainer>
-            <ContentContainer {...props} ref={modalRef} >
+            <ContentContainer {...props} ref={modalRef}>
                 {children}
             </ContentContainer>
         </ModalContainer>
     );
 };
-
 
 const Container = styled.div`
     display: flex;
@@ -51,8 +49,7 @@ const Container = styled.div`
     left: 0;
     bottom: 61px;
     z-index: 50;
- 
-`
+`;
 
 const ModalContainer = animated(props => <Container {...props} />);
 
@@ -67,7 +64,7 @@ const ContentContainer = styled.div`
         max-width: 600px;
         height: calc(100vh - 150px);
     `)}
-`
+`;
 
 const IconContainer = styled.div`
     width: 100%;
@@ -81,7 +78,7 @@ const IconContainer = styled.div`
     ${media.md(`
         padding: 30px 30px 0 0;
     `)}
-`
+`;
 
 const CloseIcon = styled(FiX)`
     width: 25px;
@@ -99,4 +96,4 @@ const CloseIcon = styled(FiX)`
         width: 40px;
         height: 40px;
     `)}
-`
+`;

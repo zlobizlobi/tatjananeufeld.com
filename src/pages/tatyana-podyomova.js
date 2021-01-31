@@ -7,7 +7,7 @@ import Img from 'gatsby-image';
 import { media } from '@styles';
 import { FiArrowRight } from 'react-icons/fi';
 import { useDetectKeyboard } from '../hooks/useDetectKeyboard';
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 
 const TatyanaPodyomova = () => {
     const data = useStaticQuery(graphql`
@@ -91,7 +91,7 @@ const TatyanaPodyomova = () => {
                 </CTAContainer>
             </ContentWrapper>
             <Footer />
-        </Layout >
+        </Layout>
     );
 };
 
@@ -195,8 +195,8 @@ const CTAContainer = styled.a`
     position: relative;
     cursor: pointer;
     width: 100%;
-    margin-top: 50px;   
-    
+    margin-top: 50px;
+
     &:hover {
         ${LandingImage} {
             transform: scale(1);

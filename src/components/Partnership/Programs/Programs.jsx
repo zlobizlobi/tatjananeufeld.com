@@ -4,16 +4,20 @@ import { media } from '@styles';
 import { DownloadLink } from '@components';
 
 export const Programs = ({ programs }) => {
-    
-    const currentYear = new Date().getFullYear();
+    const currentYear = programs[0].primary.year;
 
-    const [activeYear, setActiveYear] = useState(`${currentYear}`);
+    const [activeYear, setActiveYear] = useState(currentYear);
 
-    const [ activeProgram ] = programs.filter(
+    const [activeProgram] = programs.filter(
         ({ primary: { year } }) => year === activeYear
-    )
+    );
 
-    console.log({ activeProgram })
+    const {
+        items,
+        primary: {
+            program_file: { url },
+        },
+    } = activeProgram;
 
     return (
         <Container>
@@ -29,15 +33,15 @@ export const Programs = ({ programs }) => {
                 ))}
             </Years>
             <Content>
-                {activeProgram.items.map((item, index) => (
+                {items.map((item, index) => (
                     <ProgramSuggestion key={index}>
                         {item.program}
                     </ProgramSuggestion>
                 ))}
             </Content>
-            {primary.program_file.url && (
+            {url && (
                 <DownloadLink
-                    href={primary.program_file.url}
+                    href={url}
                     target="_blank"
                     download
                     rel="noopener"
@@ -67,7 +71,7 @@ const Year = styled.button`
     display: inline;
     transition: all 0.3s ease;
     letter-spacing: 1px;
-    
+
     :last-child {
         margin: 0;
     }
@@ -98,7 +102,6 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
 `;
-
 
 export const ProgramSuggestion = styled.span`
     color: white;

@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import { media } from '@styles';
 
 export const Navlink = ({ title, className }) => {
-    const to = title === 'tatyana-podyomova' || title === 'partnerships' ? `/${title}` : `/#${title}`;
+    const to =
+        title === 'tatyana-podyomova' || title === 'partnerships'
+            ? `/${title}`
+            : `/#${title}`;
 
     return (
         <li>

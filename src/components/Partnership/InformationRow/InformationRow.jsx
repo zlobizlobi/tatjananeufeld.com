@@ -9,7 +9,7 @@ export const InformationRow = ({ title, children, className }) => {
 
     return (
         <Column className={className}>
-            <Row onClick={() => setOpen(!open)} >
+            <Row onClick={() => setOpen(!open)}>
                 <Heading>
                     <FormattedMessage id={title} />
                 </Heading>
