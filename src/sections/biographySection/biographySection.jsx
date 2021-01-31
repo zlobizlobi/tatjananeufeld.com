@@ -60,6 +60,7 @@ export const BiographySection = () => {
                         href={fileSrc}
                         download="biography.pdf"
                         target="_blank"
+                        rel="noopener"
                     >
                         <FiDownload style={{ marginRight: '10px' }} />
                         Download

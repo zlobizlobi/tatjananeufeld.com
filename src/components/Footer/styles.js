@@ -83,7 +83,7 @@ export const CopyrightImage = styled.img.attrs({
     `)}
 `;
 
-export const CopyrightImageContainer = styled.a`
+export const CopyrightImageContainer = styled.a.attrs({ rel: 'noopener' })`
     display: flex;
     align-items: center;
     margin-top: 20px;
