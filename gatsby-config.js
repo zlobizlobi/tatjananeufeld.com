@@ -78,5 +78,12 @@ module.exports = {
                 sv: 6,
             },
         },
+        {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+                fonts: [`Montserrat\:200, 400, 700, 900`],
+                display: 'swap',
+            },
+        },
     ],
 };

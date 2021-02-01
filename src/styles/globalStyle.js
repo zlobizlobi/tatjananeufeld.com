@@ -1,40 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import MontserratRegular from './fonts/Montserrat-Regular.ttf';
-import MontserratLight from './fonts/Montserrat-Light.ttf';
-import MontserratBold from './fonts/Montserrat-Bold.ttf';
-import MontserratSemiBold from './fonts/Montserrat-SemiBold.ttf';
 
 export const GlobalStyle = createGlobalStyle`
-
-    @font-face {
-        font-family: 'Montserrat', "Arial", sans-serif;
-        font-weight: normal;
-        src: url(${MontserratRegular});
-        font-display: swap;
-    }
-
-    @font-face {
-        font-family: 'Montserrat', "Arial", sans-serif;
-        font-weight: lighter;
-        src: url(${MontserratLight});
-        font-display: swap;
-
-    }
-
-    @font-face {
-        font-family: 'Montserrat', "Arial", sans-serif;
-        font-weight: 600;
-        src: url(${MontserratSemiBold});
-        font-display: swap;
-    }
-
-    @font-face {
-        font-family: 'Montserrat', "Arial", sans-serif;
-        font-weight: bold;
-        src: url(${MontserratBold});
-        font-display: swap;
-    }
-
     * {
         margin: 0;
         padding: 0;
