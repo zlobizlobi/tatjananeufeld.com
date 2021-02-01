@@ -31,10 +31,10 @@ export const Seo = ({ description, author, title, meta = [] }) => {
 
     const host = siteMetadata.siteUrl;
 
-    const { originalPath } = usePageContext();
+    const { intl: { originalPath } } = usePageContext();
 
     const seoTitle = formatMessage({ id: title });
-
+    
     return (
         <Helmet
             htmlAttributes={{
@@ -58,6 +58,14 @@ export const Seo = ({ description, author, title, meta = [] }) => {
                 {
                     property: `og:type`,
                     content: `website`,
+                },
+                {
+                    property: `og:url`,
+                    content: `https://tatjananeufeld.com`,
+                },
+                {
+                    property: `url`,
+                    content: `https://tatjananeufeld.com`,
                 },
                 {
                     name: `twitter:card`,
@@ -97,7 +105,7 @@ export const Seo = ({ description, author, title, meta = [] }) => {
                 ...site.siteMetadata.supportedLanguages.map(supportedLang => ({
                     rel: 'alternate',
                     hrefLang: supportedLang,
-                    href: `${host}${originalPath}`,
+                    href: `${host}/${supportedLang}${originalPath}`,
                 })),
             ]}
         />
